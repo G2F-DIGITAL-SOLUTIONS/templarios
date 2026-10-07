@@ -1,0 +1,254 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { site } from '@/config/site';
+import type { Dictionary } from '@/i18n/dictionaries';
+
+/**
+ * ContactForm — accessible, progressively-enhanced form with generous touch
+ * targets and inline validation.
+ *
+ * If `site.formEndpoint` is configured, it POSTs there. Otherwise it falls
+ * back to a pre-filled mailto: so the site works with zero backend — matching
+ * the "static first" requirement.
+ */
+interface Props {
+  dict: Dictionary;
+  /** 'contact' → name/email/city/phone/subject/message; 'affiliation' → full. */
+  variant?: 'contact' | 'affiliation';
+}
+
+const { dict, variant = 'contact' } = Astro.props;
+const isAffiliation = variant === 'affiliation';
+const labels = dict.forms;
+---
+
+<form
+  class="frame-engraved rounded-md bg-surface-raised p-6 md:p-8"
+  method="post"
+  action={site.formEndpoint || undefined}
+  data-contact-form
+  data-mailto={site.email}
+  novalidate
+>
+  <p class="mb-6 text-xs text-stone-500">{labels.requiredNote}</p>
+
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="md:col-span-2">
+      <label for={`${variant}-name`} class="mb-1.5 block text-sm font-medium text-ink-800">
+        {labels.name} <span class="text-wine-600" aria-hidden="true">*</span>
+        <span class="sr-only">({dict.a11y.requiredField})</span>
+      </label>
+      <input
+        id={`${variant}-name`}
+        name="name"
+        type="text"
+        required
+        autocomplete="name"
+        class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+      />
+    </div>
+
+    <div>
+      <label for={`${variant}-email`} class="mb-1.5 block text-sm font-medium text-ink-800">
+        {labels.email} <span class="text-wine-600" aria-hidden="true">*</span>
+        <span class="sr-only">({dict.a11y.requiredField})</span>
+      </label>
+      <input
+        id={`${variant}-email`}
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+      />
+    </div>
+
+    <div>
+      <label for={`${variant}-phone`} class="mb-1.5 block text-sm font-medium text-ink-800">
+        {labels.phone}
+      </label>
+      <input
+        id={`${variant}-phone`}
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+      />
+    </div>
+
+    <div>
+      <label for={`${variant}-city`} class="mb-1.5 block text-sm font-medium text-ink-800">
+        {labels.city}
+      </label>
+      <input
+        id={`${variant}-city`}
+        name="city"
+        type="text"
+        autocomplete="address-level2"
+        class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+      />
+    </div>
+
+    {
+      isAffiliation && (
+        <>
+          <div>
+            <label for="affiliation-cpf" class="mb-1.5 block text-sm font-medium text-ink-800">
+              {labels.cpf} <span class="text-wine-600" aria-hidden="true">*</span>
+            </label>
+            <input
+              id="affiliation-cpf"
+              name="cpf"
+              type="text"
+              inputmode="numeric"
+              required
+              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label for="affiliation-birth" class="mb-1.5 block text-sm font-medium text-ink-800">
+              {labels.birthDate}
+            </label>
+            <input
+              id="affiliation-birth"
+              name="birthDate"
+              type="date"
+              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+            />
+          </div>
+          <div class="md:col-span-2">
+            <label for="affiliation-address" class="mb-1.5 block text-sm font-medium text-ink-800">
+              {labels.address}
+            </label>
+            <input
+              id="affiliation-address"
+              name="address"
+              type="text"
+              autocomplete="street-address"
+              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label for="affiliation-postal" class="mb-1.5 block text-sm font-medium text-ink-800">
+              {labels.postalCode}
+            </label>
+            <input
+              id="affiliation-postal"
+              name="postalCode"
+              type="text"
+              inputmode="numeric"
+              autocomplete="postal-code"
+              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label for="affiliation-profession" class="mb-1.5 block text-sm font-medium text-ink-800">
+              {labels.profession}
+            </label>
+            <input
+              id="affiliation-profession"
+              name="profession"
+              type="text"
+              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+            />
+          </div>
+        </>
+      )
+    }
+
+    {
+      !isAffiliation && (
+        <div class="md:col-span-2">
+          <label for={`${variant}-subject`} class="mb-1.5 block text-sm font-medium text-ink-800">
+            {labels.subject}
+          </label>
+          <input
+            id={`${variant}-subject`}
+            name="subject"
+            type="text"
+            class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+          />
+        </div>
+      )
+    }
+
+    <div class="md:col-span-2">
+      <label for={`${variant}-message`} class="mb-1.5 block text-sm font-medium text-ink-800">
+        {isAffiliation ? labels.motivation : labels.message}
+        <span class="text-wine-600" aria-hidden="true">*</span>
+      </label>
+      <textarea
+        id={`${variant}-message`}
+        name="message"
+        rows={isAffiliation ? 6 : 5}
+        required
+        class="w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
+      ></textarea>
+    </div>
+
+    <div class="md:col-span-2">
+      <label class="flex items-start gap-3 text-sm text-ink-600">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          class="mt-0.5 size-5 shrink-0 rounded-sm border-stone-400 accent-wine-700"
+        />
+        <span>
+          {labels.consent} <span class="text-wine-600" aria-hidden="true">*</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+    <button type="submit" class="btn btn-primary w-full sm:w-auto">
+      {isAffiliation ? labels.submit : labels.send}
+      <Icon name="arrow-right" size={17} />
+    </button>
+    <p
+      class="hidden text-sm text-wine-700 sm:ml-2"
+      role="status"
+      aria-live="polite"
+      data-form-status
+    >
+    </p>
+  </div>
+
+  <noscript>
+    <p class="mt-4 text-sm text-stone-500">
+      {dict.a11y.formError} <a href={`mailto:${site.email}`} class="link-quiet">{site.email}</a>
+    </p>
+  </noscript>
+</form>
+
+<script>
+  // Progressive enhancement: if there is no backend endpoint, turn the submit
+  // into a pre-filled mailto so the site works with zero infrastructure.
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  if (form) {
+    const endpoint = form.getAttribute('action');
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+
+    if (!endpoint) {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const mailto = form.dataset.mailto ?? '';
+        const lines = Array.from(data.entries())
+          .filter(([key]) => key !== 'consent')
+          .map(([key, value]) => `${key}: ${String(value)}`)
+          .join('\r\n');
+        const subject = encodeURIComponent(
+          (data.get('subject') as string) || 'Mensagem pelo site Templários',
+        );
+        window.location.href = `mailto:${mailto}?subject=${subject}&body=${encodeURIComponent(lines)}`;
+        if (status) {
+          status.classList.remove('hidden');
+          status.textContent = 'Abrindo seu programa de e-mail…';
+        }
+      });
+    }
+  }
+</script>

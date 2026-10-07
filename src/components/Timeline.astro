@@ -1,0 +1,40 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+import { tx } from '@/content/localize';
+import type { Locale } from '@/i18n/config';
+import type { Section } from '@/content/institution';
+
+/**
+ * Timeline — a vertical, engraved timeline of institutional history. The line
+ * and nodes are CSS; each entry is a real heading + text block.
+ */
+interface Props {
+  entries: Section[];
+  locale: Locale;
+}
+
+const { entries, locale } = Astro.props;
+---
+
+<ol class="relative flex flex-col gap-10 border-l-2 border-gold-500/30 pl-6 md:gap-14 md:pl-10">
+  {
+    entries.map((entry, index) => (
+      <li class="relative" id={entry.id}>
+        <span
+          class="absolute top-1.5 -left-[calc(1.5rem+7px)] grid size-4 place-items-center md:-left-[calc(2.5rem+7px)]"
+          aria-hidden="true"
+        >
+          <span class="absolute size-4 rounded-full border border-gold-500/50 bg-parchment"></span>
+          <Emblem size={9} variant="cross" class="relative text-wine-700" />
+        </span>
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-gold-700 uppercase">
+          {String(index + 1).padStart(2, '0')}
+        </p>
+        <h2 class="mt-2 !text-2xl md:!text-3xl">{tx(entry.heading, locale)}</h2>
+        <div class="prose-templar mt-4">
+          {tx(entry.body, locale).map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </li>
+    ))
+  }
+</ol>

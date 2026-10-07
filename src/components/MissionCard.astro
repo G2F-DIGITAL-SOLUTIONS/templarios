@@ -1,0 +1,41 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+import Icon, { type IconName } from '@/components/ui/Icon.astro';
+
+/**
+ * MissionPillar — a "pillar" card for the purposes/mission section. An
+ * engraved capital (icon) over a stone body, with a subtle numeric ordinal.
+ */
+interface Props {
+  title: string;
+  text: string;
+  icon: IconName;
+  index: number;
+}
+
+const { title, text, icon, index } = Astro.props;
+const ordinal = String(index + 1).padStart(2, '0');
+---
+
+<li class="card group flex h-full flex-col p-6">
+  <div class="flex items-center justify-between">
+    <span
+      class="grid size-12 place-items-center rounded-sm border border-gold-500/40 text-gold-700 transition-colors group-hover:border-gold-500 group-hover:text-wine-700"
+      aria-hidden="true"
+    >
+      <Icon name={icon} size={24} />
+    </span>
+    <span
+      class="font-display text-sm font-semibold tracking-widest text-stone-300"
+      aria-hidden="true"
+    >
+      {ordinal}
+    </span>
+  </div>
+
+  <h3 class="mt-5 font-display text-lg font-semibold text-ink-900">{title}</h3>
+  <p class="mt-2.5 flex-1 text-sm leading-relaxed text-ink-600">{text}</p>
+
+  <hr class="rule-gold mt-5 !opacity-30" />
+  <Emblem size={22} variant="cross" class="mt-4 text-gold-500/70" aria-hidden="true" />
+</li>

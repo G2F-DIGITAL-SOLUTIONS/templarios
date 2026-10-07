@@ -1,0 +1,84 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { localizedPath, type Locale } from '@/i18n';
+
+/**
+ * CTA — a consistent call-to-action band. Emphasised variant uses the wine
+ * gradient; quiet variant sits on a framed parchment plate.
+ */
+interface Props {
+  locale: Locale;
+  title: string;
+  lead?: string;
+  primaryLabel: string;
+  primaryRouteKey: Parameters<typeof localizedPath>[1];
+  secondaryLabel?: string;
+  secondaryRouteKey?: Parameters<typeof localizedPath>[1];
+  variant?: 'emphasis' | 'quiet';
+}
+
+const {
+  locale,
+  title,
+  lead,
+  primaryLabel,
+  primaryRouteKey,
+  secondaryLabel,
+  secondaryRouteKey,
+  variant = 'emphasis',
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'section-tight',
+    variant === 'emphasis' ? 'surface-dark texture-stone' : 'surface-parchment',
+  ]}
+  aria-labelledby="cta-heading"
+>
+  <div class="container-templar">
+    <div
+      class:list={[
+        'frame-engraved relative overflow-hidden rounded-md px-6 py-10 text-center md:px-12 md:py-14',
+        variant === 'emphasis' ? 'bg-ink-900/40' : 'bg-surface-raised',
+      ]}
+    >
+      <h2
+        id="cta-heading"
+        class:list={['!text-balance', variant === 'emphasis' ? '!text-parchment' : '!text-ink-900']}
+      >
+        {title}
+      </h2>
+      {lead && (
+        <p
+          class:list={[
+            'mx-auto mt-4 max-w-xl',
+            variant === 'emphasis' ? 'text-stone-200/90' : 'text-ink-600',
+          ]}
+        >
+          {lead}
+        </p>
+      )}
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={localizedPath(locale, primaryRouteKey)}
+          class:list={['btn w-full sm:w-auto', variant === 'emphasis' ? 'btn-gold' : 'btn-primary']}
+        >
+          {primaryLabel}
+          <Icon name="arrow-right" size={17} />
+        </a>
+        {secondaryLabel && secondaryRouteKey && (
+          <a
+            href={localizedPath(locale, secondaryRouteKey)}
+            class:list={[
+              'btn w-full sm:w-auto',
+              variant === 'emphasis' ? 'btn-ghost-light' : 'btn-outline',
+            ]}
+          >
+            {secondaryLabel}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

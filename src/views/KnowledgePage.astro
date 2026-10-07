@@ -1,0 +1,121 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Section from '@/components/ui/Section.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { knowledgeItems, type KnowledgeType } from '@/content/knowledge';
+import { tx } from '@/content/localize';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  /** Optional pre-filter for the dedicated lecture/study/article pages. */
+  filterType?: KnowledgeType;
+  /** Route key for this page (knowledge | lectures | studies | articles). */
+  routeKey?: RouteKey;
+}
+
+const { locale, filterType, routeKey = 'knowledge' } = Astro.props;
+const dict = getDictionary(locale);
+const home = dict.home.knowledge;
+const path = localizedPath(locale, routeKey);
+
+/** Page title per knowledge route, typed so unknown keys fall back cleanly. */
+const pageTitles: Partial<Record<RouteKey, string>> = {
+  knowledge: dict.pages.knowledge.title,
+  lectures: dict.nav.lectures,
+  studies: dict.nav.studies,
+  articles: dict.nav.articles,
+};
+const pageTitle = pageTitles[routeKey] ?? dict.pages.knowledge.title;
+
+const items = filterType ? knowledgeItems.filter((i) => i.type === filterType) : knowledgeItems;
+
+const ctaByType = {
+  lecture: dict.knowledge.ctaWatch,
+  video: dict.knowledge.ctaWatch,
+  study: dict.knowledge.ctaKnow,
+  article: dict.knowledge.ctaRead,
+} as const;
+
+const filters: { key: RouteKey; label: string }[] = [
+  { key: 'knowledge', label: dict.knowledge.filterAll },
+  { key: 'lectures', label: dict.nav.lectures },
+  { key: 'studies', label: dict.nav.studies },
+  { key: 'articles', label: dict.nav.articles },
+];
+---
+
+<BaseLayout locale={locale} routeKey={routeKey} title={pageTitle} description={dict.pages.knowledge.lead} path={path}>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={home.kicker}
+    title={pageTitle}
+    lead={dict.pages.knowledge.lead}
+    crumbs={[{ label: pageTitle }]}
+  />
+
+  <Section>
+    {
+      !filterType && (
+        <nav aria-label={home.kicker} class="mb-10">
+          <ul class="flex flex-wrap gap-2">
+            {filters.map((filter) => (
+              <li>
+                <a
+                  href={localizedPath(locale, filter.key)}
+                  aria-current={filter.key === routeKey ? 'page' : undefined}
+                  class:list={[
+                    'inline-flex min-h-10 items-center rounded-sm border px-4 text-sm font-medium no-underline transition-colors',
+                    filter.key === routeKey
+                      ? 'border-wine-700 bg-wine-700 text-parchment'
+                      : 'border-stone-300 text-ink-700 hover:border-gold-500 hover:text-wine-700',
+                  ]}
+                >
+                  {filter.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    {
+      items.length > 0 ? (
+        <ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <ArticleCard
+              locale={locale}
+              type={home.types[item.type]}
+              title={tx(item.title, locale)}
+              summary={tx(item.summary, locale)}
+              date={item.date}
+              url={item.url}
+              cta={ctaByType[item.type]}
+            />
+          ))}
+        </ul>
+      ) : (
+        <p class="text-ink-600">{dict.knowledge.emptyState}</p>
+      )
+    }
+
+    <div class="mt-14 frame-engraved rounded-md bg-surface-raised p-6 md:p-8">
+      <div class="flex flex-wrap items-center justify-between gap-5">
+        <div>
+          <h2 class="!text-xl">{dict.home.donations.kicker}</h2>
+          <p class="mt-2 max-w-xl text-sm text-ink-600">{dict.home.donations.lead}</p>
+        </div>
+        <a href={localizedPath(locale, 'donations')} class="btn btn-primary">
+          {dict.home.donations.ctaPrimary}
+          <Icon name="arrow-right" size={17} />
+        </a>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+import { type Section } from '@/content/institution';
+import { tx } from '@/content/localize';
+import { defaultLocale, type Locale } from '@/i18n/config';
+
+/**
+ * InstitutionalSection — renders a titled block of institutional copy with
+ * optional image plates running alongside the text on wide screens.
+ *
+ * Content is the same for every locale except the source language, so we
+ * annotate non-default locales with a small machine-readable note rather than
+ * pretending translations exist.
+ */
+interface Props {
+  section: Section;
+  locale: Locale;
+  /** Alternate image side for a subtle rhythm down the page. */
+  reversed?: boolean;
+  images?: { src: string; alt: string }[];
+}
+
+const { section, locale, reversed = false, images = [] } = Astro.props;
+const heading = tx(section.heading, locale);
+const body = tx(section.body, locale);
+const isTranslated = locale !== defaultLocale;
+---
+
+<section class="grid gap-8 lg:grid-cols-12 lg:gap-10" aria-labelledby={`${section.id}-heading`}>
+  <div class:list={['lg:col-span-7', reversed && 'lg:order-2 lg:col-start-6']}>
+    <h2 id={`${section.id}-heading`} class="!text-2xl md:!text-3xl">{heading}</h2>
+    <div class="prose-templar mt-5">
+      {body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+    {
+      isTranslated && (
+        <p class="mt-4 text-xs text-stone-400" lang="pt-BR">
+          {/* Institutional source text is in Portuguese; translations pending. */}
+          <span aria-hidden="true">•</span> Texto institucional original em português.
+        </p>
+      )
+    }
+  </div>
+
+  {
+    images.length > 0 && (
+      <div class:list={['lg:col-span-4 lg:col-start-9', reversed && 'lg:order-1 lg:col-start-1']}>
+        <div class="flex flex-col gap-4">
+          {images.map((image) => (
+            <figure class="frame-engraved overflow-hidden rounded-md bg-ink-900">
+              <img
+                src={image.src}
+                alt={image.alt}
+                width="720"
+                height="480"
+                loading="lazy"
+                decoding="async"
+                class="aspect-3/2 size-full object-cover"
+              />
+            </figure>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</section>

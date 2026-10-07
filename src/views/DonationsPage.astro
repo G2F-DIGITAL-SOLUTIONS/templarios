@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Icon, { type IconName } from '@/components/ui/Icon.astro';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const page = dict.pages.donations;
+const path = localizedPath(locale, 'donations');
+
+const whereItems: { key: keyof typeof dict.donations.whereItems; icon: IconName }[] = [
+  { key: 'operations', icon: 'shield' },
+  { key: 'humanitarian', icon: 'hand-heart' },
+  { key: 'research', icon: 'book' },
+  { key: 'initiatives', icon: 'compass' },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey="donations"
+  title={page.title}
+  description={page.lead}
+  path={path}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: page.title }]}
+  />
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-6">
+        <h2 class="!text-2xl">{dict.donations.whyTitle}</h2>
+        <p class="prose-templar mt-4">{dict.donations.whyText}</p>
+
+        <h2 class="mt-10 !text-2xl" id="irpf">{dict.donations.irpfTitle}</h2>
+        <p class="prose-templar mt-4">{dict.donations.irpfText}</p>
+        <p class="mt-4 rounded-sm border-l-2 border-gold-500 bg-parchment-dark/40 px-4 py-3 text-sm text-ink-600">
+          {dict.donations.legalNote}
+        </p>
+      </div>
+
+      <div class="lg:col-span-5 lg:col-start-8">
+        <div class="frame-engraved rounded-md bg-surface-raised p-6">
+          <h2 class="!text-xl">{dict.donations.howTitle}</h2>
+          <p class="mt-3 text-sm text-ink-600">{dict.donations.howText}</p>
+          <a href={localizedPath(locale, 'contact')} class="btn btn-primary mt-6 w-full">
+            {dict.donations.howCta}
+            <Icon name="arrow-right" size={17} />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-16 !text-2xl">{dict.donations.whereTitle}</h2>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        whereItems.map((item) => (
+          <li class="card p-5">
+            <span class="text-gold-600" aria-hidden="true">
+              <Icon name={item.icon} size={22} />
+            </span>
+            <p class="mt-3 text-sm leading-relaxed text-ink-700">
+              {dict.donations.whereItems[item.key]}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+</BaseLayout>

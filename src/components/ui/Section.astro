@@ -1,0 +1,30 @@
+---
+/**
+ * Section — consistent vertical rhythm, container and optional dark surface.
+ * Keeps page files short and the layout predictable.
+ */
+interface Props {
+  id?: string;
+  tone?: 'plain' | 'parchment' | 'dark' | 'sunken';
+  size?: 'default' | 'tight';
+  class?: string;
+}
+
+const { id, tone = 'plain', size = 'default', class: className = '' } = Astro.props;
+
+const toneClass = {
+  plain: '',
+  parchment: 'surface-parchment',
+  dark: 'surface-dark texture-stone',
+  sunken: 'bg-surface-sunken',
+}[tone];
+---
+
+<section
+  id={id}
+  class:list={[size === 'default' ? 'section' : 'section-tight', toneClass, className]}
+>
+  <div class="container-templar">
+    <slot />
+  </div>
+</section>

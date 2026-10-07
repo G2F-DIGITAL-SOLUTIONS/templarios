@@ -1,0 +1,187 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+import Icon from '@/components/ui/Icon.astro';
+import LanguageSwitcher from '@/components/LanguageSwitcher.astro';
+import { footerColumns } from '@/config/navigation';
+import { site } from '@/config/site';
+import { localizedPath, type Locale } from '@/i18n';
+import type { Dictionary } from '@/i18n/dictionaries';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+  /** Route of the current page, so the switcher links to its equivalent. */
+  routeKey: RouteKey;
+}
+
+const { locale, dict, routeKey } = Astro.props;
+
+const year = new Date().getFullYear();
+const legalLinks = [
+  { key: 'privacy' as const, label: dict.footer.privacy },
+  { key: 'terms' as const, label: dict.footer.terms },
+  { key: 'cookies' as const, label: dict.footer.cookies },
+];
+---
+
+<footer class="surface-dark texture-stone border-t border-gold-600/25">
+  <hr class="rule-gold !opacity-40" />
+  <div class="container-templar py-14 md:py-16">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <!-- Brand + description -->
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3">
+          <span class="text-gold-400" aria-hidden="true">
+            <Emblem size={42} />
+          </span>
+          <div class="leading-tight">
+            <p class="font-display text-parchment text-lg font-semibold">{dict.meta.siteName}</p>
+            <p class="mt-1 text-[0.66rem] font-medium tracking-[0.2em] text-stone-300 uppercase">
+              {dict.meta.shortName}
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-sm text-sm text-stone-200/90">{dict.footer.aboutText}</p>
+        <p class="mt-5 font-serif text-base text-gold-300/90 italic">“{dict.footer.motif}”</p>
+      </div>
+
+      <!-- Link columns -->
+      {
+        footerColumns.map((column) => (
+          <nav class="lg:col-span-2" aria-labelledby={`footer-${column.titleKey}`}>
+            <h2
+              id={`footer-${column.titleKey}`}
+              class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase"
+            >
+              {dict.footer[column.titleKey] as string}
+            </h2>
+            <ul class="mt-4 flex flex-col gap-2.5">
+              {column.items.map((item) => (
+                <li>
+                  <a
+                    href={localizedPath(locale, item.routeKey)}
+                    class="text-sm text-stone-200/90 no-underline transition-colors hover:text-gold-300"
+                  >
+                    {dict.nav[item.labelKey] as string}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+
+      <!-- Contact + languages -->
+      <div class="lg:col-span-2">
+        <h2 class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
+          {dict.footer.contactTitle}
+        </h2>
+        <ul class="mt-4 flex flex-col gap-3 text-sm text-stone-200/90">
+          <li class="flex gap-2.5">
+            <Icon name="map-pin" size={17} class="mt-0.5 shrink-0 text-gold-400" />
+            <span>{dict.footer.address}</span>
+          </li>
+          <li class="flex gap-2.5">
+            <Icon name="phone" size={17} class="mt-0.5 shrink-0 text-gold-400" />
+            <a href={site.phoneHref} class="no-underline transition-colors hover:text-gold-300">
+              {dict.footer.phone}
+            </a>
+          </li>
+          <li class="flex gap-2.5">
+            <Icon name="mail" size={17} class="mt-0.5 shrink-0 text-gold-400" />
+            <a
+              href={`mailto:${site.email}`}
+              class="break-all no-underline transition-colors hover:text-gold-300"
+            >
+              {dict.footer.email}
+            </a>
+          </li>
+        </ul>
+
+        {
+          site.social.length > 0 && (
+            <div class="mt-6">
+              <h2 class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
+                {dict.footer.socialTitle}
+              </h2>
+              <ul class="mt-3 flex gap-2">
+                {site.social.map((profile) => (
+                  <li>
+                    <a
+                      href={profile.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex size-10 items-center justify-center rounded-sm border border-stone-300/25 text-stone-200 transition-colors hover:border-gold-400 hover:text-gold-300"
+                      aria-label={`${profile.label} — ${dict.a11y.externalLink}`}
+                    >
+                      <Icon name={profile.icon} size={19} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Languages + affiliation -->
+      <div class="lg:col-span-2">
+        <h2 class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
+          {dict.footer.languagesTitle}
+        </h2>
+        <LanguageSwitcher
+          locale={locale}
+          routeKey={routeKey}
+          label={dict.language.label}
+          switchToLabel={dict.language.switchTo}
+          variant="inline"
+          class="mt-3 text-stone-200"
+        />
+        <a
+          href={localizedPath(locale, 'affiliation')}
+          class="btn btn-ghost-light mt-5 w-full !text-[0.7rem]"
+        >
+          {dict.nav.ctaSecondary}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-stone-300/15">
+    <div
+      class="container-templar flex flex-col items-center justify-between gap-4 py-6 text-xs text-stone-300/90 md:flex-row"
+    >
+      <div class="text-center md:text-left">
+        <p>© {year} {dict.meta.siteName}. {dict.footer.rights}</p>
+        <p class="mt-1.5 text-stone-300/80">
+          Powered by{' '}
+          <a
+            href="https://getrandel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-medium text-gold-400 no-underline transition-colors hover:text-gold-300"
+          >
+            Randel
+          </a>
+        </p>
+      </div>
+      <nav aria-label={dict.footer.legalTitle}>
+        <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          {
+            legalLinks.map((link) => (
+              <li>
+                <a
+                  href={localizedPath(locale, link.key)}
+                  class="no-underline transition-colors hover:text-gold-300"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

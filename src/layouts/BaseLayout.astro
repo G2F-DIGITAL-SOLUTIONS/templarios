@@ -1,0 +1,64 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import SEO from '@/components/SEO.astro';
+import { localeTags, type Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { alternatesFor, type RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  title: string;
+  description: string;
+  /** Path relative to site root for canonical/OG, e.g. "/historia". */
+  path: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+  /** Render a dark page background (used by a few immersive sections). */
+  dark?: boolean;
+}
+
+const {
+  locale,
+  routeKey,
+  title,
+  description,
+  path,
+  jsonLd,
+  noindex = false,
+  dark = false,
+} = Astro.props;
+
+const dict = getDictionary(locale);
+const alternates = alternatesFor(routeKey);
+---
+
+<!doctype html>
+<html lang={localeTags[locale]} class="scroll-pt-[var(--header-height)]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      {locale}
+      {dict}
+      {title}
+      {description}
+      {path}
+      {alternates}
+      {jsonLd}
+      {noindex}
+    />
+  </head>
+  <body class={dark ? 'surface-dark' : ''}>
+    <Header locale={locale} dict={dict} currentPath={path} routeKey={routeKey} />
+    <main id="conteudo" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} dict={dict} routeKey={routeKey} />
+  </body>
+</html>

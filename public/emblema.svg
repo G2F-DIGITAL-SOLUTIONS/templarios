@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 144" role="img" aria-label="Emblema da Ordem dos Cavaleiros Templários">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e1a16"/>
+      <stop offset="1" stop-color="#0c0a08"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 4 120 22v48c0 34-23 56.8-56 70C31 126.8 8 104 8 70V22L64 4Z" fill="url(#shield)" stroke="#8a6d3b" stroke-width="3"/>
+  <path d="M64 16 108 30v40c0 27-18 45.6-44 57-26-11.4-44-30-44-57V30L64 16Z" fill="none" stroke="#c9a862" stroke-width="1.5" opacity="0.55"/>
+  <g fill="#c9a862">
+    <rect x="58" y="26" width="12" height="92" rx="1"/>
+    <rect x="34" y="46" width="60" height="12" rx="1"/>
+    <rect x="40" y="72" width="48" height="12" rx="1"/>
+  </g>
+</svg>

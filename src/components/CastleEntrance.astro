@@ -1,0 +1,81 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+import CastleArch from '@/components/ui/CastleArch.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { localizedPath, type Locale } from '@/i18n';
+import type { Dictionary } from '@/i18n/dictionaries';
+
+/**
+ * CastleEntrance — the homepage hero ("Entre no Castelo").
+ *
+ * Static composition: a dark, warm-lit backdrop, the semibold title, an
+ * institutional line, two clear calls-to-action and a decorative retable
+ * (arch + towers). No parallax, no WebGL, no autoplay — just layered CSS and
+ * an inline SVG, so it stays extremely fast.
+ */
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+}
+
+const { locale, dict } = Astro.props;
+const hero = dict.home.hero;
+---
+
+<section
+  class="surface-dark texture-stone relative overflow-hidden"
+  aria-labelledby="hero-heading"
+>
+  <!-- Layered warm glow -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(184,147,78,0.28),transparent_60%)]"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="container-templar relative pt-16 pb-0 md:pt-24">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow justify-center !text-gold-400">
+        <Emblem size={20} variant="cross" class="text-gold-400" />
+        {hero.kicker}
+      </p>
+
+      <h1
+        id="hero-heading"
+        class="text-shadow-hero mt-6 !text-parchment"
+      >
+        {hero.title}
+      </h1>
+
+      <p class="mt-6 font-serif text-xl text-gold-300/95 italic md:text-2xl">{hero.lead}</p>
+
+      <p class="mx-auto mt-5 max-w-xl text-stone-200/85">{hero.intro}</p>
+
+      <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={localizedPath(locale, 'order')}
+          class="btn btn-gold w-full sm:w-auto"
+        >
+          {hero.primaryCta}
+          <Icon name="arrow-right" size={17} />
+        </a>
+        <a
+          href={localizedPath(locale, 'purposes')}
+          class="btn btn-ghost-light w-full sm:w-auto"
+        >
+          {hero.secondaryCta}
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative retable -->
+    <div class="relative mt-14 md:mt-20" aria-hidden="true">
+      <CastleArch class="h-56 w-full md:h-80" />
+    </div>
+  </div>
+</section>

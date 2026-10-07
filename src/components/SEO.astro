@@ -1,0 +1,147 @@
+---
+import { localeTags, type Locale } from '@/i18n/config';
+import type { Dictionary } from '@/i18n/dictionaries';
+import { site } from '@/config/site';
+
+/** Open Graph locale codes per site locale. */
+const ogLocales: Record<Locale, string> = {
+  pt: 'pt_BR',
+  en: 'en_US',
+  it: 'it_IT',
+  fr: 'fr_FR',
+  es: 'es_ES',
+};
+
+/**
+ * SEO — centralised <head> metadata: title, description, canonical,
+ * Open Graph, Twitter card, hreflang alternates and JSON-LD.
+ */
+interface Alternate {
+  locale: Locale;
+  path: string;
+}
+
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+  title: string;
+  description: string;
+  /** Page path relative to the site root, e.g. "/historia". */
+  path: string;
+  /** Language alternates for hreflang. Omit to skip. */
+  alternates?: Alternate[];
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  locale,
+  dict,
+  title,
+  description,
+  path,
+  alternates,
+  image = '/og-default.png',
+  type = 'website',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://www.templarios.org.br');
+const canonical = new URL(path, siteUrl).href;
+const imageUrl = new URL(image, siteUrl).href;
+const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
+
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+// A WebSite + Organization graph is emitted on every page, plus any page JSON-LD.
+const baseGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl.origin}/#organization`,
+      name: dict.meta.siteName,
+      alternateName: dict.meta.shortName,
+      url: siteUrl.origin,
+      logo: new URL('/emblema.svg', siteUrl).href,
+      email: site.email,
+      telephone: `+55 ${site.phone}`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: site.address.street,
+        addressLocality: site.address.city,
+        addressRegion: site.address.region,
+        postalCode: site.address.postalCode,
+        addressCountry: site.address.country,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.origin}/#website`,
+      url: siteUrl.origin,
+      name: dict.meta.siteName,
+      inLanguage: localeTags[locale],
+      publisher: { '@id': `${siteUrl.origin}/#organization` },
+    },
+  ],
+};
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Language alternates -->
+{
+  alternates && alternates.length > 0 && (
+    <>
+      {alternates.map((alt) => (
+        <link
+          rel="alternate"
+          hreflang={localeTags[alt.locale]}
+          href={new URL(alt.path, siteUrl).href}
+        />
+      ))}
+      <link rel="alternate" hreflang="x-default" href={new URL(alternates[0].path, siteUrl).href} />
+    </>
+  )
+}
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={dict.meta.siteName} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={ogLocales[locale]} />
+{
+  alternates
+    ?.filter((alt) => alt.locale !== locale)
+    .map((alt) => <meta property="og:locale:alternate" content={ogLocales[alt.locale]} />)
+}
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Theme -->
+<meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)" />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(baseGraph)} />
+{
+  jsonLdBlocks.map((block) => (
+    <script type="application/ld+json" set:html={JSON.stringify(block)} />
+  ))
+}

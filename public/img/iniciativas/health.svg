@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Saúde">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e1a16"/>
+      <stop offset="0.6" stop-color="#14110e"/>
+      <stop offset="1" stop-color="#0c0a08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.6" cy="0.15" r="0.8">
+      <stop offset="0" stop-color="#c9a862" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#c9a862" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <g stroke="#3b342b" stroke-width="2" opacity="0.5">
+    <path d="M0 700h1200M0 760h1200M0 820h1200"/>
+  </g>
+  <g transform="translate(600 440)" stroke="#c9a862" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9">
+    <path d="M-120 20c-44-44-88-96-88-165a165 165 0 0 1 165-165c53 0 90 15 135 60 45-45 82-60 135-60A165 165 0 0 1 392-145c0 69-44 121-88 165L95 260Z" transform="scale(0.5)"/>
+    <path d="M-293 -100H-110l-15 30 60-135 60 210 45-105H-5" transform="scale(0.5)"/>
+  </g>
+</svg>

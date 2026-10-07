@@ -1,0 +1,63 @@
+---
+/**
+ * Emblem — the Order's shield with the Templar cross.
+ *
+ * Rendered as inline SVG so it is crisp at any size and requires no asset
+ * request. The cross is the "double-bar" (patriarchal) form referenced in the
+ * Order's own material, drawn with a simple heraldic shield.
+ */
+interface Props {
+  class?: string;
+  size?: number;
+  /** 'full' shows the shield frame; 'cross' shows only the cross. */
+  variant?: 'full' | 'cross';
+  title?: string;
+}
+
+const { class: className = '', size = 48, variant = 'full', title = 'Cruz Templária' } = Astro.props;
+---
+
+{variant === 'full' ? (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 64 72"
+    class={className}
+    role="img"
+    aria-label={title}
+  >
+    <!-- Shield -->
+    <path
+      d="M32 2 60 11v24c0 17-11.5 28.4-28 35C15.5 63.4 4 52 4 35V11L32 2Z"
+      fill="currentColor"
+      opacity="0.1"></path>
+    <path
+      d="M32 2 60 11v24c0 17-11.5 28.4-28 35C15.5 63.4 4 52 4 35V11L32 2Z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"></path>
+    <!-- Templar cross (patriarchal / double-bar) -->
+    <g fill="currentColor">
+      <rect x="28.5" y="12" width="7" height="44" rx="0.5"></rect>
+      <rect x="17" y="22" width="30" height="7" rx="0.5"></rect>
+      <rect x="20" y="34" width="24" height="7" rx="0.5"></rect>
+    </g>
+  </svg>
+) : (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 30"
+    class={className}
+    role="img"
+    aria-label={title}
+  >
+    <g fill="currentColor">
+      <rect x="10" y="0" width="4" height="30"></rect>
+      <rect x="4" y="6" width="16" height="4"></rect>
+      <rect x="6" y="14" width="12" height="4"></rect>
+    </g>
+  </svg>
+)}

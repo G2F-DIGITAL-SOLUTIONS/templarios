@@ -1,0 +1,49 @@
+---
+import Breadcrumbs from '@/components/ui/Breadcrumbs.astro';
+import Emblem from '@/components/ui/Emblem.astro';
+import { localizedPath, type Locale } from '@/i18n';
+import type { Dictionary } from '@/i18n/dictionaries';
+
+/**
+ * PageHero — a compact, consistent banner for inner pages. Dark, warm-lit,
+ * with breadcrumbs, kicker, title and lead. Deliberately short so content
+ * starts high in the viewport (better Core Web Vitals, better focus).
+ */
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+  kicker: string;
+  title: string;
+  lead?: string;
+  crumbs: { label: string; routeKey?: Parameters<typeof localizedPath>[1] }[];
+}
+
+const { locale, dict, kicker, title, lead, crumbs } = Astro.props;
+---
+
+<section class="surface-dark texture-stone relative overflow-hidden" aria-labelledby="page-title">
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_70%_at_20%_-20%,rgba(184,147,78,0.22),transparent_60%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="container-templar relative py-12 md:py-16">
+    <Breadcrumbs
+      locale={locale}
+      homeLabel={dict.common.home}
+      breadcrumbLabel={dict.common.breadcrumb}
+      crumbs={crumbs}
+      class="[&_a]:text-stone-300 [&_a:hover]:text-gold-300 [&_span]:text-stone-400"
+    />
+
+    <div class="mt-8 max-w-3xl">
+      <p class="eyebrow !text-gold-400">
+        <Emblem size={18} variant="cross" class="text-gold-400" />
+        {kicker}
+      </p>
+      <h1 id="page-title" class="mt-5 !text-parchment">{title}</h1>
+      {lead && <p class="mt-5 text-lg text-stone-200/90">{lead}</p>}
+    </div>
+  </div>
+</section>

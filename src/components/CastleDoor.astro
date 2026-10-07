@@ -1,0 +1,91 @@
+---
+import Icon, { type IconName } from '@/components/ui/Icon.astro';
+import { localizedPath, type Locale } from '@/i18n';
+
+/**
+ * CastleDoor — a card styled as a door framed by stone jambs and an arched
+ * head, carrying an icon, a title, a short description and a CTA.
+ *
+ * The whole card is the link, but the visible CTA text is inside it, so the
+ * affordance is unambiguous. The frame is CSS only.
+ */
+interface Props {
+  locale: Locale;
+  title: string;
+  text: string;
+  cta: string;
+  icon: IconName;
+  routeKey: Parameters<typeof localizedPath>[1];
+  featured?: boolean;
+}
+
+const { locale, title, text, cta, icon, routeKey, featured = false } = Astro.props;
+---
+
+<li class="h-full">
+  <a
+    href={localizedPath(locale, routeKey)}
+    class:list={[
+      'group frame-engraved relative block h-full overflow-hidden rounded-t-[1.25rem] rounded-b-md p-6 no-underline transition-all duration-300',
+      'hover:-translate-y-1 focus-visible:-translate-y-1',
+      featured
+        ? 'surface-dark texture-stone text-parchment'
+        : 'bg-surface-raised hover:bg-parchment-dark/40',
+    ]}
+  >
+    <!-- Arched inner band -->
+    <span
+      class:list={[
+        'absolute inset-x-3 top-3 bottom-3 rounded-t-[1rem] rounded-b-sm border transition-colors',
+        featured ? 'border-gold-500/25' : 'border-stone-200/80 group-hover:border-gold-400/60',
+      ]}
+      aria-hidden="true"
+    ></span>
+
+    <span class="relative flex h-full flex-col">
+      <span
+        class:list={[
+          'grid size-14 place-items-center rounded-full border transition-colors',
+          featured
+            ? 'border-gold-500/50 text-gold-300'
+            : 'border-gold-500/40 text-gold-700 group-hover:border-gold-500',
+        ]}
+        aria-hidden="true"
+      >
+        <Icon name={icon} size={26} />
+      </span>
+
+      <span
+        class:list={[
+          'mt-5 block font-display text-lg font-semibold',
+          featured ? 'text-parchment' : 'text-ink-900',
+        ]}
+      >
+        {title}
+      </span>
+
+      <span
+        class:list={[
+          'mt-2.5 block flex-1 text-sm leading-relaxed',
+          featured ? 'text-stone-200/90' : 'text-ink-600',
+        ]}
+      >
+        {text}
+      </span>
+
+      <span
+        class:list={[
+          'mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase',
+          featured ? 'text-gold-300' : 'text-wine-700',
+        ]}
+      >
+        {cta}
+        <Icon
+          name="arrow-right"
+          size={15}
+          class="transition-transform duration-300 group-hover:translate-x-1"
+        />
+      </span>
+    </span>
+  </a>
+</li>

@@ -1,0 +1,270 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+import Icon from '@/components/ui/Icon.astro';
+import LanguageSwitcher from '@/components/LanguageSwitcher.astro';
+import { primaryNav, secondaryNav } from '@/config/navigation';
+import { localizedPath, type Locale } from '@/i18n';
+import type { Dictionary } from '@/i18n/dictionaries';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+  currentPath: string;
+  /** The route of the current page, so the language switcher stays on it. */
+  routeKey: RouteKey;
+}
+
+const { locale, dict, currentPath, routeKey } = Astro.props;
+
+/** A path is "current" if it matches, or is a prefix (for nested routes). */
+function isCurrent(path: string): boolean {
+  const normalised = currentPath.replace(/\/$/, '') || '/';
+  const target = path.replace(/\/$/, '') || '/';
+  if (target === '/') return normalised === '/';
+  return normalised === target || normalised.startsWith(`${target}/`);
+}
+
+const homeHref = localizedPath(locale, 'home');
+const orderHref = localizedPath(locale, 'order');
+---
+
+<a class="skip-link" href="#conteudo">{dict.common.skipToContent}</a>
+
+<header
+  class="sticky top-0 z-50 border-b border-stone-200/80 bg-parchment/90 backdrop-blur supports-[backdrop-filter]:bg-parchment/75"
+>
+  <div class="container-templar">
+    <div class="flex h-[var(--header-height)] items-center justify-between gap-4">
+      <!-- Brand -->
+      <a
+        href={homeHref}
+        class="group flex items-center gap-3 no-underline"
+        aria-label={`${dict.meta.siteName} — ${dict.common.home}`}
+      >
+        <span
+          class="text-wine-700 transition-colors group-hover:text-gold-600"
+          aria-hidden="true"
+        >
+          <Emblem size={38} />
+        </span>
+        <span class="flex flex-col leading-none">
+          <span class="font-display text-ink-900 text-sm font-semibold tracking-wide md:text-base">
+            {dict.meta.siteName}
+          </span>
+          <span class="mt-1 hidden text-[0.62rem] font-medium tracking-[0.2em] text-stone-500 uppercase sm:block">
+            {dict.meta.shortName}
+          </span>
+        </span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden lg:flex lg:items-center lg:gap-1" aria-label={dict.nav.label}>
+        <ul class="flex items-center gap-0.5">
+          {
+            primaryNav.map((item) => {
+              const href = localizedPath(locale, item.routeKey);
+              const active = isCurrent(href);
+              return (
+                <li class="group relative">
+                  <a
+                    href={href}
+                    aria-current={active ? 'page' : undefined}
+                    aria-haspopup={item.children ? 'true' : undefined}
+                    class:list={[
+                      'inline-flex min-h-11 items-center gap-1.5 rounded-sm px-3 text-sm font-medium no-underline transition-colors',
+                      active ? 'text-wine-700' : 'text-ink-700 hover:text-wine-700',
+                    ]}
+                  >
+                    {dict.nav[item.labelKey]}
+                    {item.children && (
+                      <Icon
+                        name="chevron-down"
+                        size={15}
+                        class="opacity-60 transition-transform duration-200 group-hover:rotate-180"
+                      />
+                    )}
+                  </a>
+                  {item.children && (
+                    <div class="invisible absolute top-full left-0 z-10 min-w-56 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                      <ul class="frame-engraved overflow-hidden rounded-md bg-surface-raised py-1.5 shadow-[var(--shadow-lift)]">
+                        {item.children.map((child) => {
+                          const childHref = localizedPath(locale, child.routeKey);
+                          return (
+                            <li>
+                              <a
+                                href={childHref}
+                                aria-current={isCurrent(childHref) ? 'page' : undefined}
+                                class="block px-4 py-2 text-sm text-ink-700 no-underline transition-colors hover:bg-parchment-dark/60 hover:text-wine-700"
+                              >
+                                {dict.nav[child.labelKey]}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+
+      <!-- Utilities -->
+      <div class="flex items-center gap-2 md:gap-3">
+        <LanguageSwitcher
+          locale={locale}
+          routeKey={routeKey}
+          label={dict.language.label}
+          switchToLabel={dict.language.switchTo}
+          class="hidden md:block"
+          variant="bar"
+        />
+        <a
+          href={orderHref}
+          class="btn btn-primary hidden !min-h-10 !px-4 !py-2 !text-[0.72rem] lg:inline-flex"
+        >
+          {dict.nav.ctaPrimary}
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="inline-flex size-11 items-center justify-center rounded-sm border border-stone-300 text-ink-800 transition-colors hover:border-gold-500 hover:text-wine-700 lg:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label={dict.nav.openMenu}
+          data-open-label={dict.nav.openMenu}
+          data-close-label={dict.nav.closeMenu}
+        >
+          <Icon name="menu" size={22} class="menu-icon-open" />
+          <Icon name="close" size={22} class="menu-icon-close hidden" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
+    <div class="border-t border-stone-200 bg-surface-raised">
+      <nav class="container-templar max-h-[calc(100dvh-var(--header-height))] overflow-y-auto py-4" aria-label={dict.nav.label}>
+        <ul class="flex flex-col">
+          {
+            primaryNav.map((item) => {
+              const href = localizedPath(locale, item.routeKey);
+              return (
+                <li class="border-b border-stone-200/70 py-1">
+                  <a
+                    href={href}
+                    aria-current={isCurrent(href) ? 'page' : undefined}
+                    class="flex min-h-12 items-center justify-between text-base font-medium text-ink-800 no-underline"
+                  >
+                    {dict.nav[item.labelKey]}
+                    {item.children && <Icon name="chevron-down" size={18} class="opacity-50" />}
+                  </a>
+                  {item.children && (
+                    <ul class="mb-2 flex flex-col gap-0.5 border-l-2 border-gold-500/40 pl-4">
+                      {item.children.map((child) => {
+                        const childHref = localizedPath(locale, child.routeKey);
+                        return (
+                          <li>
+                            <a
+                              href={childHref}
+                              aria-current={isCurrent(childHref) ? 'page' : undefined}
+                              class="flex min-h-11 items-center text-sm text-ink-700 no-underline"
+                            >
+                              {dict.nav[child.labelKey]}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              );
+            })
+          }
+          {
+            secondaryNav.map((item) => {
+              const href = localizedPath(locale, item.routeKey);
+              return (
+                <li class="border-b border-stone-200/70">
+                  <a
+                    href={href}
+                    aria-current={isCurrent(href) ? 'page' : undefined}
+                    class="flex min-h-12 items-center text-base font-medium text-ink-800 no-underline"
+                  >
+                    {dict.nav[item.labelKey]}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+
+        <div class="mt-5 flex flex-col gap-3">
+          <a href={orderHref} class="btn btn-primary w-full">{dict.nav.ctaPrimary}</a>
+          <a
+            href={localizedPath(locale, 'affiliation')}
+            class="btn btn-outline w-full"
+          >
+            {dict.nav.ctaSecondary}
+          </a>
+          <div class="flex items-center justify-between border-t border-stone-200 pt-4">
+            <span class="text-xs font-semibold tracking-widest text-stone-500 uppercase">
+              {dict.language.label}
+            </span>
+            <LanguageSwitcher
+              locale={locale}
+              routeKey={routeKey}
+              label={dict.language.label}
+              switchToLabel={dict.language.switchTo}
+              variant="inline"
+            />
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Minimal, dependency-free mobile menu. Progressive: the menu is usable with
+  // no JS for the links themselves; this only handles open/close state.
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+
+  if (toggle && menu) {
+    const openIcon = toggle.querySelector('.menu-icon-open');
+    const closeIcon = toggle.querySelector('.menu-icon-close');
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', (open ? toggle.dataset.closeLabel : toggle.dataset.openLabel) ?? '');
+      menu.classList.toggle('hidden', !open);
+      openIcon?.classList.toggle('hidden', open);
+      closeIcon?.classList.toggle('hidden', !open);
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // Close on Escape.
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    // Close when a link is chosen.
+    menu.addEventListener('click', (event) => {
+      if ((event.target as HTMLElement).closest('a')) setOpen(false);
+    });
+  }
+</script>

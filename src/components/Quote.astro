@@ -1,0 +1,48 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+
+/**
+ * Quote — an editorial pull-quote in the serif face with a gold rule and a
+ * small templar cross, for institutional emphasis.
+ */
+interface Props {
+  text: string;
+  source?: string;
+  tone?: 'light' | 'dark';
+  class?: string;
+}
+
+const { text, source, tone = 'light', class: className = '' } = Astro.props;
+const dark = tone === 'dark';
+---
+
+<figure
+  class:list={['relative mx-auto max-w-3xl px-6 text-center', className]}
+>
+  <Emblem
+    size={30}
+    variant="cross"
+    class:list={['mx-auto', dark ? 'text-gold-400' : 'text-gold-500']}
+    aria-hidden="true"
+  />
+  <blockquote
+    class:list={[
+      'mt-5 font-serif text-2xl leading-snug italic md:text-3xl',
+      dark ? 'text-parchment' : 'text-ink-800',
+    ]}
+  >
+    <p>“{text}”</p>
+  </blockquote>
+  {
+    source && (
+      <figcaption
+        class:list={[
+          'mt-4 text-xs font-semibold tracking-[0.18em] uppercase',
+          dark ? 'text-gold-300' : 'text-gold-700',
+        ]}
+      >
+        — {source}
+      </figcaption>
+    )
+  }
+</figure>

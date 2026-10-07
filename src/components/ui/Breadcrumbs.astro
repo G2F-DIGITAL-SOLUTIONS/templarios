@@ -1,0 +1,49 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { localizedPath, type Locale } from '@/i18n';
+
+interface Crumb {
+  label: string;
+  /** Optional route key; the final crumb usually has none (current page). */
+  routeKey?: Parameters<typeof localizedPath>[1];
+}
+
+interface Props {
+  locale: Locale;
+  homeLabel: string;
+  breadcrumbLabel: string;
+  crumbs: Crumb[];
+  class?: string;
+}
+
+const { locale, homeLabel, breadcrumbLabel, crumbs, class: className = '' } = Astro.props;
+---
+
+<nav aria-label={breadcrumbLabel} class={className}>
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-wide text-stone-400">
+    <li>
+      <a href={localizedPath(locale, 'home')} class="no-underline transition-colors hover:text-gold-600">
+        {homeLabel}
+      </a>
+    </li>
+    {
+      crumbs.map((crumb) => (
+        <li class="flex items-center gap-2">
+          <Icon name="chevron-down" size={13} class="-rotate-90 opacity-60" aria-hidden="true" />
+          {crumb.routeKey ? (
+            <a
+              href={localizedPath(locale, crumb.routeKey)}
+              class="no-underline transition-colors hover:text-gold-600"
+            >
+              {crumb.label}
+            </a>
+          ) : (
+            <span aria-current="page" class="text-stone-500">
+              {crumb.label}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

@@ -1,0 +1,132 @@
+---
+import type { GetStaticPaths } from 'astro';
+import HomeView from '@/views/HomeView.astro';
+import InstitutionPage from '@/views/InstitutionPage.astro';
+import InitiativesPage from '@/views/InitiativesPage.astro';
+import InitiativePage from '@/views/InitiativePage.astro';
+import EventsPage from '@/views/EventsPage.astro';
+import KnowledgePage from '@/views/KnowledgePage.astro';
+import DonationsPage from '@/views/DonationsPage.astro';
+import CitiesDayPage from '@/views/CitiesDayPage.astro';
+import FaqPage from '@/views/FaqPage.astro';
+import ContactPage from '@/views/ContactPage.astro';
+import AffiliationPage from '@/views/AffiliationPage.astro';
+import LegalPage from '@/views/LegalPage.astro';
+import NotFoundPage from '@/views/NotFoundPage.astro';
+import { routeDefinitions, type RouteDefinition } from '@/routes';
+import { locales, type Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, routeSegments, type RouteKey } from '@/i18n/routes';
+import {
+  aboutSections,
+  historySections,
+  purposeSections,
+  teachingSections,
+  type Section,
+} from '@/content/institution';
+
+/**
+ * Single dynamic route that statically generates every page for every locale.
+ *
+ * Static output, one file per (locale, route) pair — ideal for a CDN and for
+ * Lighthouse. Pages stay thin because all rendering lives in `src/views`.
+ */
+export const getStaticPaths: GetStaticPaths = () => {
+  return locales.flatMap((locale) =>
+    routeDefinitions.map((definition) => ({
+      params: { slug: localizedPath(locale, definition.routeKey).replace(/^\//, '') || undefined },
+      props: { locale, definition },
+    })),
+  );
+};
+
+interface Props {
+  locale: Locale;
+  definition: RouteDefinition;
+}
+
+const { locale, definition } = Astro.props;
+const { routeKey, view, meta } = definition;
+const dict = getDictionary(locale);
+
+const institutionContent: Record<
+  'about' | 'history' | 'purposes' | 'teachings',
+  { page: { kicker: string; title: string; lead: string; intro?: string }; sections: Section[]; variant: 'sections' | 'timeline' }
+> = {
+  about: { page: dict.pages.order, sections: aboutSections, variant: 'sections' },
+  history: { page: dict.pages.history, sections: historySections, variant: 'timeline' },
+  purposes: { page: dict.pages.purposes, sections: purposeSections, variant: 'sections' },
+  teachings: { page: dict.pages.teachings, sections: teachingSections, variant: 'sections' },
+};
+
+const legalBodies: Partial<Record<RouteKey, { title: string; body: string[] }>> = {
+  privacy: { title: dict.legal.privacyTitle, body: [dict.legal.placeholderNote] },
+  terms: { title: dict.legal.termsTitle, body: [dict.legal.placeholderNote] },
+  cookies: { title: dict.legal.cookiesTitle, body: [dict.legal.placeholderNote] },
+};
+
+/** Route-heavy bits resolved per view, keeping the markup below declarative. */
+const knowledgeRouteKey: RouteKey =
+  routeKey === 'lectures' || routeKey === 'studies' || routeKey === 'articles' ? routeKey : 'knowledge';
+---
+
+{
+  view === 'home' && <HomeView locale={locale} />
+}
+
+{
+  view === 'institution' && meta?.institution && (
+    <InstitutionPage
+      locale={locale}
+      routeKey={routeKey}
+      kicker={institutionContent[meta.institution].page.kicker}
+      title={institutionContent[meta.institution].page.title}
+      lead={institutionContent[meta.institution].page.lead}
+      intro={institutionContent[meta.institution].page.intro}
+      sections={institutionContent[meta.institution].sections}
+      variant={institutionContent[meta.institution].variant}
+    />
+  )
+}
+
+{view === 'initiatives' && <InitiativesPage locale={locale} />}
+
+{
+  view === 'initiative' && meta?.initiativeId && (
+    <InitiativePage locale={locale} initiativeId={meta.initiativeId} routeKey={routeKey} />
+  )
+}
+
+{view === 'events' && <EventsPage locale={locale} />}
+
+{
+  view === 'knowledge' && (
+    <KnowledgePage
+      locale={locale}
+      routeKey={knowledgeRouteKey}
+      filterType={meta?.knowledgeType}
+    />
+  )
+}
+
+{view === 'donations' && <DonationsPage locale={locale} />}
+
+{view === 'citiesDay' && <CitiesDayPage locale={locale} />}
+
+{view === 'faq' && <FaqPage locale={locale} />}
+
+{view === 'contact' && <ContactPage locale={locale} />}
+
+{view === 'affiliation' && <AffiliationPage locale={locale} />}
+
+{
+  view === 'legal' &&
+    legalBodies[routeKey] &&
+    (() => {
+      const legal = legalBodies[routeKey]!;
+      return <LegalPage locale={locale} routeKey={routeKey} title={legal.title} body={legal.body} />;
+    })()
+}
+
+{/* Fallback — should never render, generated paths always match a view. */}
+{routeSegments[routeKey].pt === '404' && <NotFoundPage locale={locale} />}

@@ -1,0 +1,415 @@
+import type { DeepPartial, Widen } from '../dictionaries';
+import type { Dictionary } from './pt';
+
+/** Italian dictionary. Omitted keys fall back to Portuguese. */
+export const it: DeepPartial<Widen<Dictionary>> = {
+  meta: {
+    siteName: 'Ordine dei Cavalieri Templari',
+    shortName: 'OSMTH Brasile',
+    tagline: 'Tradizione, conoscenza e servizio al prossimo.',
+    defaultDescription:
+      "L'Ordine dei Cavalieri Templari (OSMTH Brasile) custodisce una tradizione secolare e la mette al servizio di valori attuali: etica, fraternità, educazione, salute e servizio alla società.",
+    ogLocale: 'it_IT',
+  },
+
+  common: {
+    skipToContent: 'Vai al contenuto principale',
+    readMore: 'Scopri di più',
+    learnMore: 'Conosci',
+    enter: 'Entra',
+    explore: 'Esplora',
+    viewAll: 'Vedi tutto',
+    backHome: 'Torna alla home',
+    backTo: 'Indietro',
+    home: 'Home',
+    breadcrumb: 'Sei in',
+    onThisPage: 'In questa pagina',
+    scrollHint: 'Continua',
+    imageCredit: 'Immagine',
+    loading: 'Caricamento',
+  },
+
+  language: {
+    label: 'Lingua',
+    switchTo: 'Cambia lingua in',
+    current: 'Lingua attuale',
+  },
+
+  nav: {
+    label: 'Navigazione principale',
+    order: 'Ordine',
+    initiatives: 'Iniziative',
+    knowledge: 'Conoscenza',
+    events: 'Eventi',
+    citiesDay: 'Giorno delle Città',
+    donations: 'Donazioni',
+    faq: 'FAQ',
+    contact: 'Contatti',
+    affiliation: 'Affiliazione',
+    shop: 'Negozio',
+    tv: 'TV Templari',
+    about: 'Chi Siamo',
+    history: 'Storia',
+    purposes: 'Propositi',
+    teachings: 'Insegnamenti',
+    environment: 'Ambiente',
+    sport: 'Sport',
+    health: 'Salute',
+    education: 'Educazione',
+    lectures: 'Conferenze',
+    studies: 'Studi',
+    articles: 'Articoli',
+    openMenu: 'Apri menu',
+    closeMenu: 'Chiudi menu',
+    ctaPrimary: "Scopri l'Ordine",
+    ctaSecondary: 'Partecipa',
+  },
+
+  footer: {
+    aboutTitle: 'Ordine dei Cavalieri Templari',
+    aboutText:
+      "Una fraternità che custodisce la tradizione templare e la mette al servizio della società contemporanea — attraverso l'etica, lo studio, la fraternità e la carità.",
+    navTitle: 'Navigazione',
+    institutionalTitle: 'Istituzionale',
+    initiativesTitle: 'Iniziative',
+    knowledgeTitle: 'Conoscenza',
+    contactTitle: 'Contatti',
+    languagesTitle: 'Lingue',
+    socialTitle: 'Social',
+    legalTitle: 'Legale',
+    privacy: 'Informativa sulla Privacy',
+    terms: 'Termini di Utilizzo',
+    cookies: 'Cookie',
+    rights: 'Tutti i diritti riservati.',
+    address: 'Rua Ferreira Penteado, 709 – Sala 121 — Centro, Campinas – SP — Brasile — 13010-041',
+    phone: 'Tel: +55 (19) 2511-0047',
+    email: 'cavaleiros.templarios@templarios.org.br',
+  },
+
+  a11y: {
+    logoAlt: "Stemma dell'Ordine dei Cavalieri Templari",
+    decorative: 'Elemento decorativo',
+    externalLink: 'Si apre in una nuova scheda',
+    requiredField: 'campo obbligatorio',
+    formSuccess: 'Abbiamo ricevuto il tuo messaggio. Grazie per averci contattato.',
+    formError: 'Non è stato possibile inviare ora. Riprova o scrivici via e-mail.',
+  },
+
+  forms: {
+    name: 'Nome completo',
+    email: 'E-mail',
+    phone: 'Telefono',
+    city: 'Città',
+    state: 'Stato / Provincia',
+    message: 'Messaggio',
+    subject: 'Oggetto',
+    birthDate: 'Data di nascita',
+    maritalStatus: 'Stato civile',
+    address: 'Indirizzo di residenza completo',
+    postalCode: 'CAP',
+    education: 'Formazione',
+    profession: 'Professione',
+    motivation: "Raccontaci perché desideri affiliarti e far parte dell'Ordine:",
+    send: 'Invia messaggio',
+    submit: 'Invia richiesta di affiliazione',
+    consent: 'Autorizzo l’uso dei miei dati per rispondere a questa richiesta.',
+    requiredNote: 'I campi contrassegnati con * sono obbligatori.',
+    selectPlaceholder: 'Seleziona',
+  },
+
+  home: {
+    hero: {
+      kicker: 'Ordine dei Cavalieri Templari',
+      title: 'Una tradizione secolare al servizio di valori che restano attuali.',
+      lead: 'Tradizione, conoscenza e servizio al prossimo.',
+      intro:
+        "Siamo una fraternità di uomini e donne che coltiva l'etica, lo studio e la carità. Entra e scopri le diverse sale dell'Ordine.",
+      primaryCta: "Esplora l'Ordine",
+      secondaryCta: 'Scopri la nostra missione',
+      bridgeAlt: "L'ingresso di un castello medievale all'alba",
+    },
+    doors: {
+      kicker: 'Le Porte del Castello',
+      title: "Ogni porta conduce a un'area dell'Ordine",
+      lead: 'Scegli da dove iniziare la visita. Puoi percorrere tutte le sale quando vuoi.',
+      items: {
+        order: {
+          label: "L'Ordine",
+          text: 'Scopri la nostra storia, identità, missione e proposito.',
+          cta: 'Entra',
+        },
+        history: {
+          label: 'La Nostra Storia',
+          text: 'Scopri il percorso storico della tradizione templare e la sua evoluzione nei secoli.',
+          cta: 'Scopri la storia',
+        },
+        purposes: {
+          label: 'I Nostri Propositi',
+          text: "Scopri i valori e i principi che guidano l'azione dell'Ordine.",
+          cta: 'Scopri i nostri propositi',
+        },
+        teachings: {
+          label: 'Insegnamenti',
+          text: 'Studi, conoscenza, cultura e sviluppo personale.',
+          cta: 'Esplora gli studi',
+        },
+        initiatives: {
+          label: 'Le Nostre Iniziative',
+          text: 'Scopri le azioni realizzate a beneficio della società.',
+          cta: 'Scopri le iniziative',
+        },
+        events: {
+          label: 'Eventi',
+          text: "Segui gli eventi e le attività dell'Ordine.",
+          cta: 'Vedi gli eventi',
+        },
+      },
+    },
+    about: {
+      kicker: "Sull'Ordine",
+      title: 'Chi siamo',
+      lead: 'Un Ordine di Cavalieri del Tempio — non massonico — che riunisce uomini e donne attorno a etica, conoscenza e servizio.',
+      body: "L'Ordine dei Cavalieri Templari cerca di riunire persone tolleranti e di buona volontà, che amano la giustizia e la nobiltà di carattere, desiderose di essere utili agli altri e che comprendano davvero il significato della parola fraternità.",
+      highlights: {
+        identity: 'Identità',
+        identityText: "Un Ordine ecclesiastico ed ecumenico, riconoscibile per la stessa croce a doppia barra e per l'antico motto dell'Ordine.",
+        origin: 'Origine',
+        originText: 'Legato alla OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — il cui Ordine Madre ha sede a Porto, in Portogallo.',
+        values: 'Valori',
+        valuesText: 'Etica, fraternità, giustizia, carità, educazione e difesa della dignità umana.',
+        today: 'Oggi',
+        todayText: 'Studi, mutuo aiuto e iniziative sociali in educazione, salute, sport e ambiente.',
+      },
+      cta: "Scopri l'Ordine",
+      ctaSecondary: 'La nostra storia',
+    },
+    quote: {
+      text: 'La nostra missione è, innanzitutto, qui e ora.',
+      source: "Dagli Insegnamenti dell'Ordine",
+    },
+    purposes: {
+      kicker: 'Missione e Propositi',
+      title: 'Principi che guidano la nostra azione',
+      lead: "I propositi dell'Ordine sono rivestiti di nobiltà e virtù e si traducono in impegni concreti verso la società.",
+      pillars: {
+        education: { title: 'Educazione', text: 'Promuovere conoscenza, cultura e opportunità di apprendimento permanente.' },
+        health: { title: 'Salute', text: 'Contribuire al benessere e alla dignità delle persone.' },
+        environment: { title: 'Ambiente', text: 'Rispettare e prendersi cura della Terra e della vita in tutta la sua diversità.' },
+        justice: { title: 'Giustizia e Cittadinanza', text: 'Promuovere valori etici, dignità, responsabilità e partecipazione sociale.' },
+        cooperation: { title: 'Fraternità e Mutuo Aiuto', text: 'Mantenere un efficace programma di mutuo aiuto tra i membri e le loro famiglie.' },
+        culture: { title: 'Cultura e Studio', text: 'Dare priorità allo studio come base principale della realizzazione umana.' },
+      },
+      cta: 'Scopri i nostri propositi',
+    },
+    initiatives: {
+      kicker: "L'Ordine in azione",
+      title: 'Iniziative a beneficio della società',
+      lead: "L'Ordine non esiste solo per custodire una tradizione. Utilizza i suoi valori per contribuire alla società contemporanea.",
+      items: {
+        environment: { title: 'Ambiente', text: 'Progetti, azioni e iniziative legate alla tutela ambientale.' },
+        sport: { title: 'Sport', text: 'Incentivo allo sport, integrazione sociale e sviluppo umano.' },
+        health: { title: 'Salute', text: 'Azioni di sostegno alla salute, al benessere e all’assistenza.' },
+        education: { title: 'Educazione', text: 'Progetti volti all’accesso a educazione, cultura e conoscenza.' },
+      },
+      cardCta: "Scopri l'iniziativa",
+      cta: 'Scopri le iniziative',
+    },
+    donations: {
+      kicker: 'Fai parte di qualcosa di più grande',
+      title: "Il tuo contributo sostiene ciò che l'Ordine realizza",
+      lead: "I contributi ricevuti sono destinati a un fondo generale di gestione dell'Ordine, alle sue attività umanitarie e benefiche e alle sue ricerche.",
+      reasons: {
+        mission: { title: 'Dove vanno i fondi', text: "Quote e contributi mensili sostengono le attività istituzionali, umanitarie e benefiche e la ricerca dell'Ordine." },
+        transparency: { title: 'Impegno per la trasparenza', text: "L'Ordine si impegna per la rendicontazione e l'uso responsabile dei fondi ricevuti." },
+        impact: { title: 'Impatto sociale', text: 'Sostenere iniziative in educazione, salute, sport e ambiente per il bene della comunità.' },
+      },
+      ctaPrimary: 'Voglio contribuire',
+      ctaSecondary: 'Scopri come funziona la deduzione fiscale',
+    },
+    events: {
+      kicker: 'Agenda',
+      title: 'Prossimi eventi',
+      lead: "Cerimonie, incontri e attività dell'Ordine.",
+      ctaAll: 'Vedi tutti gli eventi',
+      emptyState: 'Nessun evento annunciato al momento. Segui presto la nostra agenda.',
+      dateLabel: 'Data',
+      locationLabel: 'Luogo',
+      externalNote: "L'agenda completa è mantenuta sulla nostra piattaforma eventi.",
+    },
+    knowledge: {
+      kicker: 'La conoscenza fa parte della nostra tradizione',
+      title: 'Conferenze, studi e articoli',
+      lead: "Materiali dell'Ordine per lo studio e lo sviluppo personale.",
+      ctaAll: 'Esplora la conoscenza',
+      types: { lecture: 'Conferenza', study: 'Studio', article: 'Articolo', video: 'Video' },
+    },
+    citiesDay: {
+      kicker: 'Progetto',
+      title: 'Giorno delle Città',
+      lead: "Un'iniziativa che avvicina l'Ordine alle città e alle loro comunità.",
+      body: 'Scopri lo scopo del progetto, come funziona e come portare il Giorno delle Città nella tua città.',
+      cta: 'Voglio portare il Giorno delle Città nella mia città',
+      ctaSecondary: 'Scopri il progetto',
+    },
+    affiliation: {
+      kicker: 'Partecipa',
+      title: "L'Ordine sta aprendo le sue porte per te",
+      lead: 'Riuniamo uomini e donne tolleranti e di buona volontà, desiderosi di essere utili agli altri.',
+      cta: "Scopri l'affiliazione",
+    },
+    finalCta: {
+      title: 'Scopri il tuo posto nell’Ordine',
+      lead: 'Scoprire, fidarsi, partecipare e contribuire — questo è il cammino.',
+      primary: "Esplora l'Ordine",
+      secondary: 'Contattaci',
+    },
+  },
+
+  pages: {
+    order: {
+      kicker: "L'Ordine",
+      title: 'Chi Siamo',
+      lead: 'Un vero Ordine Ecclesiastico di Cavalieri Templari, affiliato al suo Ordine Madre con sede a Porto, in Portogallo.',
+      intro:
+        "L'Ordine dei Cavalieri Templari è un Ordine di Cavalieri del Tempio — non è quindi un Ordine massonico, né a esso collegato, se non storicamente.",
+    },
+    history: { kicker: 'Percorso', title: 'Storia', lead: 'Il cammino della tradizione templare, dalle origini medievali alla sua espressione contemporanea.' },
+    purposes: { kicker: 'Missione', title: 'Propositi', lead: "I propositi dell'Ordine dei Cavalieri Templari sono rivestiti di nobiltà con il mantello bianco della virtù." },
+    teachings: { kicker: 'Studi', title: 'Insegnamenti', lead: 'Lavoriamo con gli studi templari verso un obiettivo comune: il miglioramento del nostro carattere.' },
+    initiatives: { kicker: "L'Ordine in azione", title: 'Iniziative', lead: "Le aree in cui l'Ordine contribuisce alla società contemporanea." },
+    events: { kicker: 'Agenda', title: 'Eventi', lead: "Segui gli eventi e le attività dell'Ordine." },
+    knowledge: { kicker: 'Conoscenza', title: 'Conferenze, Studi e Articoli', lead: "Materiali dell'Ordine per studio, riflessione e sviluppo personale." },
+    citiesDay: { kicker: 'Progetto', title: 'Giorno delle Città', lead: "Un'iniziativa che avvicina l'Ordine alle città e alle loro comunità." },
+    donations: { kicker: 'Contribuisci', title: 'Donazioni', lead: "Fai parte di qualcosa di più grande. Il tuo contributo sostiene le attività umanitarie, benefiche e di ricerca dell'Ordine." },
+    affiliation: { kicker: 'Partecipa', title: 'Affiliazione', lead: "La mistica e secolare Ordine dei Cavalieri Templari sta aprendo le sue porte per te." },
+    faq: { kicker: 'Domande', title: 'Domande Frequenti', lead: "Risposte basate esclusivamente sulle informazioni ufficiali dell'Ordine." },
+    contact: { kicker: 'Contattaci', title: 'Contatti', lead: "Siamo a disposizione per rispondere alle tue domande sull'Ordine." },
+  },
+
+  sections: {
+    related: 'Continua a esplorare',
+    relatedLead: "Altre sale dell'Ordine che potrebbero interessarti.",
+    gallery: 'Galleria',
+    faqTitle: 'Domande Frequenti',
+  },
+
+  faq: {
+    categories: { about: "Sull'Ordine", affiliation: 'Affiliazione', events: 'Eventi', donations: 'Donazioni' },
+    ctaTitle: 'Non hai trovato la risposta?',
+    ctaText: 'Contattaci e saremo felici di aiutarti.',
+    ctaButton: 'Contattaci',
+  },
+
+  affiliation: {
+    purposeTitle: 'Perché affiliarsi',
+    purposeText:
+      "Lo scopo dell'Ordine è avere una società di Cavalieri Templari con lo stesso standard di nobiltà e virtù del tradizionale Ordine dei Cavalieri Templari, mantenendo un efficace programma di mutuo aiuto.",
+    whoTitle: 'Chi può affiliarsi',
+    whoText:
+      'Persone di entrambi i sessi, animate dal proposito di recuperare valori caduti nell’oblio e di costruire un mondo libero e giusto.',
+    processTitle: 'Come funziona il processo',
+    steps: {
+      one: { title: "Conosci l'Ordine", text: 'Leggi la nostra identità, storia e propositi prima di qualsiasi decisione.' },
+      two: { title: 'Verifica i requisiti', text: 'Comprendi chi può partecipare e cosa ci si aspetta da un membro.' },
+      three: { title: 'Invia la richiesta', text: 'Compila il modulo con i tuoi dati e le tue motivazioni.' },
+      four: { title: 'Segui la risposta', text: 'Il nostro team ti contatterà per guidarti nei prossimi passi.' },
+    },
+    benefitsTitle: 'Vantaggi',
+    benefits: {
+      study: "Accesso agli studi e agli insegnamenti dell'Ordine.",
+      fraternity: 'Fraternità e mutuo aiuto tra i membri.',
+      events: 'Partecipazione a eventi e cerimonie.',
+      growth: 'Opportunità di sviluppo personale e culturale.',
+    },
+    responsibilitiesTitle: 'Responsabilità',
+    responsibilitiesText:
+      "Il membro deve cercare il proprio miglioramento morale e intellettuale, dedicare disciplina allo studio e contribuire con quote e contributi mensili che sostengono l'Ordine.",
+    feesTitle: 'Quota di iscrizione e contributo mensile',
+    feesText:
+      "L'Ordine è strettamente una fraternità. Vi sono contributi mensili e una quota di iscrizione individuale, destinati a un fondo generale di gestione, ad attività umanitarie e benefiche e alle ricerche dell'Ordine.",
+    feeRegistrationLabel: 'Quota di iscrizione',
+    feeMonthlyLabel: 'Contributo mensile minimo',
+    formTitle: 'Richiesta di affiliazione',
+    formIntro: 'Compila i campi sottostanti. Le tue informazioni saranno trattate con riservatezza.',
+  },
+
+  donations: {
+    whyTitle: 'Perché donare',
+    whyText:
+      "Donare significa partecipare a ciò che l'Ordine realizza. I contributi sostengono le attività istituzionali, umanitarie e benefiche e le ricerche dell'Ordine.",
+    whereTitle: 'Dove vanno i fondi',
+    whereItems: {
+      operations: "Fondo generale di gestione dell'Ordine.",
+      humanitarian: 'Attività umanitarie e benefiche.',
+      research: 'Ricerca e indagine scientifica e culturale.',
+      initiatives: 'Iniziative in educazione, salute, sport e ambiente.',
+    },
+    howTitle: 'Come donare',
+    howText: "Contatta l'Ordine per ricevere le indicazioni e i dati necessari per donare in modo sicuro.",
+    howCta: 'Voglio contribuire',
+    irpfTitle: 'Deduzione fiscale',
+    irpfText:
+      "Le informazioni su un'eventuale deduzione fiscale devono seguire esclusivamente le regole e le informazioni ufficiali fornite dall'Ordine.",
+    irpfCta: 'Scopri come funziona la deduzione fiscale',
+    legalNote: "L'Ordine non fornisce consulenza fiscale. Consulta sempre le regole ufficiali e un professionista qualificato.",
+  },
+
+  citiesDay: {
+    whatTitle: "Cos'è",
+    whatText:
+      "Il Giorno delle Città è un'iniziativa istituzionale che avvicina l'Ordine alle città e alle loro comunità, celebrando i valori di fraternità, cultura e servizio.",
+    purposeTitle: 'Il suo scopo',
+    purposeText: 'Riunire la comunità attorno a valori che restano attuali: etica, solidarietà, cultura e cittadinanza.',
+    howTitle: 'Come funziona',
+    howText: "Insieme a partner locali, l'Ordine organizza un programma di attività e incontri aperto alla comunità cittadina.",
+    whyTitle: 'Perché esiste',
+    whyText: 'Perché una tradizione resta viva solo quando si traduce in servizio concreto alla società.',
+    participateTitle: 'Come una città può partecipare',
+    participateText: 'Le città interessate possono manifestare il proprio interesse tramite il modulo. Il nostro team fornirà indicazioni su requisiti, calendario e supporto.',
+    bringTitle: 'Porta il Giorno delle Città nella tua città',
+    bringText: 'Compila il modulo raccontandoci della tua città e del tuo interesse. Ti contatteremo.',
+    cta: 'Voglio portare il Giorno delle Città nella mia città',
+  },
+
+  events: {
+    upcomingTitle: 'Prossimi eventi',
+    platformNote: 'La registrazione e l’agenda completa sono mantenute sulla nostra piattaforma eventi esterna.',
+    ctaPlatform: 'Vedi tutti gli eventi',
+    emptyState: 'Nessun evento annunciato al momento.',
+  },
+
+  knowledge: {
+    filterAll: 'Tutti',
+    ctaWatch: 'Guarda',
+    ctaRead: 'Leggi',
+    ctaKnow: 'Scopri',
+    emptyState: 'Nessun contenuto pubblicato ancora.',
+  },
+
+  contact: {
+    infoTitle: 'Informazioni di contatto',
+    formTitle: 'Invia un messaggio',
+    addressLabel: 'Indirizzo',
+    phoneLabel: 'Telefono',
+    emailLabel: 'E-mail',
+    emailCta: 'Invia e-mail',
+    hoursLabel: 'Orari',
+    hoursValue: "Contatta l'Ordine per gli orari di apertura.",
+  },
+
+  legal: {
+    privacyTitle: 'Informativa sulla Privacy',
+    termsTitle: 'Termini di Utilizzo',
+    cookiesTitle: 'Cookie',
+    updatedLabel: 'Ultimo aggiornamento',
+    placeholderNote:
+      "Questo documento è un modello iniziale e deve essere rivisto e completato dall'Ordine con il testo legale ufficiale.",
+  },
+
+  notFound: {
+    kicker: 'Pagina non trovata',
+    title: 'Questo corridoio del castello non esiste',
+    text: "La pagina che cerchi potrebbe essere stata spostata o non esistere. Torna all'ingresso ed esplora l'Ordine.",
+    cta: 'Torna alla home',
+  },
+};

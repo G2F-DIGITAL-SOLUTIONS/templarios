@@ -1,0 +1,111 @@
+---
+/**
+ * Icon — a tiny, dependency-free inline SVG set.
+ *
+ * Keeps the site free of an icon library (less JS, fewer requests) while
+ * giving a single, consistent stroke style. Every icon is decorative by
+ * default; pass a `title` to expose it to assistive technology.
+ */
+export type IconName =
+  | 'leaf'
+  | 'trophy'
+  | 'heart-pulse'
+  | 'graduation'
+  | 'shield'
+  | 'scroll'
+  | 'compass'
+  | 'book'
+  | 'hand-heart'
+  | 'calendar'
+  | 'arrow-right'
+  | 'arrow-up-right'
+  | 'chevron-down'
+  | 'check'
+  | 'plus'
+  | 'map-pin'
+  | 'phone'
+  | 'mail'
+  | 'globe'
+  | 'quote'
+  | 'menu'
+  | 'close'
+  | 'facebook'
+  | 'instagram'
+  | 'youtube'
+  | 'x';
+
+interface Props {
+  name: IconName;
+  class?: string;
+  size?: number | string;
+  strokeWidth?: number;
+  title?: string;
+  filled?: boolean;
+}
+
+const {
+  name,
+  class: className = '',
+  size = 24,
+  strokeWidth = 1.5,
+  title,
+  filled = false,
+} = Astro.props;
+
+const paths: Record<IconName, string> = {
+  leaf: 'M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z|M2 21c0-3 1.85-5.36 5.08-6',
+  trophy:
+    'M6 9H4.5a2.5 2.5 0 0 1 0-5H6|M18 9h1.5a2.5 2.5 0 0 0 0-5H18|M4 22h16|M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22|M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22|M18 2H6v7a6 6 0 0 0 12 0V2Z',
+  'heart-pulse':
+    'M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z|M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27',
+  graduation:
+    'M22 10v6|M2 10l10-5 10 5-10 5z|M6 12v5c3 3 9 3 12 0v-5',
+  shield: 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z',
+  scroll:
+    'M19 17V5a2 2 0 0 0-2-2H4|M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3',
+  compass: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z|M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z',
+  book: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20|M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z',
+  'hand-heart':
+    'M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16|M7 20l1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9|M2 15l6 6',
+  calendar:
+    'M8 2v4|M16 2v4|M3 10h18|M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z',
+  'arrow-right': 'M5 12h14|M12 5l7 7-7 7',
+  'arrow-up-right': 'M7 17 17 7|M7 7h10v10',
+  'chevron-down': 'M6 9l6 6 6-6',
+  check: 'M20 6 9 17l-5-5',
+  plus: 'M12 5v14|M5 12h14',
+  'map-pin': 'M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z|M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+  phone: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z',
+  mail: 'M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z|m22 7-10 6L2 7',
+  globe: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z|M2 12h20|M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z',
+  quote:
+    'M10 11H6a1 1 0 0 1-1-1V8a3 3 0 0 1 3-3|M10 11c0 4-2 6-5 7|M20 11h-4a1 1 0 0 1-1-1V8a3 3 0 0 1 3-3|M20 11c0 4-2 6-5 7',
+  menu: 'M4 6h16|M4 12h16|M4 18h16',
+  close: 'M18 6 6 18|M6 6l12 12',
+  facebook: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z',
+  instagram:
+    'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z|M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z|M17.5 6.5h.01',
+  youtube:
+    'M22 8.5a3 3 0 0 0-2.1-2.14C18.2 6 12 6 12 6s-6.2 0-7.9.36A3 3 0 0 0 2 8.5 31 31 0 0 0 2 12a31 31 0 0 0 .1 3.5 3 3 0 0 0 2.1 2.14C5.8 18 12 18 12 18s6.2 0 7.9-.36a3 3 0 0 0 2.1-2.14A31 31 0 0 0 22 12a31 31 0 0 0-.1-3.5Z|m10 15 5-3-5-3z',
+  x: 'M18 2h3l-7 8 7.5 12H15l-5-7-6 7H1l7.5-9L1 2h6l4.5 6.5L18 2Z',
+};
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill={filled ? 'currentColor' : 'none'}
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden={title ? undefined : 'true'}
+  role={title ? 'img' : undefined}
+  focusable="false"
+>
+  {title && <title>{title}</title>}
+  {paths[name].split('|').map((d) => <path d={d} />)}
+</svg>

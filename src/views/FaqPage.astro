@@ -1,0 +1,122 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import AccordionItem from '@/components/ui/AccordionItem.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { faqByCategory, faqCategories, type FaqCategory } from '@/content/faq';
+import { tx } from '@/content/localize';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const page = dict.pages.faq;
+const path = localizedPath(locale, 'faq');
+
+const categoryIcons: Record<FaqCategory, 'shield' | 'hand-heart' | 'calendar' | 'trophy'> = {
+  about: 'shield',
+  affiliation: 'hand-heart',
+  events: 'calendar',
+  donations: 'trophy',
+};
+
+const groups = faqCategories.map((category) => ({
+  category,
+  label: dict.faq.categories[category],
+  icon: categoryIcons[category],
+  items: faqByCategory(category),
+}));
+
+// FAQPage structured data from the official answers (Portuguese source text).
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqCategories.flatMap((category) =>
+    faqByCategory(category).map((item) => ({
+      '@type': 'Question',
+      name: tx(item.question, locale),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: tx(item.answer, locale),
+      },
+    })),
+  ),
+};
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey="faq"
+  title={page.title}
+  description={page.lead}
+  path={path}
+  jsonLd={faqJsonLd}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: page.title }]}
+  />
+
+  <!-- Category quick-jump -->
+  <Section size="tight">
+    <nav aria-label={page.title}>
+      <ul class="flex flex-wrap gap-2">
+        {
+          groups.map((group) => (
+            <li>
+              <a
+                href={`#faq-${group.category}`}
+                class="inline-flex min-h-10 items-center gap-2 rounded-sm border border-stone-300 px-4 text-sm font-medium text-ink-700 no-underline transition-colors hover:border-gold-500 hover:text-wine-700"
+              >
+                <Icon name={group.icon} size={17} class="text-gold-600" />
+                {group.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </Section>
+
+  <Section size="tight">
+    <div class="flex flex-col gap-14">
+      {
+        groups.map((group) => (
+          <section id={`faq-${group.category}`} aria-labelledby={`faq-${group.category}-title`}>
+            <h2 id={`faq-${group.category}-title`} class="!text-2xl">
+              {group.label}
+            </h2>
+            <hr class="rule-gold mt-4 !opacity-40" />
+            <div class="mt-2">
+              {group.items.map((item) => (
+                <AccordionItem
+                  id={item.id}
+                  question={tx(item.question, locale)}
+                  answer={tx(item.answer, locale)}
+                />
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 frame-engraved rounded-md bg-surface-raised p-8 text-center">
+      <h2 class="!text-xl">{dict.faq.ctaTitle}</h2>
+      <p class="mx-auto mt-3 max-w-lg text-ink-600">{dict.faq.ctaText}</p>
+      <a href={localizedPath(locale, 'contact')} class="btn btn-primary mt-6">
+        {dict.faq.ctaButton}
+        <Icon name="arrow-right" size={17} />
+      </a>
+    </div>
+  </Section>
+</BaseLayout>

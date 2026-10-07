@@ -1,0 +1,73 @@
+---
+import Emblem from '@/components/ui/Emblem.astro';
+
+/**
+ * SectionHeading — consistent kicker + title + lead with an optional
+ * engraved divider, in light or dark contexts.
+ */
+interface Props {
+  kicker?: string;
+  title: string;
+  lead?: string;
+  id?: string;
+  align?: 'left' | 'center';
+  tone?: 'light' | 'dark';
+  as?: 'h1' | 'h2';
+  showSeal?: boolean;
+  class?: string;
+}
+
+const {
+  kicker,
+  title,
+  lead,
+  id,
+  align = 'left',
+  tone = 'light',
+  as: Heading = 'h2',
+  showSeal = false,
+  class: className = '',
+} = Astro.props;
+
+const isCenter = align === 'center';
+const dark = tone === 'dark';
+---
+
+<div
+  class:list={[
+    'flex flex-col',
+    isCenter ? 'items-center text-center' : 'items-start',
+    className,
+  ]}
+>
+  {
+    showSeal && (
+      <span
+        class:list={['mb-4 text-gold-500', dark && 'text-gold-400']}
+        aria-hidden="true"
+      >
+        <Emblem size={34} variant="cross" />
+      </span>
+    )
+  }
+  {kicker && <p class="eyebrow">{kicker}</p>}
+  <Heading
+    id={id}
+    class:list={[
+      'mt-3 max-w-3xl',
+      dark ? '!text-parchment' : '!text-ink-900',
+    ]}
+  >
+    {title}
+  </Heading>
+  {lead && (
+    <p
+      class:list={[
+        'mt-4 max-w-2xl text-base md:text-lg',
+        dark ? 'text-stone-200/90' : 'text-ink-600',
+      ]}
+    >
+      {lead}
+    </p>
+  )}
+</div>

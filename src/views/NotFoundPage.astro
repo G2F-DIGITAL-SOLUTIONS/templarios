@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Emblem from '@/components/ui/Emblem.astro';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const nf = dict.notFound;
+const path = localizedPath(locale, 'notFound');
+
+const links: { key: RouteKey; label: string }[] = [
+  { key: 'order', label: dict.nav.about },
+  { key: 'history', label: dict.nav.history },
+  { key: 'initiatives', label: dict.nav.initiatives },
+  { key: 'events', label: dict.nav.events },
+  { key: 'contact', label: dict.nav.contact },
+];
+---
+
+<BaseLayout locale={locale} routeKey="notFound" title={nf.kicker} description={nf.text} path={path} noindex>
+  <section class="surface-dark texture-stone">
+    <div class="container-templar flex min-h-[70vh] flex-col items-center justify-center py-20 text-center">
+      <Emblem size={64} variant="full" class="text-gold-400/80" />
+      <p class="eyebrow mt-8 justify-center !text-gold-400">{nf.kicker}</p>
+      <h1 class="mt-4 max-w-2xl !text-parchment">{nf.title}</h1>
+      <p class="mt-5 max-w-lg text-stone-200/90">{nf.text}</p>
+
+      <a href={localizedPath(locale, 'home')} class="btn btn-gold mt-9">
+        <Icon name="arrow-right" size={17} class="rotate-180" />
+        {nf.cta}
+      </a>
+
+      <ul class="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-3">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={localizedPath(locale, link.key)}
+                class="text-sm text-stone-200 no-underline transition-colors hover:text-gold-300"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

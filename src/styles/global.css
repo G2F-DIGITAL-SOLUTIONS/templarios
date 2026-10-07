@@ -1,0 +1,429 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Self-hosted variable fonts (no third-party requests, fast, cacheable)
+   --------------------------------------------------------------------------- */
+@import '@fontsource-variable/cinzel/wght.css';
+@import '@fontsource-variable/cormorant-garamond/wght.css';
+@import '@fontsource-variable/inter/wght.css';
+
+/* ---------------------------------------------------------------------------
+   Design tokens — "medieval + institucional + sofisticado + contemporâneo"
+   --------------------------------------------------------------------------- */
+@theme {
+  /* Typography */
+  --font-display: 'Cinzel Variable', 'Cormorant Garamond Variable', Georgia, serif;
+  --font-serif: 'Cormorant Garamond Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Stone / neutral base */
+  --color-ink-950: #0c0a08;
+  --color-ink-900: #14110e;
+  --color-ink-800: #1e1a16;
+  --color-ink-700: #2b2620;
+  --color-ink-600: #3b342b;
+  --color-stone-500: #6b6157;
+  --color-stone-400: #8f857a;
+  --color-stone-300: #b7ada1;
+  --color-stone-200: #d6cec2;
+  --color-stone-100: #eae4da;
+  --color-parchment: #f5f0e6;
+  --color-parchment-dark: #ece4d5;
+
+  /* Accents */
+  --color-gold-700: #8a6d3b;
+  --color-gold-600: #a3813f;
+  --color-gold-500: #b8934e;
+  --color-gold-400: #c9a862;
+  --color-gold-300: #ddc388;
+  --color-wine-800: #521020;
+  --color-wine-700: #6b1426;
+  --color-wine-600: #85172c;
+  --color-wine-500: #a01d34;
+  --color-templar-red: #9c1f2e;
+
+  /* Semantic surface tokens */
+  --color-surface: var(--color-parchment);
+  --color-surface-raised: #fbf8f2;
+  --color-surface-sunken: var(--color-parchment-dark);
+  --color-surface-dark: var(--color-ink-900);
+  --color-surface-dark-raised: var(--color-ink-800);
+
+  /* Spacing / rhythm */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Shadows — soft, engraved feel; never heavy */
+  --shadow-plate: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(20, 17, 14, 0.06),
+    0 8px 24px -12px rgba(20, 17, 14, 0.22);
+  --shadow-lift: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 4px rgba(20, 17, 14, 0.06),
+    0 18px 44px -20px rgba(20, 17, 14, 0.3);
+  --shadow-inset-line: 0 1px 0 rgba(255, 255, 255, 0.35), 0 -1px 0 rgba(20, 17, 14, 0.06);
+
+  /* Motion — minimal, respectful of reduced motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    color-scheme: light;
+    --header-height: 4.5rem;
+    scrollbar-gutter: stable;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink-900);
+    line-height: 1.12;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 3.75rem);
+  }
+  h2 {
+    font-size: clamp(1.65rem, 3vw + 0.9rem, 2.75rem);
+  }
+  h3 {
+    font-size: clamp(1.2rem, 1.5vw + 0.9rem, 1.6rem);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 0.25em;
+  }
+
+  /* Visible, consistent focus ring everywhere (never removed). */
+  :focus-visible {
+    outline: 3px solid var(--color-gold-500);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background: var(--color-gold-400);
+    color: var(--color-ink-950);
+  }
+
+  /* Honor reduced motion globally: neutralise transitions/animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable visual language — the "castle" kit
+   --------------------------------------------------------------------------- */
+@layer components {
+  /* Layout shell ---------------------------------------------------------- */
+  .container-templar {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-templar {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section {
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  }
+  .section-tight {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  /* Eyebrow / kicker ------------------------------------------------------ */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold-700);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-gold-500));
+  }
+
+  /* Aged-gold rule / divider --------------------------------------------- */
+  .rule-gold {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-gold-500) 20%,
+      var(--color-gold-500) 80%,
+      transparent
+    );
+    opacity: 0.6;
+  }
+
+  /* Seal — circular emblem used as a small decorative anchor --------------- */
+  .seal {
+    display: grid;
+    place-items: center;
+    border-radius: 9999px;
+    border: 1px solid var(--color-gold-500);
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.18), transparent 55%),
+      linear-gradient(160deg, var(--color-wine-700), var(--color-ink-900));
+    color: var(--color-gold-300);
+  }
+
+  /* Parchment / stone surfaces ------------------------------------------- */
+  .surface-parchment {
+    background-color: var(--color-surface);
+    background-image:
+      radial-gradient(1200px 600px at 15% -10%, rgba(184, 147, 78, 0.1), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(156, 31, 46, 0.05), transparent 55%);
+  }
+
+  .surface-dark {
+    position: relative;
+    background-color: var(--color-ink-900);
+    color: var(--color-stone-100);
+    background-image:
+      radial-gradient(1100px 520px at 78% -12%, rgba(184, 147, 78, 0.16), transparent 62%),
+      radial-gradient(800px 460px at 0% 108%, rgba(107, 20, 38, 0.28), transparent 60%);
+  }
+
+  /* Subtle engraved stone texture (pure CSS, zero requests) --------------- */
+  .texture-stone {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.014) 0px,
+        rgba(255, 255, 255, 0.014) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.02) 0px,
+        rgba(0, 0, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+  }
+
+  /* Cards ---------------------------------------------------------------- */
+  .card {
+    position: relative;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-stone-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-plate);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out),
+      border-color 0.35s var(--ease-out);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--color-gold-400);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
+  }
+
+  /* Double-line engraved frame (the signature "castle door" border) ------- */
+  .frame-engraved {
+    position: relative;
+    border: 1px solid color-mix(in srgb, var(--color-gold-500) 55%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-gold-500) 22%, transparent);
+  }
+
+  /* Eyebrow arch — a subtle rounded top evoking a doorway ----------------- */
+  .arch-top {
+    border-start-start-radius: 9999px;
+    border-start-end-radius: 9999px;
+  }
+
+  /* Buttons --------------------------------------------------------------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 2.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out), transform 0.2s var(--ease-out);
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, var(--color-wine-600), var(--color-wine-800));
+    color: var(--color-parchment);
+    border: 1px solid var(--color-wine-800);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 10px 22px -14px rgba(107, 20, 38, 0.8);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(180deg, var(--color-wine-500), var(--color-wine-700));
+  }
+
+  .btn-gold {
+    background: linear-gradient(180deg, var(--color-gold-400), var(--color-gold-600));
+    color: var(--color-ink-950);
+    border: 1px solid var(--color-gold-700);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.32) inset, 0 10px 22px -14px rgba(138, 109, 59, 0.9);
+  }
+  .btn-gold:hover {
+    background: linear-gradient(180deg, var(--color-gold-300), var(--color-gold-500));
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-ink-900);
+    border: 1px solid var(--color-ink-600);
+  }
+  .btn-outline:hover {
+    border-color: var(--color-gold-600);
+    color: var(--color-wine-700);
+  }
+
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--color-stone-100);
+    border: 1px solid color-mix(in srgb, var(--color-stone-300) 45%, transparent);
+  }
+  .btn-ghost-light:hover {
+    border-color: var(--color-gold-400);
+    color: var(--color-gold-300);
+  }
+
+  /* Text link with animated gold underline -------------------------------- */
+  .link-quiet {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-wine-700);
+  }
+  .link-quiet::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out);
+  }
+  .link-quiet:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Prose block for institutional copy ------------------------------------ */
+  .prose-templar {
+    max-width: 68ch;
+    font-size: 1.075rem;
+    line-height: 1.85;
+    color: var(--color-ink-700);
+  }
+  .prose-templar > p + p {
+    margin-top: 1.15em;
+  }
+  .prose-templar strong {
+    color: var(--color-ink-900);
+    font-weight: 600;
+  }
+  .prose-templar blockquote {
+    margin: 1.75em 0;
+    padding-left: 1.25em;
+    border-left: 2px solid var(--color-gold-500);
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--color-ink-800);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+   --------------------------------------------------------------------------- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-shadow-hero {
+    text-shadow: 0 2px 24px rgba(12, 10, 8, 0.75), 0 1px 3px rgba(12, 10, 8, 0.6);
+  }
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-ink-900);
+    color: var(--color-parchment);
+    border-radius: var(--radius-sm);
+    transition: top 0.2s var(--ease-out);
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
