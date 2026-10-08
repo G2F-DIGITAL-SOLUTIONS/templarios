@@ -1,15 +1,15 @@
 ---
 /**
- * Emblem — the Order's shield with the Templar cross.
+ * Emblem — the Order's mark, simplified from the official icon: an arched
+ * castle gateway with the double-bar (patriarchal) Templar cross.
  *
- * Rendered as inline SVG so it is crisp at any size and requires no asset
- * request. The cross is the "double-bar" (patriarchal) form referenced in the
- * Order's own material, drawn with a simple heraldic shield.
+ * Rendered as inline SVG so it is crisp at any size and needs no asset
+ * request. Uses `currentColor` so it adapts to light/dark contexts.
  */
 interface Props {
   class?: string;
   size?: number;
-  /** 'full' shows the shield frame; 'cross' shows only the cross. */
+  /** 'full' shows the arched gate; 'cross' shows only the cross. */
   variant?: 'full' | 'cross';
   title?: string;
 }
@@ -17,47 +17,51 @@ interface Props {
 const { class: className = '', size = 48, variant = 'full', title = 'Cruz Templária' } = Astro.props;
 ---
 
-{variant === 'full' ? (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 64 72"
-    class={className}
-    role="img"
-    aria-label={title}
-  >
-    <!-- Shield -->
-    <path
-      d="M32 2 60 11v24c0 17-11.5 28.4-28 35C15.5 63.4 4 52 4 35V11L32 2Z"
-      fill="currentColor"
-      opacity="0.1"></path>
-    <path
-      d="M32 2 60 11v24c0 17-11.5 28.4-28 35C15.5 63.4 4 52 4 35V11L32 2Z"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"></path>
-    <!-- Templar cross (patriarchal / double-bar) -->
-    <g fill="currentColor">
-      <rect x="28.5" y="12" width="7" height="44" rx="0.5"></rect>
-      <rect x="17" y="22" width="30" height="7" rx="0.5"></rect>
-      <rect x="20" y="34" width="24" height="7" rx="0.5"></rect>
-    </g>
-  </svg>
-) : (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 30"
-    class={className}
-    role="img"
-    aria-label={title}
-  >
-    <g fill="currentColor">
-      <rect x="10" y="0" width="4" height="30"></rect>
-      <rect x="4" y="6" width="16" height="4"></rect>
-      <rect x="6" y="14" width="12" height="4"></rect>
-    </g>
-  </svg>
-)}
+{
+  variant === 'full' ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 56 64"
+      class={className}
+      role="img"
+      aria-label={title}
+    >
+      {/* Arched gate */}
+      <path
+        d="M8 60V32a20 20 0 0 1 40 0v28Z"
+        fill="currentColor"
+        opacity="0.12"
+      />
+      <path
+        d="M8 60V32a20 20 0 0 1 40 0v28"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+      />
+      {/* Double-bar cross */}
+      <g fill="currentColor">
+        <rect x="25.5" y="10" width="5" height="40" rx="0.6" />
+        <rect x="18" y="18" width="20" height="5" rx="0.6" />
+        <rect x="20" y="28" width="16" height="5" rx="0.6" />
+      </g>
+    </svg>
+  ) : (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 30"
+      class={className}
+      role="img"
+      aria-label={title}
+    >
+      <g fill="currentColor">
+        <rect x="10" y="0" width="4" height="30" />
+        <rect x="4" y="6" width="16" height="4" />
+        <rect x="6" y="14" width="12" height="4" />
+      </g>
+    </svg>
+  )
+}

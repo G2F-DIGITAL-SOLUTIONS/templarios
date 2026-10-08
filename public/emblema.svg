@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 144" role="img" aria-label="Emblema da Ordem dos Cavaleiros Templários">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 108" role="img" aria-label="Emblema da Ordem dos Cavaleiros TemplÃ¡rios">
   <defs>
-    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="gate" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1e1a16"/>
       <stop offset="1" stop-color="#0c0a08"/>
     </linearGradient>
   </defs>
-  <path d="M64 4 120 22v48c0 34-23 56.8-56 70C31 126.8 8 104 8 70V22L64 4Z" fill="url(#shield)" stroke="#8a6d3b" stroke-width="3"/>
-  <path d="M64 16 108 30v40c0 27-18 45.6-44 57-26-11.4-44-30-44-57V30L64 16Z" fill="none" stroke="#c9a862" stroke-width="1.5" opacity="0.55"/>
+  <!-- Arched gate (the castle doorway) -->
+  <path d="M12 104V48a36 36 0 0 1 72 0v56Z" fill="url(#gate)" stroke="#8a6d3b" stroke-width="3"/>
+  <path d="M20 100V49a28 28 0 0 1 56 0v51" fill="none" stroke="#c9a862" stroke-width="1.6" opacity="0.5"/>
+  <!-- Double-bar (patriarchal) Templar cross -->
   <g fill="#c9a862">
-    <rect x="58" y="26" width="12" height="92" rx="1"/>
-    <rect x="34" y="46" width="60" height="12" rx="1"/>
-    <rect x="40" y="72" width="48" height="12" rx="1"/>
+    <rect x="44" y="26" width="8" height="56" rx="1"/>
+    <rect x="32" y="39" width="32" height="8" rx="1"/>
+    <rect x="35" y="55" width="26" height="8" rx="1"/>
   </g>
 </svg>

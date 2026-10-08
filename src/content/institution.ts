@@ -3,10 +3,9 @@ import type { Localized } from './localize';
 /**
  * Editorial content for the institutional pages.
  *
- * Content is grounded in the Order's current institutional material
- * (templarios.org.br) and reorganised — not invented. Where the Order has not
- * yet confirmed a fact (e.g. specific historic dates beyond the ones already
- * published, tax rules, social profiles), the copy deliberately avoids claims.
+ * Content is generic institutional material for the Order, reorganised — not
+ * invented. Where a fact is not yet confirmed (e.g. specific historic dates,
+ * tax rules, social profiles), the copy deliberately avoids claims.
  */
 
 export interface Section {

@@ -84,9 +84,6 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     terms: 'Terms of Use',
     cookies: 'Cookies',
     rights: 'All rights reserved.',
-    address: 'Rua Ferreira Penteado, 709 – Suite 121 — Centro, Campinas – SP — Brazil — 13010-041',
-    phone: 'Phone: +55 (19) 2511-0047',
-    email: 'cavaleiros.templarios@templarios.org.br',
     motif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
   },
 

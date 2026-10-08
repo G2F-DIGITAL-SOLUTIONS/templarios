@@ -4,7 +4,7 @@ import PageHero from '@/components/PageHero.astro';
 import ContactForm from '@/components/ContactForm.astro';
 import Section from '@/components/ui/Section.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { site } from '@/config/site';
+import { contactAddressLine, site } from '@/config/site';
 import { getDictionary } from '@/i18n/dictionaries';
 import { localizedPath, type Locale } from '@/i18n';
 
@@ -48,7 +48,7 @@ const path = localizedPath(locale, 'contact');
               <h3 class="font-display text-base font-semibold text-ink-900">
                 {dict.contact.addressLabel}
               </h3>
-              <address class="mt-1 not-italic text-ink-600">{dict.footer.address}</address>
+              <address class="mt-1 not-italic text-ink-600">{contactAddressLine}</address>
             </div>
           </li>
           <li class="flex gap-4">

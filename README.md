@@ -224,18 +224,22 @@ inventados** e sem hardcode dentro de componentes traduzíveis.
 Todos os dados de contato e links externos ficam em `src/config/site.ts`:
 
 ```ts
-// src/config/site.ts (trecho)
+// src/config/site.ts (trecho — valores são PLACEHOLDERS)
 export const site = {
   name: 'Ordem dos Cavaleiros Templários',
   shortName: 'OSMTH Brasil',
-  email: 'cavaleiros.templarios@templarios.org.br',
-  phone: '(19) 2511-0047',
-  eventsPlatformUrl: 'https://www.templarios.org.br/',
+  email: 'contato@exemplo.org',
+  phone: '(00) 0000-0000',
+  eventsPlatformUrl: 'https://exemplo.org/eventos',
   formEndpoint: '',        // vazio → ContactForm usa mailto: pré-preenchido
   social: [],              // apenas redes sociais OFICIAIS da Ordem
 } as const;
 ```
 
+> **Placeholders:** as informações de contato (e-mail, telefone, endereço e
+> links externos) estão preenchidas com valores de exemplo. Substitua-as pelos
+> dados oficiais da Ordem em `src/config/site.ts` antes de publicar.
+>
 > **Regra editorial:** não inventar fatos históricos, datas, regras tributárias
 > ou redes sociais. Conteúdo de IRPF deve vir de fonte jurídica/contábil oficial
 > fornecida pela Ordem.

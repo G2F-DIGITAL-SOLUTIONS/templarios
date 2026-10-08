@@ -37,7 +37,7 @@ export const events: EventItem[] = [
       en: 'Religious ceremony granting the title of Knighthood, open to those who wish to attend.',
     },
     date: '2026-11-14',
-    location: { pt: 'Campinas — SP', en: 'Campinas — SP, Brazil' },
+    location: { pt: 'Local a definir', en: 'Venue to be announced' },
     placeholder: true,
   },
   {
@@ -51,7 +51,7 @@ export const events: EventItem[] = [
       en: 'A gathering for study and the sharing of knowledge among members of the Order.',
     },
     date: '2026-12-05',
-    location: { pt: 'Campinas — SP', en: 'Campinas — SP, Brazil' },
+    location: { pt: 'Local a definir', en: 'Venue to be announced' },
     placeholder: true,
   },
   {

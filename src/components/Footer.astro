@@ -3,7 +3,7 @@ import Emblem from '@/components/ui/Emblem.astro';
 import Icon from '@/components/ui/Icon.astro';
 import LanguageSwitcher from '@/components/LanguageSwitcher.astro';
 import { footerColumns } from '@/config/navigation';
-import { site } from '@/config/site';
+import { contactAddressLine, site } from '@/config/site';
 import { localizedPath, type Locale } from '@/i18n';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { RouteKey } from '@/i18n/routes';
@@ -80,12 +80,12 @@ const legalLinks = [
         <ul class="mt-4 flex flex-col gap-3 text-sm text-stone-200/90">
           <li class="flex gap-2.5">
             <Icon name="map-pin" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <span>{dict.footer.address}</span>
+            <span>{contactAddressLine}</span>
           </li>
           <li class="flex gap-2.5">
             <Icon name="phone" size={17} class="mt-0.5 shrink-0 text-gold-400" />
             <a href={site.phoneHref} class="no-underline transition-colors hover:text-gold-300">
-              {dict.footer.phone}
+              {site.phone}
             </a>
           </li>
           <li class="flex gap-2.5">
@@ -94,7 +94,7 @@ const legalLinks = [
               href={`mailto:${site.email}`}
               class="break-all no-underline transition-colors hover:text-gold-300"
             >
-              {dict.footer.email}
+              {site.email}
             </a>
           </li>
         </ul>

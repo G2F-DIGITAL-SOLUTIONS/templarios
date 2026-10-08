@@ -86,9 +86,6 @@ export const pt = {
     terms: 'Termos de Uso',
     cookies: 'Cookies',
     rights: 'Todos os direitos reservados.',
-    address: 'Rua Ferreira Penteado, 709 – Sala 121 — Centro, Campinas – SP — CEP 13010-041',
-    phone: 'Fone: (19) 2511-0047',
-    email: 'cavaleiros.templarios@templarios.org.br',
     motif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
   },
 

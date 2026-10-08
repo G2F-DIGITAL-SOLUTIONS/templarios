@@ -81,9 +81,6 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     terms: "Conditions d'Utilisation",
     cookies: 'Cookies',
     rights: 'Tous droits réservés.',
-    address: 'Rua Ferreira Penteado, 709 – Bureau 121 — Centro, Campinas – SP — Brésil — 13010-041',
-    phone: 'Tél. : +55 (19) 2511-0047',
-    email: 'cavaleiros.templarios@templarios.org.br',
   },
 
   a11y: {

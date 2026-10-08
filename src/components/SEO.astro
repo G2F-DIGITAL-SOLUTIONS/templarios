@@ -49,7 +49,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://www.templarios.org.br');
+const siteUrl = Astro.site ?? new URL('https://www.exemplo.org');
 const canonical = new URL(path, siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
 const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
