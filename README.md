@@ -54,7 +54,7 @@ Fontes self-hosted (zero requests para Google Fonts):
 ```bash
 npm install          # instala dependências
 
-npm run dev          # servidor de desenvolvimento (http://localhost:4321)
+npm run dev          # servidor de desenvolvimento (http://localhost:6000)
 npm run check        # astro check (0 erros esperados)
 npm run build        # gera o site estático em dist/
 npm run preview      # serve o build de produção localmente

@@ -1,0 +1,15 @@
+scripts:
+  node: kool exec app node
+  npm: kool docker kooldev/node:22 npm
+  npx: kool docker kooldev/node:22 npx
+  astro: kool exec app npx astro
+
+  setup:
+    - kool run npm install
+    - kool start
+
+  reset:
+    - kool run npm install
+
+  build: kool exec app npm run build
+  check: kool exec app npm run check

@@ -1,0 +1,46 @@
+services:
+  app:
+    image: kooldev/node:22
+    command: ["npm", "run", "dev"]
+    ports:
+      - "${KOOL_APP_PORT:-6000}:6000"
+    environment:
+      ASUSER: "${KOOL_ASUSER:-0}"
+      UID: "${UID:-0}"
+      # Astro binds to 127.0.0.1 unless told otherwise, which Docker cannot publish.
+      HOST: 0.0.0.0
+      PORT: "6000"
+      KOOL_APP_PORT: "${KOOL_APP_PORT:-6000}"
+      # Keep the dev server in the foreground so it stays the container's main process.
+      ASTRO_DEV_BACKGROUND: "0"
+      ASTRO_PREVIEW_BACKGROUND: "0"
+    volumes:
+      - .:/app:delegated
+    networks:
+      - kool_local
+      - kool_global
+
+  prod:
+    image: kooldev/node:22
+    command: ["npm", "run", "preview"]
+    ports:
+      - "${KOOL_APP_PORT:-6000}:6000"
+    environment:
+      ASUSER: "${KOOL_ASUSER:-0}"
+      UID: "${UID:-0}"
+      HOST: 0.0.0.0
+      PORT: "6000"
+      KOOL_APP_PORT: "${KOOL_APP_PORT:-6000}"
+      # Keep the preview server in the foreground so it stays the container's main process.
+      ASTRO_PREVIEW_BACKGROUND: "0"
+    volumes:
+      - .:/app:delegated
+    networks:
+      - kool_local
+      - kool_global
+
+networks:
+  kool_local:
+  kool_global:
+    external: true
+    name: "${KOOL_GLOBAL_NETWORK:-kool_global}"
