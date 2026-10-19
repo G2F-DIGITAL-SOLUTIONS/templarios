@@ -20,14 +20,16 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
-  ...(listenOnAllInterfaces
-    ? {
-        server: {
+  server: {
+    // Vite blocks unknown Host headers. A leading dot also allows subdomains.
+    allowedHosts: ['.templariosdobrasil.com'],
+    ...(listenOnAllInterfaces
+      ? {
           host: true,
           port,
-        },
-      }
-    : {}),
+        }
+      : {}),
+  },
   i18n: {
     defaultLocale: 'pt',
     locales: ['pt', 'en', 'it', 'fr', 'es'],
