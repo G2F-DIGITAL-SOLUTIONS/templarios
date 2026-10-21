@@ -3,12 +3,16 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "Site institucional da Ordem dos Cavaleiros Templários — um castelo templário contemporâneo na web.",
+  "description": "Site institucional da Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB).",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "prebuild": "npm run redirects",
     "preview": "astro preview",
     "check": "astro check",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "redirects": "node scripts/generate-redirects.mjs",
+    "verify": "npm run check && npm run check:i18n && npm run build",
     "astro": "astro"
   },
   "dependencies": {

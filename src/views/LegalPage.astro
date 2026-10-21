@@ -9,28 +9,29 @@ import type { RouteKey } from '@/i18n/routes';
 
 /**
  * LegalPage — shared renderer for the privacy, terms and cookies pages.
- * The body is intentionally a clear placeholder: the Order must supply the
- * official legal text, and this makes that obligation explicit.
+ * Content lives in the dictionaries, so every locale is complete.
  */
 interface Props {
   locale: Locale;
   routeKey: RouteKey;
   title: string;
-  body: string[];
+  description: string;
+  paragraphs: string[];
 }
 
-const { locale, routeKey, title, body } = Astro.props;
+const { locale, routeKey, title, description, paragraphs } = Astro.props;
 const dict = getDictionary(locale);
 const path = localizedPath(locale, routeKey);
-const updated = '2026-01-01';
+const updated = '2026-10-21';
 ---
 
-<BaseLayout locale={locale} {routeKey} title={title} description={title} path={path} noindex>
+<BaseLayout locale={locale} {routeKey} title={title} description={description} path={path}>
   <PageHero
     locale={locale}
     dict={dict}
     kicker={dict.footer.legalTitle}
     title={title}
+    lead={description}
     crumbs={[{ label: title }]}
   />
 
@@ -43,15 +44,15 @@ const updated = '2026-01-01';
       </p>
 
       <div class="prose-templar mt-8">
-        {body.map((paragraph) => <p>{paragraph}</p>)}
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
 
       <p class="mt-10 rounded-sm border-l-2 border-gold-500 bg-parchment-dark/40 px-4 py-3 text-sm text-ink-600">
-        {dict.legal.placeholderNote}
+        {dict.legal.reviewNote}
       </p>
 
-      <a href={localizedPath(locale, 'contact')} class="btn btn-outline mt-8">
-        {dict.faq.ctaButton}
+      <a href={localizedPath(locale, 'participate')} class="btn btn-outline mt-8">
+        {dict.nav.ctaSecondary}
       </a>
     </div>
   </Section>

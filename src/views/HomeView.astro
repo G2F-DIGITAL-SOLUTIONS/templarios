@@ -1,23 +1,13 @@
 ---
 import CastleEntrance from '@/components/CastleEntrance.astro';
 import CastleDoor from '@/components/CastleDoor.astro';
-import MissionCard from '@/components/MissionCard.astro';
-import InitiativeCard from '@/components/InitiativeCard.astro';
-import EventCard from '@/components/EventCard.astro';
-import ArticleCard from '@/components/ArticleCard.astro';
 import Quote from '@/components/Quote.astro';
 import Section from '@/components/ui/Section.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
+import CTA from '@/components/ui/CTA.astro';
 import Icon, { type IconName } from '@/components/ui/Icon.astro';
-import { doors } from '@/content/doors';
-import { quotes } from '@/content/institution';
-import { initiatives } from '@/content/initiatives';
-import { events } from '@/content/events';
-import { knowledgeItems } from '@/content/knowledge';
-import { tx } from '@/content/localize';
 import { getDictionary } from '@/i18n/dictionaries';
 import { localizedPath, type Locale } from '@/i18n';
-import { isUpcoming } from '@/utils/date';
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
@@ -33,40 +23,12 @@ const path = localizedPath(locale, 'home');
 const metaTitle = dict.meta.siteName;
 const metaDescription = dict.meta.defaultDescription;
 
-/** Mission pillars: copy lives in the dictionary, icons here. */
-const pillars: { key: keyof typeof home.purposes.pillars; icon: IconName }[] = [
-  { key: 'mission', icon: 'compass' },
-  { key: 'vision', icon: 'shield' },
-  { key: 'values', icon: 'heart-pulse' },
-  { key: 'motto', icon: 'scroll' },
-];
-
-const upcomingEvents = events.filter((e) => isUpcoming(e.date)).slice(0, 3);
-const featuredKnowledge = knowledgeItems.slice(0, 3);
-
-const knowledgeCta = {
-  lecture: dict.knowledge.ctaWatch,
-  video: dict.knowledge.ctaWatch,
-  study: dict.knowledge.ctaKnow,
-  article: dict.knowledge.ctaRead,
-} as const;
-
-const donateReasons: { title: string; text: string; icon: IconName }[] = [
-  {
-    title: home.donations.reasons.mission.title,
-    text: home.donations.reasons.mission.text,
-    icon: 'hand-heart',
-  },
-  {
-    title: home.donations.reasons.transparency.title,
-    text: home.donations.reasons.transparency.text,
-    icon: 'shield',
-  },
-  {
-    title: home.donations.reasons.impact.title,
-    text: home.donations.reasons.impact.text,
-    icon: 'trophy',
-  },
+/** The four doors of the consolidated architecture. */
+const doors: { key: keyof typeof home.doors.items; icon: IconName; featured?: boolean }[] = [
+  { key: 'order', icon: 'scroll', featured: true },
+  { key: 'heritage', icon: 'shield' },
+  { key: 'society', icon: 'book' },
+  { key: 'participate', icon: 'hand-heart' },
 ];
 
 /** About highlights: title/text keys are paired, icons here. */
@@ -76,6 +38,8 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
   { title: home.about.highlights.values, text: home.about.highlights.valuesText, icon: 'compass' },
   { title: home.about.highlights.today, text: home.about.highlights.todayText, icon: 'hand-heart' },
 ];
+
+const societyIcons: IconName[] = ['book', 'heart-pulse', 'graduation', 'leaf'];
 ---
 
 <BaseLayout
@@ -85,298 +49,159 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
   description={metaDescription}
   path={path}
 >
-  <!-- HERO: Entre no Castelo -->
+  <!-- HERO -->
   <CastleEntrance locale={locale} dict={dict} />
 
-<!-- AS PORTAS DO CASTELO -->
-<Section tone="parchment" id="portas">
-  <SectionHeading
-    kicker={home.doors.kicker}
-    title={home.doors.title}
-    lead={home.doors.lead}
-    align="center"
-    class="mx-auto"
-    showSeal
-  />
-  <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {
-      doors.map((door) => (
-        <CastleDoor
-          locale={locale}
-          title={home.doors.items[door.copyKey].label}
-          text={home.doors.items[door.copyKey].text}
-          cta={home.doors.items[door.copyKey].cta}
-          icon={door.icon}
-          routeKey={door.routeKey}
-          featured={door.featured}
-        />
-      ))
-    }
-  </ul>
-</Section>
-
-<!-- SOBRE A ORDEM -->
-<Section>
-  <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
-    <div class="lg:col-span-6">
-      <SectionHeading
-        kicker={home.about.kicker}
-        title={home.about.title}
-        lead={home.about.lead}
-      />
-      <p class="prose-templar mt-5">{home.about.body}</p>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href={localizedPath(locale, 'order')} class="btn btn-primary">
-          {home.about.cta}
-          <Icon name="arrow-right" size={17} />
-        </a>
-        <a href={localizedPath(locale, 'history')} class="btn btn-outline">
-          {home.about.ctaSecondary}
-        </a>
-      </div>
-    </div>
-
-    <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-6">
-      {
-        aboutHighlights.map((item) => (
-          <li class="card p-5">
-            <span class="text-gold-600" aria-hidden="true">
-              <Icon name={item.icon} size={22} />
-            </span>
-            <h3 class="mt-3 font-display text-base font-semibold text-ink-900">
-              {item.title}
-            </h3>
-            <p class="mt-2 text-sm leading-relaxed text-ink-600">
-              {item.text}
-            </p>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</Section>
-
-<!-- QUOTE -->
-<Section tone="sunken" size="tight">
-  <Quote text={tx(quotes[0].text, locale)} source={tx(quotes[0].source, locale)} />
-</Section>
-
-<!-- MISSÃO E PROPÓSITOS -->
-<Section id="propositos">
-  <SectionHeading
-    kicker={home.purposes.kicker}
-    title={home.purposes.title}
-    lead={home.purposes.lead}
-    align="center"
-    class="mx-auto"
-  />
-  <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {
-      pillars.map((pillar, index) => (
-        <MissionCard
-          title={home.purposes.pillars[pillar.key].title}
-          text={home.purposes.pillars[pillar.key].text}
-          icon={pillar.icon}
-          index={index}
-        />
-      ))
-    }
-  </ul>
-  <div class="mt-10 text-center">
-    <a href={localizedPath(locale, 'purposes')} class="btn btn-outline">
-      {home.purposes.cta}
-      <Icon name="arrow-right" size={17} />
-    </a>
-  </div>
-</Section>
-
-<!-- A ORDEM EM AÇÃO -->
-<Section tone="parchment">
-  <SectionHeading
-    kicker={home.initiatives.kicker}
-    title={home.initiatives.title}
-    lead={home.initiatives.lead}
-  />
-  <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-    {
-      initiatives.map((initiative) => (
-        <InitiativeCard
-          locale={locale}
-          title={tx(initiative.name, locale)}
-          text={tx(initiative.description, locale)}
-          icon={initiative.icon}
-          routeKey={initiative.routeKey}
-          cta={home.initiatives.cardCta}
-          image={
-            ['environment', 'sport', 'health', 'education'].includes(initiative.id)
-              ? `/img/iniciativas/${initiative.id}.svg`
-              : undefined
-          }
-          imageAlt={tx(initiative.name, locale)}
-        />
-      ))
-    }
-  </ul>
-  <div class="mt-10 text-center">
-    <a href={localizedPath(locale, 'initiatives')} class="btn btn-outline">
-      {home.initiatives.cta}
-      <Icon name="arrow-right" size={17} />
-    </a>
-  </div>
-</Section>
-
-<!-- DOAÇÕES -->
-<Section tone="dark" id="doacoes">
-  <div class="grid gap-10 lg:grid-cols-12">
-    <div class="lg:col-span-5">
-      <SectionHeading
-        kicker={home.donations.kicker}
-        title={home.donations.title}
-        lead={home.donations.lead}
-        tone="dark"
-      />
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href={localizedPath(locale, 'donations')} class="btn btn-gold">
-          {home.donations.ctaPrimary}
-          <Icon name="arrow-right" size={17} />
-        </a>
-        <a href={`${localizedPath(locale, 'donations')}#irpf`} class="btn btn-ghost-light">
-          {home.donations.ctaSecondary}
-        </a>
-      </div>
-    </div>
-
-    <ul class="grid gap-4 sm:grid-cols-3 lg:col-span-7">
-      {
-        donateReasons.map((reason) => (
-          <li class="rounded-md border border-gold-500/25 bg-ink-900/40 p-5">
-            <span class="text-gold-400" aria-hidden="true">
-              <Icon name={reason.icon} size={22} />
-            </span>
-            <h3 class="mt-3 font-display text-base font-semibold text-parchment">
-              {reason.title}
-            </h3>
-            <p class="mt-2 text-sm leading-relaxed text-stone-200/85">
-              {reason.text}
-            </p>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</Section>
-
-<!-- EVENTOS -->
-<Section>
-  <div class="flex flex-wrap items-end justify-between gap-6">
+  <!-- AS PORTAS -->
+  <Section tone="parchment" id="portas">
     <SectionHeading
-      kicker={home.events.kicker}
-      title={home.events.title}
-      lead={home.events.lead}
+      kicker={home.doors.kicker}
+      title={home.doors.title}
+      lead={home.doors.lead}
+      align="center"
+      class="mx-auto"
+      showSeal
     />
-    <a href={localizedPath(locale, 'events')} class="btn btn-outline">
-      {home.events.ctaAll}
-      <Icon name="arrow-right" size={17} />
-    </a>
-  </div>
-
-  {
-    upcomingEvents.length > 0 ? (
-      <ul class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {upcomingEvents.map((event) => (
-          <EventCard
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        doors.map((door) => (
+          <CastleDoor
             locale={locale}
-            title={tx(event.title, locale)}
-            summary={tx(event.summary, locale)}
-            date={event.date}
-            location={tx(event.location, locale)}
-            url={event.url ?? localizedPath(locale, 'contact')}
-            dateLabel={home.events.dateLabel}
-            locationLabel={home.events.locationLabel}
-            cta={home.events.ctaAll}
-            externalNote={home.events.externalNote}
+            title={home.doors.items[door.key].label}
+            text={home.doors.items[door.key].text}
+            cta={home.doors.items[door.key].cta}
+            icon={door.icon}
+            routeKey={door.key}
+            featured={door.featured}
           />
-        ))}
-      </ul>
-    ) : (
-      <p class="mt-8 text-ink-600">{home.events.emptyState}</p>
-    )
-  }
-</Section>
+        ))
+      }
+    </ul>
+  </Section>
 
-<!-- CONHECIMENTO -->
-<Section tone="sunken">
-  <div class="flex flex-wrap items-end justify-between gap-6">
-    <SectionHeading
-      kicker={home.knowledge.kicker}
-      title={home.knowledge.title}
-      lead={home.knowledge.lead}
-    />
-    <a href={localizedPath(locale, 'knowledge')} class="btn btn-outline">
-      {home.knowledge.ctaAll}
-      <Icon name="arrow-right" size={17} />
-    </a>
-  </div>
-  <ul class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-    {
-      featuredKnowledge.map((item) => (
-        <ArticleCard
-          locale={locale}
-          type={home.knowledge.types[item.type]}
-          title={tx(item.title, locale)}
-          summary={tx(item.summary, locale)}
-          date={item.date}
-          url={item.url}
-          cta={knowledgeCta[item.type]}
+  <!-- SOBRE A ORDEM -->
+  <Section>
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <div class="lg:col-span-6">
+        <SectionHeading
+          kicker={home.about.kicker}
+          title={home.about.title}
+          lead={home.about.lead}
         />
-      ))
-    }
-  </ul>
-</Section>
-
-<!-- DIA DAS CIDADES -->
-<Section tone="parchment">
-  <div class="frame-engraved overflow-hidden rounded-md bg-surface-raised">
-    <div class="grid items-center gap-8 p-8 md:p-12 lg:grid-cols-12">
-      <div class="lg:col-span-7">
-        <p class="eyebrow">{home.citiesDay.kicker}</p>
-        <h2 class="mt-3">{home.citiesDay.title}</h2>
-        <p class="prose-templar mt-4 !text-lg">{home.citiesDay.lead}</p>
-        <p class="prose-templar mt-3">{home.citiesDay.body}</p>
+        <p class="prose-templar mt-5">{home.about.body}</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={localizedPath(locale, 'citiesDay')} class="btn btn-primary">
-            {home.citiesDay.ctaSecondary}
+          <a href={localizedPath(locale, 'order')} class="btn btn-primary">
+            {home.about.cta}
             <Icon name="arrow-right" size={17} />
           </a>
-          <a href={`${localizedPath(locale, 'contact')}?assunto=dia-das-cidades`} class="btn btn-outline">
-            {home.citiesDay.cta}
+          <a href={localizedPath(locale, 'heritage')} class="btn btn-outline">
+            {home.about.ctaSecondary}
           </a>
         </div>
       </div>
-      <div class="lg:col-span-5" aria-hidden="true">
-        <div class="surface-dark texture-stone grid aspect-4/3 place-items-center rounded-md">
-          <Icon name="map-pin" size={56} strokeWidth={1.1} class="text-gold-400/80" />
-        </div>
-      </div>
-    </div>
-  </div>
-</Section>
 
-<!-- CTA AFILIAÇÃO -->
-<Section tone="dark" size="tight">
-  <div class="mx-auto max-w-2xl text-center">
-    <p class="eyebrow justify-center !text-gold-400">{home.affiliation.kicker}</p>
-    <h2 class="mt-4 !text-parchment">{home.affiliation.title}</h2>
-    <p class="mt-4 text-stone-200/90">{home.affiliation.lead}</p>
-    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-      <a href={localizedPath(locale, 'affiliation')} class="btn btn-gold w-full sm:w-auto">
-        {home.affiliation.cta}
+      <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-6">
+        {
+          aboutHighlights.map((item) => (
+            <li class="card p-5">
+              <span class="text-gold-600" aria-hidden="true">
+                <Icon name={item.icon} size={22} />
+              </span>
+              <h3 class="mt-3 font-display text-base font-semibold text-ink-900">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <!-- LEMA -->
+  <Section tone="sunken" size="tight">
+    <Quote text={home.motto.translation} source={home.motto.latin} />
+  </Section>
+
+  <!-- VALORES -->
+  <Section id="valores">
+    <SectionHeading
+      kicker={home.values.kicker}
+      title={home.values.title}
+      lead={home.values.lead}
+      align="center"
+      class="mx-auto"
+    />
+    <ol class="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+      {
+        home.values.items.map((value, index) => (
+          <li class="card flex flex-col items-center gap-2 px-3 py-5 text-center">
+            <span class="font-display text-xs font-semibold tracking-widest text-gold-700" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span class="text-sm font-medium text-ink-800">{value}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <!-- INDEPENDÊNCIA -->
+  <Section tone="dark" id="independencia">
+    <div class="mx-auto max-w-3xl text-center">
+      <SectionHeading
+        kicker={home.independence.kicker}
+        title={home.independence.title}
+        align="center"
+        tone="dark"
+        class="items-center"
+      />
+      <p class="mt-6 text-stone-200/90">{home.independence.text}</p>
+      <a
+        href={`${localizedPath(locale, 'order')}#independencia`}
+        class="btn btn-gold mt-8"
+      >
+        {home.independence.cta}
         <Icon name="arrow-right" size={17} />
       </a>
-      <a href={localizedPath(locale, 'contact')} class="btn btn-ghost-light w-full sm:w-auto">
-        {home.finalCta.secondary}
+    </div>
+  </Section>
+
+  <!-- CULTURA E ATUAÇÃO SOCIAL -->
+  <Section tone="parchment">
+    <SectionHeading
+      kicker={home.society.kicker}
+      title={home.society.title}
+      lead={home.society.lead}
+    />
+    <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        home.society.items.map((item, index) => (
+          <li class="card flex h-full flex-col p-6">
+            <span class="text-gold-600" aria-hidden="true">
+              <Icon name={societyIcons[index] ?? 'book'} size={24} />
+            </span>
+            <h3 class="mt-4 font-display text-base font-semibold text-ink-900">{item.title}</h3>
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{item.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-10 text-center">
+      <a href={localizedPath(locale, 'society')} class="btn btn-outline">
+        {home.society.cta}
+        <Icon name="arrow-right" size={17} />
       </a>
     </div>
-  </div>
-</Section>
+  </Section>
+
+  <!-- CTA FINAL -->
+  <CTA
+    locale={locale}
+    title={home.finalCta.title}
+    lead={home.finalCta.lead}
+    primaryLabel={home.finalCta.primary}
+    primaryRouteKey="participate"
+    secondaryLabel={home.finalCta.secondary}
+    secondaryRouteKey="participate"
+    variant="emphasis"
+  />
 </BaseLayout>

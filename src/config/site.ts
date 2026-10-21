@@ -2,12 +2,10 @@
  * Global site configuration — single source of truth for links, contacts
  * and social profiles. Components read from here.
  *
- * Editorial note (per institutional guidelines):
- * - The e-mail and social profiles below are taken from the material provided
- *   by the Order. They are NOT rendered as clickable links until the Order
- *   confirms they are active and correct (see src/config/README note below).
- * - No physical address, telephone or additional legal data is published,
- *   as none has been confirmed by the Order.
+ * All institutional data below was provided by the Order. Registration data
+ * (CNPJ) is displayed with an explicit note that it does not replace an
+ * official registry certificate. No address or telephone is published,
+ * because none has been confirmed by the institution.
  */
 
 export const site = {
@@ -25,9 +23,9 @@ export const site = {
   firstLady: 'Sueli Teodoro',
   /** Cultural and literary arm associated with the Order. */
   culturalArm: 'Academia Brasileira Templária de Letras (ABTL)',
-  /** Institutional e-mail provided by the Order. Not clickable until validated. */
+  /** Institutional e-mail provided by the Order. */
   email: 'oicmctb@gmail.com',
-  /** Official social handles, as provided by the Order. Not linked until validated. */
+  /** Official social handle, as provided by the Order. */
   socialHandle: '@oicmctb',
   /** Official social platforms, as provided by the Order. */
   socialPlatforms: ['Facebook', 'Instagram'],
@@ -36,13 +34,10 @@ export const site = {
   /** Portuguese translation of the motto. */
   mottoTranslation: 'Para criar o futuro de um modo diferente.',
   /**
-   * Form submission endpoint. Left empty so ContactForm falls back to
-   * a pre-filled mailto: (the e-mail is shown but not as a clickable link
-   * until validated by the Order).
+   * Form submission endpoint. Left empty so ContactForm falls back to a
+   * pre-filled mailto: — the site works with zero backend infrastructure.
    */
   formEndpoint: '',
   /** Only official social profiles of the Order should be listed here. */
   social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
 } as const;
-
-export const contactAddressLine = undefined;

@@ -1,7 +1,10 @@
 ---
 /**
- * Emblem â€” the Order's mark, simplified from the official icon: an arched
- * castle gateway with the double-bar (patriarchal) Templar cross.
+ * Emblem â€” a generic site mark, not the official coat of arms.
+ *
+ * The Order's official heraldic art is a separate institutional asset and is
+ * not recreated here. This simplified mark combines an arched gateway with a
+ * Maltese cross, used only as a visual signpost for the website.
  *
  * Rendered as inline SVG so it is crisp at any size and needs no asset
  * request. Uses `currentColor` so it adapts to light/dark contexts.
@@ -11,10 +14,11 @@ interface Props {
   size?: number;
   /** 'full' shows the arched gate; 'cross' shows only the cross. */
   variant?: 'full' | 'cross';
+  /** Optional accessible name. When omitted the mark is decorative. */
   title?: string;
 }
 
-const { class: className = '', size = 48, variant = 'full', title = 'Cruz TemplÃ¡ria' } = Astro.props;
+const { class: className = '', size = 48, variant = 'full', title } = Astro.props;
 ---
 
 {
@@ -25,26 +29,24 @@ const { class: className = '', size = 48, variant = 'full', title = 'Cruz TemplÃ
       height={size}
       viewBox="0 0 56 64"
       class={className}
-      role="img"
+      role={title ? 'img' : undefined}
       aria-label={title}
+      aria-hidden={title ? undefined : 'true'}
     >
       {/* Arched gate */}
-      <path
-        d="M8 60V32a20 20 0 0 1 40 0v28Z"
-        fill="currentColor"
-        opacity="0.12"
-      />
+      <path d="M8 60V32a20 20 0 0 1 40 0v28Z" fill="currentColor" opacity="0.12" />
       <path
         d="M8 60V32a20 20 0 0 1 40 0v28"
         fill="none"
         stroke="currentColor"
         stroke-width="2.4"
       />
-      {/* Double-bar cross */}
-      <g fill="currentColor">
-        <rect x="25.5" y="10" width="5" height="40" rx="0.6" />
-        <rect x="18" y="18" width="20" height="5" rx="0.6" />
-        <rect x="20" y="28" width="16" height="5" rx="0.6" />
+      {/* Simplified Maltese cross */}
+      <g fill="currentColor" transform="translate(16 16) scale(0.75)">
+        <path d="M16 3 21 10 16 16 11 10Z" />
+        <path d="M29 16 22 11 16 16 22 21Z" />
+        <path d="M16 29 11 22 16 16 21 22Z" />
+        <path d="M3 16 10 21 16 16 10 11Z" />
       </g>
     </svg>
   ) : (
@@ -52,15 +54,17 @@ const { class: className = '', size = 48, variant = 'full', title = 'Cruz TemplÃ
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox="0 0 24 30"
+      viewBox="0 0 32 32"
       class={className}
-      role="img"
+      role={title ? 'img' : undefined}
       aria-label={title}
+      aria-hidden={title ? undefined : 'true'}
     >
       <g fill="currentColor">
-        <rect x="10" y="0" width="4" height="30" />
-        <rect x="4" y="6" width="16" height="4" />
-        <rect x="6" y="14" width="12" height="4" />
+        <path d="M16 3 21 10 16 16 11 10Z" />
+        <path d="M29 16 22 11 16 16 22 21Z" />
+        <path d="M16 29 11 22 16 16 21 22Z" />
+        <path d="M3 16 10 21 16 16 10 11Z" />
       </g>
     </svg>
   )

@@ -50,7 +50,12 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://templariosdobrasil.com');
-const canonical = new URL(path, siteUrl).href;
+
+/** Builds are directory-style (`/en/order/index.html`), so canonicals use a trailing slash. */
+const normalisePath = (value: string): string =>
+  value === '/' ? '/' : `${value.replace(/\/+$/, '')}/`;
+
+const canonical = new URL(normalisePath(path), siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
 const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
 
@@ -97,10 +102,10 @@ const baseGraph = {
         <link
           rel="alternate"
           hreflang={localeTags[alt.locale]}
-          href={new URL(alt.path, siteUrl).href}
+          href={new URL(normalisePath(alt.path), siteUrl).href}
         />
       ))}
-      <link rel="alternate" hreflang="x-default" href={new URL(alternates[0].path, siteUrl).href} />
+      <link rel="alternate" hreflang="x-default" href={new URL(normalisePath(alternates[0].path), siteUrl).href} />
     </>
   )
 }

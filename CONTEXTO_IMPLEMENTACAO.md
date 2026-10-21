@@ -1,51 +1,45 @@
-# CONTEXTO — Reestruturação Institucional OICMCTB
+# CONTEXTO — Reestruturação institucional OICMCTB
 
-## Status da branch
-- Branch: `feat/reestruturacao-oicmctb` (criada a partir de `main`, que está atualizada com `origin/main`)
-- Repositório: `/Users/gabrielnicolim/Documents/g2f/templarios`
-- Framework: Astro v7 (SSG estático), Tailwind CSS v4, TypeScript, i18n (pt/en/it/fr/es)
-- Build: 156 páginas HTML estáticas geradas com sucesso
-- Type check: 0 erros, 0 warnings
+## Status
 
-## Implementação concluída
+- Branch: `feat/reestruturacao-oicmctb`
+- Projeto: `/Users/gabrielnicolim/Documents/g2f/templarios`
+- Stack: Astro 7 (SSG), Tailwind CSS 4, TypeScript strict
+- Idiomas: pt (fonte), en, it, fr, es — dicionários completos
+- Build: 45 páginas de conteúdo + 140 redirecionamentos estáticos
+- `npm run check`: 0 erros, 0 warnings
+- `npm run check:i18n`: 0 erros, 0 warnings
+- `npm run build`: concluído
 
-### Arquivos modificados
-1. `src/config/site.ts` — Nome institucional completo (OICMCTB), CNPJ, Grão-Mestre, Primeira-Dama, ABTL, e-mail, lema, redes sociais. Placeholders removidos. Endereço/telefone não publicados (não confirmados).
-2. `src/config/navigation.ts` — Menu principal reorganizado: "A Ordem" agrupa Quem Somos, Missão Visão e Valores, Informações Institucionais. Novos itens: História, Brasão e Simbologia, Academia (ABTL), Damas Templárias, Atuação Social, Contato.
-3. `src/i18n/routes.ts` — Novas rotas: brasao, abtl, damas, informacoes, iniciativaSocial, iniciativaCulture, iniciativaHeraldry, iniciativaCivicMemory.
-4. `src/routes.ts` — Novas view definitions para brasao, abtl, damas, informacoes.
-5. `src/i18n/dictionaries/pt.ts` — Cópia institucional reescrita (fonte da verdade para i18n).
-6. `src/i18n/dictionaries/en.ts, es.ts, fr.ts, it.ts` — Atualizados para bater com o novo tipo Dictionary.
-7. `src/content/institution.ts` — Quem Somos, História, Missão/Visão/Valores, Ensinamentos, Conteúdo de Brasão/ABTL/Damas/Informações Institucionais.
-8. `src/content/initiatives.ts` — 8 frentes de atuação (incluindo Assistência Social, Cultura/História/Pesquisa, Estudos Heráldicos, Memória de Heróis Cívicos).
-9. `src/content/doors.ts` — Novas portas da homepage.
-10. `src/views/HomeView.astro` — Hero com lema oficial, nova apresentação institucional.
-11. `src/views/InstitutionPage.astro` — Corrigido relatedLinks (purposes → missionVisionValues).
-12. `src/views/InitiativesPage.astro` — Apenas imagens SVG para as 4 iniciativas originais.
-13. `src/views/InitiativePage.astro` — Todas as 8 iniciativas.
-14. `src/views/ContactPage.astro` — E-mail e redes como texto (não links), dados pendentes.
-15. `src/views/EventsPage.astro` — Removido eventsPlatformUrl (não confirmado).
-16. `src/views/BrasaoPage.astro` — NOVA: página de Brasão e Simbologia com 8 seções heráldicas.
-17. `src/views/AbtlPage.astro` — NOVA: página da Academia Brasileira Templária de Letras.
-18. `src/views/DamasPage.astro` — NOVA: página do Conselho Nacional das Damas Templárias.
-19. `src/views/InformacoesPage.astro` — NOVA: página de Informações Institucionais.
-20. `src/components/Footer.astro` — E-mail/redes como texto, não links clicáveis até validação.
-21. `src/components/SEO.astro` — Domínio de produção, JSON-LD Organization sem endereço/telefone não confirmados.
-22. `src/components/CastleEntrance.astro` — CTA secundário aponta para História.
-23. `astro.config.mjs` — SITE = https://templariosdobrasil.com
-24. `public/robots.txt` — Sitemap com domínio de produção.
+## Arquitetura implementada
 
-### Pendências documentais (para relatório final)
-1. Arquivo vetorial oficial do brasão (CDR/SVG/PNG alta resolução) — solicitar à Ordem. O emblema atual é um SVG genérico (portão do castelo), não o brasão oficial.
-2. Validação do CNPJ 42.071.770/0001-75 em fontes oficiais (Receita Federal).
-3. Validação do e-mail oicmctb@gmail.com e perfis @oicmctb (Facebook/Instagram) — não publicados como links clicáveis até confirmação.
-4. Confirmação da nomenclatura correta do Conselho Nacional das Damas Templárias (Sueli Teodoro = Primeira-Dama).
-5. Validação da razão social e situação cadastral em fontes oficiais.
+Rotas consolidadas: `home`, `order`, `heritage`, `society`, `participate`, `privacy`, `terms`, `cookies`, `notFound`.
 
-### Não implementado (intencionalmente)
-- Deploy em produção (alterações estão apenas no código/local, não publicadas).
-- Emblema/brasão oficial substituído (arquivo oficial não disponível no repositório).
-- E-mail e redes sociais como links clicáveis (pendente de validação pela Ordem).
-- Páginas vazias criadas somente para preencher o menu.
-- Novas dependências ou CMS.
-- Endereço, telefone, estatuto, certificados (não confirmados pela Ordem).
+Views: `HomeView`, `OrderPage`, `HeritagePage`, `SocietyPage`, `ParticipatePage`, `LegalPage`, `NotFoundPage`.
+
+Conteúdo removido/consolidado: páginas de eventos, conhecimento, iniciativas individuais, doações, Dia das Cidades, FAQ, contato, afiliação, ABTL, Damas, Brasão e Informações Institucionais. Seus conteúdos foram absorvidos pelas cinco páginas principais.
+
+## Conteúdo editorial
+
+- Identidade: Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB).
+- Removidas referências a OSMTH Brasil, ordem-mãe em Portugal, autoridade eclesiástica e vínculo com a Maçonaria (com seção explícita de independência).
+- Removidos eventos, artigos, projetos, taxas, valores e benefícios fiscais não confirmados.
+- Brasão explicado a partir do documento institucional (pp. 32–40), sem recriar a arte oficial.
+- Dados institucionais exibidos com ressalva de validação.
+
+## i18n
+
+- `src/i18n/dictionaries/{pt,en,it,fr,es}.ts` completos.
+- `src/i18n/dictionaries.ts` não faz fallback para português.
+- `src/i18n/routes.ts` concentra slugs por idioma.
+- `scripts/check-i18n.mjs` verifica chaves ausentes, arrays, valores vazios, texto literal e termos legados.
+- `src/i18n/legacy-redirects.ts` + `scripts/generate-redirects.mjs` geram redirects Astro, Netlify e Vercel.
+
+## Pendências
+
+1. Arquivo vetorial oficial do brasão.
+2. Validação externa do CNPJ e da razão social.
+3. Confirmação do e-mail e dos perfis sociais.
+4. Revisão jurídica dos textos legais.
+5. Endpoint do formulário (hoje `mailto:`).
+6. Imagem OG oficial.

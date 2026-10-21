@@ -1,0 +1,139 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import CTA from '@/components/ui/CTA.astro';
+import Emblem from '@/components/ui/Emblem.astro';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const heritage = dict.heritage;
+const page = dict.pages.heritage;
+const path = localizedPath(locale, 'heritage');
+
+/** Sections rendered with the standard paragraph treatment. */
+const textSections = [
+  heritage.shield,
+  heritage.helmet,
+  heritage.mantling,
+  heritage.crest,
+  heritage.warCry,
+  heritage.divisa,
+] as const;
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey="heritage"
+  title={page.title}
+  description={page.lead}
+  path={path}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: page.title }]}
+  />
+
+  <!-- Introduction + history -->
+  <Section>
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <div class="lg:col-span-7">
+        <SectionHeading title={heritage.history.title} as="h2" />
+        <div class="prose-templar mt-6">
+          {heritage.history.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="surface-dark texture-stone frame-engraved grid aspect-square place-items-center rounded-md">
+          <Emblem size={132} variant="full" class="text-gold-400/80" />
+        </div>
+        <p class="mt-4 text-xs text-stone-500">{heritage.intro}</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Seal -->
+  <Section id={heritage.seal.id} tone="parchment">
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading
+        kicker={heritage.kicker}
+        title={heritage.seal.title}
+        as="h2"
+      />
+      <div class="prose-templar mt-6">
+        {heritage.seal.paragraphs.slice(0, 3).map((paragraph) => <p>{paragraph}</p>)}
+        <ul>
+          {heritage.seal.items.map((item) => <li>{item}</li>)}
+        </ul>
+        {heritage.seal.paragraphs.slice(3).map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Heraldic elements -->
+  {
+    textSections.map((section, index) => (
+      <Section id={section.id} tone={index % 2 === 1 ? 'sunken' : 'plain'}>
+        <div class="mx-auto max-w-3xl">
+          <SectionHeading title={section.title} as="h2" />
+          <div class="prose-templar mt-6">
+            {section.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </Section>
+    ))
+  }
+
+  <!-- Colours -->
+  <Section id={heritage.colors.id} tone="parchment">
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading title={heritage.colors.title} as="h2" />
+      <div class="prose-templar mt-6">
+        {heritage.colors.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <ul class="mt-6 grid gap-2 sm:grid-cols-2">
+        {
+          heritage.colors.items.map((item) => (
+            <li class="rounded-sm border border-stone-200 bg-surface-raised px-4 py-3 text-sm text-ink-700">
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <!-- Graphic fidelity -->
+  <Section id={heritage.fidelity.id}>
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading title={heritage.fidelity.title} as="h2" />
+      <div class="prose-templar mt-6">
+        {heritage.fidelity.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </Section>
+
+  <CTA
+    locale={locale}
+    title={dict.order.info.title}
+    lead={dict.order.info.lead}
+    primaryLabel={dict.pages.order.title}
+    primaryRouteKey="order"
+    secondaryLabel={dict.nav.ctaSecondary}
+    secondaryRouteKey="participate"
+    variant="quiet"
+  />
+</BaseLayout>

@@ -25,16 +25,9 @@ function isCurrent(path: string): boolean {
   return normalised === target || normalised.startsWith(`${target}/`);
 }
 
-/** True when the current page lives inside a menu group (so we highlight it). */
-function isGroupActive(item: (typeof primaryNav)[number]): boolean {
-  if (isCurrent(localizedPath(locale, item.routeKey))) return true;
-  return Boolean(
-    item.children?.some((child) => isCurrent(localizedPath(locale, child.routeKey))),
-  );
-}
-
 const homeHref = localizedPath(locale, 'home');
 const orderHref = localizedPath(locale, 'order');
+const participateHref = localizedPath(locale, 'participate');
 ---
 
 <a class="skip-link" href="#conteudo">{dict.common.skipToContent}</a>
@@ -42,13 +35,14 @@ const orderHref = localizedPath(locale, 'order');
 <header
   class="sticky top-0 z-50 border-b border-stone-200/80 bg-parchment/90 backdrop-blur supports-[backdrop-filter]:bg-parchment/75"
 >
+  <!-- Masthead: brand, language and primary action -->
   <div class="container-templar">
-    <div class="flex h-[var(--header-height)] items-center justify-between gap-3 xl:gap-6">
+    <div class="flex h-[var(--header-top-height)] items-center justify-between gap-4">
       <!-- Brand -->
       <a
         href={homeHref}
-        class="group flex min-w-0 shrink items-center gap-3 no-underline"
-        aria-label={`${dict.meta.siteName} — ${dict.common.home}`}
+        class="group flex min-w-0 flex-1 items-center gap-3 no-underline"
+        aria-label={`${dict.meta.shortName} — ${dict.meta.siteName}`}
       >
         <span
           class="shrink-0 text-wine-700 transition-colors group-hover:text-gold-600"
@@ -56,86 +50,16 @@ const orderHref = localizedPath(locale, 'order');
         >
           <Emblem size={38} />
         </span>
-        <span class="hidden flex-col leading-none sm:flex">
-          <span class="font-display text-ink-900 truncate text-sm font-semibold tracking-wide xl:text-base">
-            {dict.meta.siteName}
+        <span class="flex min-w-0 flex-col leading-none">
+          <span class="block truncate font-display text-sm font-semibold tracking-wide text-ink-900 lg:text-[0.82rem] xl:text-[0.95rem]">
+            <span class="hidden lg:inline">{dict.meta.siteName}</span>
+            <span class="lg:hidden">{dict.meta.shortName}</span>
           </span>
           <span class="mt-1 hidden text-[0.62rem] font-medium tracking-[0.2em] text-stone-500 uppercase lg:block">
             {dict.meta.shortName}
           </span>
         </span>
       </a>
-
-      <!-- Desktop navigation -->
-      <nav class="hidden lg:block" aria-label={dict.nav.label}>
-        <ul class="flex items-center gap-0.5 xl:gap-1.5">
-          {
-            primaryNav.map((item) => {
-              const groupActive = isGroupActive(item);
-
-              // Items with children are dropdown toggles, not links.
-              if (item.children) {
-                return (
-                  <li class="group relative" data-dropdown data-open="false">
-                    <button
-                      type="button"
-                      data-dropdown-toggle
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class:list={[
-                        'inline-flex min-h-11 items-center gap-1 rounded-sm px-2.5 text-sm font-medium transition-colors xl:gap-1.5 xl:px-4',
-                        groupActive ? 'text-wine-700' : 'text-ink-700 hover:text-wine-700',
-                      ]}
-                    >
-                      {dict.nav[item.labelKey]}
-                      <Icon
-                        name="chevron-down"
-                        size={15}
-                        class="opacity-60 transition-transform duration-200 group-data-[open=true]:rotate-180"
-                      />
-                    </button>
-                    <div class="invisible absolute top-full left-0 z-10 min-w-56 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-data-[open=true]:visible group-data-[open=true]:translate-y-0 group-data-[open=true]:opacity-100">
-                      <ul class="frame-engraved overflow-hidden rounded-md bg-surface-raised py-1.5 shadow-[var(--shadow-lift)]">
-                        {item.children.map((child) => {
-                          const childHref = localizedPath(locale, child.routeKey);
-                          return (
-                            <li>
-                              <a
-                                href={childHref}
-                                aria-current={isCurrent(childHref) ? 'page' : undefined}
-                                class="block px-4 py-2 text-sm text-ink-700 no-underline transition-colors hover:bg-parchment-dark/60 hover:text-wine-700"
-                              >
-                                {dict.nav[child.labelKey]}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </li>
-                );
-              }
-
-              const href = localizedPath(locale, item.routeKey);
-              const active = isCurrent(href);
-              return (
-                <li>
-                  <a
-                    href={href}
-                    aria-current={active ? 'page' : undefined}
-                    class:list={[
-                      'inline-flex min-h-11 items-center gap-1.5 rounded-sm px-2.5 text-sm font-medium no-underline transition-colors xl:px-4',
-                      active ? 'text-wine-700' : 'text-ink-700 hover:text-wine-700',
-                    ]}
-                  >
-                    {dict.nav[item.labelKey]}
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </nav>
 
       <!-- Utilities -->
       <div class="flex shrink-0 items-center gap-2 xl:gap-4">
@@ -149,7 +73,7 @@ const orderHref = localizedPath(locale, 'order');
         />
         <a
           href={orderHref}
-          class="btn btn-primary hidden whitespace-nowrap !min-h-11 !px-4 !py-2.5 !text-[0.72rem] xl:!px-6 lg:inline-flex"
+          class="btn btn-primary hidden whitespace-nowrap !min-h-11 !px-4 !py-2.5 !text-[0.72rem] lg:!px-4 xl:!px-6 lg:inline-flex"
         >
           {dict.nav.ctaPrimary}
         </a>
@@ -172,69 +96,27 @@ const orderHref = localizedPath(locale, 'order');
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
-    <div class="border-t border-stone-200 bg-surface-raised">
-      <nav class="container-templar max-h-[calc(100dvh-var(--header-height))] overflow-y-auto py-4" aria-label={dict.nav.label}>
-        <ul class="flex flex-col">
+  <!-- Desktop navigation: its own row keeps long institutional names and
+       long localised labels from competing for the same horizontal space. -->
+  <div class="hidden border-t border-stone-200/70 lg:block">
+    <div class="container-templar">
+      <nav aria-label={dict.nav.label}>
+        <ul class="flex h-[var(--header-nav-height)] items-center justify-center gap-1">
           {
             primaryNav.map((item) => {
-              if (item.children) {
-                return (
-                  <li class="border-b border-stone-200/70">
-                    <details class="group/mob" data-mobile-group>
-                      <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between text-base font-medium text-ink-800">
-                        {dict.nav[item.labelKey]}
-                        <Icon
-                          name="chevron-down"
-                          size={18}
-                          class="opacity-50 transition-transform duration-200 group-open/mob:rotate-180"
-                        />
-                      </summary>
-                      <ul class="mb-2 flex flex-col gap-0.5 border-l-2 border-gold-500/40 pl-4">
-                        {item.children.map((child) => {
-                          const childHref = localizedPath(locale, child.routeKey);
-                          return (
-                            <li>
-                              <a
-                                href={childHref}
-                                aria-current={isCurrent(childHref) ? 'page' : undefined}
-                                class="flex min-h-11 items-center text-sm text-ink-700 no-underline"
-                              >
-                                {dict.nav[child.labelKey]}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </details>
-                  </li>
-                );
-              }
-
               const href = localizedPath(locale, item.routeKey);
+              const active = isCurrent(href);
               return (
-                <li class="border-b border-stone-200/70">
+                <li class="h-full">
                   <a
                     href={href}
-                    aria-current={isCurrent(href) ? 'page' : undefined}
-                    class="flex min-h-12 items-center text-base font-medium text-ink-800 no-underline"
-                  >
-                    {dict.nav[item.labelKey]}
-                  </a>
-                </li>
-              );
-            })
-          }
-          {
-            secondaryNav.map((item) => {
-              const href = localizedPath(locale, item.routeKey);
-              return (
-                <li class="border-b border-stone-200/70">
-                  <a
-                    href={href}
-                    aria-current={isCurrent(href) ? 'page' : undefined}
-                    class="flex min-h-12 items-center text-base font-medium text-ink-800 no-underline"
+                    aria-current={active ? 'page' : undefined}
+                    class:list={[
+                      'inline-flex h-full items-center whitespace-nowrap border-b-2 px-3 text-[0.82rem] font-medium no-underline transition-colors xl:px-5 xl:text-sm',
+                      active
+                        ? 'border-gold-500 text-wine-700'
+                        : 'border-transparent text-ink-700 hover:border-gold-500/40 hover:text-wine-700',
+                    ]}
                   >
                     {dict.nav[item.labelKey]}
                   </a>
@@ -243,15 +125,54 @@ const orderHref = localizedPath(locale, 'order');
             })
           }
         </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
+    <div class="border-t border-stone-200 bg-surface-raised">
+      <nav class="container-templar max-h-[calc(100dvh-var(--header-height))] overflow-y-auto py-4" aria-label={dict.nav.label}>
+        <ul class="flex flex-col">
+          {
+            primaryNav.map((item) => {
+              const href = localizedPath(locale, item.routeKey);
+              return (
+                <li class="border-b border-stone-200/70">
+                  <a
+                    href={href}
+                    aria-current={isCurrent(href) ? 'page' : undefined}
+                    class="flex min-h-12 items-center text-base font-medium text-ink-800 no-underline"
+                  >
+                    {dict.nav[item.labelKey]}
+                  </a>
+                </li>
+              );
+            })
+          }
+          {
+            secondaryNav
+              .filter((item) => item.routeKey !== 'participate')
+              .map((item) => {
+                const href = localizedPath(locale, item.routeKey);
+                return (
+                  <li class="border-b border-stone-200/70">
+                    <a
+                      href={href}
+                      aria-current={isCurrent(href) ? 'page' : undefined}
+                      class="flex min-h-12 items-center text-base font-medium text-ink-800 no-underline"
+                    >
+                      {dict.nav[item.labelKey]}
+                    </a>
+                  </li>
+                );
+              })
+          }
+        </ul>
 
         <div class="mt-5 flex flex-col gap-3">
           <a href={orderHref} class="btn btn-primary w-full">{dict.nav.ctaPrimary}</a>
-          <a
-            href={localizedPath(locale, 'affiliation')}
-            class="btn btn-outline w-full"
-          >
-            {dict.nav.ctaSecondary}
-          </a>
+          <a href={participateHref} class="btn btn-outline w-full">{dict.nav.ctaSecondary}</a>
           <div class="flex items-center justify-between border-t border-stone-200 pt-4">
             <span class="text-xs font-semibold tracking-widest text-stone-500 uppercase">
               {dict.language.label}
@@ -271,7 +192,7 @@ const orderHref = localizedPath(locale, 'order');
 </header>
 
 <script>
-  // Click-driven dropdowns (desktop nav groups + language selector).
+  // Click-driven dropdowns (language selector).
   // Generic: any [data-dropdown] with a [data-dropdown-toggle] child works.
   const dropdowns = Array.from(document.querySelectorAll<HTMLElement>('[data-dropdown]'));
 
@@ -352,10 +273,17 @@ const orderHref = localizedPath(locale, 'order');
       }
     });
 
-    // Close when a link is chosen (but not when toggling a group).
+    // Close when a link is chosen.
     menu.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
       if (target.closest('a')) setMenuOpen(false);
+    });
+
+    // The drawer only exists below lg. If the viewport grows while it is open,
+    // close it so the page scroll lock is released.
+    const desktop = window.matchMedia('(min-width: 64rem)');
+    desktop.addEventListener('change', (event) => {
+      if (event.matches) setMenuOpen(false);
     });
   }
 </script>

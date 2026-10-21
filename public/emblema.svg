@@ -1,17 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 108" role="img" aria-label="Emblema da Ordem dos Cavaleiros Templários">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 108" role="img" aria-label="Emblema institucional da OICMCTB">
   <defs>
     <linearGradient id="gate" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1e1a16"/>
       <stop offset="1" stop-color="#0c0a08"/>
     </linearGradient>
   </defs>
-  <!-- Arched gate (the castle doorway) -->
+  <!-- Arched gate (generic site mark, not the official coat of arms) -->
   <path d="M12 104V48a36 36 0 0 1 72 0v56Z" fill="url(#gate)" stroke="#8a6d3b" stroke-width="3"/>
   <path d="M20 100V49a28 28 0 0 1 56 0v51" fill="none" stroke="#c9a862" stroke-width="1.6" opacity="0.5"/>
-  <!-- Double-bar (patriarchal) Templar cross -->
-  <g fill="#c9a862">
-    <rect x="44" y="26" width="8" height="56" rx="1"/>
-    <rect x="32" y="39" width="32" height="8" rx="1"/>
-    <rect x="35" y="55" width="26" height="8" rx="1"/>
+  <!-- Simplified Maltese cross -->
+  <g fill="#c9a862" transform="translate(12.8 14.8) scale(2.2)">
+    <path d="M16 3 21 10 16 16 11 10Z"/>
+    <path d="M29 16 22 11 16 16 22 21Z"/>
+    <path d="M16 29 11 22 16 16 21 22Z"/>
+    <path d="M3 16 10 21 16 16 10 11Z"/>
   </g>
 </svg>

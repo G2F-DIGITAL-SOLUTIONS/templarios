@@ -1,9 +1,9 @@
 /**
  * Locale configuration.
  *
- * Portuguese (pt) is the source of truth for institutional content.
- * Other locales are fully supported for site chrome and are ready for
- * content translation — untranslated content falls back to pt gracefully.
+ * Portuguese (pt) is the source of truth for institutional content. Every
+ * other locale ships a complete dictionary (checked by `npm run check:i18n`),
+ * so no institutional text falls back to Portuguese.
  */
 export const locales = ['pt', 'en', 'it', 'fr', 'es'] as const;
 

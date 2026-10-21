@@ -1,389 +1,145 @@
-# Ordem dos Cavaleiros Templários — Site institucional
+# OICMCTB — Site institucional
 
-> "Um castelo templário contemporâneo na web."
+Site institucional estático da **Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB)**.
 
-Site institucional estático da **Ordem dos Cavaleiros Templários (OSMTH Brasil)**.
-A experiência parte da metáfora do **castelo virtual** — portas, arcos, pedra,
-pergaminho, cruz templária e iluminação quente — construída somente com
-**composição visual, tipografia, texturas e hierarquia**, sem animações pesadas,
-parallax, WebGL ou vídeos.
+O projeto substitui a identidade editorial anterior (OSMTH Brasil / “Ordem dos Cavaleiros Templários”) por uma arquitetura enxuta, em cinco páginas, com conteúdo institucional verificado, cinco idiomas completos e redirecionamentos permanentes das rotas antigas.
 
-O resultado é um site rápido, acessível, multilíngue (PT · EN · IT · FR · ES),
-otimizado para SEO e pronto para deploy estático.
+- Produção: <https://templariosdobrasil.com>
+- Stack: Astro 7 (SSG), Tailwind CSS 4, TypeScript strict
+- Idiomas: Português (padrão), English, Italiano, Français, Español
 
 ---
 
-## Sumário
-
-1. [Stack](#1-stack)
-2. [Como rodar](#2-como-rodar)
-3. [Arquitetura do projeto](#3-arquitetura-do-projeto)
-4. [Internacionalização (i18n)](#4-internacionalização-i18n)
-5. [Conteúdo e como editar](#5-conteúdo-e-como-editar)
-6. [Design system](#6-design-system)
-7. [SEO, acessibilidade e performance](#7-seo-acessibilidade-e-performance)
-8. [Deploy](#8-deploy)
-9. [Conectar formulários e CMS](#9-conectar-formulários-e-cms)
-10. [Convenções de código](#10-convenções-de-código)
-
----
-
-## 1. Stack
-
-| Camada        | Escolha                                              |
-| ------------- | ---------------------------------------------------- |
-| Framework     | [Astro v7](https://astro.build) (`output: 'static'`) |
-| Estilo        | Tailwind CSS v4 via `@tailwindcss/vite` + tokens CSS |
-| Linguagem     | TypeScript (strict)                                  |
-| Tipografia    | `@fontsource-variable/*` (self-hosted, sem requests externos) |
-| Sitemap       | `@astrojs/sitemap`                                   |
-| Checagem      | `@astrojs/check` + `typescript`                      |
-
-Sem banco de dados, sem Node server persistente, sem Docker. O build produz
-**HTML estático puro** em `dist/`.
-
-Fontes self-hosted (zero requests para Google Fonts):
-
-- **Títulos:** Cinzel Variable + Cormorant Garamond Variable
-- **Interface:** Inter Variable
-
----
-
-## 2. Como rodar
+## Como rodar
 
 ```bash
-npm install          # instala dependências
-
-npm run dev          # servidor de desenvolvimento (http://localhost:4321)
-npm run check        # astro check (0 erros esperados)
-npm run build        # gera o site estático em dist/
-npm run preview      # serve o build de produção localmente
+npm install
+npm run dev          # http://localhost:4321
+npm run check        # astro check (TypeScript + Astro)
+npm run check:i18n   # integridade das traduções e termos proibidos
+npm run build        # build estático em dist/
+npm run preview      # serve dist/ localmente
+npm run verify       # check + check:i18n + build
 ```
 
-Requisitos: **Node.js 20+** e npm.
+Requisitos: Node.js 20+.
+
+O `prebuild` executa `npm run redirects` automaticamente. Esse script gera:
+
+- `redirects.generated.mjs` — consumido por `astro.config.mjs` (páginas de redirecionamento estáticas);
+- `public/_redirects` — regras 301 para Netlify / Cloudflare Pages;
+- o bloco `redirects` de `vercel.json` — regras 301 para Vercel.
+
+A fonte única é `src/i18n/legacy-redirects.ts`.
 
 ---
 
-## 3. Arquitetura do projeto
+## Arquitetura pública
+
+| Página | PT | EN | IT | FR | ES |
+| --- | --- | --- | --- | --- | --- |
+| Início | `/` | `/en/` | `/it/` | `/fr/` | `/es/` |
+| A Ordem | `/ordem` | `/en/order` | `/it/ordine` | `/fr/ordre` | `/es/orden` |
+| História e Brasão | `/historia-e-brasao` | `/en/history-and-coat-of-arms` | `/it/storia-e-stemma` | `/fr/histoire-et-blason` | `/es/historia-y-escudo` |
+| Cultura e Atuação Social | `/cultura-e-atuacao-social` | `/en/culture-and-social-action` | `/it/cultura-e-azione-sociale` | `/fr/culture-et-action-sociale` | `/es/cultura-y-accion-social` |
+| Participar e Contato | `/participe` | `/en/participate` | `/it/partecipa` | `/fr/participer` | `/es/participa` |
+| Privacidade | `/politica-de-privacidade` | `/en/privacy-policy` | `/it/informativa-privacy` | `/fr/politique-de-confidentialite` | `/es/politica-de-privacidad` |
+| Termos | `/termos` | `/en/terms` | `/it/termini` | `/fr/conditions` | `/es/terminos` |
+| Cookies | `/cookies` | `/en/cookies` | `/it/cookie` | `/fr/cookies` | `/es/cookies` |
+
+As rotas antigas (`/historia`, `/propositos`, `/iniciativas`, `/eventos`, `/conhecimento`, `/doacoes`, `/afiliacao`, `/faq`, `/contato`, `/brasao`, `/abtl`, `/damas-templarias`, `/informacoes-institucionais`, `/loja`, `/tv`, entre outras) redirecionam permanentemente para a página consolidada equivalente, preservando o idioma.
+
+---
+
+## Estrutura
 
 ```text
 src/
 ├── pages/
-│   ├── [...slug].astro      # Gera todas as páginas de conteúdo (SSG)
-│   └── 404.astro            # Página 404
-├── routes.ts                # Mapa RouteKey → view (fonte única do espaço de URL)
-├── layouts/
-│   └── BaseLayout.astro     # <html>, <head>, header/footer, skip-link
-├── views/                   # Uma view por tipo de página (recebe props)
+│   ├── [...slug].astro       # gera todas as rotas × 5 idiomas
+│   └── 404.astro
+├── routes.ts                 # RouteKey → view
+├── views/
 │   ├── HomeView.astro
-│   ├── InstitutionPage.astro
-│   ├── InitiativesPage.astro
-│   ├── InitiativePage.astro
-│   ├── EventsPage.astro
-│   ├── KnowledgePage.astro
-│   ├── DonationsPage.astro
-│   ├── CitiesDayPage.astro
-│   ├── FaqPage.astro
-│   ├── ContactPage.astro
-│   ├── AffiliationPage.astro
+│   ├── OrderPage.astro
+│   ├── HeritagePage.astro
+│   ├── SocietyPage.astro
+│   ├── ParticipatePage.astro
 │   ├── LegalPage.astro
 │   └── NotFoundPage.astro
-├── components/              # Componentes reutilizáveis e pequenos
-│   ├── Header.astro · Footer.astro · LanguageSwitcher.astro
-│   ├── CastleEntrance.astro · CastleDoor.astro
-│   ├── InstitutionalSection.astro · MissionCard.astro
-│   ├── InitiativeCard.astro · EventCard.astro · ArticleCard.astro
-│   ├── ContactForm.astro · Timeline.astro · Quote.astro
-│   ├── SEO.astro · PageHero.astro
-│   └── ui/  (Section, SectionHeading, CTA, Breadcrumbs, AccordionItem,
-│             CastleArch, Emblem, Icon)
-├── content/                 # Dados de conteúdo tipados
-│   ├── institution.ts · initiatives.ts · events.ts
-│   ├── knowledge.ts · faq.ts · doors.ts
-│   └── localize.ts          # Tipo Localized<T> + helper tx()
-├── config/
-│   ├── site.ts              # Contatos, links, redes sociais, endpoint de form
-│   └── navigation.ts        # Menu principal, secundário e colunas do footer
+├── components/
+│   ├── Header.astro / Footer.astro / LanguageSwitcher.astro
+│   ├── CastleEntrance.astro / CastleDoor.astro / PageHero.astro
+│   ├── ContactForm.astro / SEO.astro
+│   └── ui/                   # Section, SectionHeading, CTA, Emblem, Icon…
 ├── i18n/
-│   ├── config.ts            # Locales, nomes nativos, tags BCP-47
-│   ├── routes.ts            # Slugs por locale + resolvedor reverso
-│   ├── dictionaries.ts      # deepMerge + fallback para pt
-│   └── dictionaries/        # pt.ts (fonte) · en · it · fr · es
-├── styles/
-│   └── global.css           # Design system (tokens + utilitários)
-└── utils/
-    └── date.ts              # Formatação de datas por locale
-```
-
-### Como as páginas são geradas
-
-`src/routes.ts` é o **mapa único** do site. Ele liga cada `RouteKey` a uma
-`view` e a props específicas:
-
-```ts
-// src/routes.ts (trecho)
-export const routeDefinitions: RouteDefinition[] = [
-  { routeKey: 'home', view: 'home' },
-  { routeKey: 'order', view: 'institution', meta: { institution: 'about' } },
-  { routeKey: 'history', view: 'institution', meta: { institution: 'history' } },
-  { routeKey: 'initiativeEducation', view: 'initiative', meta: { initiativeId: 'education' } },
-  // ...
-];
-```
-
-`src/pages/[...slug].astro` percorre esse mapa **para cada locale** e gera todas
-as rotas estáticas. Adicionar uma página normalmente é:
-
-1. adicionar a `RouteKey` em `src/i18n/routes.ts` (com os slugs por locale);
-2. adicionar a definição em `src/routes.ts` apontando para uma `view`.
-
-O build atual gera **116 páginas HTML estáticas**.
-
-### URLs amigáveis
-
-Português é servido na raiz; os demais idiomas recebem prefixo:
-
-```text
-/                          /en/                /it/     /fr/     /es/
-/ordem                     /en/order
-/historia                  /en/history
-/propositos                /en/purposes
-/ensinamentos              /en/teachings
-/iniciativas               /en/initiatives
-/iniciativas/meio-ambiente /en/initiatives/environment
-/iniciativas/esporte       /en/initiatives/sport
-/iniciativas/saude         /en/initiatives/health
-/iniciativas/educacao      /en/initiatives/education
-/eventos                   /en/events
-/conhecimento              /en/knowledge
-/palestras · /estudos · /artigos
-/dia-das-cidades           /en/cities-day
-/doacoes                   /en/donations
-/afiliacao                 /en/affiliation
-/faq · /contato
-/politica-de-privacidade · /termos · /cookies
+│   ├── config.ts             # locales, tags BCP-47
+│   ├── routes.ts             # slugs por idioma
+│   ├── legacy-redirects.ts   # mapa de redirecionamentos 301
+│   ├── dictionaries.ts       # seleção de dicionário (sem fallback para pt)
+│   └── dictionaries/         # pt (fonte), en, it, fr, es — completos
+├── config/
+│   ├── site.ts               # dados institucionais
+│   └── navigation.ts         # menu e rodapé
+└── layouts/BaseLayout.astro
 ```
 
 ---
 
-## 4. Internacionalização (i18n)
+## Conteúdo e regras editoriais
 
-Cinco locales: **pt (fonte de verdade), en, it, fr, es**.
+- A razão social e a sigla permanecem em português em todos os idiomas; não se cria uma “tradução oficial” do nome jurídico.
+- Não há vínculo institucional com a Maçonaria, com ordens estrangeiras ou com autoridade eclesiástica. A página **A Ordem** traz uma seção específica sobre independência.
+- A inspiração na tradição templária é apresentada como memória e valores, sem alegar continuidade jurídica com a ordem medieval.
+- O brasão é explicado a partir do material heráldico fornecido (selo, escudo, elmo, paquifes, timbre, grito de guerra, divisa, cores e fidelidade gráfica). O site **não recria** a arte oficial.
+- Não são publicados eventos, artigos, projetos, publicações, taxas, mensalidades, benefícios fiscais ou regras de afiliação não confirmados.
+- Endereço e telefone não são publicados por falta de confirmação institucional.
+- Dados cadastrais aparecem com a ressalva de que não substituem certidão ou consulta aos registros oficiais.
 
-- **Slugs traduzidos por locale** — `src/i18n/routes.ts` define o segmento de
-  cada rota em cada idioma, com resolução reversa (`matchRouteKey`) para que o
-  seletor de idioma aponte para a **mesma página** no idioma escolhido.
-- **Dicionário com fallback** — `src/i18n/dictionaries.ts` faz `deepMerge` das
-  traduções sobre o `pt.ts`. Chaves ausentes caem para o português, então um
-  idioma parcialmente traduzido nunca renderiza string vazia.
-- **Conteúdo localizado** — os módulos em `src/content/` usam o tipo
-  `Localized<T>` e o helper `tx(value, locale)`:
+### Como editar textos
 
-```ts
-// src/content/localize.ts
-export type Localized<T> = { pt: T } & Partial<Record<Exclude<Locale, 'pt'>, T>>;
-export function tx<T>(value: Localized<T>, locale: Locale): T {
-  return (value as Partial<Record<Locale, T>>)[locale] ?? value.pt;
-}
-```
-
-- **Seletor acessível** — `LanguageSwitcher.astro` usa apenas links de texto
-  (`PT | EN | IT | FR | ES`), sem depender de bandeiras, com `aria-label`
-  descrevendo o idioma de destino.
-- **SEO multilíngue** — cada página gera `hreflang` para todos os idiomas +
-  `x-default`, `canonical` e `<html lang>` corretos.
-
-**Adicionar um novo idioma** (ex.: `de`):
-
-1. `src/i18n/config.ts` → adicionar a locale em `locales`, `localeNames`,
-   `localeShort`, `localeTags`.
-2. `src/i18n/routes.ts` → adicionar o segmento de URL de cada `RouteKey`.
-3. `src/i18n/dictionaries/de.ts` → criar as traduções (parcial é aceitável).
-4. `src/i18n/dictionaries.ts` → registrar em `overrides`.
-5. `astro.config.mjs` → incluir em `i18n.locales` e no `sitemap`.
+1. Edite primeiro `src/i18n/dictionaries/pt.ts` (fonte da verdade).
+2. Replique a mesma chave/estrutura nos demais dicionários (`en.ts`, `it.ts`, `fr.ts`, `es.ts`).
+3. Rode `npm run check:i18n`. O script falha em chaves ausentes, arrays com tamanho diferente, valores vazios, texto literal em markup e termos legados.
+4. Rode `npm run check` e `npm run build`.
 
 ---
 
-## 5. Conteúdo e como editar
+## i18n
 
-Todo o conteúdo institucional está em módulos TypeScript tipados, **sem textos
-inventados** e sem hardcode dentro de componentes traduzíveis.
-
-| Arquivo                          | O que contém                                            |
-| -------------------------------- | ------------------------------------------------------- |
-| `src/config/site.ts`             | Nome, e-mail, telefone, endereço, redes, links externos |
-| `src/content/institution.ts`     | Quem Somos, História, Propósitos, Ensinamentos          |
-| `src/content/initiatives.ts`     | Meio Ambiente, Esporte, Saúde, Educação                 |
-| `src/content/events.ts`          | Agenda de eventos                                       |
-| `src/content/knowledge.ts`       | Palestras, estudos e artigos                            |
-| `src/content/faq.ts`             | FAQ por categorias                                      |
-| `src/content/doors.ts`           | As 6 "Portas do Castelo" da homepage                    |
-
-### Editar um contato ou link
-
-Todos os dados de contato e links externos ficam em `src/config/site.ts`:
-
-```ts
-// src/config/site.ts (trecho — valores são PLACEHOLDERS)
-export const site = {
-  name: 'Ordem dos Cavaleiros Templários',
-  shortName: 'OSMTH Brasil',
-  email: 'contato@exemplo.org',
-  phone: '(00) 0000-0000',
-  eventsPlatformUrl: 'https://exemplo.org/eventos',
-  formEndpoint: '',        // vazio → ContactForm usa mailto: pré-preenchido
-  social: [],              // apenas redes sociais OFICIAIS da Ordem
-} as const;
-```
-
-> **Placeholders:** as informações de contato (e-mail, telefone, endereço e
-> links externos) estão preenchidas com valores de exemplo. Substitua-as pelos
-> dados oficiais da Ordem em `src/config/site.ts` antes de publicar.
->
-> **Regra editorial:** não inventar fatos históricos, datas, regras tributárias
-> ou redes sociais. Conteúdo de IRPF deve vir de fonte jurídica/contábil oficial
-> fornecida pela Ordem.
-
-### Reconectar a marca
-
-- Domínio de produção → `astro.config.mjs` (constante `SITE`) e
-  `public/robots.txt` (linha `Sitemap:`).
-- Imagem de compartilhamento (Open Graph) → `public/og-default.png`
-  (regerar com `python3 scripts/generate_og.py`).
-- Favicon/emblema → `public/favicon.svg`, `public/emblema.svg`.
+- O seletor de idioma aponta para a **página equivalente**, não para a home.
+- `<html lang>`, `hreflang`, canonical, Open Graph e JSON-LD são atualizados por locale.
+- Não há fallback silencioso para português: os cinco dicionários são completos e verificados no build.
+- Rotas legadas são redirecionadas mantendo o idioma e, quando aplicável, a âncora da seção consolidada.
 
 ---
 
-## 6. Design system
+## Identidade visual
 
-Tudo em `src/styles/global.css`, em três camadas:
-
-1. **Tokens** (`@theme`) — fontes (`--font-display`, `--font-sans`), cores
-   (`--color-ink-*`, `--color-gold-*`, `--color-wine-*`, `--color-parchment`)
-   e sombras (`plate`/`lift`).
-2. **Componentes utilitários** — `.frame-engraved`, `.surface-dark`,
-   `.prose-templar`, `.btn-*`, textura de pedra gravada.
-3. **Base** — reset, foco visível, tipografia fluida.
-
-Princípios:
-
-- **Serifada** (Cinzel / Cormorant) para títulos, **sans** (Inter) para interface.
-- Ouro envelhecido e vermelho vinho como **acentos**, nunca como base.
-- Ornamentos (arcos, escudos, divisores) com **moderação** — o site deve
-  continuar contemporâneo, sem estética de videogame/RPG.
-- Todos os elementos gráficos são **SVG inline** (`ui/CastleArch`, `ui/Emblem`,
-  `ui/Icon`) — sem imagens pesadas.
+- Tipografia: Cinzel Variable e Cormorant Garamond Variable (títulos), Inter Variable (interface), self-hosted.
+- O emblema genérico do site é uma composição simplificada (portão + cruz de Malta) e **não** representa o brasão oficial.
+- O arquivo vetorial oficial do brasão deve ser fornecido pela Ordem para aplicações que exijam arte final.
 
 ---
 
-## 7. SEO, acessibilidade e performance
+## Deploy
 
-### SEO
+O build gera HTML estático em `dist/`. Configurações de hospedagem incluídas:
 
-- `SEO.astro` gera por página: `title`, `meta description`, `canonical`,
-  Open Graph, Twitter/X Card, `hreflang` + `x-default`.
-- **JSON-LD Schema.org**: `Organization`, `WebSite`, `FAQPage` (+ `Event`
-  quando aplicável).
-- `sitemap-index.xml` + `sitemap-0.xml` gerados no build; `robots.txt` em
-  `public/`.
-- URLs amigáveis e traduzidas por idioma.
-
-### Acessibilidade
-
-- HTML semântico e hierarquia de headings consistente.
-- Skip-link ("Ir para o conteúdo principal"), navegação por teclado e foco
-  visível.
-- `aria-label` em controles icônicos; `alt` em todas as imagens.
-- Seletor de idioma sem dependência de bandeiras ou de hover.
-- Contraste adequado; o conceito medieval nunca prejudica a legibilidade.
-
-### Performance
-
-- **SSG puro**: HTML estático, CSS crítico inline (`inlineStylesheets: 'auto'`),
-  JavaScript quase nulo (apenas o drawer mobile e o accordion do FAQ).
-- Fontes self-hosted com `font-display: swap`; imagens com `loading="lazy"`
-  abaixo da dobra.
-- Sem sliders, carrosséis automáticos, vídeos em autoplay, WebGL ou partículas.
-- Meta de referência: **Lighthouse Performance 90+** e ótimos Core Web Vitals.
+- `public/_headers` — cache e cabeçalhos de segurança;
+- `public/_redirects` — 301 (Netlify / Cloudflare Pages);
+- `vercel.json` — headers e 301 (Vercel);
+- `netlify.toml` — build e headers;
+- `public/robots.txt` — sitemap de produção;
+- `@astrojs/sitemap` — `sitemap-index.xml`.
 
 ---
 
-## 8. Deploy
+## Pendências institucionais
 
-O projeto é **estático** — qualquer host/CDN serve `dist/`. Fluxo desejado:
-
-```text
-git push  →  build (npm run build)  →  deploy de dist/
-```
-
-| Plataforma           | Configuração                                                        |
-| -------------------- | ------------------------------------------------------------------- |
-| **Cloudflare Pages** | Build: `npm run build` · Output: `dist` · Node 20 · usa `public/_headers` |
-| **Vercel**           | Detectado via `vercel.json` (framework Astro, output `dist`)          |
-| **Netlify**          | Detectado via `netlify.toml` (build `npm run build`, publish `dist`)  |
-| **Servidor estático**| Enviar o conteúdo de `dist/` (Nginx, S3+CloudFront, etc.)           |
-
-Já incluímos a configuração pronta no repositório:
-
-- `netlify.toml` — build, publish e cabeçalhos de cache/segurança.
-- `vercel.json` — build, output e cabeçalhos.
-- `public/_headers` — cache/segurança para Cloudflare Pages e Netlify.
-- `.nvmrc` — fixa o Node 20.
-
-Recomendações de infra:
-
-- **CDN** com cache longo para `/assets` versionados (`_astro/*`) e cache curto
-  para o HTML.
-- **Compressão** Brotli/Gzip habilitada no host/CDN.
-- **HTTPS** obrigatório (todos os hosts acima oferecem automaticamente).
-
-Não há necessidade de Docker, banco de dados, Redis, workers, filas ou Node
-server persistente.
-
----
-
-## 9. Conectar formulários e CMS
-
-### Formulários (contato / Dia das Cidades / afiliação)
-
-`ContactForm.astro` funciona em dois modos:
-
-- **Sem backend** (`site.formEndpoint = ''`): monta automaticamente um
-  `mailto:` pré-preenchido — o visitante envia pelo próprio cliente de e-mail.
-- **Com backend**: defina `formEndpoint` em `src/config/site.ts` (ex.:
-  Formspree, ou um Cloudflare Worker/Functions). O formulário passa a fazer
-  `POST` para esse endpoint.
-
-```ts
-// src/config/site.ts
-formEndpoint: 'https://formspree.io/f/SEU_ID',
-```
-
-### CMS (futuro)
-
-A primeira versão usa arquivos de conteúdo (`src/content/*.ts`). Como os dados
-já são módulos isolados e tipados, é simples migrar depois para:
-
-- **Astro Content Collections** (Markdown/MDX) — trocar os módulos por
-  `getCollection()`.
-- **CMS headless** (Sanity, Contentful, Decap, Directus) — substituir a leitura
-  dos módulos por chamadas ao CMS no build (mantendo SSG).
-
-Nenhuma alteração de componente é necessária: as views consomem os dados
-tipados, e `tx()` já resolve a localização.
-
----
-
-## 10. Convenções de código
-
-- **Componentes pequenos e previsíveis**; evitar arquivos com centenas de linhas.
-- **Texto traduzível nunca hardcoded** em componentes — usar os dicionários.
-- **Conteúdo institucional** apenas em `src/content/*` e `src/config/*`.
-- Aliases de import via `@/` (ex.: `@/components/...`).
-- Rodar `npm run check` antes de commitar; manter **0 erros, 0 warnings**.
-- Não introduzir animações complexas, parallax, vídeo em autoplay ou WebGL sem
-  decisão explícita — este é um site **estático rápido e institucional**.
-
----
-
-© Ordem dos Cavaleiros Templários. Conteúdo institucional sujeito à revisão da Ordem.
+1. Arquivo vetorial oficial do brasão (CDR/SVG/PDF) para substituir o emblema genérico onde for necessário.
+2. Validação do CNPJ `42.071.770/0001-75` e da situação cadastral em fontes oficiais.
+3. Confirmação do e-mail `oicmctb@gmail.com` e dos perfis `@oicmctb`.
+4. Revisão jurídica dos textos de Privacidade, Termos e Cookies.
+5. Definição de endpoint para o formulário de contato (hoje há fallback `mailto:`).
+6. Substituição de `public/og-default.png` por imagem oficial, se desejado.
