@@ -49,7 +49,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://www.exemplo.org');
+const siteUrl = Astro.site ?? new URL('https://templariosdobrasil.com');
 const canonical = new URL(path, siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
 const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
@@ -57,6 +57,8 @@ const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.me
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
 // A WebSite + Organization graph is emitted on every page, plus any page JSON-LD.
+// Dados institucionais são usados somente quando confirmados pela Ordem;
+// endereço e telefone não são publicados até validação.
 const baseGraph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -68,15 +70,6 @@ const baseGraph = {
       url: siteUrl.origin,
       logo: new URL('/emblema.svg', siteUrl).href,
       email: site.email,
-      telephone: `+55 ${site.phone}`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: site.address.street,
-        addressLocality: site.address.city,
-        addressRegion: site.address.region,
-        postalCode: site.address.postalCode,
-        addressCountry: site.address.country,
-      },
     },
     {
       '@type': 'WebSite',

@@ -29,9 +29,17 @@ const description = tx(initiative.description, locale);
 const focus = tx(initiative.focus, locale);
 const path = localizedPath(locale, routeKey);
 
-const otherInitiatives = (['environment', 'sport', 'health', 'education'] as const).filter(
-  (id) => id !== initiativeId,
-);
+const allInitiativeIds = [
+  'environment',
+  'sport',
+  'health',
+  'education',
+  'social',
+  'culture',
+  'heraldry',
+  'civicMemory',
+] as const;
+const otherInitiatives = allInitiativeIds.filter((id) => id !== initiativeId);
 ---
 
 <BaseLayout locale={locale} {routeKey} title={name} description={description} path={path}>

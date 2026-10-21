@@ -7,11 +7,11 @@
  */
 export const pt = {
   meta: {
-    siteName: 'Ordem dos Cavaleiros Templários',
-    shortName: 'OSMTH Brasil',
-    tagline: 'Tradição, conhecimento e serviço ao próximo.',
+    siteName: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+    shortName: 'OICMCTB',
+    tagline: 'Tradição, honra e compromisso com o futuro.',
     defaultDescription:
-      'A Ordem dos Cavaleiros Templários (OSMTH Brasil) preserva uma tradição de séculos e a coloca a serviço de valores atuais: ética, fraternidade, educação, saúde e serviço à sociedade.',
+      'Conheça a OICMCTB, sua história, seus valores cavalheirescos, sua simbologia, suas iniciativas culturais e seu compromisso social.',
     ogLocale: 'pt_BR',
   },
 
@@ -41,8 +41,8 @@ export const pt = {
 
   nav: {
     label: 'Navegação principal',
-    order: 'Ordem',
-    initiatives: 'Iniciativas',
+    order: 'A Ordem',
+    initiatives: 'Atuação Social',
     knowledge: 'Conhecimento',
     events: 'Eventos',
     citiesDay: 'Dia das Cidades',
@@ -55,12 +55,20 @@ export const pt = {
     // Sub-items
     about: 'Quem Somos',
     history: 'História',
-    purposes: 'Propósitos',
+    missionVisionValues: 'Missão, Visão e Valores',
     teachings: 'Ensinamentos',
+    institutionalInfo: 'Informações Institucionais',
+    coatOfArms: 'Brasão e Simbologia',
+    academy: 'Academia (ABTL)',
+    templarLadies: 'Damas Templárias',
     environment: 'Meio Ambiente',
     sport: 'Esporte',
     health: 'Saúde',
     education: 'Educação',
+    social: 'Assistência Social',
+    culture: 'Cultura, História e Pesquisa',
+    heraldry: 'Estudos Heráldicos',
+    civicMemory: 'Memória de Heróis Cívicos',
     lectures: 'Palestras',
     studies: 'Estudos',
     articles: 'Artigos',
@@ -71,12 +79,12 @@ export const pt = {
   },
 
   footer: {
-    aboutTitle: 'Ordem dos Cavaleiros Templários',
+    aboutTitle: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
     aboutText:
-      'Uma fraternidade que preserva a tradição templária e a coloca a serviço da sociedade contemporânea — pela ética, pelo estudo, pela fraternidade e pela caridade.',
+      'Organização civil brasileira sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, dedicada ao desenvolvimento humano, à preservação da memória histórica e ao bem comum.',
     navTitle: 'Navegação',
     institutionalTitle: 'Institucional',
-    initiativesTitle: 'Iniciativas',
+    initiativesTitle: 'Atuação Social',
     knowledgeTitle: 'Conhecimento',
     contactTitle: 'Contato',
     languagesTitle: 'Idiomas',
@@ -123,66 +131,76 @@ export const pt = {
 
   home: {
     hero: {
-      kicker: 'Ordem dos Cavaleiros Templários',
-      title: 'Uma tradição de séculos a serviço de valores que permanecem atuais.',
-      lead: 'Tradição, conhecimento e serviço ao próximo.',
+      kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+      title: 'Tradição, honra e compromisso com o futuro.',
+      lead: 'CREARE FUTURUM MUTATO MODO — Para criar o futuro de um modo diferente.',
       intro:
-        'Somos uma fraternidade de homens e mulheres que cultiva a ética, o estudo e a caridade. Entre e conheça os diferentes espaços da Ordem.',
-      primaryCta: 'Explorar a Ordem',
-      secondaryCta: 'Conheça nossa missão',
-      bridgeAlt: 'Entrada de um castelo medieval ao amanhecer',
+        'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil é uma organização civil brasileira dedicada à valorização dos princípios cavalheirescos, ao desenvolvimento humano, à preservação da memória histórica e à promoção de iniciativas culturais, educacionais e filantrópicas.',
+      primaryCta: 'Conheça a Ordem',
+      secondaryCta: 'Conheça nossa história',
+      bridgeAlt: 'Identidade institucional da OICMCTB',
     },
     doors: {
-      kicker: 'As Portas do Castelo',
-      title: 'Cada porta leva a uma área da Ordem',
+      kicker: 'Conheça a OICMCTB',
+      title: 'Cada espaço leva a uma área da Ordem',
       lead: 'Escolha por onde começar sua visita. Você pode percorrer todos os espaços quando quiser.',
       items: {
         order: {
           label: 'A Ordem',
-          text: 'Conheça nossa história, identidade, missão e propósito.',
+          text: 'Conheça nossa identidade, missão, valores e informações institucionais.',
           cta: 'Entrar',
         },
         history: {
           label: 'Nossa História',
-          text: 'Conheça a trajetória histórica da tradição templária e sua evolução ao longo dos séculos.',
+          text: 'Conheça a trajetória da Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
           cta: 'Conhecer a história',
         },
-        purposes: {
-          label: 'Nossos Propósitos',
-          text: 'Conheça os valores e princípios que orientam a atuação da Ordem.',
+        missionVisionValues: {
+          label: 'Missão, Visão e Valores',
+          text: 'Conheça a missão, a visão, os valores, o lema e a filosofia de trabalho da Ordem.',
           cta: 'Conhecer nossos propósitos',
         },
-        teachings: {
-          label: 'Ensinamentos',
-          text: 'Estudos, conhecimento, cultura e desenvolvimento pessoal.',
-          cta: 'Explorar estudos',
+        coatOfArms: {
+          label: 'Brasão e Simbologia',
+          text: 'Conheça os elementos heráldicos, o selo, o lema e os significados institucionais.',
+          cta: 'Ver o brasão',
+        },
+        academy: {
+          label: 'Academia (ABTL)',
+          text: 'Conheça o braço cultural, acadêmico e literário da Ordem.',
+          cta: 'Ver a Academia',
+        },
+        damas: {
+          label: 'Damas Templárias',
+          text: 'Conheça o Conselho Nacional das Damas Templárias e sua participação institucional.',
+          cta: 'Ver as Damas',
         },
         initiatives: {
-          label: 'Nossas Iniciativas',
-          text: 'Conheça as ações realizadas em benefício da sociedade.',
+          label: 'Atuação Social',
+          text: 'Conheça as frentes de atuação da Ordem em benefício da sociedade.',
           cta: 'Conhecer iniciativas',
         },
-        events: {
-          label: 'Eventos',
-          text: 'Acompanhe os eventos e atividades da Ordem.',
-          cta: 'Ver eventos',
+        contact: {
+          label: 'Contato',
+          text: 'Entre em contato com a Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
+          cta: 'Fale conosco',
         },
       },
     },
     about: {
       kicker: 'Sobre a Ordem',
       title: 'Quem somos',
-      lead: 'Uma Ordem de Cavaleiros do Templo — não maçônica — que reúne homens e mulheres em torno da ética, do conhecimento e do serviço.',
-      body: 'A Ordem dos Cavaleiros Templários busca reunir pessoas tolerantes e de boa vontade, que amem a justiça e a nobreza de caráter, desejosas de serem úteis aos outros e que compreendam verdadeiramente o sentido da palavra fraternidade.',
+      lead: 'Organização civil brasileira sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico.',
+      body: 'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) é uma organização civil brasileira dedicada à valorização dos princípios cavalheirescos, ao desenvolvimento humano, à preservação da memória histórica e à promoção de iniciativas culturais, educacionais e filantrópicas.',
       highlights: {
         identity: 'Identidade',
-        identityText: 'Ordem Eclesiástica e ecumênica, identificada pela mesma cruz de barra dupla e pelo antigo lema da Ordem.',
+        identityText: 'Ordem civil brasileira, independente, sem vínculo institucional com a Maçonaria.',
         origin: 'Origem',
-        originText: 'Vinculada à OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — cuja Ordem Mãe tem sede no Porto, em Portugal.',
+        originText: 'Formalizada como pessoa jurídica em 2021, sob a liderança do Grão-Mestre Roberto Aguiar Guazzelli.',
         values: 'Valores',
-        valuesText: 'Ética, fraternidade, justiça, caridade, educação e defesa da dignidade humana.',
+        valuesText: 'Fé, esperança, caridade, justiça, prudência, fortaleza e temperança.',
         today: 'Hoje',
-        todayText: 'Estudos, apoio mútuo e iniciativas sociais voltadas à educação, à saúde, ao esporte e ao meio ambiente.',
+        todayText: 'Iniciativas culturais, educacionais e filantrópicas em benefício das comunidades.',
       },
       cta: 'Conheça a Ordem',
       ctaSecondary: 'Nossa história',
@@ -192,45 +210,37 @@ export const pt = {
       source: 'Dos Ensinamentos da Ordem',
     },
     purposes: {
-      kicker: 'Missão e Propósitos',
+      kicker: 'Missão, Visão e Valores',
       title: 'Princípios que orientam nossa atuação',
-      lead: 'Os propósitos da Ordem são revestidos de nobreza e virtude, e se traduzem em compromissos concretos com a sociedade.',
+      lead: 'A missão da OICMCTB é contribuir para criar o futuro de um modo diferente, promovendo o desenvolvimento humano e a preservação da memória histórica.',
       pillars: {
-        education: {
-          title: 'Educação',
-          text: 'Promover conhecimento, cultura e oportunidades de aprendizagem ao longo da vida.',
+        mission: {
+          title: 'Missão',
+          text: 'Contribuir para criar o futuro de um modo diferente, promovendo o desenvolvimento humano e a preservação da memória histórica.',
         },
-        health: {
-          title: 'Saúde',
-          text: 'Contribuir para o bem-estar e a dignidade das pessoas.',
+        vision: {
+          title: 'Visão',
+          text: 'Ser reconhecida como uma ordem templária legitimamente brasileira, comprometida com o bem comum.',
         },
-        environment: {
-          title: 'Meio Ambiente',
-          text: 'Respeitar e cuidar da Terra e da vida em toda a sua diversidade.',
+        values: {
+          title: 'Valores',
+          text: 'Fé, esperança, caridade, justiça, prudência, fortaleza e temperança.',
         },
-        justice: {
-          title: 'Justiça e Cidadania',
-          text: 'Promover valores éticos, dignidade, responsabilidade e participação social.',
-        },
-        cooperation: {
-          title: 'Fraternidade e Ajuda Mútua',
-          text: 'Manter um eficiente programa de ajuda mútua entre os membros e suas famílias.',
-        },
-        culture: {
-          title: 'Cultura e Estudo',
-          text: 'Priorizar o estudo como base principal da satisfação humana e do desenvolvimento pessoal.',
+        motto: {
+          title: 'Lema',
+          text: 'CREARE FUTURUM MUTATO MODO — Para criar o futuro de um modo diferente.',
         },
       },
       cta: 'Conhecer nossos propósitos',
     },
     initiatives: {
-      kicker: 'A Ordem em ação',
-      title: 'Iniciativas em benefício da sociedade',
-      lead: 'A Ordem não existe apenas para preservar uma tradição. Ela utiliza seus valores para contribuir com a sociedade contemporânea.',
+      kicker: 'Atuação Social',
+      title: 'Frentes de Atuação em Benefício da Sociedade',
+      lead: 'A Ordem utiliza seus valores para contribuir com a sociedade contemporânea por meio de diversas frentes de atuação.',
       items: {
         environment: {
           title: 'Meio Ambiente',
-          text: 'Projetos, ações e iniciativas relacionadas à preservação ambiental.',
+          text: 'Proteção da Amazônia, conscientização ambiental e respeito à Terra e à diversidade da vida.',
         },
         sport: {
           title: 'Esporte',
@@ -238,11 +248,27 @@ export const pt = {
         },
         health: {
           title: 'Saúde',
-          text: 'Ações de apoio à saúde, ao bem-estar e à assistência.',
+          text: 'Ações de apoio à saúde, ao bem-estar e à assistência aos que mais precisam.',
         },
         education: {
           title: 'Educação',
           text: 'Projetos voltados ao acesso à educação, à cultura e ao conhecimento.',
+        },
+        social: {
+          title: 'Assistência Social',
+          text: 'Amparo aos necessitados e iniciativas de solidariedade e apoio comunitário.',
+        },
+        culture: {
+          title: 'Cultura, História e Pesquisa',
+          text: 'Preservação da memória histórica e cultural, incluindo estudos heráldicos.',
+        },
+        heraldry: {
+          title: 'Estudos Heráldicos',
+          text: 'Estudos e publicações sobre heráldica, incluindo o brasão e o selo da OICMCTB.',
+        },
+        civicMemory: {
+          title: 'Memória de Heróis Cívicos',
+          text: 'Valorização da memória de heróis cívicos locais e regionais.',
         },
       },
       cardCta: 'Conhecer iniciativa',
@@ -317,29 +343,29 @@ export const pt = {
     order: {
       kicker: 'A Ordem',
       title: 'Quem Somos',
-      lead: 'Uma verdadeira Ordem Eclesiástica de Cavaleiros Templários, afiliada à sua Ordem Mãe com sede no Porto, em Portugal.',
+      lead: 'Organização civil brasileira sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico.',
       intro:
-        'A Ordem dos Cavaleiros Templários é uma Ordem de Cavaleiros do Templo — não sendo, portanto, uma Ordem Maçônica, nem a ela conectada, a não ser historicamente.',
+        'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) é uma organização civil independente e não constitui uma Ordem Maçônica. A instituição não possui vínculo institucional com a Maçonaria.',
     },
     history: {
-      kicker: 'Trajetória',
+      kicker: 'História da Ordem',
       title: 'História',
-      lead: 'A trajetória da tradição templária, das origens medievais à sua expressão contemporânea.',
+      lead: 'A trajetória da OICMCTB desde sua idealização até a formalização jurídica em 2021.',
     },
     purposes: {
-      kicker: 'Missão',
-      title: 'Propósitos',
-      lead: 'Os propósitos da Ordem dos Cavaleiros Templários são revestidos de nobreza com a capa branca da virtude.',
+      kicker: 'Missão, Visão e Valores',
+      title: 'Missão, Visão e Valores',
+      lead: 'Missão, visão, valores, lema e filosofia de trabalho da Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     },
     teachings: {
-      kicker: 'Estudos',
+      kicker: 'Ensinamentos',
       title: 'Ensinamentos',
-      lead: 'Trabalhamos com os estudos Templários para alcançar um objetivo comum: o aprimoramento do nosso caráter.',
+      lead: 'Estudos, conhecimento, cultura e desenvolvimento pessoal na tradição cavalheiresca.',
     },
     initiatives: {
-      kicker: 'A Ordem em ação',
-      title: 'Iniciativas',
-      lead: 'Áreas em que a Ordem contribui com a sociedade contemporânea.',
+      kicker: 'Atuação Social',
+      title: 'Frentes de Atuação',
+      lead: 'Áreas de atuação da OICMCTB em benefício da sociedade.',
     },
     events: {
       kicker: 'Agenda',
@@ -364,7 +390,7 @@ export const pt = {
     affiliation: {
       kicker: 'Participe',
       title: 'Afiliar-se',
-      lead: 'A mística e secular Ordem dos Cavaleiros Templários está abrindo as suas portas para você.',
+      lead: 'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil está abrindo as suas portas para você.',
     },
     faq: {
       kicker: 'Dúvidas',
@@ -375,6 +401,26 @@ export const pt = {
       kicker: 'Fale conosco',
       title: 'Contato',
       lead: 'Estamos à disposição para responder suas questões sobre a Ordem.',
+    },
+    brasao: {
+      kicker: 'Brasão de Armas',
+      title: 'Brasão de Armas e Simbologia',
+      lead: 'Elementos heráldicos, cores, selo, lema e significados institucionais do brasão da OICMCTB.',
+    },
+    abtl: {
+      kicker: 'Academia Brasileira Templária de Letras',
+      title: 'Academia Brasileira Templária de Letras — ABTL',
+      lead: 'Braço cultural, acadêmico e literário associado à OICMCTB.',
+    },
+    damas: {
+      kicker: 'Damas Templárias',
+      title: 'Conselho Nacional das Damas Templárias',
+      lead: 'Participação institucional das mulheres na OICMCTB.',
+    },
+    informacoes: {
+      kicker: 'Informações Institucionais',
+      title: 'Informações Institucionais',
+      lead: 'Dados institucionais da Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     },
   },
 
@@ -400,7 +446,7 @@ export const pt = {
   affiliation: {
     purposeTitle: 'Por que se afiliar',
     purposeText:
-      'O propósito da Ordem é ter uma sociedade de Cavaleiros Templários com o mesmo padrão de nobreza e virtude da tradicional Ordem dos Cavaleiros Templários, mantendo um eficiente programa de ajuda mútua.',
+      'O propósito da Ordem é reunir homens e mulheres em torno dos valores cavalheirescos, do desenvolvimento humano, da cidadania, da memória histórica e do bem comum.',
     whoTitle: 'Quem pode se afiliar',
     whoText:
       'Pessoas de ambos os sexos, imbuídas do propósito de resgatar valores que caíram no esquecimento e de construir um mundo livre e justo. Buscamos pessoas livres e de bons costumes, devotadas à família e corretas em seu procedimento com os demais.',
@@ -508,10 +554,16 @@ export const pt = {
     formTitle: 'Envie uma mensagem',
     addressLabel: 'Endereço',
     phoneLabel: 'Telefone',
-    emailLabel: 'E-mail',
+    emailLabel: 'E-mail institucional',
     emailCta: 'Enviar e-mail',
     hoursLabel: 'Atendimento',
     hoursValue: 'Consulte a Ordem para horários de atendimento.',
+    addressPending: 'Endereço não divulgado pela instituição.',
+    phonePending: 'Telefone não divulgado pela instituição.',
+    emailPending:
+      'O e-mail institucional é oicmctb@gmail.com. Não disponibilizado como link clicável até validação pela Ordem.',
+    socialPending:
+      'Redes sociais: @oicmctb (Facebook e Instagram). Não disponibilizadas como links até validação pela Ordem.',
   },
 
   legal: {

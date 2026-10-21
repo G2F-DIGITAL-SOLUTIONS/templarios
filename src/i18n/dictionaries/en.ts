@@ -53,8 +53,12 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     tv: 'Templar TV',
     about: 'About Us',
     history: 'History',
-    purposes: 'Purposes',
+    missionVisionValues: 'Mission, Vision and Values',
     teachings: 'Teachings',
+    institutionalInfo: 'Institutional Information',
+    coatOfArms: 'Coat of Arms',
+    academy: 'Academy (ABTL)',
+    templarLadies: 'Templar Ladies',
     environment: 'Environment',
     sport: 'Sport',
     health: 'Health',
@@ -145,25 +149,35 @@ export const en: DeepPartial<Widen<Dictionary>> = {
           text: 'Discover the historic path of the Templar tradition and its evolution through the centuries.',
           cta: 'Discover the history',
         },
-        purposes: {
-          label: 'Our Purposes',
-          text: 'Discover the values and principles that guide the Order.',
+        missionVisionValues: {
+          label: 'Mission, Vision and Values',
+          text: 'Discover the mission, vision, values, motto and working philosophy of the Order.',
           cta: 'Discover our purposes',
         },
-        teachings: {
-          label: 'Teachings',
-          text: 'Studies, knowledge, culture and personal development.',
-          cta: 'Explore the studies',
+        coatOfArms: {
+          label: 'Coat of Arms',
+          text: 'Discover the heraldic elements, the seal, the motto and the institutional meanings.',
+          cta: 'See the coat of arms',
+        },
+        academy: {
+          label: 'Academy (ABTL)',
+          text: 'Discover the cultural, academic and literary arm of the Order.',
+          cta: 'See the Academy',
+        },
+        damas: {
+          label: 'Templar Ladies',
+          text: 'Discover the National Council of Templar Ladies and its institutional participation.',
+          cta: 'See the Ladies',
+        },
+        contact: {
+          label: 'Contact',
+          text: 'Contact the International Civil Military Order of the Knights Templar of Brazil.',
+          cta: 'Contact us',
         },
         initiatives: {
           label: 'Our Initiatives',
           text: 'Discover the actions carried out for the benefit of society.',
           cta: 'Discover the initiatives',
-        },
-        events: {
-          label: 'Events',
-          text: 'Follow the events and activities of the Order.',
-          cta: 'See events',
         },
       },
     },
@@ -194,29 +208,21 @@ export const en: DeepPartial<Widen<Dictionary>> = {
       title: 'Principles that guide our work',
       lead: 'The purposes of the Order are clothed in nobility and virtue, and translate into concrete commitments to society.',
       pillars: {
-        education: {
-          title: 'Education',
-          text: 'Promote knowledge, culture and lifelong learning opportunities.',
+        mission: {
+          title: 'Mission',
+          text: 'To contribute to creating the future in a different way, promoting human development and the preservation of historical memory.',
         },
-        health: {
-          title: 'Health',
-          text: 'Contribute to the wellbeing and dignity of people.',
+        vision: {
+          title: 'Vision',
+          text: 'To be recognized as a legitimately Brazilian Templar order, committed to the common good.',
         },
-        environment: {
-          title: 'Environment',
-          text: 'Respect and care for the Earth and life in all its diversity.',
+        values: {
+          title: 'Values',
+          text: 'Faith, hope, charity, justice, prudence, fortitude and temperance.',
         },
-        justice: {
-          title: 'Justice and Citizenship',
-          text: 'Promote ethical values, dignity, responsibility and social participation.',
-        },
-        cooperation: {
-          title: 'Fraternity and Mutual Aid',
-          text: 'Maintain an effective programme of mutual aid among members and their families.',
-        },
-        culture: {
-          title: 'Culture and Study',
-          text: 'Prioritise study as a main foundation of human fulfilment and personal development.',
+        motto: {
+          title: 'Motto',
+          text: 'CREARE FUTURUM MUTATO MODO — To create the future in a different way.',
         },
       },
       cta: 'Discover our purposes',
@@ -228,7 +234,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
       items: {
         environment: {
           title: 'Environment',
-          text: 'Projects, actions and initiatives related to environmental preservation.',
+          text: 'Amazon protection, environmental awareness and respect for the Earth and the diversity of life.',
         },
         sport: {
           title: 'Sport',
@@ -236,11 +242,27 @@ export const en: DeepPartial<Widen<Dictionary>> = {
         },
         health: {
           title: 'Health',
-          text: 'Actions supporting health, wellbeing and assistance.',
+          text: 'Actions supporting health, wellbeing and assistance to those most in need.',
         },
         education: {
           title: 'Education',
           text: 'Projects aimed at access to education, culture and knowledge.',
+        },
+        social: {
+          title: 'Social Assistance',
+          text: 'Support for those in need and solidarity and community support initiatives.',
+        },
+        culture: {
+          title: 'Culture, History and Research',
+          text: 'Preservation of historical and cultural memory, including heraldic studies.',
+        },
+        heraldry: {
+          title: 'Heraldic Studies',
+          text: 'Studies and publications on heraldry, including the OICMCTB coat of arms and seal.',
+        },
+        civicMemory: {
+          title: 'Civic Heroes Memory',
+          text: 'Appreciation of the memory of local and regional civic heroes.',
         },
       },
       cardCta: 'Discover initiative',
@@ -325,9 +347,9 @@ export const en: DeepPartial<Widen<Dictionary>> = {
       lead: 'The path of the Templar tradition, from its medieval origins to its contemporary expression.',
     },
     purposes: {
-      kicker: 'Mission',
-      title: 'Purposes',
-      lead: 'The purposes of the Order of the Knights Templar are clothed in nobility with the white cloak of virtue.',
+      kicker: 'Mission, Vision and Values',
+      title: 'Mission, Vision and Values',
+      lead: 'Mission, vision, values, motto and working philosophy of the International Civil Military Order of the Knights Templar of Brazil.',
     },
     teachings: {
       kicker: 'Studies',
@@ -373,6 +395,26 @@ export const en: DeepPartial<Widen<Dictionary>> = {
       kicker: 'Get in touch',
       title: 'Contact',
       lead: 'We are available to answer your questions about the Order.',
+    },
+    brasao: {
+      kicker: 'Coat of Arms',
+      title: 'Coat of Arms and Symbology',
+      lead: 'Heraldic elements, colors, seal, motto and institutional meanings of the OICMCTB coat of arms.',
+    },
+    abtl: {
+      kicker: 'Brazilian Templarian Academy of Letters',
+      title: 'Brazilian Templarian Academy of Letters — ABTL',
+      lead: 'Cultural, academic and literary arm associated with the OICMCTB.',
+    },
+    damas: {
+      kicker: 'Templar Ladies',
+      title: 'National Council of Templar Ladies',
+      lead: 'Institutional participation of women in the OICMCTB.',
+    },
+    informacoes: {
+      kicker: 'Institutional Information',
+      title: 'Institutional Information',
+      lead: 'Institutional data of the International Civil Military Order of the Knights Templar of Brazil.',
     },
   },
 
@@ -491,10 +533,16 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     formTitle: 'Send a message',
     addressLabel: 'Address',
     phoneLabel: 'Phone',
-    emailLabel: 'Email',
+    emailLabel: 'Institutional email',
     emailCta: 'Send email',
     hoursLabel: 'Hours',
     hoursValue: 'Please contact the Order for opening hours.',
+    addressPending: 'Address not disclosed by the institution.',
+    phonePending: 'Phone not disclosed by the institution.',
+    emailPending:
+      'The institutional email is oicmctb@gmail.com. Not available as a clickable link until validated by the Order.',
+    socialPending:
+      'Social media: @oicmctb (Facebook and Instagram). Not available as links until validated by the Order.',
   },
 
   legal: {

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import { institutionalInfo } from '@/content/institution';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+}
+
+const { locale, routeKey } = Astro.props;
+const dict = getDictionary(locale);
+const page = dict.pages.informacoes;
+const path = localizedPath(locale, routeKey);
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey={routeKey}
+  title={page.title}
+  description={page.lead}
+  path={path}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: dict.nav.institutionalInfo }]}
+  />
+
+  <Section>
+    <dl class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {institutionalInfo.items.map((item) => (
+        <div class="key-value">
+          <dt class="font-display text-base font-semibold text-ink-900">
+            {item.label}
+          </dt>
+          <dd class="mt-2 text-ink-700">{item.value}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <section class="mt-12">
+      <h2 class="!text-xl md:!text-2xl">Validação</h2>
+      <p class="prose-templar mt-4">{institutionalInfo.validationNote}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="!text-xl md:!text-2xl">Contato</h2>
+      <p class="prose-templar mt-4">{institutionalInfo.contactNote}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="!text-xl md:!text-2xl">Escopo</h2>
+      <p class="prose-templar mt-4">{institutionalInfo.noInvention}</p>
+    </section>
+  </Section>
+</BaseLayout>

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Change this to the final production domain before deploy.
-const SITE = 'https://www.exemplo.org';
+const SITE = 'https://templariosdobrasil.com';
 
 export default defineConfig({
   site: SITE,

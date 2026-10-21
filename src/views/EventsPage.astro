@@ -9,7 +9,7 @@ import { tx } from '@/content/localize';
 import { getDictionary } from '@/i18n/dictionaries';
 import { localizedPath, type Locale } from '@/i18n';
 import { isUpcoming } from '@/utils/date';
-import { site } from '@/config/site';
+
 
 interface Props {
   locale: Locale;
@@ -38,9 +38,7 @@ const past = events.filter((e) => !isUpcoming(e.date));
     <div class="flex flex-wrap items-start justify-between gap-6">
       <h2>{dict.events.upcomingTitle}</h2>
       <a
-        href={site.eventsPlatformUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={localizedPath(locale, 'contact')}
         class="btn btn-primary"
       >
         {dict.events.ctaPlatform}
@@ -60,7 +58,7 @@ const past = events.filter((e) => !isUpcoming(e.date));
               summary={tx(event.summary, locale)}
               date={event.date}
               location={tx(event.location, locale)}
-              url={event.url ?? site.eventsPlatformUrl}
+              url={event.url ?? localizedPath(locale, 'contact')}
               dateLabel={dict.home.events.dateLabel}
               locationLabel={dict.home.events.locationLabel}
               cta={dict.events.ctaPlatform}

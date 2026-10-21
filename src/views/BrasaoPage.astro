@@ -1,0 +1,75 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import { coatOfArms, motto } from '@/content/institution';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+import type { RouteKey } from '@/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+}
+
+const { locale, routeKey } = Astro.props;
+const dict = getDictionary(locale);
+const page = dict.pages.brasao;
+const path = localizedPath(locale, routeKey);
+
+const sections = [
+  { id: 'shield', ...coatOfArms.shield },
+  { id: 'seal', ...coatOfArms.seal },
+  { id: 'helmet', ...coatOfArms.helmet },
+  { id: 'mantling', ...coatOfArms.mantling },
+  { id: 'crest', ...coatOfArms.crest },
+  { id: 'motto', ...coatOfArms.motto },
+  { id: 'divisa', ...coatOfArms.divisa },
+  { id: 'colors', ...coatOfArms.colors },
+] as { id: string; heading: string; body: string[] }[];
+
+const mottoData = motto;
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey={routeKey}
+  title={page.title}
+  description={page.lead}
+  path={path}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: dict.nav.coatOfArms }]}
+  />
+
+  <Section>
+    <p class="prose-templar !text-lg mx-auto text-center">
+      {coatOfArms.sealNote}
+    </p>
+
+    {sections.map((section) => (
+      <section id={section.id} class="mt-16">
+        <h2 id={section.id}-heading class="!text-2xl md:!text-3xl">
+          {section.heading}
+        </h2>
+        <div class="prose-templar mt-5">
+          {section.body.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <Section tone="parchment" size="tight" class="mt-16">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="!text-xl text-parchment">{mottoData.latin}</h2>
+        <p class="mt-4 text-stone-200/90">{mottoData.translation}</p>
+      </div>
+    </Section>
+  </Section>
+</BaseLayout>

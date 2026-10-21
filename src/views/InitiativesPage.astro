@@ -50,7 +50,11 @@ const path = localizedPath(locale, 'initiatives');
             icon={initiative.icon}
             routeKey={initiative.routeKey}
             cta={dict.home.initiatives.cardCta}
-            image={`/img/iniciativas/${initiative.id}.svg`}
+            image={
+              ['environment', 'sport', 'health', 'education'].includes(initiative.id)
+                ? `/img/iniciativas/${initiative.id}.svg`
+                : undefined
+            }
             imageAlt={tx(initiative.name, locale)}
           />
         ))
