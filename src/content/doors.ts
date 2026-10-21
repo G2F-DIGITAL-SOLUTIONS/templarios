@@ -2,7 +2,7 @@ import type { RouteKey } from '@/i18n/routes';
 import type { Dictionary } from '@/i18n/dictionaries';
 
 /**
- * The six "doors of the castle" shown on the homepage. Each maps a copy key
+ * The "doors of the castle" shown on the homepage. Each maps a copy key
  * from the dictionary to a destination route, so the copy stays translatable
  * and the links stay locale-aware.
  */
@@ -19,8 +19,15 @@ export interface Door {
 export const doors: Door[] = [
   { id: 'order', copyKey: 'order', routeKey: 'order', icon: 'shield', featured: true },
   { id: 'history', copyKey: 'history', routeKey: 'history', icon: 'scroll' },
-  { id: 'purposes', copyKey: 'purposes', routeKey: 'purposes', icon: 'compass' },
-  { id: 'teachings', copyKey: 'teachings', routeKey: 'teachings', icon: 'book' },
+  {
+    id: 'missionVisionValues',
+    copyKey: 'missionVisionValues',
+    routeKey: 'purposes',
+    icon: 'compass',
+  },
+  { id: 'coatOfArms', copyKey: 'coatOfArms', routeKey: 'brasao', icon: 'shield' },
+  { id: 'academy', copyKey: 'academy', routeKey: 'abtl', icon: 'book' },
+  { id: 'damas', copyKey: 'damas', routeKey: 'damas', icon: 'hand-heart' },
   { id: 'initiatives', copyKey: 'initiatives', routeKey: 'initiatives', icon: 'hand-heart' },
-  { id: 'events', copyKey: 'events', routeKey: 'events', icon: 'calendar' },
+  { id: 'contact', copyKey: 'contact', routeKey: 'contact', icon: 'calendar' },
 ];

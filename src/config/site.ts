@@ -1,38 +1,48 @@
 /**
  * Global site configuration — single source of truth for links, contacts
- * and social profiles. Update these values; components read from here.
+ * and social profiles. Components read from here.
  *
- * NOTE: the values below are PLACEHOLDERS. Replace them with the Order's
- * official contact details before going live.
+ * Editorial note (per institutional guidelines):
+ * - The e-mail and social profiles below are taken from the material provided
+ *   by the Order. They are NOT rendered as clickable links until the Order
+ *   confirms they are active and correct (see src/config/README note below).
+ * - No physical address, telephone or additional legal data is published,
+ *   as none has been confirmed by the Order.
  */
 
 export const site = {
-  name: 'Ordem dos Cavaleiros Templários',
-  shortName: 'OSMTH Brasil',
-  legalName: 'Ordem dos Cavaleiros Templários',
-  email: 'contato@exemplo.org',
-  phone: '(00) 0000-0000',
-  phoneHref: 'tel:+550000000000',
-  address: {
-    street: 'Rua Exemplo, 000 – Sala 000',
-    district: 'Bairro',
-    city: 'Cidade',
-    region: 'UF',
-    postalCode: '00000-000',
-    country: 'BR',
-  },
-  /** External platform for the events agenda (provided by the Order). */
-  eventsPlatformUrl: 'https://exemplo.org/eventos',
+  /** Full institutional name, used on first mention and in metadata. */
+  name: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  /** Short institutional name used in headers/footers. */
+  shortName: 'OICMCTB',
+  /** Legal name (razão social), as provided by the Order. */
+  legalName: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  /** CNPJ as provided by the Order — pending external validation. */
+  cnpj: '42.071.770/0001-75',
+  /** Grand Master, as identified in the institutional material. */
+  grandMaster: 'Roberto Aguiar Guazzelli',
+  /** First Lady of the National Council of Templar Ladies, as identified. */
+  firstLady: 'Sueli Teodoro',
+  /** Cultural and literary arm associated with the Order. */
+  culturalArm: 'Academia Brasileira Templária de Letras (ABTL)',
+  /** Institutional e-mail provided by the Order. Not clickable until validated. */
+  email: 'oicmctb@gmail.com',
+  /** Official social handles, as provided by the Order. Not linked until validated. */
+  socialHandle: '@oicmctb',
+  /** Official social platforms, as provided by the Order. */
+  socialPlatforms: ['Facebook', 'Instagram'],
+  /** Lema oficial da Ordem. */
+  motto: 'CREARE FUTURUM MUTATO MODO',
+  /** Portuguese translation of the motto. */
+  mottoTranslation: 'Para criar o futuro de um modo diferente.',
   /**
-   * Form submission endpoint (e.g. Formspree, a Cloudflare Worker, or the
-   * Order's own handler). Leave empty to fall back to a pre-filled mailto:.
+   * Form submission endpoint. Left empty so ContactForm falls back to
+   * a pre-filled mailto: (the e-mail is shown but not as a clickable link
+   * until validated by the Order).
    */
   formEndpoint: '',
-  /** Official shop, if maintained externally. */
-  shopUrl: 'https://exemplo.org/loja',
   /** Only official social profiles of the Order should be listed here. */
   social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
 } as const;
 
-export const contactAddressLine =
-  'Rua Exemplo, 000 – Sala 000 — Bairro, Cidade – UF — CEP 00000-000';
+export const contactAddressLine = undefined;

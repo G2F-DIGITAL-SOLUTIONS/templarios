@@ -11,6 +11,10 @@ import CitiesDayPage from '@/views/CitiesDayPage.astro';
 import FaqPage from '@/views/FaqPage.astro';
 import ContactPage from '@/views/ContactPage.astro';
 import AffiliationPage from '@/views/AffiliationPage.astro';
+import BrasaoPage from '@/views/BrasaoPage.astro';
+import AbtlPage from '@/views/AbtlPage.astro';
+import DamasPage from '@/views/DamasPage.astro';
+import InformacoesPage from '@/views/InformacoesPage.astro';
 import LegalPage from '@/views/LegalPage.astro';
 import NotFoundPage from '@/views/NotFoundPage.astro';
 import { routeDefinitions, type RouteDefinition } from '@/routes';
@@ -118,6 +122,14 @@ const knowledgeRouteKey: RouteKey =
 {view === 'contact' && <ContactPage locale={locale} />}
 
 {view === 'affiliation' && <AffiliationPage locale={locale} />}
+
+{view === 'brasao' && <BrasaoPage locale={locale} routeKey={routeKey} />}
+
+{view === 'abtl' && <AbtlPage locale={locale} routeKey={routeKey} />}
+
+{view === 'damas' && <DamasPage locale={locale} routeKey={routeKey} />}
+
+{view === 'informacoes' && <InformacoesPage locale={locale} routeKey={routeKey} />}
 
 {
   view === 'legal' &&

@@ -17,7 +17,11 @@ export type ViewName =
   | 'faq'
   | 'contact'
   | 'affiliation'
-  | 'legal';
+  | 'legal'
+  | 'brasao'
+  | 'abtl'
+  | 'damas'
+  | 'informacoes';
 
 export interface RouteDefinition {
   routeKey: RouteKey;
@@ -27,6 +31,7 @@ export interface RouteDefinition {
     institution?: 'about' | 'history' | 'purposes' | 'teachings';
     initiativeId?: string;
     knowledgeType?: 'lecture' | 'study' | 'article' | 'video';
+    page?: 'brasao' | 'abtl' | 'damas' | 'informacoes';
   };
 }
 
@@ -45,6 +50,10 @@ export const routeDefinitions: RouteDefinition[] = [
   { routeKey: 'initiativeSport', view: 'initiative', meta: { initiativeId: 'sport' } },
   { routeKey: 'initiativeHealth', view: 'initiative', meta: { initiativeId: 'health' } },
   { routeKey: 'initiativeEducation', view: 'initiative', meta: { initiativeId: 'education' } },
+  { routeKey: 'initiativeSocial', view: 'initiative', meta: { initiativeId: 'social' } },
+  { routeKey: 'initiativeCulture', view: 'initiative', meta: { initiativeId: 'culture' } },
+  { routeKey: 'initiativeHeraldry', view: 'initiative', meta: { initiativeId: 'heraldry' } },
+  { routeKey: 'initiativeCivicMemory', view: 'initiative', meta: { initiativeId: 'civicMemory' } },
   { routeKey: 'events', view: 'events' },
   { routeKey: 'knowledge', view: 'knowledge' },
   { routeKey: 'lectures', view: 'knowledge', meta: { knowledgeType: 'lecture' } },
@@ -55,6 +64,10 @@ export const routeDefinitions: RouteDefinition[] = [
   { routeKey: 'affiliation', view: 'affiliation' },
   { routeKey: 'faq', view: 'faq' },
   { routeKey: 'contact', view: 'contact' },
+  { routeKey: 'brasao', view: 'brasao', meta: { page: 'brasao' } },
+  { routeKey: 'abtl', view: 'abtl', meta: { page: 'abtl' } },
+  { routeKey: 'damas', view: 'damas', meta: { page: 'damas' } },
+  { routeKey: 'informacoes', view: 'informacoes', meta: { page: 'informacoes' } },
   { routeKey: 'privacy', view: 'legal' },
   { routeKey: 'terms', view: 'legal' },
   { routeKey: 'cookies', view: 'legal' },

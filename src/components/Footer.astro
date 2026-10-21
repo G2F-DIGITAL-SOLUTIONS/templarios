@@ -3,7 +3,7 @@ import Emblem from '@/components/ui/Emblem.astro';
 import Icon from '@/components/ui/Icon.astro';
 import LanguageSwitcher from '@/components/LanguageSwitcher.astro';
 import { footerColumns } from '@/config/navigation';
-import { contactAddressLine, site } from '@/config/site';
+import { site } from '@/config/site';
 import { localizedPath, type Locale } from '@/i18n';
 import type { Dictionary } from '@/i18n/dictionaries';
 import type { RouteKey } from '@/i18n/routes';
@@ -23,6 +23,13 @@ const legalLinks = [
   { key: 'terms' as const, label: dict.footer.terms },
   { key: 'cookies' as const, label: dict.footer.cookies },
 ];
+
+/**
+ * E-mail e redes sociais são exibidos como texto simples, não como links
+ * clicáveis, até que a Ordem confirme que estão ativos e corretos
+ * (conforme diretrizes institucionais, seção 4.9).
+ */
+
 ---
 
 <footer class="surface-dark texture-stone border-t border-gold-600/25">
@@ -36,7 +43,9 @@ const legalLinks = [
             <Emblem size={42} />
           </span>
           <div class="leading-tight">
-            <p class="font-display text-parchment text-lg font-semibold">{dict.meta.siteName}</p>
+            <p class="font-display text-parchment text-lg font-semibold">
+              {dict.meta.siteName}
+            </p>
             <p class="mt-1 text-[0.66rem] font-medium tracking-[0.2em] text-stone-300 uppercase">
               {dict.meta.shortName}
             </p>
@@ -72,57 +81,34 @@ const legalLinks = [
         ))
       }
 
-      <!-- Contact + languages -->
+      <!-- Contact -->
       <div class="lg:col-span-2">
         <h2 class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
           {dict.footer.contactTitle}
         </h2>
         <ul class="mt-4 flex flex-col gap-3 text-sm text-stone-200/90">
           <li class="flex gap-2.5">
-            <Icon name="map-pin" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <span>{contactAddressLine}</span>
+            <span class="mt-0.5 text-gold-600" aria-hidden="true">
+              <Icon name="mail" size={17} />
+            </span>
+            <span class="break-all">{site.email}</span>
           </li>
           <li class="flex gap-2.5">
-            <Icon name="phone" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <a href={site.phoneHref} class="no-underline transition-colors hover:text-gold-300">
-              {site.phone}
-            </a>
+            <span class="mt-0.5 text-gold-600" aria-hidden="true">
+              <Icon name="globe" size={17} />
+            </span>
+            <span class="break-all">{site.socialHandle}</span>
           </li>
           <li class="flex gap-2.5">
-            <Icon name="mail" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <a
-              href={`mailto:${site.email}`}
-              class="break-all no-underline transition-colors hover:text-gold-300"
-            >
-              {site.email}
-            </a>
+            <span class="mt-0.5 text-gold-600" aria-hidden="true">
+              <Icon name="globe" size={17} />
+            </span>
+            <span class="text-sm text-stone-400">{site.socialPlatforms.join(' e ')}</span>
           </li>
         </ul>
-
-        {
-          site.social.length > 0 && (
-            <div class="mt-6">
-              <h2 class="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
-                {dict.footer.socialTitle}
-              </h2>
-              <ul class="mt-3 flex gap-2">
-                {site.social.map((profile) => (
-                  <li>
-                    <a
-                      href={profile.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex size-10 items-center justify-center rounded-sm border border-stone-300/25 text-stone-200 transition-colors hover:border-gold-400 hover:text-gold-300"
-                      aria-label={`${profile.label} — ${dict.a11y.externalLink}`}
-                    >
-                      <Icon name={profile.icon} size={19} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )
-        }
+        <p class="mt-4 text-xs text-stone-400/80">
+          Dados não publicados como links até validação pela Ordem.
+        </p>
       </div>
 
       <!-- Languages + affiliation -->
@@ -154,17 +140,6 @@ const legalLinks = [
     >
       <div class="text-center md:text-left">
         <p>© {year} {dict.meta.siteName}. {dict.footer.rights}</p>
-        <p class="mt-1.5 text-stone-300/80">
-          Powered by{' '}
-          <a
-            href="https://getrandel.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-medium text-gold-400 no-underline transition-colors hover:text-gold-300"
-          >
-            Randel
-          </a>
-        </p>
       </div>
       <nav aria-label={dict.footer.legalTitle}>
         <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">

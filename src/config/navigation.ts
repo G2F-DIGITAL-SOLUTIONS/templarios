@@ -13,44 +13,34 @@ export interface NavItem {
   children?: NavChild[];
 }
 
-/** Primary navigation — mirrors the proposed information architecture. */
+/**
+ * Primary navigation.
+ *
+ * "A Ordem" groups Quem Somos, Missão Visão e Valores, and Informações
+ * Institucionais. História and Brasão e Simbologia are top-level items.
+ * Academia (ABTL), Atuação Social and Contato are top-level items.
+ * No empty pages are created solely to fill the menu.
+ */
 export const primaryNav: NavItem[] = [
   {
     labelKey: 'order',
     routeKey: 'order',
     children: [
       { labelKey: 'about', routeKey: 'order' },
-      { labelKey: 'history', routeKey: 'history' },
-      { labelKey: 'purposes', routeKey: 'purposes' },
-      { labelKey: 'teachings', routeKey: 'teachings' },
+      { labelKey: 'missionVisionValues', routeKey: 'purposes' },
+      { labelKey: 'institutionalInfo', routeKey: 'informacoes' },
     ],
   },
-  {
-    labelKey: 'initiatives',
-    routeKey: 'initiatives',
-    children: [
-      { labelKey: 'environment', routeKey: 'initiativeEnvironment' },
-      { labelKey: 'sport', routeKey: 'initiativeSport' },
-      { labelKey: 'health', routeKey: 'initiativeHealth' },
-      { labelKey: 'education', routeKey: 'initiativeEducation' },
-    ],
-  },
-  {
-    labelKey: 'knowledge',
-    routeKey: 'knowledge',
-    children: [
-      { labelKey: 'lectures', routeKey: 'lectures' },
-      { labelKey: 'studies', routeKey: 'studies' },
-      { labelKey: 'articles', routeKey: 'articles' },
-    ],
-  },
-  { labelKey: 'events', routeKey: 'events' },
-  { labelKey: 'citiesDay', routeKey: 'citiesDay' },
+  { labelKey: 'history', routeKey: 'history' },
+  { labelKey: 'coatOfArms', routeKey: 'brasao' },
+  { labelKey: 'academy', routeKey: 'abtl' },
+  { labelKey: 'templarLadies', routeKey: 'damas' },
+  { labelKey: 'initiatives', routeKey: 'initiatives' },
+  { labelKey: 'contact', routeKey: 'contact' },
 ];
 
 /** Secondary links (may live in the header utility area and the footer). */
 export const secondaryNav: NavItem[] = [
-  { labelKey: 'donations', routeKey: 'donations' },
   { labelKey: 'faq', routeKey: 'faq' },
   { labelKey: 'contact', routeKey: 'contact' },
 ];
@@ -61,10 +51,12 @@ export const footerColumns: { titleKey: keyof Dictionary['footer']; items: NavCh
     titleKey: 'institutionalTitle',
     items: [
       { labelKey: 'about', routeKey: 'order' },
+      { labelKey: 'missionVisionValues', routeKey: 'purposes' },
       { labelKey: 'history', routeKey: 'history' },
-      { labelKey: 'purposes', routeKey: 'purposes' },
-      { labelKey: 'teachings', routeKey: 'teachings' },
-      { labelKey: 'affiliation', routeKey: 'affiliation' },
+      { labelKey: 'coatOfArms', routeKey: 'brasao' },
+      { labelKey: 'academy', routeKey: 'abtl' },
+      { labelKey: 'templarLadies', routeKey: 'damas' },
+      { labelKey: 'institutionalInfo', routeKey: 'informacoes' },
     ],
   },
   {
@@ -74,6 +66,10 @@ export const footerColumns: { titleKey: keyof Dictionary['footer']; items: NavCh
       { labelKey: 'sport', routeKey: 'initiativeSport' },
       { labelKey: 'health', routeKey: 'initiativeHealth' },
       { labelKey: 'education', routeKey: 'initiativeEducation' },
+      { labelKey: 'social', routeKey: 'initiativeSocial' },
+      { labelKey: 'culture', routeKey: 'initiativeCulture' },
+      { labelKey: 'heraldry', routeKey: 'initiativeHeraldry' },
+      { labelKey: 'civicMemory', routeKey: 'initiativeCivicMemory' },
     ],
   },
   {

@@ -18,7 +18,7 @@ import { tx } from '@/content/localize';
 import { getDictionary } from '@/i18n/dictionaries';
 import { localizedPath, type Locale } from '@/i18n';
 import { isUpcoming } from '@/utils/date';
-import { site } from '@/config/site';
+
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 interface Props {
@@ -35,12 +35,10 @@ const metaDescription = dict.meta.defaultDescription;
 
 /** Mission pillars: copy lives in the dictionary, icons here. */
 const pillars: { key: keyof typeof home.purposes.pillars; icon: IconName }[] = [
-  { key: 'education', icon: 'graduation' },
-  { key: 'health', icon: 'heart-pulse' },
-  { key: 'environment', icon: 'leaf' },
-  { key: 'justice', icon: 'compass' },
-  { key: 'cooperation', icon: 'hand-heart' },
-  { key: 'culture', icon: 'book' },
+  { key: 'mission', icon: 'compass' },
+  { key: 'vision', icon: 'shield' },
+  { key: 'values', icon: 'heart-pulse' },
+  { key: 'motto', icon: 'scroll' },
 ];
 
 const upcomingEvents = events.filter((e) => isUpcoming(e.date)).slice(0, 3);
@@ -209,7 +207,11 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
           icon={initiative.icon}
           routeKey={initiative.routeKey}
           cta={home.initiatives.cardCta}
-          image={`/img/iniciativas/${initiative.id}.svg`}
+          image={
+            ['environment', 'sport', 'health', 'education'].includes(initiative.id)
+              ? `/img/iniciativas/${initiative.id}.svg`
+              : undefined
+          }
           imageAlt={tx(initiative.name, locale)}
         />
       ))
@@ -288,7 +290,7 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
             summary={tx(event.summary, locale)}
             date={event.date}
             location={tx(event.location, locale)}
-            url={event.url ?? site.eventsPlatformUrl}
+            url={event.url ?? localizedPath(locale, 'contact')}
             dateLabel={home.events.dateLabel}
             locationLabel={home.events.locationLabel}
             cta={home.events.ctaAll}
