@@ -6,11 +6,11 @@ import type { Dictionary } from './pt';
  */
 export const en: DeepPartial<Widen<Dictionary>> = {
   meta: {
-    siteName: 'Order of the Knights Templar',
-    shortName: 'OSMTH Brazil',
-    tagline: 'Tradition, knowledge and service to others.',
+    siteName: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
+    shortName: "OICMCTB",
+    tagline: "CREARE FUTURUM MUTATO MODO — To create the future in a different way.",
     defaultDescription:
-      'The Order of the Knights Templar (OSMTH Brazil) preserves a centuries-old tradition and places it at the service of enduring values: ethics, fraternity, education, health and service to society.',
+      "The International Civil Military Order of Knights Templar of Brazil (OICMCTB) is a Brazilian non-profit civil organisation of a fraternal, cultural, philosophical, civic and philanthropic character, dedicated to chivalric values, human development, culture and the common good.",
     ogLocale: 'en_US',
   },
 
@@ -27,7 +27,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     breadcrumb: 'You are at',
     onThisPage: 'On this page',
     scrollHint: 'Continue',
-    underlineMotif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
+    underlineMotif: 'CREARE FUTURUM MUTATO MODO',
     imageCredit: 'Image',
     loading: 'Loading',
   },
@@ -41,8 +41,8 @@ export const en: DeepPartial<Widen<Dictionary>> = {
   nav: {
     label: 'Main navigation',
     order: 'Order',
-    initiatives: 'Initiatives',
-    knowledge: 'Knowledge',
+    initiatives: "Culture and Social Action",
+    knowledge: "Culture and Knowledge",
     events: 'Events',
     citiesDay: 'Day of Cities',
     donations: 'Donations',
@@ -52,7 +52,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     shop: 'Shop',
     tv: 'Templar TV',
     about: 'About Us',
-    history: 'History',
+    history: "History and Coat of Arms",
     purposes: 'Purposes',
     teachings: 'Teachings',
     environment: 'Environment',
@@ -69,9 +69,9 @@ export const en: DeepPartial<Widen<Dictionary>> = {
   },
 
   footer: {
-    aboutTitle: 'Order of the Knights Templar',
+    aboutTitle: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
     aboutText:
-      'A fraternity that preserves the Templar tradition and places it at the service of contemporary society — through ethics, study, fraternity and charity.',
+      "A Brazilian non-profit civil organisation of a fraternal, cultural, philosophical, civic and philanthropic character, with its own identity and autonomy, dedicated to chivalric values, culture and the common good.",
     navTitle: 'Navigation',
     institutionalTitle: 'Institutional',
     initiativesTitle: 'Initiatives',
@@ -84,11 +84,11 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     terms: 'Terms of Use',
     cookies: 'Cookies',
     rights: 'All rights reserved.',
-    motif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
+    motif: 'CREARE FUTURUM MUTATO MODO',
   },
 
   a11y: {
-    logoAlt: 'Emblem of the Order of the Knights Templar',
+    logoAlt: "Coat of arms of the OICMCTB",
     decorative: 'Decorative element',
     externalLink: 'Opens in a new tab',
     requiredField: 'required field',
@@ -117,11 +117,13 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     consent: 'I authorise the use of my data to respond to this enquiry.',
     requiredNote: 'Fields marked with * are required.',
     selectPlaceholder: 'Select',
+    mailSubject: 'Message via the OICMCTB website',
+    mailOpening: 'Opening your e-mail program…',
   },
 
   home: {
     hero: {
-      kicker: 'Order of the Knights Templar',
+      kicker: 'OICMCTB',
       title: 'A tradition of centuries at the service of values that remain current.',
       lead: 'Tradition, knowledge and service to others.',
       intro:
@@ -171,14 +173,14 @@ export const en: DeepPartial<Widen<Dictionary>> = {
       kicker: 'About the Order',
       title: 'Who we are',
       lead: 'An Order of Knights of the Temple — not Masonic — bringing together men and women around ethics, knowledge and service.',
-      body: 'The Order of the Knights Templar seeks to gather tolerant people of goodwill, who love justice and nobility of character, who wish to be useful to others and who truly understand the meaning of the word fraternity.',
+      body: 'The OICMCTB seeks to gather tolerant people of goodwill, who love justice and nobility of character, who wish to be useful to others and who truly understand the meaning of the word fraternity.',
       highlights: {
         identity: 'Identity',
-        identityText: 'An ecclesiastical and ecumenical Order, identified by the same double-bar cross and the ancient motto of the Order.',
+        identityText: "A Brazilian non-profit civil organisation of a fraternal, cultural, philosophical, civic and philanthropic character, with its own identity and autonomy.",
         origin: 'Origin',
-        originText: 'Linked to the OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — whose Mother Order is seated in Porto, Portugal.',
+        originText: "The institution was formally incorporated as a legal entity in 2021. Its Grand Master is Roberto Aguiar Guazzelli.",
         values: 'Values',
-        valuesText: 'Ethics, fraternity, justice, charity, education and the defence of human dignity.',
+        valuesText: "Faith in God, Hope, Charity, Justice, Prudence, Fortitude and Temperance.",
         today: 'Today',
         todayText: 'Studies, mutual aid and social initiatives in education, health, sport and the environment.',
       },
@@ -265,7 +267,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
         },
       },
       ctaPrimary: 'I want to contribute',
-      ctaSecondary: 'Understand how income tax deduction works',
+      ctaSecondary: 'Contact us',
     },
     events: {
       kicker: 'Agenda',
@@ -315,9 +317,9 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     order: {
       kicker: 'The Order',
       title: 'Who We Are',
-      lead: 'A true Ecclesiastical Order of Knights Templar, affiliated to its Mother Order seated in Porto, Portugal.',
+      lead: "A Brazilian non-profit civil organisation of a fraternal, cultural, philosophical, civic and philanthropic character, with its own identity and autonomy.",
       intro:
-        'The Order of the Knights Templar is an Order of Knights of the Temple — it is therefore not a Masonic Order, nor connected to one, except historically.',
+        'The OICMCTB is an Order of Knights of the Temple — it is therefore not a Masonic Order, nor connected to one, except historically.',
     },
     history: {
       kicker: 'Journey',
@@ -327,7 +329,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     purposes: {
       kicker: 'Mission',
       title: 'Purposes',
-      lead: 'The purposes of the Order of the Knights Templar are clothed in nobility with the white cloak of virtue.',
+      lead: 'The purposes of the OICMCTB are clothed in nobility with the white cloak of virtue.',
     },
     teachings: {
       kicker: 'Studies',
@@ -362,7 +364,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     affiliation: {
       kicker: 'Join us',
       title: 'Affiliation',
-      lead: 'The mystic and secular Order of the Knights Templar is opening its doors to you.',
+      lead: 'The OICMCTB is opening its doors to you.',
     },
     faq: {
       kicker: 'Questions',
@@ -387,7 +389,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     categories: {
       about: 'About the Order',
       affiliation: 'Affiliation',
-      events: 'Events',
+      events: "Participation in institutional life, as guided by the Order.",
       donations: 'Donations',
     },
     ctaTitle: 'Didn’t find your answer?',
@@ -398,10 +400,10 @@ export const en: DeepPartial<Widen<Dictionary>> = {
   affiliation: {
     purposeTitle: 'Why affiliate',
     purposeText:
-      'The purpose of the Order is to have a society of Knights Templar with the same standard of nobility and virtue as the traditional Order of the Knights Templar, maintaining an effective programme of mutual aid.',
+      'The purpose of the Order is to have a society of Knights Templar with the same standard of nobility and virtue as the traditional OICMCTB, maintaining an effective programme of mutual aid.',
     whoTitle: 'Who may affiliate',
     whoText:
-      'People of both sexes, imbued with the purpose of restoring values that have fallen into oblivion and building a free and just world. We seek free people of good habits, devoted to family and correct in their conduct towards others.',
+      "Confirmed guidance on participation is provided by the Order to those who express interest through the form. We do not publish unconfirmed admission rules, benefits or contributions.",
     processTitle: 'How the process works',
     steps: {
       one: { title: 'Discover the Order', text: 'Read about our identity, history and purposes before any decision.' },
@@ -411,17 +413,17 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     },
     benefitsTitle: 'Benefits',
     benefits: {
-      study: 'Access to the studies and teachings of the Order.',
-      fraternity: 'Fraternity and mutual aid among members.',
+      study: "Study, culture and preservation of historical memory.",
+      fraternity: "Fraternity and service to the common good.",
       events: 'Participation in events and ceremonies.',
-      growth: 'Opportunities for personal and cultural development.',
+      growth: "Human and cultural development.",
     },
     responsibilitiesTitle: 'Responsibilities',
     responsibilitiesText:
-      'A member must seek their own moral and intellectual improvement, devote discipline to study and contribute the fees and monthly dues that sustain the Order.',
+      "Participants are invited to live the Order’s values — Faith in God, Hope, Charity, Justice, Prudence, Fortitude and Temperance — with humility, sincerity and service to the common good. Specific conditions, where they exist, are communicated directly by the Order.",
     feesTitle: 'Registration fee and monthly dues',
     feesText:
-      'The Order is strictly a fraternity. There are monthly contributions and an individual registration fee, directed to a general operating fund, to humanitarian and charitable activities and to the research of the Order. There are no other mandatory charges.',
+      "Information about any contributions is provided directly by the Order, after official confirmation. No amount is published on this site without proof.",
     feeRegistrationLabel: 'Registration fee',
     feeMonthlyLabel: 'Minimum monthly contribution',
     formTitle: 'Affiliation request',
@@ -443,10 +445,6 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     howText:
       'Contact the Order to receive the guidance and details needed to make your donation securely.',
     howCta: 'I want to contribute',
-    irpfTitle: 'Income tax deduction',
-    irpfText:
-      'Information about possible income tax deductions must follow exclusively the rules and official information provided by the Order, based on its own legal and accounting advice.',
-    irpfCta: 'Understand how income tax deduction works',
     legalNote:
       'The Order does not provide tax advice. Always consult the official rules and a qualified professional.',
   },
@@ -459,8 +457,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     purposeText:
       'To gather the community around values that remain current: ethics, solidarity, culture and citizenship.',
     howTitle: 'How it works',
-    howText:
-      'Together with local partners, the Order organises a programme of activities and gatherings open to the city community.',
+    howText: 'Any edition is only announced after official confirmation by the Order, with city, date and programme defined.',
     whyTitle: 'Why it exists',
     whyText: 'Because a tradition stays alive only when it translates into concrete service to society.',
     participateTitle: 'How a city can take part',
@@ -473,6 +470,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
 
   events: {
     upcomingTitle: 'Upcoming events',
+    pastTitle: "Past events",
     platformNote: 'Registration and the full agenda are kept on our external events platform.',
     ctaPlatform: 'See all events',
     emptyState: 'No events announced at the moment.',
@@ -503,7 +501,7 @@ export const en: DeepPartial<Widen<Dictionary>> = {
     cookiesTitle: 'Cookies',
     updatedLabel: 'Last updated',
     placeholderNote:
-      'This document is an initial template and must be reviewed and completed by the Order with the official legal text.',
+      "To request the current version of this document, contact us at the institutional e-mail oicmctb@gmail.com. The official legal text will be published after validation by those responsible.",
   },
 
   notFound: {

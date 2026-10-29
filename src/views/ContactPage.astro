@@ -40,28 +40,24 @@ const path = localizedPath(locale, 'contact');
       <div class="lg:col-span-5">
         <h2 class="!text-2xl">{dict.contact.infoTitle}</h2>
         <ul class="mt-6 flex flex-col gap-6">
-          <li class="flex gap-4">
-            <span class="mt-0.5 text-gold-600" aria-hidden="true">
-              <Icon name="map-pin" size={22} />
-            </span>
-            <div>
-              <h3 class="font-display text-base font-semibold text-ink-900">
-                {dict.contact.addressLabel}
-              </h3>
-              <address class="mt-1 not-italic text-ink-600">{contactAddressLine}</address>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="mt-0.5 text-gold-600" aria-hidden="true">
-              <Icon name="phone" size={22} />
-            </span>
-            <div>
-              <h3 class="font-display text-base font-semibold text-ink-900">
-                {dict.contact.phoneLabel}
-              </h3>
-              <a href={site.phoneHref} class="link-quiet mt-1 inline-block">{site.phone}</a>
-            </div>
-          </li>
+          {contactAddressLine && (
+            <li class="flex gap-4">
+              <span class="mt-0.5 text-gold-600" aria-hidden="true"><Icon name="map-pin" size={22} /></span>
+              <div>
+                <h3 class="font-display text-base font-semibold text-ink-900">{dict.contact.addressLabel}</h3>
+                <address class="mt-1 not-italic text-ink-600">{contactAddressLine}</address>
+              </div>
+            </li>
+          )}
+          {site.phone && site.phoneHref && (
+            <li class="flex gap-4">
+              <span class="mt-0.5 text-gold-600" aria-hidden="true"><Icon name="phone" size={22} /></span>
+              <div>
+                <h3 class="font-display text-base font-semibold text-ink-900">{dict.contact.phoneLabel}</h3>
+                <a href={site.phoneHref} class="link-quiet mt-1 inline-block">{site.phone}</a>
+              </div>
+            </li>
+          )}
           <li class="flex gap-4">
             <span class="mt-0.5 text-gold-600" aria-hidden="true">
               <Icon name="mail" size={22} />

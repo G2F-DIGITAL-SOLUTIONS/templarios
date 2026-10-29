@@ -49,7 +49,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://www.exemplo.org');
+const siteUrl = Astro.site ?? new URL('https://templariosdobrasil.com');
 const canonical = new URL(path, siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
 const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
@@ -67,16 +67,9 @@ const baseGraph = {
       alternateName: dict.meta.shortName,
       url: siteUrl.origin,
       logo: new URL('/emblema.svg', siteUrl).href,
+      // Only the confirmed institutional e-mail is published. Address and
+      // telephone stay out of structured data until officially confirmed.
       email: site.email,
-      telephone: `+55 ${site.phone}`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: site.address.street,
-        addressLocality: site.address.city,
-        addressRegion: site.address.region,
-        postalCode: site.address.postalCode,
-        addressCountry: site.address.country,
-      },
     },
     {
       '@type': 'WebSite',

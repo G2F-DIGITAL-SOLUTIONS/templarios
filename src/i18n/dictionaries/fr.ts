@@ -4,11 +4,11 @@ import type { Dictionary } from './pt';
 /** French dictionary. Omitted keys fall back to Portuguese. */
 export const fr: DeepPartial<Widen<Dictionary>> = {
   meta: {
-    siteName: 'Ordre des Chevaliers Templiers',
-    shortName: 'OSMTH Brésil',
-    tagline: 'Tradition, connaissance et service au prochain.',
+    siteName: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
+    shortName: "OICMCTB",
+    tagline: "CREARE FUTURUM MUTATO MODO — Créer l'avenir d'une manière différente.",
     defaultDescription:
-      "L'Ordre des Chevaliers Templiers (OSMTH Brésil) préserve une tradition séculaire et la met au service de valeurs toujours actuelles : éthique, fraternité, éducation, santé et service à la société.",
+      "L'Ordre International Civil Militaire des Chevaliers Templiers du Brésil (OICMCTB) est une organisation civile brésilienne à but non lucratif, à caractère fraternel, culturel, philosophique, civique et philanthropique, dédiée aux valeurs chevaleresques, au développement humain, à la culture et au bien commun.",
     ogLocale: 'fr_FR',
   },
 
@@ -26,6 +26,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     onThisPage: 'Sur cette page',
     scrollHint: 'Continuer',
     imageCredit: 'Image',
+    underlineMotif: 'CREARE FUTURUM MUTATO MODO',
     loading: 'Chargement',
   },
 
@@ -38,8 +39,8 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
   nav: {
     label: 'Navigation principale',
     order: 'Ordre',
-    initiatives: 'Initiatives',
-    knowledge: 'Connaissance',
+    initiatives: "Culture et Action Sociale",
+    knowledge: "Culture et Connaissance",
     events: 'Événements',
     citiesDay: 'Jour des Villes',
     donations: 'Dons',
@@ -49,7 +50,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     shop: 'Boutique',
     tv: 'TV Templiers',
     about: 'Qui Sommes-Nous',
-    history: 'Histoire',
+    history: "Histoire et Armoiries",
     purposes: 'Propos',
     teachings: 'Enseignements',
     environment: 'Environnement',
@@ -66,9 +67,9 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
   },
 
   footer: {
-    aboutTitle: 'Ordre des Chevaliers Templiers',
+    aboutTitle: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
     aboutText:
-      "Une fraternité qui préserve la tradition templière et la met au service de la société contemporaine — par l'éthique, l'étude, la fraternité et la charité.",
+      "Organisation civile brésilienne à but non lucratif, à caractère fraternel, culturel, philosophique, civique et philanthropique, dotée d'une identité et d'une autonomie propres, dédiée aux valeurs chevaleresques, à la culture et au bien commun.",
     navTitle: 'Navigation',
     institutionalTitle: 'Institutionnel',
     initiativesTitle: 'Initiatives',
@@ -81,10 +82,11 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     terms: "Conditions d'Utilisation",
     cookies: 'Cookies',
     rights: 'Tous droits réservés.',
+    motif: 'CREARE FUTURUM MUTATO MODO',
   },
 
   a11y: {
-    logoAlt: "Blason de l'Ordre des Chevaliers Templiers",
+    logoAlt: "Armoiries de l'OICMCTB",
     decorative: 'Élément décoratif',
     externalLink: 'S’ouvre dans un nouvel onglet',
     requiredField: 'champ obligatoire',
@@ -100,6 +102,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     state: 'Région / État',
     message: 'Message',
     subject: 'Objet',
+    cpf: 'CPF',
     birthDate: 'Date de naissance',
     maritalStatus: 'Situation familiale',
     address: 'Adresse de résidence complète',
@@ -112,11 +115,13 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     consent: "J'autorise l'utilisation de mes données pour répondre à cette demande.",
     requiredNote: 'Les champs marqués d’un * sont obligatoires.',
     selectPlaceholder: 'Sélectionner',
+    mailSubject: 'Message via le site de l’OICMCTB',
+    mailOpening: 'Ouverture de votre programme de messagerie…',
   },
 
   home: {
     hero: {
-      kicker: 'Ordre des Chevaliers Templiers',
+      kicker: 'OICMCTB',
       title: 'Une tradition séculaire au service de valeurs toujours actuelles.',
       lead: 'Tradition, connaissance et service au prochain.',
       intro:
@@ -142,14 +147,14 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
       kicker: "À propos de l'Ordre",
       title: 'Qui sommes-nous',
       lead: 'Un Ordre de Chevaliers du Temple — non maçonnique — qui réunit hommes et femmes autour de l’éthique, de la connaissance et du service.',
-      body: "L'Ordre des Chevaliers Templiers cherche à réunir des personnes tolérantes et de bonne volonté, aimant la justice et la noblesse de caractère, désireuses d'être utiles aux autres et comprenant véritablement le sens du mot fraternité.",
+      body: "L'OICMCTB cherche à réunir des personnes tolérantes et de bonne volonté, aimant la justice et la noblesse de caractère, désireuses d'être utiles aux autres et comprenant véritablement le sens du mot fraternité.",
       highlights: {
         identity: 'Identité',
-        identityText: "Un Ordre ecclésiastique et œcuménique, reconnaissable à la même croix à double barre et à l'ancienne devise de l'Ordre.",
+        identityText: "Organisation civile brésilienne à but non lucratif, à caractère fraternel, culturel, philosophique, civique et philanthropique, dotée d'une identité et d'une autonomie propres.",
         origin: 'Origine',
-        originText: "Lié à l'OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — dont l'Ordre Mère siège à Porto, au Portugal.",
+        originText: "L'institution a été formalisée comme personne juridique en 2021. Son Grand Maître est Roberto Aguiar Guazzelli.",
         values: 'Valeurs',
-        valuesText: "Éthique, fraternité, justice, charité, éducation et défense de la dignité humaine.",
+        valuesText: "Foi en Dieu, Espérance, Charité, Justice, Prudence, Force et Tempérance.",
         today: "Aujourd'hui",
         todayText: "Études, entraide et initiatives sociales en éducation, santé, sport et environnement.",
       },
@@ -197,7 +202,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
         impact: { title: 'Impact social', text: 'Soutenir des initiatives en éducation, santé, sport et environnement au bénéfice de la communauté.' },
       },
       ctaPrimary: 'Je veux contribuer',
-      ctaSecondary: 'Comprendre la déduction fiscale',
+      ctaSecondary: 'Contactez-nous',
     },
     events: {
       kicker: 'Agenda',
@@ -242,12 +247,12 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     order: {
       kicker: "L'Ordre",
       title: 'Qui Sommes-Nous',
-      lead: "Un véritable Ordre Ecclésiastique de Chevaliers Templiers, affilié à son Ordre Mère sis à Porto, au Portugal.",
+      lead: "Organisation civile brésilienne à but non lucratif, à caractère fraternel, culturel, philosophique, civique et philanthropique, dotée d'une identité et d'une autonomie propres.",
       intro:
-        "L'Ordre des Chevaliers Templiers est un Ordre de Chevaliers du Temple — il n'est donc pas un Ordre maçonnique, ni lié à celui-ci, sauf historiquement.",
+        "L'OICMCTB est un Ordre de Chevaliers du Temple — il n'est donc pas un Ordre maçonnique, ni lié à celui-ci, sauf historiquement.",
     },
     history: { kicker: 'Parcours', title: 'Histoire', lead: 'Le parcours de la tradition templière, des origines médiévales à son expression contemporaine.' },
-    purposes: { kicker: 'Mission', title: 'Propos', lead: "Les propos de l'Ordre des Chevaliers Templiers sont revêtus de noblesse avec le manteau blanc de la vertu." },
+    purposes: { kicker: 'Mission', title: 'Propos', lead: "Les propos de l'OICMCTB sont revêtus de noblesse avec le manteau blanc de la vertu." },
     teachings: { kicker: 'Études', title: 'Enseignements', lead: "Nous travaillons les études templières vers un objectif commun : l'amélioration de notre caractère." },
     initiatives: { kicker: "L'Ordre en action", title: 'Initiatives', lead: "Les domaines dans lesquels l'Ordre contribue à la société contemporaine." },
     events: { kicker: 'Agenda', title: 'Événements', lead: "Suivez les événements et activités de l'Ordre." },
@@ -279,7 +284,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
       "Le but de l'Ordre est d'avoir une société de Chevaliers Templiers avec le même niveau de noblesse et de vertu que l'Ordre traditionnel des Chevaliers Templiers, en maintenant un programme efficace d'entraide.",
     whoTitle: 'Qui peut s’affilier',
     whoText:
-      "Des personnes des deux sexes, animées du propos de restaurer des valeurs tombées dans l'oubli et de construire un monde libre et juste.",
+      "Les orientations confirmées sur la participation sont fournies par l’Ordre aux personnes qui manifestent leur intérêt via le formulaire. Nous ne publions pas de règles d’admission, d’avantages ou de contributions non confirmés.",
     processTitle: 'Comment se déroule le processus',
     steps: {
       one: { title: "Découvrir l'Ordre", text: 'Lisez notre identité, notre histoire et nos propos avant toute décision.' },
@@ -289,17 +294,17 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     },
     benefitsTitle: 'Avantages',
     benefits: {
-      study: "Accès aux études et aux enseignements de l'Ordre.",
-      fraternity: 'Fraternité et entraide entre les membres.',
-      events: 'Participation aux événements et cérémonies.',
-      growth: 'Opportunités de développement personnel et culturel.',
+      study: "Étude, culture et préservation de la mémoire historique.",
+      fraternity: "Fraternité et service du bien commun.",
+      events: "Participation à la vie institutionnelle, selon les orientations de l’Ordre.",
+      growth: "Développement humain et culturel.",
     },
     responsibilitiesTitle: 'Responsabilités',
     responsibilitiesText:
-      "Le membre doit rechercher son propre perfectionnement moral et intellectuel, consacrer de la discipline à l'étude et contribuer aux frais et cotisations qui soutiennent l'Ordre.",
+      "Les participants sont invités à vivre les valeurs de l’Ordre — Foi en Dieu, Espérance, Charité, Justice, Prudence, Force et Tempérance — avec humilité, sincérité et service du bien commun. Les conditions spécifiques, le cas échéant, sont communiquées directement par l’Ordre.",
     feesTitle: "Frais d'inscription et cotisation mensuelle",
     feesText:
-      "L'Ordre est strictement une fraternité. Il existe des contributions mensuelles et des frais d'inscription individuels, destinés à un fonds général de fonctionnement, à des activités humanitaires et caritatives et aux recherches de l'Ordre.",
+      "Les informations sur d’éventuelles contributions sont fournies directement par l’Ordre, après confirmation officielle. Aucun montant n’est publié sur ce site sans preuve.",
     feeRegistrationLabel: "Frais d'inscription",
     feeMonthlyLabel: 'Contribution mensuelle minimale',
     formTitle: "Demande d'affiliation",
@@ -320,10 +325,6 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     howTitle: 'Comment donner',
     howText: "Contactez l'Ordre pour recevoir les indications et les informations nécessaires pour donner en toute sécurité.",
     howCta: 'Je veux contribuer',
-    irpfTitle: 'Déduction fiscale',
-    irpfText:
-      "Les informations sur une éventuelle déduction fiscale doivent respecter exclusivement les règles et les informations officielles fournies par l'Ordre.",
-    irpfCta: 'Comprendre la déduction fiscale',
     legalNote: "L'Ordre ne fournit pas de conseil fiscal. Consultez toujours les règles officielles et un professionnel qualifié.",
   },
 
@@ -346,6 +347,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
 
   events: {
     upcomingTitle: 'Prochains événements',
+    pastTitle: "Événements passés",
     platformNote: "L'inscription et l'agenda complet sont tenus sur notre plateforme d'événements externe.",
     ctaPlatform: 'Voir tous les événements',
     emptyState: 'Aucun événement annoncé pour le moment.',
@@ -376,7 +378,7 @@ export const fr: DeepPartial<Widen<Dictionary>> = {
     cookiesTitle: 'Cookies',
     updatedLabel: 'Dernière mise à jour',
     placeholderNote:
-      "Ce document est un modèle initial et doit être revu et complété par l'Ordre avec le texte juridique officiel.",
+      "Pour demander la version en vigueur de ce document, contactez-nous à l’e-mail institutionnel oicmctb@gmail.com. Le texte juridique officiel sera publié après validation par les responsables.",
   },
 
   notFound: {

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Change this to the final production domain before deploy.
-const SITE = 'https://www.exemplo.org';
+const SITE = 'https://templariosdobrasil.com';
 
 // Set by docker-compose so the dev server is reachable through the published port.
 const port = Number(process.env.PORT || 6000);

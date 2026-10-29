@@ -11,5 +11,7 @@ scripts:
   reset:
     - kool run npm install
 
-  build: kool exec app npm run build
-  check: kool exec app npm run check
+  # Same one-off container as `kool run npm` — works without `kool start`,
+  # as long as bind-mounted files aren't root-owned (see ASUSER in compose).
+  build: kool run npm run build
+  check: kool run npm run check

@@ -37,18 +37,15 @@ const past = events.filter((e) => !isUpcoming(e.date));
   <Section>
     <div class="flex flex-wrap items-start justify-between gap-6">
       <h2>{dict.events.upcomingTitle}</h2>
-      <a
-        href={site.eventsPlatformUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-primary"
-      >
-        {dict.events.ctaPlatform}
-        <Icon name="arrow-up-right" size={17} />
-      </a>
+      {site.eventsPlatformUrl && (
+        <a href={site.eventsPlatformUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          {dict.events.ctaPlatform}
+          <Icon name="arrow-up-right" size={17} />
+        </a>
+      )}
     </div>
 
-    <p class="mt-3 max-w-2xl text-sm text-stone-500">{dict.events.platformNote}</p>
+    {site.eventsPlatformUrl && <p class="mt-3 max-w-2xl text-sm text-stone-500">{dict.events.platformNote}</p>}
 
     {
       upcoming.length > 0 ? (
@@ -60,7 +57,7 @@ const past = events.filter((e) => !isUpcoming(e.date));
               summary={tx(event.summary, locale)}
               date={event.date}
               location={tx(event.location, locale)}
-              url={event.url ?? site.eventsPlatformUrl}
+              url={event.url ?? (site.eventsPlatformUrl || undefined)}
               dateLabel={dict.home.events.dateLabel}
               locationLabel={dict.home.events.locationLabel}
               cta={dict.events.ctaPlatform}

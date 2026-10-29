@@ -14,17 +14,18 @@ export interface NavItem {
 }
 
 /** Primary navigation — mirrors the proposed information architecture. */
+/** Consolidated IA (AUDIT.md §4): Início · A Ordem · História e Brasão · Cultura e Atuação Social · Participar e Contato. */
 export const primaryNav: NavItem[] = [
   {
     labelKey: 'order',
     routeKey: 'order',
     children: [
       { labelKey: 'about', routeKey: 'order' },
-      { labelKey: 'history', routeKey: 'history' },
       { labelKey: 'purposes', routeKey: 'purposes' },
       { labelKey: 'teachings', routeKey: 'teachings' },
     ],
   },
+  { labelKey: 'history', routeKey: 'history' },
   {
     labelKey: 'initiatives',
     routeKey: 'initiatives',
@@ -33,19 +34,21 @@ export const primaryNav: NavItem[] = [
       { labelKey: 'sport', routeKey: 'initiativeSport' },
       { labelKey: 'health', routeKey: 'initiativeHealth' },
       { labelKey: 'education', routeKey: 'initiativeEducation' },
-    ],
-  },
-  {
-    labelKey: 'knowledge',
-    routeKey: 'knowledge',
-    children: [
       { labelKey: 'lectures', routeKey: 'lectures' },
       { labelKey: 'studies', routeKey: 'studies' },
       { labelKey: 'articles', routeKey: 'articles' },
     ],
   },
-  { labelKey: 'events', routeKey: 'events' },
-  { labelKey: 'citiesDay', routeKey: 'citiesDay' },
+  {
+    labelKey: 'contact',
+    routeKey: 'contact',
+    children: [
+      { labelKey: 'affiliation', routeKey: 'affiliation' },
+      { labelKey: 'faq', routeKey: 'faq' },
+      { labelKey: 'donations', routeKey: 'donations' },
+      { labelKey: 'events', routeKey: 'events' },
+    ],
+  },
 ];
 
 /** Secondary links (may live in the header utility area and the footer). */
@@ -79,11 +82,10 @@ export const footerColumns: { titleKey: keyof Dictionary['footer']; items: NavCh
   {
     titleKey: 'knowledgeTitle',
     items: [
-      { labelKey: 'lectures', routeKey: 'lectures' },
-      { labelKey: 'studies', routeKey: 'studies' },
-      { labelKey: 'articles', routeKey: 'articles' },
-      { labelKey: 'events', routeKey: 'events' },
-      { labelKey: 'citiesDay', routeKey: 'citiesDay' },
+      { labelKey: 'affiliation', routeKey: 'affiliation' },
+      { labelKey: 'faq', routeKey: 'faq' },
+      { labelKey: 'donations', routeKey: 'donations' },
+      { labelKey: 'contact', routeKey: 'contact' },
     ],
   },
 ];

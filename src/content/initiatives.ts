@@ -1,125 +1,14 @@
 import type { RouteKey } from '@/i18n/routes';
 import type { Localized } from './localize';
 
-export interface Initiative {
-  id: string;
-  routeKey: RouteKey;
-  /** Lucide-style icon key resolved by the Icon component. */
-  icon: 'leaf' | 'trophy' | 'heart-pulse' | 'graduation';
-  name: Localized<string>;
-  tagline: Localized<string>;
-  description: Localized<string>;
-  /** Concrete areas of action described in the institutional spirit of the Order. */
-  focus: { pt: string[]; en?: string[] };
-}
+export interface Initiative { id: string; routeKey: RouteKey; icon: 'leaf' | 'trophy' | 'heart-pulse' | 'graduation'; name: Localized<string>; tagline: Localized<string>; description: Localized<string>; focus: Localized<string[]>; }
 
+/** Areas presented as institutional goals/fields — not as proven results, projects, beneficiaries or partnerships (see AUDIT.md). */
 export const initiatives: Initiative[] = [
-  {
-    id: 'environment',
-    routeKey: 'initiativeEnvironment',
-    icon: 'leaf',
-    name: { pt: 'Meio Ambiente', en: 'Environment' },
-    tagline: {
-      pt: 'Respeito e cuidado com a comunidade da vida.',
-      en: 'Respect and care for the community of life.',
-    },
-    description: {
-      pt: 'Projetos, ações e iniciativas relacionadas à preservação ambiental e ao respeito à Terra e à diversidade da vida.',
-      en: 'Projects, actions and initiatives related to environmental preservation and to respect for the Earth and the diversity of life.',
-    },
-    focus: {
-      pt: [
-        'Conscientização ambiental junto às comunidades.',
-        'Apoio a projetos de preservação e recuperação de áreas naturais.',
-        'Educação para o respeito à Terra e à diversidade.',
-      ],
-      en: [
-        'Environmental awareness within communities.',
-        'Support for projects preserving and restoring natural areas.',
-        'Education for respect of the Earth and diversity.',
-      ],
-    },
-  },
-  {
-    id: 'sport',
-    routeKey: 'initiativeSport',
-    icon: 'trophy',
-    name: { pt: 'Esporte', en: 'Sport' },
-    tagline: {
-      pt: 'O esporte como caminho de integração e desenvolvimento.',
-      en: 'Sport as a path of integration and development.',
-    },
-    description: {
-      pt: 'Incentivo ao esporte, à integração social e ao desenvolvimento humano, especialmente entre jovens e comunidades.',
-      en: 'Encouragement of sport, social integration and human development, especially among young people and communities.',
-    },
-    focus: {
-      pt: [
-        'Incentivo à prática esportiva como disciplina e formação.',
-        'Apoio a iniciativas de integração social por meio do esporte.',
-        'Valorização do desenvolvimento humano e do trabalho em equipe.',
-      ],
-      en: [
-        'Encouraging sport as discipline and formation.',
-        'Supporting social-integration initiatives through sport.',
-        'Valuing human development and teamwork.',
-      ],
-    },
-  },
-  {
-    id: 'health',
-    routeKey: 'initiativeHealth',
-    icon: 'heart-pulse',
-    name: { pt: 'Saúde', en: 'Health' },
-    tagline: {
-      pt: 'Bem-estar e dignidade das pessoas.',
-      en: 'The wellbeing and dignity of people.',
-    },
-    description: {
-      pt: 'Ações de apoio à saúde, ao bem-estar e à assistência aos que mais precisam, em espírito de caridade e serviço.',
-      en: 'Actions supporting health, wellbeing and assistance to those most in need, in a spirit of charity and service.',
-    },
-    focus: {
-      pt: [
-        'Apoio a entidades de assistência e de cuidado à saúde.',
-        'Iniciativas de promoção do bem-estar e da dignidade.',
-        'Caridade e serviço aos necessitados.',
-      ],
-      en: [
-        'Support for care and health-assistance bodies.',
-        'Initiatives promoting wellbeing and dignity.',
-        'Charity and service to those in need.',
-      ],
-    },
-  },
-  {
-    id: 'education',
-    routeKey: 'initiativeEducation',
-    icon: 'graduation',
-    name: { pt: 'Educação', en: 'Education' },
-    tagline: {
-      pt: 'Conhecimento, cultura e oportunidades.',
-      en: 'Knowledge, culture and opportunity.',
-    },
-    description: {
-      pt: 'Projetos voltados ao acesso à educação, à cultura e ao conhecimento, compreendendo a aprendizagem como caminho ao longo de toda a vida.',
-      en: 'Projects aimed at access to education, culture and knowledge, understanding learning as a lifelong path.',
-    },
-    focus: {
-      pt: [
-        'Apoio ao acesso à educação e à cultura.',
-        'Valorização do estudo e da aprendizagem contínua.',
-        'Promoção do conhecimento como bem comum.',
-      ],
-      en: [
-        'Support for access to education and culture.',
-        'Valuing study and continuous learning.',
-        'Promoting knowledge as a common good.',
-      ],
-    },
-  },
+  { id: 'environment', routeKey: 'initiativeEnvironment', icon: 'leaf', name: { pt: 'Meio Ambiente', en: 'Environment', it: 'Ambiente', fr: 'Environnement', es: 'Medio Ambiente', }, tagline: { pt: 'Respeito e cuidado com a Terra e com a diversidade da vida.', en: 'Respect and care for the Earth and the diversity of life.', it: 'Rispetto e cura per la Terra e la diversità della vita.', fr: 'Respect et soin de la Terre et de la diversité de la vie.', es: 'Respeto y cuidado de la Tierra y de la diversidad de la vida.', }, description: { pt: 'Frente institucional voltada ao meio ambiente, incluindo, entre os objetivos mencionados nos materiais da Ordem, a proteção da Amazônia. É apresentada como objetivo institucional, não como resultado comprovado.', en: 'Institutional field devoted to the environment, including, among the goals mentioned in the Order’s materials, protection of the Amazon. It is presented as an institutional goal, not as a proven result.', it: 'Ambito istituzionale dedicato all’ambiente, inclusa, tra gli obiettivi menzionati nei materiali dell’Ordine, la protezione dell’Amazzonia. È presentato come obiettivo istituzionale, non come risultato comprovato.', fr: 'Domaine institutionnel consacré à l’environnement, incluant, parmi les objectifs mentionnés dans les matériaux de l’Ordre, la protection de l’Amazonie. Il est présenté comme un objectif institutionnel, et non comme un résultat prouvé.', es: 'Ámbito institucional dedicado al medio ambiente, incluida, entre los objetivos mencionados en los materiales de la Orden, la protección de la Amazonía. Se presenta como objetivo institucional, no como resultado comprobado.', }, focus: { pt: ['Promover educação e conscientização ambiental.', 'Valorizar a preservação de áreas naturais.', 'Respeitar a Terra e a diversidade da vida.'], en: ['Promote environmental education and awareness.', 'Value the preservation of natural areas.', 'Respect the Earth and the diversity of life.'], it: ['Promuovere educazione e consapevolezza ambientale.', 'Valorizzare la preservazione delle aree naturali.', 'Rispettare la Terra e la diversità della vita.'], fr: ['Promouvoir l’éducation et la sensibilisation à l’environnement.', 'Valoriser la préservation des espaces naturels.', 'Respecter la Terre et la diversité de la vie.'], es: ['Promover la educación y la conciencia ambiental.', 'Valorar la preservación de las áreas naturales.', 'Respetar la Tierra y la diversidad de la vida.'], } },
+  { id: 'sport', routeKey: 'initiativeSport', icon: 'trophy', name: { pt: 'Esporte', en: 'Sport', it: 'Sport', fr: 'Sport', es: 'Deporte', }, tagline: { pt: 'O esporte como caminho de integração e desenvolvimento humano.', en: 'Sport as a path of integration and human development.', it: 'Lo sport come via di integrazione e sviluppo umano.', fr: 'Le sport comme voie d’intégration et de développement humain.', es: 'El deporte como camino de integración y desarrollo humano.', }, description: { pt: 'Frente institucional de incentivo ao esporte, à integração social e ao desenvolvimento humano, apresentada como objetivo da Ordem.', en: 'Institutional field encouraging sport, social integration and human development, presented as a goal of the Order.', it: 'Ambito istituzionale di incentivo allo sport, all’integrazione sociale e allo sviluppo umano, presentato come obiettivo dell’Ordine.', fr: 'Domaine institutionnel d’encouragement au sport, à l’intégration sociale et au développement humain, présenté comme un objectif de l’Ordre.', es: 'Ámbito institucional de incentivo al deporte, a la integración social y al desarrollo humano, presentado como objetivo de la Orden.', }, focus: { pt: ['Incentivar a prática esportiva como disciplina e formação.', 'Valorizar a integração social por meio do esporte.', 'Promover desenvolvimento humano e trabalho em equipe.'], en: ['Encourage sport as discipline and formation.', 'Value social integration through sport.', 'Promote human development and teamwork.'], it: ['Incoraggiare la pratica sportiva come disciplina e formazione.', 'Valorizzare l’integrazione sociale attraverso lo sport.', 'Promuovere sviluppo umano e lavoro di squadra.'], fr: ['Encourager la pratique sportive comme discipline et formation.', 'Valoriser l’intégration sociale par le sport.', 'Promouvoir le développement humain et le travail d’équipe.'], es: ['Fomentar la práctica deportiva como disciplina y formación.', 'Valorar la integración social mediante el deporte.', 'Promover el desarrollo humano y el trabajo en equipo.'], } },
+  { id: 'health', routeKey: 'initiativeHealth', icon: 'heart-pulse', name: { pt: 'Saúde', en: 'Health', it: 'Salute', fr: 'Santé', es: 'Salud', }, tagline: { pt: 'Bem-estar e dignidade das pessoas.', en: 'The wellbeing and dignity of people.', it: 'Benessere e dignità delle persone.', fr: 'Bien-être et dignité des personnes.', es: 'Bienestar y dignidad de las personas.', }, description: { pt: 'Frente institucional voltada à saúde, ao bem-estar e à assistência social, em espírito de caridade e serviço, apresentada como objetivo da Ordem.', en: 'Institutional field devoted to health, wellbeing and social assistance, in a spirit of charity and service, presented as a goal of the Order.', it: 'Ambito istituzionale dedicato a salute, benessere e assistenza sociale, in spirito di carità e servizio, presentato come obiettivo dell’Ordine.', fr: 'Domaine institutionnel consacré à la santé, au bien-être et à l’assistance sociale, dans un esprit de charité et de service, présenté comme un objectif de l’Ordre.', es: 'Ámbito institucional dedicado a la salud, al bienestar y a la asistencia social, con espíritu de caridad y servicio, presentado como objetivo de la Orden.', }, focus: { pt: ['Promover bem-estar e dignidade.', 'Valorizar a assistência a quem mais precisa.', 'Agir com caridade e serviço ao bem comum.'], en: ['Promote wellbeing and dignity.', 'Value assistance to those most in need.', 'Act with charity and service to the common good.'], it: ['Promuovere benessere e dignità.', 'Valorizzare l’assistenza a chi ne ha più bisogno.', 'Agire con carità e servizio al bene comune.'], fr: ['Promouvoir le bien-être et la dignité.', 'Valoriser l’assistance aux personnes qui en ont le plus besoin.', 'Agir avec charité et service du bien commun.'], es: ['Promover el bienestar y la dignidad.', 'Valorar la asistencia a quienes más lo necesitan.', 'Actuar con caridad y servicio al bien común.'], } },
+  { id: 'education', routeKey: 'initiativeEducation', icon: 'graduation', name: { pt: 'Educação', en: 'Education', it: 'Educazione', fr: 'Éducation', es: 'Educación', }, tagline: { pt: 'Conhecimento, cultura e oportunidades de aprendizagem.', en: 'Knowledge, culture and learning opportunities.', it: 'Conoscenza, cultura e opportunità di apprendimento.', fr: 'Connaissance, culture et possibilités d’apprentissage.', es: 'Conocimiento, cultura y oportunidades de aprendizaje.', }, description: { pt: 'Frente institucional voltada à educação, à cultura e à pesquisa histórica. Inclui a Academia Brasileira Templária de Letras (ABTL), braço cultural e literário associado à Ordem.', en: 'Institutional field devoted to education, culture and historical research. It includes the Academia Brasileira Templária de Letras (ABTL), the cultural and literary arm associated with the Order.', it: 'Ambito istituzionale dedicato a educazione, cultura e ricerca storica. Include l’Academia Brasileira Templária de Letras (ABTL), braccio culturale e letterario associato all’Ordine.', fr: 'Domaine institutionnel consacré à l’éducation, à la culture et à la recherche historique. Il inclut l’Academia Brasileira Templária de Letras (ABTL), bras culturel et littéraire associé à l’Ordre.', es: 'Ámbito institucional dedicado a la educación, la cultura y la investigación histórica. Incluye la Academia Brasileira Templária de Letras (ABTL), brazo cultural y literario asociado a la Orden.', }, focus: { pt: ['Apoiar o acesso à educação e à cultura.', 'Valorizar o estudo e a aprendizagem contínua.', 'Preservar a memória histórica e promover o conhecimento como bem comum.'], en: ['Support access to education and culture.', 'Value study and lifelong learning.', 'Preserve historical memory and promote knowledge as a common good.'], it: ['Sostenere l’accesso a educazione e cultura.', 'Valorizzare studio e apprendimento continuo.', 'Preservare la memoria storica e promuovere la conoscenza come bene comune.'], fr: ['Soutenir l’accès à l’éducation et à la culture.', 'Valoriser l’étude et l’apprentissage tout au long de la vie.', 'Préserver la mémoire historique et promouvoir la connaissance comme bien commun.'], es: ['Apoyar el acceso a la educación y a la cultura.', 'Valorar el estudio y el aprendizaje continuo.', 'Preservar la memoria histórica y promover el conocimiento como bien común.'], } },
 ];
 
-export function getInitiative(id: string): Initiative | undefined {
-  return initiatives.find((i) => i.id === id);
-}
+export function getInitiative(id: string): Initiative | undefined { return initiatives.find((i) => i.id === id); }

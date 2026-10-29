@@ -1,38 +1,32 @@
 /**
- * Global site configuration — single source of truth for links, contacts
- * and social profiles. Update these values; components read from here.
- *
- * NOTE: the values below are PLACEHOLDERS. Replace them with the Order's
- * official contact details before going live.
+ * Global site configuration — single source of truth for links and contacts.
+ * Only confirmed information is published. Unconfirmed fields stay `null` /
+ * empty and are hidden by the components that would render them (see
+ * AUDIT.md for the pending confirmations).
  */
-
 export const site = {
-  name: 'Ordem dos Cavaleiros Templários',
-  shortName: 'OSMTH Brasil',
-  legalName: 'Ordem dos Cavaleiros Templários',
-  email: 'contato@exemplo.org',
-  phone: '(00) 0000-0000',
-  phoneHref: 'tel:+550000000000',
-  address: {
-    street: 'Rua Exemplo, 000 – Sala 000',
-    district: 'Bairro',
-    city: 'Cidade',
-    region: 'UF',
-    postalCode: '00000-000',
-    country: 'BR',
+  name: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  shortName: 'OICMCTB',
+  legalName: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  /** Institutional e-mail confirmed for publication. */
+  email: 'oicmctb@gmail.com',
+  /** Not confirmed for publication — hidden until validated. */
+  phone: null as string | null,
+  phoneHref: null as string | null,
+  address: null as null | {
+    street: string; district: string; city: string; region: string; postalCode: string; country: string;
   },
-  /** External platform for the events agenda (provided by the Order). */
-  eventsPlatformUrl: 'https://exemplo.org/eventos',
-  /**
-   * Form submission endpoint (e.g. Formspree, a Cloudflare Worker, or the
-   * Order's own handler). Leave empty to fall back to a pre-filled mailto:.
-   */
+  /** No confirmed external events platform — hidden until validated. */
+  eventsPlatformUrl: '',
+  /** No confirmed form backend; the form falls back to a pre-filled mailto:. */
   formEndpoint: '',
-  /** Official shop, if maintained externally. */
-  shopUrl: 'https://exemplo.org/loja',
-  /** Only official social profiles of the Order should be listed here. */
+  /** No confirmed shop — hidden until validated. */
+  shopUrl: '',
+  /**
+   * Social profiles mentioned by representatives (@oicmctb on Facebook and
+   * Instagram) are NOT listed until the URLs are verified as official.
+   */
   social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
 } as const;
 
-export const contactAddressLine =
-  'Rua Exemplo, 000 – Sala 000 — Bairro, Cidade – UF — CEP 00000-000';
+export const contactAddressLine: string | null = null;

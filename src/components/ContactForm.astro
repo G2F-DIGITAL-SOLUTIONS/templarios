@@ -28,6 +28,8 @@ const labels = dict.forms;
   action={site.formEndpoint || undefined}
   data-contact-form
   data-mailto={site.email}
+  data-mail-subject={labels.mailSubject}
+  data-mail-opening={labels.mailOpening}
   novalidate
 >
   <p class="mb-6 text-xs text-stone-500">{labels.requiredNote}</p>
@@ -92,19 +94,6 @@ const labels = dict.forms;
     {
       isAffiliation && (
         <>
-          <div>
-            <label for="affiliation-cpf" class="mb-1.5 block text-sm font-medium text-ink-800">
-              {labels.cpf} <span class="text-wine-600" aria-hidden="true">*</span>
-            </label>
-            <input
-              id="affiliation-cpf"
-              name="cpf"
-              type="text"
-              inputmode="numeric"
-              required
-              class="min-h-11 w-full rounded-sm border border-stone-300 bg-parchment px-3.5 py-2.5 text-ink-900 transition-colors focus:border-gold-500 focus:outline-none"
-            />
-          </div>
           <div>
             <label for="affiliation-birth" class="mb-1.5 block text-sm font-medium text-ink-800">
               {labels.birthDate}
@@ -241,12 +230,12 @@ const labels = dict.forms;
           .map(([key, value]) => `${key}: ${String(value)}`)
           .join('\r\n');
         const subject = encodeURIComponent(
-          (data.get('subject') as string) || 'Mensagem pelo site Templários',
+          (data.get('subject') as string) || form.dataset.mailSubject || 'OICMCTB',
         );
         window.location.href = `mailto:${mailto}?subject=${subject}&body=${encodeURIComponent(lines)}`;
         if (status) {
           status.classList.remove('hidden');
-          status.textContent = 'Abrindo seu programa de e-mail…';
+          status.textContent = form.dataset.mailOpening ?? '';
         }
       });
     }

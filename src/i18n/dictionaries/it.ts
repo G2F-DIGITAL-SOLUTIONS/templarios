@@ -4,11 +4,11 @@ import type { Dictionary } from './pt';
 /** Italian dictionary. Omitted keys fall back to Portuguese. */
 export const it: DeepPartial<Widen<Dictionary>> = {
   meta: {
-    siteName: 'Ordine dei Cavalieri Templari',
-    shortName: 'OSMTH Brasile',
-    tagline: 'Tradizione, conoscenza e servizio al prossimo.',
+    siteName: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
+    shortName: "OICMCTB",
+    tagline: "CREARE FUTURUM MUTATO MODO — Creare il futuro in modo diverso.",
     defaultDescription:
-      "L'Ordine dei Cavalieri Templari (OSMTH Brasile) custodisce una tradizione secolare e la mette al servizio di valori attuali: etica, fraternità, educazione, salute e servizio alla società.",
+      "L'Ordine Internazionale Civile Militare dei Cavalieri Templari del Brasile (OICMCTB) è un'organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico, dedicata ai valori cavallereschi, allo sviluppo umano, alla cultura e al bene comune.",
     ogLocale: 'it_IT',
   },
 
@@ -26,6 +26,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     onThisPage: 'In questa pagina',
     scrollHint: 'Continua',
     imageCredit: 'Immagine',
+    underlineMotif: 'CREARE FUTURUM MUTATO MODO',
     loading: 'Caricamento',
   },
 
@@ -38,8 +39,8 @@ export const it: DeepPartial<Widen<Dictionary>> = {
   nav: {
     label: 'Navigazione principale',
     order: 'Ordine',
-    initiatives: 'Iniziative',
-    knowledge: 'Conoscenza',
+    initiatives: "Cultura e Azione Sociale",
+    knowledge: "Cultura e Conoscenza",
     events: 'Eventi',
     citiesDay: 'Giorno delle Città',
     donations: 'Donazioni',
@@ -49,7 +50,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     shop: 'Negozio',
     tv: 'TV Templari',
     about: 'Chi Siamo',
-    history: 'Storia',
+    history: "Storia e Stemma",
     purposes: 'Propositi',
     teachings: 'Insegnamenti',
     environment: 'Ambiente',
@@ -66,9 +67,9 @@ export const it: DeepPartial<Widen<Dictionary>> = {
   },
 
   footer: {
-    aboutTitle: 'Ordine dei Cavalieri Templari',
+    aboutTitle: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
     aboutText:
-      "Una fraternità che custodisce la tradizione templare e la mette al servizio della società contemporanea — attraverso l'etica, lo studio, la fraternità e la carità.",
+      "Organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico, con identità e autonomia proprie, dedicata ai valori cavallereschi, alla cultura e al bene comune.",
     navTitle: 'Navigazione',
     institutionalTitle: 'Istituzionale',
     initiativesTitle: 'Iniziative',
@@ -81,10 +82,11 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     terms: 'Termini di Utilizzo',
     cookies: 'Cookie',
     rights: 'Tutti i diritti riservati.',
+    motif: 'CREARE FUTURUM MUTATO MODO',
   },
 
   a11y: {
-    logoAlt: "Stemma dell'Ordine dei Cavalieri Templari",
+    logoAlt: "Stemma dell'OICMCTB",
     decorative: 'Elemento decorativo',
     externalLink: 'Si apre in una nuova scheda',
     requiredField: 'campo obbligatorio',
@@ -100,6 +102,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     state: 'Stato / Provincia',
     message: 'Messaggio',
     subject: 'Oggetto',
+    cpf: 'CPF',
     birthDate: 'Data di nascita',
     maritalStatus: 'Stato civile',
     address: 'Indirizzo di residenza completo',
@@ -112,11 +115,13 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     consent: 'Autorizzo l’uso dei miei dati per rispondere a questa richiesta.',
     requiredNote: 'I campi contrassegnati con * sono obbligatori.',
     selectPlaceholder: 'Seleziona',
+    mailSubject: 'Messaggio dal sito dell’OICMCTB',
+    mailOpening: 'Apertura del programma e-mail…',
   },
 
   home: {
     hero: {
-      kicker: 'Ordine dei Cavalieri Templari',
+      kicker: 'OICMCTB',
       title: 'Una tradizione secolare al servizio di valori che restano attuali.',
       lead: 'Tradizione, conoscenza e servizio al prossimo.',
       intro:
@@ -166,14 +171,14 @@ export const it: DeepPartial<Widen<Dictionary>> = {
       kicker: "Sull'Ordine",
       title: 'Chi siamo',
       lead: 'Un Ordine di Cavalieri del Tempio — non massonico — che riunisce uomini e donne attorno a etica, conoscenza e servizio.',
-      body: "L'Ordine dei Cavalieri Templari cerca di riunire persone tolleranti e di buona volontà, che amano la giustizia e la nobiltà di carattere, desiderose di essere utili agli altri e che comprendano davvero il significato della parola fraternità.",
+      body: "L'OICMCTB cerca di riunire persone tolleranti e di buona volontà, che amano la giustizia e la nobiltà di carattere, desiderose di essere utili agli altri e che comprendano davvero il significato della parola fraternità.",
       highlights: {
         identity: 'Identità',
-        identityText: "Un Ordine ecclesiastico ed ecumenico, riconoscibile per la stessa croce a doppia barra e per l'antico motto dell'Ordine.",
+        identityText: "Organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico, con identità e autonomia proprie.",
         origin: 'Origine',
-        originText: 'Legato alla OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — il cui Ordine Madre ha sede a Porto, in Portogallo.',
+        originText: "L'istituzione è stata formalizzata come persona giuridica nel 2021. Il suo Gran Maestro è Roberto Aguiar Guazzelli.",
         values: 'Valori',
-        valuesText: 'Etica, fraternità, giustizia, carità, educazione e difesa della dignità umana.',
+        valuesText: "Fede in Dio, Speranza, Carità, Giustizia, Prudenza, Fortezza e Temperanza.",
         today: 'Oggi',
         todayText: 'Studi, mutuo aiuto e iniziative sociali in educazione, salute, sport e ambiente.',
       },
@@ -221,7 +226,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
         impact: { title: 'Impatto sociale', text: 'Sostenere iniziative in educazione, salute, sport e ambiente per il bene della comunità.' },
       },
       ctaPrimary: 'Voglio contribuire',
-      ctaSecondary: 'Scopri come funziona la deduzione fiscale',
+      ctaSecondary: 'Contattaci',
     },
     events: {
       kicker: 'Agenda',
@@ -266,19 +271,19 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     order: {
       kicker: "L'Ordine",
       title: 'Chi Siamo',
-      lead: 'Un vero Ordine Ecclesiastico di Cavalieri Templari, affiliato al suo Ordine Madre con sede a Porto, in Portogallo.',
+      lead: "Organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico, con identità e autonomia proprie.",
       intro:
-        "L'Ordine dei Cavalieri Templari è un Ordine di Cavalieri del Tempio — non è quindi un Ordine massonico, né a esso collegato, se non storicamente.",
+        "L'OICMCTB è un Ordine di Cavalieri del Tempio — non è quindi un Ordine massonico, né a esso collegato, se non storicamente.",
     },
     history: { kicker: 'Percorso', title: 'Storia', lead: 'Il cammino della tradizione templare, dalle origini medievali alla sua espressione contemporanea.' },
-    purposes: { kicker: 'Missione', title: 'Propositi', lead: "I propositi dell'Ordine dei Cavalieri Templari sono rivestiti di nobiltà con il mantello bianco della virtù." },
+    purposes: { kicker: 'Missione', title: 'Propositi', lead: "I propositi dell'OICMCTB sono rivestiti di nobiltà con il mantello bianco della virtù." },
     teachings: { kicker: 'Studi', title: 'Insegnamenti', lead: 'Lavoriamo con gli studi templari verso un obiettivo comune: il miglioramento del nostro carattere.' },
     initiatives: { kicker: "L'Ordine in azione", title: 'Iniziative', lead: "Le aree in cui l'Ordine contribuisce alla società contemporanea." },
     events: { kicker: 'Agenda', title: 'Eventi', lead: "Segui gli eventi e le attività dell'Ordine." },
     knowledge: { kicker: 'Conoscenza', title: 'Conferenze, Studi e Articoli', lead: "Materiali dell'Ordine per studio, riflessione e sviluppo personale." },
     citiesDay: { kicker: 'Progetto', title: 'Giorno delle Città', lead: "Un'iniziativa che avvicina l'Ordine alle città e alle loro comunità." },
     donations: { kicker: 'Contribuisci', title: 'Donazioni', lead: "Fai parte di qualcosa di più grande. Il tuo contributo sostiene le attività umanitarie, benefiche e di ricerca dell'Ordine." },
-    affiliation: { kicker: 'Partecipa', title: 'Affiliazione', lead: "La mistica e secolare Ordine dei Cavalieri Templari sta aprendo le sue porte per te." },
+    affiliation: { kicker: 'Partecipa', title: 'Affiliazione', lead: "L'OICMCTB sta aprendo le sue porte per te." },
     faq: { kicker: 'Domande', title: 'Domande Frequenti', lead: "Risposte basate esclusivamente sulle informazioni ufficiali dell'Ordine." },
     contact: { kicker: 'Contattaci', title: 'Contatti', lead: "Siamo a disposizione per rispondere alle tue domande sull'Ordine." },
   },
@@ -300,10 +305,10 @@ export const it: DeepPartial<Widen<Dictionary>> = {
   affiliation: {
     purposeTitle: 'Perché affiliarsi',
     purposeText:
-      "Lo scopo dell'Ordine è avere una società di Cavalieri Templari con lo stesso standard di nobiltà e virtù del tradizionale Ordine dei Cavalieri Templari, mantenendo un efficace programma di mutuo aiuto.",
+      "Lo scopo dell'Ordine è avere una società di Cavalieri Templari con lo stesso standard di nobiltà e virtù del tradizionale OICMCTB, mantenendo un efficace programma di mutuo aiuto.",
     whoTitle: 'Chi può affiliarsi',
     whoText:
-      'Persone di entrambi i sessi, animate dal proposito di recuperare valori caduti nell’oblio e di costruire un mondo libero e giusto.',
+      "Le indicazioni confermate sulla partecipazione sono fornite dall’Ordine a chi manifesta interesse tramite il modulo. Non pubblichiamo regole di ingresso, benefici o contributi non confermati.",
     processTitle: 'Come funziona il processo',
     steps: {
       one: { title: "Conosci l'Ordine", text: 'Leggi la nostra identità, storia e propositi prima di qualsiasi decisione.' },
@@ -313,17 +318,17 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     },
     benefitsTitle: 'Vantaggi',
     benefits: {
-      study: "Accesso agli studi e agli insegnamenti dell'Ordine.",
-      fraternity: 'Fraternità e mutuo aiuto tra i membri.',
-      events: 'Partecipazione a eventi e cerimonie.',
-      growth: 'Opportunità di sviluppo personale e culturale.',
+      study: "Studio, cultura e preservazione della memoria storica.",
+      fraternity: "Fraternità e servizio al bene comune.",
+      events: "Partecipazione alla vita istituzionale, secondo le indicazioni dell’Ordine.",
+      growth: "Sviluppo umano e culturale.",
     },
     responsibilitiesTitle: 'Responsabilità',
     responsibilitiesText:
-      "Il membro deve cercare il proprio miglioramento morale e intellettuale, dedicare disciplina allo studio e contribuire con quote e contributi mensili che sostengono l'Ordine.",
+      "Chi partecipa è invitato a vivere i valori dell’Ordine — Fede in Dio, Speranza, Carità, Giustizia, Prudenza, Fortezza e Temperanza — con umiltà, sincerità e servizio al bene comune. Eventuali condizioni specifiche sono comunicate direttamente dall’Ordine.",
     feesTitle: 'Quota di iscrizione e contributo mensile',
     feesText:
-      "L'Ordine è strettamente una fraternità. Vi sono contributi mensili e una quota di iscrizione individuale, destinati a un fondo generale di gestione, ad attività umanitarie e benefiche e alle ricerche dell'Ordine.",
+      "Informazioni su eventuali contributi sono fornite direttamente dall’Ordine, dopo conferma ufficiale. Nessun importo è pubblicato in questo sito senza comprova.",
     feeRegistrationLabel: 'Quota di iscrizione',
     feeMonthlyLabel: 'Contributo mensile minimo',
     formTitle: 'Richiesta di affiliazione',
@@ -344,10 +349,6 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     howTitle: 'Come donare',
     howText: "Contatta l'Ordine per ricevere le indicazioni e i dati necessari per donare in modo sicuro.",
     howCta: 'Voglio contribuire',
-    irpfTitle: 'Deduzione fiscale',
-    irpfText:
-      "Le informazioni su un'eventuale deduzione fiscale devono seguire esclusivamente le regole e le informazioni ufficiali fornite dall'Ordine.",
-    irpfCta: 'Scopri come funziona la deduzione fiscale',
     legalNote: "L'Ordine non fornisce consulenza fiscale. Consulta sempre le regole ufficiali e un professionista qualificato.",
   },
 
@@ -362,7 +363,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     whyTitle: 'Perché esiste',
     whyText: 'Perché una tradizione resta viva solo quando si traduce in servizio concreto alla società.',
     participateTitle: 'Come una città può partecipare',
-    participateText: 'Le città interessate possono manifestare il proprio interesse tramite il modulo. Il nostro team fornirà indicazioni su requisiti, calendario e supporto.',
+    participateText: 'Le città interessate possono manifestare interesse tramite il modulo di contatto. Indicazioni, requisiti e calendario sono forniti solo dopo conferma ufficiale.',
     bringTitle: 'Porta il Giorno delle Città nella tua città',
     bringText: 'Compila il modulo raccontandoci della tua città e del tuo interesse. Ti contatteremo.',
     cta: 'Voglio portare il Giorno delle Città nella mia città',
@@ -370,6 +371,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
 
   events: {
     upcomingTitle: 'Prossimi eventi',
+    pastTitle: "Eventi passati",
     platformNote: 'La registrazione e l’agenda completa sono mantenute sulla nostra piattaforma eventi esterna.',
     ctaPlatform: 'Vedi tutti gli eventi',
     emptyState: 'Nessun evento annunciato al momento.',
@@ -400,7 +402,7 @@ export const it: DeepPartial<Widen<Dictionary>> = {
     cookiesTitle: 'Cookie',
     updatedLabel: 'Ultimo aggiornamento',
     placeholderNote:
-      "Questo documento è un modello iniziale e deve essere rivisto e completato dall'Ordine con il testo legale ufficiale.",
+      "Per richiedere la versione vigente di questo documento, contattateci all’e-mail istituzionale oicmctb@gmail.com. Il testo giuridico ufficiale sarà pubblicato dopo la convalida dei responsabili.",
   },
 
   notFound: {

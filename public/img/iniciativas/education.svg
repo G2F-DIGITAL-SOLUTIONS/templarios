@@ -5,7 +5,7 @@
       <stop offset="0.6" stop-color="#14110e"/>
       <stop offset="1" stop-color="#0c0a08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="0.1" r="0.85">
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.85">
       <stop offset="0" stop-color="#c9a862" stop-opacity="0.2"/>
       <stop offset="1" stop-color="#c9a862" stop-opacity="0"/>
     </radialGradient>
@@ -16,6 +16,6 @@
     <path d="M0 700h1200M0 760h1200M0 820h1200"/>
   </g>
   <g transform="translate(600 440)" stroke="#c9a862" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9">
-    <path d="M440 200v120M40 200l200-100 200 100-200 100zM120 240v100c60 60 180 60 240 0V240"/>
+    <path d="M200 -10v120M-200 -10l200-100 200 100-200 100zM-120 30v100c60 60 180 60 240 0V30"/>
   </g>
 </svg>

@@ -2,154 +2,21 @@ import type { Localized } from './localize';
 
 export type FaqCategory = 'about' | 'affiliation' | 'events' | 'donations';
 
-export interface FaqItem {
-  id: string;
-  category: FaqCategory;
-  question: Localized<string>;
-  answer: Localized<string>;
-}
+export interface FaqItem { id: string; category: FaqCategory; question: Localized<string>; answer: Localized<string>; }
 
-/**
- * FAQ content. All answers are grounded strictly in the Order's official
- * institutional information — no tax rules, dates or claims are invented.
- */
+/** FAQ — only confirmed institutional information; no unconfirmed admission rules, fees, tax benefits, venues or partnerships. */
 export const faqItems: FaqItem[] = [
-  {
-    id: 'o-que-e',
-    category: 'about',
-    question: {
-      pt: 'O que é a Ordem dos Cavaleiros Templários?',
-      en: 'What is the Order of the Knights Templar?',
-    },
-    answer: {
-      pt: 'É uma Ordem Eclesiástica de Cavaleiros Templários pertencente à Ordo Supremus Militaris Templi Hierosolymitani (OSMTH), afiliada e nascida de sua Ordem Templária Mãe, com sede na cidade do Porto, em Portugal. Seus membros recebem o título de Cavaleiro (ou Dama) Templário(a).',
-      en: 'It is an Ecclesiastical Order of Knights Templar belonging to the Ordo Supremus Militaris Templi Hierosolymitani (OSMTH), affiliated to and born from its Mother Templar Order, seated in the city of Porto, Portugal. Its members receive the title of Knight (or Dame) Templar.',
-    },
-  },
-  {
-    id: 'missao',
-    category: 'about',
-    question: { pt: 'Qual é a sua missão?', en: 'What is its mission?' },
-    answer: {
-      pt: 'Reunir homens e mulheres que demonstrem elevada ética e princípios morais, promovendo o estudo, a fraternidade, a caridade e o serviço à sociedade, em benefício da dignidade humana.',
-      en: 'To bring together men and women who demonstrate high ethics and moral principles, promoting study, fraternity, charity and service to society, for the benefit of human dignity.',
-    },
-  },
-  {
-    id: 'relacao-tradicao',
-    category: 'about',
-    question: {
-      pt: 'Qual é a sua relação com a tradição histórica dos Templários?',
-      en: 'What is its relation to the historic Templar tradition?',
-    },
-    answer: {
-      pt: 'A Ordem preserva a tradição e o espírito da secular Ordem dos Cavaleiros Templários. A OSMTH, ordem moderna, foi refundada no início do século XIX sob ideais humanitários e humanísticos, não se apresentando como descendente direta da ordem medieval fundada em 1118 e dissolvida em 1312.',
-      en: 'The Order preserves the tradition and spirit of the age-old Order of the Knights Templar. The OSMTH, the modern order, was re-established in the early 19th century under humanitarian and humanistic ideals, and does not present itself as a direct descendant of the medieval order founded in 1118 and dissolved in 1312.',
-    },
-  },
-  {
-    id: 'religiosa',
-    category: 'about',
-    question: { pt: 'A Ordem é religiosa?', en: 'Is the Order religious?' },
-    answer: {
-      pt: 'A Ordem é uma instituição eclesiástica e ecumênica. As cerimônias de posse — as concessões do título de Cavalaria — são religiosas e geralmente abertas a qualquer um que deseje vê-las. A Ordem respeita todas as religiões e credos.',
-      en: 'The Order is an ecclesiastical and ecumenical institution. Its investiture ceremonies — the granting of the title of Knighthood — are religious and generally open to anyone who wishes to see them. The Order respects all religions and creeds.',
-    },
-  },
-  {
-    id: 'maconica',
-    category: 'about',
-    question: { pt: 'A Ordem é uma organização maçônica?', en: 'Is the Order a Masonic organisation?' },
-    answer: {
-      pt: 'Não. A OSMTH é uma Ordem de Cavaleiros do Templo, não sendo uma Ordem Maçônica nem a ela conectada, a não ser historicamente, como qualquer das organizações templárias dentro da Maçonaria.',
-      en: 'No. The OSMTH is an Order of Knights of the Temple and is not a Masonic Order, nor connected to one, except historically, as with any of the Templar organisations within Freemasonry.',
-    },
-  },
-  {
-    id: 'quem-pode',
-    category: 'affiliation',
-    question: { pt: 'Quem pode participar?', en: 'Who may take part?' },
-    answer: {
-      pt: 'Pessoas de ambos os sexos, imbuídas do propósito de resgatar valores que caíram no esquecimento e de construir um mundo livre e justo. Buscamos pessoas livres e de bons costumes, devotadas à família e corretas em seu procedimento com os demais.',
-      en: 'People of both sexes, imbued with the purpose of restoring values that have fallen into oblivion and building a free and just world. We seek free people of good habits, devoted to family and correct in their conduct towards others.',
-    },
-  },
-  {
-    id: 'como-afiliacao',
-    category: 'affiliation',
-    question: { pt: 'Como funciona a afiliação?', en: 'How does affiliation work?' },
-    answer: {
-      pt: 'O interessado conhece a Ordem, verifica os requisitos, envia seu pedido por meio do formulário e aguarda o contato da equipe, que orientará os próximos passos.',
-      en: 'The interested person learns about the Order, checks the requirements, sends their request through the form and awaits contact from the team, who will guide the next steps.',
-    },
-  },
-  {
-    id: 'requisitos',
-    category: 'affiliation',
-    question: { pt: 'Quais são os requisitos?', en: 'What are the requirements?' },
-    answer: {
-      pt: 'Ser uma pessoa livre e de bons costumes, devotada à família, correta no procedimento com os demais e disposta a buscar o próprio aperfeiçoamento moral e intelectual. É necessária disciplina em relação ao tempo de estudo.',
-      en: 'To be a free person of good habits, devoted to family, correct in conduct towards others and willing to seek their own moral and intellectual improvement. Discipline regarding study time is required.',
-    },
-  },
-  {
-    id: 'contribuicoes',
-    category: 'affiliation',
-    question: { pt: 'Há contribuições a pagar?', en: 'Are there contributions to pay?' },
-    answer: {
-      pt: 'Sim. A Ordem é estritamente uma fraternidade e há uma taxa de registro individual e uma contribuição mínima mensal, destinadas a um fundo geral de operações, a atividades humanitárias e beneficentes e às pesquisas da Ordem. Não há outras cotas obrigatórias.',
-      en: 'Yes. The Order is strictly a fraternity and there is an individual registration fee and a minimum monthly contribution, directed to a general operating fund, to humanitarian and charitable activities and to the Order’s research. There are no other mandatory charges.',
-    },
-  },
-  {
-    id: 'eventos-como',
-    category: 'events',
-    question: { pt: 'Como participar dos eventos?', en: 'How can I take part in events?' },
-    answer: {
-      pt: 'A inscrição e a agenda completa são mantidas em nossa plataforma de eventos. A partir dela você pode conhecer e se inscrever nos eventos abertos.',
-      en: 'Registration and the full agenda are kept on our events platform. There you can find out about and register for open events.',
-    },
-  },
-  {
-    id: 'eventos-agenda',
-    category: 'events',
-    question: { pt: 'Onde encontro a agenda?', en: 'Where can I find the agenda?' },
-    answer: {
-      pt: 'Você encontra os próximos eventos na página de Eventos e a agenda completa em nossa plataforma externa de eventos.',
-      en: 'You can find upcoming events on the Events page and the full agenda on our external events platform.',
-    },
-  },
-  {
-    id: 'doacoes-como',
-    category: 'donations',
-    question: { pt: 'Como posso doar?', en: 'How can I donate?' },
-    answer: {
-      pt: 'Entre em contato com a Ordem para receber as orientações e os dados necessários para realizar sua doação de forma segura.',
-      en: 'Contact the Order to receive the guidance and details needed to make your donation securely.',
-    },
-  },
-  {
-    id: 'doacoes-uso',
-    category: 'donations',
-    question: { pt: 'Como os recursos são utilizados?', en: 'How are the funds used?' },
-    answer: {
-      pt: 'Os recursos são destinados a um fundo geral de operações da Ordem, às suas atividades humanitárias e beneficentes e às suas pesquisas e investigações.',
-      en: 'The funds are directed to a general operating fund of the Order, to its humanitarian and charitable activities and to its research and investigation.',
-    },
-  },
-  {
-    id: 'doacoes-irpf',
-    category: 'donations',
-    question: { pt: 'Como funciona a questão do IRPF?', en: 'How does income tax deduction work?' },
-    answer: {
-      pt: 'As informações sobre eventual dedução no Imposto de Renda devem observar exclusivamente as regras e as informações oficiais fornecidas pela Ordem, com base em orientação jurídica e contábil própria. A Ordem não presta consultoria tributária.',
-      en: 'Information about any income tax deduction must follow exclusively the rules and official information provided by the Order, based on its own legal and accounting advice. The Order does not provide tax advice.',
-    },
-  },
+  { id: 'o-que-e', category: 'about', question: { pt: 'O que é a OICMCTB?', en: 'What is the OICMCTB?', it: 'Che cos\'è l\'OICMCTB?', fr: 'Qu’est-ce que l’OICMCTB ?', es: '¿Qué es la OICMCTB?', }, answer: { pt: 'A OICMCTB é uma organização civil brasileira, sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, com identidade e autonomia próprias, dedicada aos valores cavalheirescos, ao desenvolvimento humano, à cultura, à preservação da memória histórica e ao bem comum. Foi formalizada como pessoa jurídica em 2021.', en: 'The OICMCTB is a Brazilian non-profit civil organisation of a fraternal, cultural, philosophical, civic and philanthropic character, with its own identity and autonomy, dedicated to chivalric values, human development, culture, preservation of historical memory and the common good. It was formally incorporated as a legal entity in 2021.', it: 'L\'OICMCTB è un\'organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico, con identità e autonomia proprie, dedicata ai valori cavallereschi, allo sviluppo umano, alla cultura, alla preservazione della memoria storica e al bene comune. È stata formalizzata come persona giuridica nel 2021.', fr: 'L\'OICMCTB est une organisation civile brésilienne à but non lucratif, à caractère fraternel, culturel, philosophique, civique et philanthropique, dotée d\'une identité et d\'une autonomie propres, dédiée aux valeurs chevaleresques, au développement humain, à la culture, à la préservation de la mémoire historique et au bien commun. Elle a été formalisée comme personne juridique en 2021.', es: 'La OICMCTB es una organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico, con identidad y autonomía propias, dedicada a los valores caballerescos, al desarrollo humano, a la cultura, a la preservación de la memoria histórica y al bien común. Fue formalizada como persona jurídica en 2021.', } },
+  { id: 'missao', category: 'about', question: { pt: 'Qual é a sua missão?', en: 'What is its mission?', it: 'Qual è la sua missione?', fr: 'Quelle est sa mission ?', es: '¿Cuál es su misión?', }, answer: { pt: 'Contribuir para criar o futuro de um modo diferente, promovendo desenvolvimento humano, preservação da história templária, memória dos heróis cívicos locais, ações comunitárias, projetos educacionais e reconhecimento do mérito, respeitando tradições e leis locais. Lema: CREARE FUTURUM MUTATO MODO.', en: 'To help create the future in a different way, promoting human development, preservation of Templar history, memory of local civic heroes, community actions, educational projects and recognition of merit, respecting local traditions and laws. Motto: CREARE FUTURUM MUTATO MODO.', it: 'Contribuire a creare il futuro in modo diverso, promuovendo lo sviluppo umano, la preservazione della storia templare, la memoria degli eroi civici locali, azioni comunitarie, progetti educativi e il riconoscimento del merito, nel rispetto delle tradizioni e delle leggi locali. Motto: CREARE FUTURUM MUTATO MODO.', fr: 'Contribuer à créer l’avenir d’une manière différente, en promouvant le développement humain, la préservation de l’histoire templière, la mémoire des héros civiques locaux, des actions communautaires, des projets éducatifs et la reconnaissance du mérite, dans le respect des traditions et des lois locales. Devise : CREARE FUTURUM MUTATO MODO.', es: 'Contribuir a crear el futuro de una manera diferente, promoviendo el desarrollo humano, la preservación de la historia templaria, la memoria de los héroes cívicos locales, acciones comunitarias, proyectos educativos y el reconocimiento del mérito, respetando las tradiciones y las leyes locales. Lema: CREARE FUTURUM MUTATO MODO.', } },
+  { id: 'valores', category: 'about', question: { pt: 'Quais são os seus valores?', en: 'What are its values?', it: 'Quali sono i suoi valori?', fr: 'Quelles sont ses valeurs ?', es: '¿Cuáles son sus valores?', }, answer: { pt: 'Fé em Deus, Esperança, Caridade, Justiça, Prudência, Fortaleza e Temperança.', en: 'Faith in God, Hope, Charity, Justice, Prudence, Fortitude and Temperance.', it: 'Fede in Dio, Speranza, Carità, Giustizia, Prudenza, Fortezza e Temperanza.', fr: 'Foi en Dieu, Espérance, Charité, Justice, Prudence, Force et Tempérance.', es: 'Fe en Dios, Esperanza, Caridad, Justicia, Prudencia, Fortaleza y Templanza.', } },
+  { id: 'tradicao', category: 'about', question: { pt: 'A OICMCTB é a ordem medieval dos Templários?', en: 'Is the OICMCTB the medieval order of the Templars?', it: 'L\'OICMCTB è l\'ordine medievale dei Templari?', fr: 'L’OICMCTB est-elle l’ordre médiéval des Templiers ?', es: '¿La OICMCTB es la orden medieval de los Templarios?', }, answer: { pt: 'Não. A OICMCTB inspira-se na tradição histórica templária e preserva a sua memória, sem alegar continuidade jurídica direta com a ordem medieval. É uma instituição brasileira contemporânea, formalizada como pessoa jurídica em 2021.', en: 'No. The OICMCTB is inspired by the historical Templar tradition and preserves its memory, without claiming direct legal continuity with the medieval order. It is a contemporary Brazilian institution, formally incorporated as a legal entity in 2021.', it: 'No. L\'OICMCTB si ispira alla tradizione storica templare e ne preserva la memoria, senza rivendicare continuità giuridica diretta con l\'ordine medievale. È un\'istituzione brasiliana contemporanea, formalizzata come persona giuridica nel 2021.', fr: 'Non. L\'OICMCTB s\'inspire de la tradition historique templière et préserve sa mémoire, sans revendiquer de continuité juridique directe avec l\'ordre médiéval. C\'est une institution brésilienne contemporaine, formalisée comme personne juridique en 2021.', es: 'No. La OICMCTB se inspira en la tradición histórica templaria y preserva su memoria, sin alegar continuidad jurídica directa con la orden medieval. Es una institución brasileña contemporánea, formalizada como persona jurídica en 2021.', } },
+  { id: 'maconica', category: 'about', question: { pt: 'A OICMCTB é uma organização maçônica?', en: 'Is the OICMCTB a Masonic organisation?', it: 'L\'OICMCTB è un\'organizzazione massonica?', fr: 'L’OICMCTB est-elle une organisation maçonnique ?', es: '¿La OICMCTB es una organización masónica?', }, answer: { pt: 'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) é uma organização civil independente e não constitui uma Ordem Maçônica. A instituição não possui vínculo institucional com a Maçonaria. A eventual participação de pessoas que também sejam membros da Maçonaria ocorre exclusivamente em caráter individual, mediante ingresso e aceitação formal como membros da OICMCTB, sem estabelecer vínculo institucional entre as organizações.', en: 'The International Civil Military Order of Knights Templar of Brazil (OICMCTB) is an independent civil organisation and is not a Masonic Order. The institution has no institutional link with Freemasonry. Any participation by persons who are also members of Freemasonry takes place exclusively in an individual capacity, through formal admission and acceptance as members of the OICMCTB, without establishing any institutional link between the organisations.', it: 'L\'Ordine Internazionale Civile Militare dei Cavalieri Templari del Brasile (OICMCTB) è un\'organizzazione civile indipendente e non costituisce un Ordine Massonico. L\'istituzione non ha alcun legame istituzionale con la Massoneria. L\'eventuale partecipazione di persone che siano anche membri della Massoneria avviene esclusivamente a titolo individuale, mediante ingresso e accettazione formale come membri dell\'OICMCTB, senza stabilire alcun legame istituzionale tra le organizzazioni.', fr: 'L\'Ordre International Civil Militaire des Chevaliers Templiers du Brésil (OICMCTB) est une organisation civile indépendante et ne constitue pas un Ordre maçonnique. L\'institution n\'a aucun lien institutionnel avec la Franc-maçonnerie. La participation éventuelle de personnes également membres de la Franc-maçonnerie a lieu exclusivement à titre individuel, par admission et acceptation formelles comme membres de l\'OICMCTB, sans établir de lien institutionnel entre les organisations.', es: 'La Orden Internacional Civil Militar Caballeros Templarios de Brasil (OICMCTB) es una organización civil independiente y no constituye una Orden Masónica. La institución no tiene vínculo institucional con la Masonería. La eventual participación de personas que también sean miembros de la Masonería ocurre exclusivamente a título individual, mediante ingreso y aceptación formal como miembros de la OICMCTB, sin establecer vínculo institucional entre las organizaciones.', } },
+  { id: 'quem-pode', category: 'affiliation', question: { pt: 'Quem pode participar?', en: 'Who may take part?', it: 'Chi può partecipare?', fr: 'Qui peut participer ?', es: '¿Quién puede participar?', }, answer: { pt: 'As orientações confirmadas de participação são fornecidas pela Ordem a quem manifesta interesse pelo formulário de contato. Não publicamos regras de ingresso não confirmadas.', en: 'Confirmed guidance on participation is provided by the Order to those who express interest through the contact form. We do not publish unconfirmed admission rules.', it: 'Le indicazioni confermate sulla partecipazione sono fornite dall’Ordine a chi manifesta interesse tramite il modulo di contatto. Non pubblichiamo regole di ingresso non confermate.', fr: 'Les orientations confirmées sur la participation sont fournies par l’Ordre aux personnes qui manifestent leur intérêt via le formulaire de contact. Nous ne publions pas de règles d’admission non confirmées.', es: 'Las orientaciones confirmadas de participación las proporciona la Orden a quienes manifiestan interés mediante el formulario de contacto. No publicamos reglas de ingreso no confirmadas.', } },
+  { id: 'como-participar', category: 'affiliation', question: { pt: 'Como posso manifestar interesse?', en: 'How can I express interest?', it: 'Come posso manifestare interesse?', fr: 'Comment puis-je manifester mon intérêt ?', es: '¿Cómo puedo manifestar interés?', }, answer: { pt: 'Utilize o formulário de contato ou de participação deste site. A Ordem responderá com as orientações aplicáveis.', en: 'Use the contact or participation form on this site. The Order will reply with the applicable guidance.', it: 'Utilizzate il modulo di contatto o di partecipazione di questo sito. L’Ordine risponderà con le indicazioni applicabili.', fr: 'Utilisez le formulaire de contact ou de participation de ce site. L’Ordre répondra avec les orientations applicables.', es: 'Utilice el formulario de contacto o de participación de este sitio. La Orden responderá con las orientaciones aplicables.', } },
+  { id: 'contato', category: 'events', question: { pt: 'Como entro em contato?', en: 'How do I get in touch?', it: 'Come posso contattarvi?', fr: 'Comment puis-je vous contacter ?', es: '¿Cómo puedo contactar?', }, answer: { pt: 'Pelo e-mail institucional oicmctb@gmail.com ou pelo formulário de contato deste site. Endereço e telefone só serão publicados após confirmação oficial.', en: 'By the institutional e-mail oicmctb@gmail.com or by the contact form on this site. Address and telephone will only be published after official confirmation.', it: 'Tramite l’e-mail istituzionale oicmctb@gmail.com o il modulo di contatto di questo sito. Indirizzo e telefono saranno pubblicati solo dopo conferma ufficiale.', fr: 'Par l’e-mail institutionnel oicmctb@gmail.com ou par le formulaire de contact de ce site. L’adresse et le téléphone ne seront publiés qu’après confirmation officielle.', es: 'Por el correo institucional oicmctb@gmail.com o por el formulario de contacto de este sitio. La dirección y el teléfono solo se publicarán tras confirmación oficial.', } },
+  { id: 'doacoes', category: 'donations', question: { pt: 'Como posso contribuir ou doar?', en: 'How can I contribute or donate?', it: 'Come posso contribuire o donare?', fr: 'Comment puis-je contribuer ou faire un don ?', es: '¿Cómo puedo contribuir o donar?', }, answer: { pt: 'Entre em contato pelo e-mail oicmctb@gmail.com para receber as orientações confirmadas pela Ordem. Não publicamos dados de doação nem benefícios fiscais sem comprovação.', en: 'Contact us at oicmctb@gmail.com to receive the guidance confirmed by the Order. We do not publish donation details or tax benefits without proof.', it: 'Contattateci a oicmctb@gmail.com per ricevere le indicazioni confermate dall’Ordine. Non pubblichiamo dati per donazioni né benefici fiscali senza comprova.', fr: 'Contactez-nous à oicmctb@gmail.com pour recevoir les orientations confirmées par l’Ordre. Nous ne publions pas de coordonnées de don ni d’avantages fiscaux sans preuve.', es: 'Contáctenos en oicmctb@gmail.com para recibir las orientaciones confirmadas por la Orden. No publicamos datos de donación ni beneficios fiscales sin comprobación.', } },
 ];
 
-export function faqByCategory(category: FaqCategory): FaqItem[] {
-  return faqItems.filter((i) => i.category === category);
-}
+export function faqByCategory(category: FaqCategory): FaqItem[] { return faqItems.filter((i) => i.category === category); }
 
 export const faqCategories: FaqCategory[] = ['about', 'affiliation', 'events', 'donations'];

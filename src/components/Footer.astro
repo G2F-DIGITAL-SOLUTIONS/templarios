@@ -78,16 +78,20 @@ const legalLinks = [
           {dict.footer.contactTitle}
         </h2>
         <ul class="mt-4 flex flex-col gap-3 text-sm text-stone-200/90">
-          <li class="flex gap-2.5">
-            <Icon name="map-pin" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <span>{contactAddressLine}</span>
-          </li>
-          <li class="flex gap-2.5">
-            <Icon name="phone" size={17} class="mt-0.5 shrink-0 text-gold-400" />
-            <a href={site.phoneHref} class="no-underline transition-colors hover:text-gold-300">
-              {site.phone}
-            </a>
-          </li>
+          {contactAddressLine && (
+            <li class="flex gap-2.5">
+              <Icon name="map-pin" size={17} class="mt-0.5 shrink-0 text-gold-400" />
+              <span>{contactAddressLine}</span>
+            </li>
+          )}
+          {site.phone && site.phoneHref && (
+            <li class="flex gap-2.5">
+              <Icon name="phone" size={17} class="mt-0.5 shrink-0 text-gold-400" />
+              <a href={site.phoneHref} class="no-underline transition-colors hover:text-gold-300">
+                {site.phone}
+              </a>
+            </li>
+          )}
           <li class="flex gap-2.5">
             <Icon name="mail" size={17} class="mt-0.5 shrink-0 text-gold-400" />
             <a

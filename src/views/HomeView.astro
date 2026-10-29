@@ -238,7 +238,7 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
           {home.donations.ctaPrimary}
           <Icon name="arrow-right" size={17} />
         </a>
-        <a href={`${localizedPath(locale, 'donations')}#irpf`} class="btn btn-ghost-light">
+        <a href={localizedPath(locale, 'contact')} class="btn btn-ghost-light">
           {home.donations.ctaSecondary}
         </a>
       </div>
@@ -288,7 +288,7 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
             summary={tx(event.summary, locale)}
             date={event.date}
             location={tx(event.location, locale)}
-            url={event.url ?? site.eventsPlatformUrl}
+            url={event.url ?? (site.eventsPlatformUrl || undefined)}
             dateLabel={home.events.dateLabel}
             locationLabel={home.events.locationLabel}
             cta={home.events.ctaAll}
@@ -315,6 +315,7 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
       <Icon name="arrow-right" size={17} />
     </a>
   </div>
+  {featuredKnowledge.length > 0 ? (
   <ul class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
     {
       featuredKnowledge.map((item) => (
@@ -330,9 +331,12 @@ const aboutHighlights: { title: string; text: string; icon: IconName }[] = [
       ))
     }
   </ul>
+  ) : (
+    <p class="mt-8 text-ink-600">{dict.knowledge.emptyState}</p>
+  )}
 </Section>
 
-<!-- DIA DAS CIDADES -->
+<!-- CULTURA / DIA DAS CIDADES (seção consolidada em Cultura e Atuação Social) -->
 <Section tone="parchment">
   <div class="frame-engraved overflow-hidden rounded-md bg-surface-raised">
     <div class="grid items-center gap-8 p-8 md:p-12 lg:grid-cols-12">

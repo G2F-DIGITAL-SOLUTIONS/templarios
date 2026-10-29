@@ -7,11 +7,11 @@
  */
 export const pt = {
   meta: {
-    siteName: 'Ordem dos Cavaleiros Templários',
-    shortName: 'OSMTH Brasil',
-    tagline: 'Tradição, conhecimento e serviço ao próximo.',
+    siteName: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
+    shortName: "OICMCTB",
+    tagline: "CREARE FUTURUM MUTATO MODO — Para criar o futuro de um modo diferente.",
     defaultDescription:
-      'A Ordem dos Cavaleiros Templários (OSMTH Brasil) preserva uma tradição de séculos e a coloca a serviço de valores atuais: ética, fraternidade, educação, saúde e serviço à sociedade.',
+      "A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) é uma organização civil brasileira, sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, dedicada aos valores cavalheirescos, ao desenvolvimento humano, à cultura e ao bem comum.",
     ogLocale: 'pt_BR',
   },
 
@@ -28,7 +28,7 @@ export const pt = {
     breadcrumb: 'Você está em',
     onThisPage: 'Nesta página',
     scrollHint: 'Prossiga',
-    underlineMotif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
+    underlineMotif: 'CREARE FUTURUM MUTATO MODO',
     imageCredit: 'Imagem',
     loading: 'Carregando',
   },
@@ -42,8 +42,8 @@ export const pt = {
   nav: {
     label: 'Navegação principal',
     order: 'Ordem',
-    initiatives: 'Iniciativas',
-    knowledge: 'Conhecimento',
+    initiatives: "Cultura e Atuação Social",
+    knowledge: "Cultura e Conhecimento",
     events: 'Eventos',
     citiesDay: 'Dia das Cidades',
     donations: 'Doações',
@@ -54,7 +54,7 @@ export const pt = {
     tv: 'TV Templários',
     // Sub-items
     about: 'Quem Somos',
-    history: 'História',
+    history: "História e Brasão",
     purposes: 'Propósitos',
     teachings: 'Ensinamentos',
     environment: 'Meio Ambiente',
@@ -71,9 +71,9 @@ export const pt = {
   },
 
   footer: {
-    aboutTitle: 'Ordem dos Cavaleiros Templários',
+    aboutTitle: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
     aboutText:
-      'Uma fraternidade que preserva a tradição templária e a coloca a serviço da sociedade contemporânea — pela ética, pelo estudo, pela fraternidade e pela caridade.',
+      "Organização civil brasileira, sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, com identidade e autonomia próprias, dedicada aos valores cavalheirescos, à cultura e ao bem comum.",
     navTitle: 'Navegação',
     institutionalTitle: 'Institucional',
     initiativesTitle: 'Iniciativas',
@@ -86,11 +86,11 @@ export const pt = {
     terms: 'Termos de Uso',
     cookies: 'Cookies',
     rights: 'Todos os direitos reservados.',
-    motif: 'Non nobis, Domine, non nobis, sed nomini tuo ad gloriam',
+    motif: 'CREARE FUTURUM MUTATO MODO',
   },
 
   a11y: {
-    logoAlt: 'Brasão da Ordem dos Cavaleiros Templários',
+    logoAlt: "Brasão da OICMCTB",
     decorative: 'Elemento decorativo',
     externalLink: 'Abre em nova aba',
     requiredField: 'campo obrigatório',
@@ -119,11 +119,13 @@ export const pt = {
     consent: 'Autorizo o uso dos meus dados para resposta a este contato.',
     requiredNote: 'Campos marcados com * são obrigatórios.',
     selectPlaceholder: 'Selecione',
+    mailSubject: 'Mensagem pelo site da OICMCTB',
+    mailOpening: 'Abrindo seu programa de e-mail…',
   },
 
   home: {
     hero: {
-      kicker: 'Ordem dos Cavaleiros Templários',
+      kicker: 'OICMCTB',
       title: 'Uma tradição de séculos a serviço de valores que permanecem atuais.',
       lead: 'Tradição, conhecimento e serviço ao próximo.',
       intro:
@@ -173,14 +175,14 @@ export const pt = {
       kicker: 'Sobre a Ordem',
       title: 'Quem somos',
       lead: 'Uma Ordem de Cavaleiros do Templo — não maçônica — que reúne homens e mulheres em torno da ética, do conhecimento e do serviço.',
-      body: 'A Ordem dos Cavaleiros Templários busca reunir pessoas tolerantes e de boa vontade, que amem a justiça e a nobreza de caráter, desejosas de serem úteis aos outros e que compreendam verdadeiramente o sentido da palavra fraternidade.',
+      body: 'A OICMCTB busca reunir pessoas tolerantes e de boa vontade, que amem a justiça e a nobreza de caráter, desejosas de serem úteis aos outros e que compreendam verdadeiramente o sentido da palavra fraternidade.',
       highlights: {
         identity: 'Identidade',
-        identityText: 'Ordem Eclesiástica e ecumênica, identificada pela mesma cruz de barra dupla e pelo antigo lema da Ordem.',
+        identityText: "Organização civil brasileira, sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, com identidade e autonomia próprias.",
         origin: 'Origem',
-        originText: 'Vinculada à OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — cuja Ordem Mãe tem sede no Porto, em Portugal.',
+        originText: "A instituição foi formalizada como pessoa jurídica em 2021. Seu Grão-Mestre é Roberto Aguiar Guazzelli.",
         values: 'Valores',
-        valuesText: 'Ética, fraternidade, justiça, caridade, educação e defesa da dignidade humana.',
+        valuesText: "Fé em Deus, Esperança, Caridade, Justiça, Prudência, Fortaleza e Temperança.",
         today: 'Hoje',
         todayText: 'Estudos, apoio mútuo e iniciativas sociais voltadas à educação, à saúde, ao esporte e ao meio ambiente.',
       },
@@ -267,7 +269,7 @@ export const pt = {
         },
       },
       ctaPrimary: 'Quero contribuir',
-      ctaSecondary: 'Entenda como funciona a dedução no IRPF',
+      ctaSecondary: 'Fale conosco',
     },
     events: {
       kicker: 'Agenda',
@@ -317,9 +319,9 @@ export const pt = {
     order: {
       kicker: 'A Ordem',
       title: 'Quem Somos',
-      lead: 'Uma verdadeira Ordem Eclesiástica de Cavaleiros Templários, afiliada à sua Ordem Mãe com sede no Porto, em Portugal.',
+      lead: "Organização civil brasileira, sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico, com identidade e autonomia próprias.",
       intro:
-        'A Ordem dos Cavaleiros Templários é uma Ordem de Cavaleiros do Templo — não sendo, portanto, uma Ordem Maçônica, nem a ela conectada, a não ser historicamente.',
+        'A OICMCTB é uma Ordem de Cavaleiros do Templo — não sendo, portanto, uma Ordem Maçônica, nem a ela conectada, a não ser historicamente.',
     },
     history: {
       kicker: 'Trajetória',
@@ -329,7 +331,7 @@ export const pt = {
     purposes: {
       kicker: 'Missão',
       title: 'Propósitos',
-      lead: 'Os propósitos da Ordem dos Cavaleiros Templários são revestidos de nobreza com a capa branca da virtude.',
+      lead: 'Os propósitos da OICMCTB são revestidos de nobreza com a capa branca da virtude.',
     },
     teachings: {
       kicker: 'Estudos',
@@ -364,7 +366,7 @@ export const pt = {
     affiliation: {
       kicker: 'Participe',
       title: 'Afiliar-se',
-      lead: 'A mística e secular Ordem dos Cavaleiros Templários está abrindo as suas portas para você.',
+      lead: 'A OICMCTB está abrindo as suas portas para você.',
     },
     faq: {
       kicker: 'Dúvidas',
@@ -389,7 +391,7 @@ export const pt = {
     categories: {
       about: 'Sobre a Ordem',
       affiliation: 'Afiliação',
-      events: 'Eventos',
+      events: "Participação na vida institucional, conforme orientações da Ordem.",
       donations: 'Doações',
     },
     ctaTitle: 'Não encontrou sua resposta?',
@@ -400,10 +402,10 @@ export const pt = {
   affiliation: {
     purposeTitle: 'Por que se afiliar',
     purposeText:
-      'O propósito da Ordem é ter uma sociedade de Cavaleiros Templários com o mesmo padrão de nobreza e virtude da tradicional Ordem dos Cavaleiros Templários, mantendo um eficiente programa de ajuda mútua.',
+      'O propósito da Ordem é ter uma sociedade de Cavaleiros Templários com o mesmo padrão de nobreza e virtude da tradicional OICMCTB, mantendo um eficiente programa de ajuda mútua.',
     whoTitle: 'Quem pode se afiliar',
     whoText:
-      'Pessoas de ambos os sexos, imbuídas do propósito de resgatar valores que caíram no esquecimento e de construir um mundo livre e justo. Buscamos pessoas livres e de bons costumes, devotadas à família e corretas em seu procedimento com os demais.',
+      "As orientações confirmadas sobre participação são fornecidas pela Ordem a quem manifesta interesse pelo formulário. Não publicamos regras de ingresso, benefícios ou contribuições não confirmados.",
     processTitle: 'Como funciona o processo',
     steps: {
       one: {
@@ -425,17 +427,17 @@ export const pt = {
     },
     benefitsTitle: 'Benefícios',
     benefits: {
-      study: 'Acesso aos estudos e ensinamentos da Ordem.',
-      fraternity: 'Fraternidade e ajuda mútua entre os membros.',
+      study: "Estudo, cultura e preservação da memória histórica.",
+      fraternity: "Fraternidade e serviço ao bem comum.",
       events: 'Participação em eventos e cerimônias.',
-      growth: 'Oportunidades de desenvolvimento pessoal e cultural.',
+      growth: "Desenvolvimento humano e cultural.",
     },
     responsibilitiesTitle: 'Responsabilidades',
     responsibilitiesText:
-      'O membro deve buscar o próprio aperfeiçoamento moral e intelectual, dedicar disciplina ao estudo e contribuir com as taxas e mensalidades que sustentam a Ordem.',
+      "Quem participa é convidado a viver os valores da Ordem — Fé em Deus, Esperança, Caridade, Justiça, Prudência, Fortaleza e Temperança — com humildade, sinceridade e serviço ao bem comum. Condições específicas, quando existirem, são informadas diretamente pela Ordem.",
     feesTitle: 'Taxa de registro e mensalidade',
     feesText:
-      'A Ordem é estritamente uma fraternidade. Há contribuições pagáveis mensalmente e uma taxa de registro individual, destinadas a um fundo geral de operações, a atividades humanitárias e beneficentes e às pesquisas da Ordem. Não há outras cotas obrigatórias.',
+      "Informações sobre eventuais contribuições são fornecidas diretamente pela Ordem, após confirmação oficial. Nenhum valor é publicado neste site sem comprovação.",
     feeRegistrationLabel: 'Taxa de registro',
     feeMonthlyLabel: 'Contribuição mínima mensal',
     formTitle: 'Pedido de afiliação',
@@ -457,10 +459,6 @@ export const pt = {
     howText:
       'Entre em contato com a Ordem para receber as orientações e os dados necessários para realizar sua doação de forma segura.',
     howCta: 'Quero contribuir',
-    irpfTitle: 'Dedução no IRPF',
-    irpfText:
-      'As informações sobre possibilidade de dedução no Imposto de Renda devem observar exclusivamente as regras e as informações oficiais fornecidas pela Ordem, com base em orientação jurídica e contábil própria.',
-    irpfCta: 'Entenda como funciona a dedução no IRPF',
     legalNote:
       'A Ordem não presta consultoria tributária. Consulte sempre as regras oficiais e um profissional habilitado.',
   },
@@ -473,14 +471,12 @@ export const pt = {
     purposeText:
       'Reunir a comunidade em torno de valores que permanecem atuais: ética, solidariedade, cultura e cidadania.',
     howTitle: 'Como funciona',
-    howText:
-      'A Ordem organiza, em conjunto com parceiros locais, uma programação de atividades e encontros aberta à comunidade da cidade.',
+    howText: 'Qualquer edição só é anunciada após confirmação oficial da Ordem, com cidade, data e programação definidos.',
     whyTitle: 'Por que existe',
     whyText:
       'Porque a tradição só permanece viva quando se traduz em serviço concreto à sociedade.',
     participateTitle: 'Como uma cidade pode participar',
-    participateText:
-      'Cidades interessadas podem manifestar interesse por meio do formulário. Nossa equipe orientará sobre requisitos, calendário e apoio disponível.',
+    participateText: 'Cidades interessadas podem manifestar interesse pelo formulário de contato. Orientações, requisitos e calendário só são informados após confirmação oficial.',
     bringTitle: 'Leve o Dia das Cidades para a sua cidade',
     bringText:
       'Preencha o formulário contando sobre sua cidade e seu interesse. Entraremos em contato.',
@@ -520,7 +516,7 @@ export const pt = {
     cookiesTitle: 'Cookies',
     updatedLabel: 'Última atualização',
     placeholderNote:
-      'Este documento é um modelo inicial e deve ser revisado e complementado pela Ordem com o texto jurídico oficial.',
+      "Para solicitar a versão vigente deste documento, entre em contato pelo e-mail institucional oicmctb@gmail.com. O texto jurídico oficial será publicado após validação pelos responsáveis.",
   },
 
   notFound: {

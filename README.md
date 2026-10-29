@@ -1,8 +1,8 @@
-# Ordem dos Cavaleiros Templários — Site institucional
+# OICMCTB — Site institucional
 
 > "Um castelo templário contemporâneo na web."
 
-Site institucional estático da **Ordem dos Cavaleiros Templários (OSMTH Brasil)**.
+Site institucional estático da **Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB)**.
 A experiência parte da metáfora do **castelo virtual** — portas, arcos, pedra,
 pergaminho, cruz templária e iluminação quente — construída somente com
 **composição visual, tipografia, texturas e hierarquia**, sem animações pesadas,
@@ -54,7 +54,7 @@ Fontes self-hosted (zero requests para Google Fonts):
 ```bash
 npm install          # instala dependências
 
-npm run dev          # servidor de desenvolvimento (http://localhost:6000)
+npm run dev          # servidor de desenvolvimento (http://localhost:4321)
 npm run check        # astro check (0 erros esperados)
 npm run build        # gera o site estático em dist/
 npm run preview      # serve o build de produção localmente
@@ -224,21 +224,21 @@ inventados** e sem hardcode dentro de componentes traduzíveis.
 Todos os dados de contato e links externos ficam em `src/config/site.ts`:
 
 ```ts
-// src/config/site.ts (trecho — valores são PLACEHOLDERS)
+// src/config/site.ts (trecho — só dados confirmados são publicados; ver AUDIT.md)
 export const site = {
-  name: 'Ordem dos Cavaleiros Templários',
-  shortName: 'OSMTH Brasil',
-  email: 'contato@exemplo.org',
-  phone: '(00) 0000-0000',
-  eventsPlatformUrl: 'https://exemplo.org/eventos',
+  name: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  shortName: 'OICMCTB',
+  email: 'oicmctb@gmail.com',
+  phone: null, // não confirmado — oculto
+  eventsPlatformUrl: '', // não confirmado — oculto
   formEndpoint: '',        // vazio → ContactForm usa mailto: pré-preenchido
   social: [],              // apenas redes sociais OFICIAIS da Ordem
 } as const;
 ```
 
-> **Placeholders:** as informações de contato (e-mail, telefone, endereço e
-> links externos) estão preenchidas com valores de exemplo. Substitua-as pelos
-> dados oficiais da Ordem em `src/config/site.ts` antes de publicar.
+> **Dados não confirmados:** telefone, endereço e links externos ficam
+> ocultos (`null`/vazio em `src/config/site.ts`) até confirmação oficial —
+> ver pendências em `AUDIT.md`. E-mail publicado: `oicmctb@gmail.com`.
 >
 > **Regra editorial:** não inventar fatos históricos, datas, regras tributárias
 > ou redes sociais. Conteúdo de IRPF deve vir de fonte jurídica/contábil oficial

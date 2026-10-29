@@ -4,11 +4,11 @@ import type { Dictionary } from './pt';
 /** Spanish dictionary. Omitted keys fall back to Portuguese. */
 export const es: DeepPartial<Widen<Dictionary>> = {
   meta: {
-    siteName: 'Orden de los Caballeros Templarios',
-    shortName: 'OSMTH Brasil',
-    tagline: 'Tradición, conocimiento y servicio al prójimo.',
+    siteName: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
+    shortName: "OICMCTB",
+    tagline: "CREARE FUTURUM MUTATO MODO — Crear el futuro de una manera diferente.",
     defaultDescription:
-      'La Orden de los Caballeros Templarios (OSMTH Brasil) preserva una tradición de siglos y la pone al servicio de valores actuales: ética, fraternidad, educación, salud y servicio a la sociedad.',
+      "La Orden Internacional Civil Militar Caballeros Templarios de Brasil (OICMCTB) es una organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico, dedicada a los valores caballerescos, al desarrollo humano, a la cultura y al bien común.",
     ogLocale: 'es_ES',
   },
 
@@ -26,6 +26,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     onThisPage: 'En esta página',
     scrollHint: 'Continuar',
     imageCredit: 'Imagen',
+    underlineMotif: 'CREARE FUTURUM MUTATO MODO',
     loading: 'Cargando',
   },
 
@@ -38,8 +39,8 @@ export const es: DeepPartial<Widen<Dictionary>> = {
   nav: {
     label: 'Navegación principal',
     order: 'Orden',
-    initiatives: 'Iniciativas',
-    knowledge: 'Conocimiento',
+    initiatives: "Cultura y Acción Social",
+    knowledge: "Cultura y Conocimiento",
     events: 'Eventos',
     citiesDay: 'Día de las Ciudades',
     donations: 'Donaciones',
@@ -49,7 +50,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     shop: 'Tienda',
     tv: 'TV Templarios',
     about: 'Quiénes Somos',
-    history: 'Historia',
+    history: "Historia y Escudo",
     purposes: 'Propósitos',
     teachings: 'Enseñanzas',
     environment: 'Medio Ambiente',
@@ -66,9 +67,9 @@ export const es: DeepPartial<Widen<Dictionary>> = {
   },
 
   footer: {
-    aboutTitle: 'Orden de los Caballeros Templarios',
+    aboutTitle: "Ordem Internacional Civil Militar Cavaleiros Templários do Brasil",
     aboutText:
-      'Una fraternidad que preserva la tradición templaria y la pone al servicio de la sociedad contemporánea — por la ética, el estudio, la fraternidad y la caridad.',
+      "Organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico, con identidad y autonomía propias, dedicada a los valores caballerescos, a la cultura y al bien común.",
     navTitle: 'Navegación',
     institutionalTitle: 'Institucional',
     initiativesTitle: 'Iniciativas',
@@ -81,10 +82,11 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     terms: 'Términos de Uso',
     cookies: 'Cookies',
     rights: 'Todos los derechos reservados.',
+    motif: 'CREARE FUTURUM MUTATO MODO',
   },
 
   a11y: {
-    logoAlt: 'Escudo de la Orden de los Caballeros Templarios',
+    logoAlt: "Escudo de la OICMCTB",
     decorative: 'Elemento decorativo',
     externalLink: 'Se abre en una nueva pestaña',
     requiredField: 'campo obligatorio',
@@ -100,6 +102,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     state: 'Estado / Provincia',
     message: 'Mensaje',
     subject: 'Asunto',
+    cpf: 'CPF',
     birthDate: 'Fecha de nacimiento',
     maritalStatus: 'Estado civil',
     address: 'Dirección de residencia completa',
@@ -112,11 +115,13 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     consent: 'Autorizo el uso de mis datos para responder a esta consulta.',
     requiredNote: 'Los campos marcados con * son obligatorios.',
     selectPlaceholder: 'Seleccionar',
+    mailSubject: 'Mensaje desde el sitio de la OICMCTB',
+    mailOpening: 'Abriendo su programa de correo…',
   },
 
   home: {
     hero: {
-      kicker: 'Orden de los Caballeros Templarios',
+      kicker: 'OICMCTB',
       title: 'Una tradición de siglos al servicio de valores que siguen vigentes.',
       lead: 'Tradición, conocimiento y servicio al prójimo.',
       intro:
@@ -142,14 +147,14 @@ export const es: DeepPartial<Widen<Dictionary>> = {
       kicker: 'Sobre la Orden',
       title: 'Quiénes somos',
       lead: 'Una Orden de Caballeros del Templo — no masónica — que reúne a hombres y mujeres en torno a la ética, el conocimiento y el servicio.',
-      body: 'La Orden de los Caballeros Templarios busca reunir a personas tolerantes y de buena voluntad, que amen la justicia y la nobleza de carácter, deseosas de ser útiles a los demás y que comprendan verdaderamente el sentido de la palabra fraternidad.',
+      body: 'La OICMCTB busca reunir a personas tolerantes y de buena voluntad, que amen la justicia y la nobleza de carácter, deseosas de ser útiles a los demás y que comprendan verdaderamente el sentido de la palabra fraternidad.',
       highlights: {
         identity: 'Identidad',
-        identityText: 'Una Orden Eclesiástica y ecuménica, identificada por la misma cruz de doble barra y por el antiguo lema de la Orden.',
+        identityText: "Organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico, con identidad y autonomía propias.",
         origin: 'Origen',
-        originText: 'Vinculada a la OSMTH — Ordo Supremus Militaris Templi Hierosolymitani — cuya Orden Madre tiene sede en Oporto, Portugal.',
+        originText: "La institución fue formalizada como persona jurídica en 2021. Su Gran Maestre es Roberto Aguiar Guazzelli.",
         values: 'Valores',
-        valuesText: 'Ética, fraternidad, justicia, caridad, educación y defensa de la dignidad humana.',
+        valuesText: "Fe en Dios, Esperanza, Caridad, Justicia, Prudencia, Fortaleza y Templanza.",
         today: 'Hoy',
         todayText: 'Estudios, ayuda mutua e iniciativas sociales en educación, salud, deporte y medio ambiente.',
       },
@@ -197,7 +202,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
         impact: { title: 'Impacto social', text: 'Apoyar iniciativas de educación, salud, deporte y medio ambiente en beneficio de la comunidad.' },
       },
       ctaPrimary: 'Quiero contribuir',
-      ctaSecondary: 'Entiende cómo funciona la deducción en el IRPF',
+      ctaSecondary: 'Contáctanos',
     },
     events: {
       kicker: 'Agenda',
@@ -242,19 +247,19 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     order: {
       kicker: 'La Orden',
       title: 'Quiénes Somos',
-      lead: 'Una verdadera Orden Eclesiástica de Caballeros Templarios, afiliada a su Orden Madre con sede en Oporto, Portugal.',
+      lead: "Organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico, con identidad y autonomía propias.",
       intro:
-        'La Orden de los Caballeros Templarios es una Orden de Caballeros del Templo — no es, por tanto, una Orden Masónica, ni está conectada a ella, salvo históricamente.',
+        'La OICMCTB es una Orden de Caballeros del Templo — no es, por tanto, una Orden Masónica, ni está conectada a ella, salvo históricamente.',
     },
     history: { kicker: 'Trayectoria', title: 'Historia', lead: 'La trayectoria de la tradición templaria, desde sus orígenes medievales hasta su expresión contemporánea.' },
-    purposes: { kicker: 'Misión', title: 'Propósitos', lead: 'Los propósitos de la Orden de los Caballeros Templarios están revestidos de nobleza con la capa blanca de la virtud.' },
+    purposes: { kicker: 'Misión', title: 'Propósitos', lead: 'Los propósitos de la OICMCTB están revestidos de nobleza con la capa blanca de la virtud.' },
     teachings: { kicker: 'Estudios', title: 'Enseñanzas', lead: 'Trabajamos con los estudios templarios hacia un objetivo común: el perfeccionamiento de nuestro carácter.' },
     initiatives: { kicker: 'La Orden en acción', title: 'Iniciativas', lead: 'Las áreas en las que la Orden contribuye a la sociedad contemporánea.' },
     events: { kicker: 'Agenda', title: 'Eventos', lead: 'Sigue los eventos y actividades de la Orden.' },
     knowledge: { kicker: 'Conocimiento', title: 'Conferencias, Estudios y Artículos', lead: 'Materiales de la Orden para el estudio, la reflexión y el desarrollo personal.' },
     citiesDay: { kicker: 'Proyecto', title: 'Día de las Ciudades', lead: 'Una iniciativa que acerca la Orden a las ciudades y a sus comunidades.' },
     donations: { kicker: 'Contribuye', title: 'Donaciones', lead: 'Forma parte de algo mayor. Tu contribución sostiene las actividades humanitarias, benéficas y de investigación de la Orden.' },
-    affiliation: { kicker: 'Participa', title: 'Afiliación', lead: 'La mística y secular Orden de los Caballeros Templarios está abriendo sus puertas para ti.' },
+    affiliation: { kicker: 'Participa', title: 'Afiliación', lead: 'La OICMCTB está abriendo sus puertas para ti.' },
     faq: { kicker: 'Dudas', title: 'Preguntas Frecuentes', lead: 'Respuestas basadas exclusivamente en la información oficial de la Orden.' },
     contact: { kicker: 'Hablemos', title: 'Contacto', lead: 'Estamos a disposición para responder tus preguntas sobre la Orden.' },
   },
@@ -276,10 +281,10 @@ export const es: DeepPartial<Widen<Dictionary>> = {
   affiliation: {
     purposeTitle: 'Por qué afiliarse',
     purposeText:
-      'El propósito de la Orden es tener una sociedad de Caballeros Templarios con el mismo estándar de nobleza y virtud de la tradicional Orden de los Caballeros Templarios, manteniendo un eficiente programa de ayuda mutua.',
+      'El propósito de la Orden es tener una sociedad de Caballeros Templarios con el mismo estándar de nobleza y virtud de la tradicional OICMCTB, manteniendo un eficiente programa de ayuda mutua.',
     whoTitle: 'Quién puede afiliarse',
     whoText:
-      'Personas de ambos sexos, imbuidas del propósito de rescatar valores que cayeron en el olvido y de construir un mundo libre y justo.',
+      "Las orientaciones confirmadas sobre participación las proporciona la Orden a quienes manifiestan interés mediante el formulario. No publicamos reglas de ingreso, beneficios ni contribuciones no confirmados.",
     processTitle: 'Cómo funciona el proceso',
     steps: {
       one: { title: 'Conoce la Orden', text: 'Lee sobre nuestra identidad, historia y propósitos antes de cualquier decisión.' },
@@ -289,17 +294,17 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     },
     benefitsTitle: 'Beneficios',
     benefits: {
-      study: 'Acceso a los estudios y enseñanzas de la Orden.',
-      fraternity: 'Fraternidad y ayuda mutua entre los miembros.',
-      events: 'Participación en eventos y ceremonias.',
-      growth: 'Oportunidades de desarrollo personal y cultural.',
+      study: "Estudio, cultura y preservación de la memoria histórica.",
+      fraternity: "Fraternidad y servicio al bien común.",
+      events: "Participación en la vida institucional, según las orientaciones de la Orden.",
+      growth: "Desarrollo humano y cultural.",
     },
     responsibilitiesTitle: 'Responsabilidades',
     responsibilitiesText:
-      'El miembro debe buscar su propio perfeccionamiento moral e intelectual, dedicar disciplina al estudio y contribuir con las tasas y mensualidades que sostienen la Orden.',
+      "Quienes participan son invitados a vivir los valores de la Orden — Fe en Dios, Esperanza, Caridad, Justicia, Prudencia, Fortaleza y Templanza — con humildad, sinceridad y servicio al bien común. Las condiciones específicas, cuando existan, las comunica directamente la Orden.",
     feesTitle: 'Tasa de registro y mensualidad',
     feesText:
-      'La Orden es estrictamente una fraternidad. Hay contribuciones mensuales y una tasa de registro individual, destinadas a un fondo general de operaciones, a actividades humanitarias y benéficas y a las investigaciones de la Orden.',
+      "La información sobre eventuales contribuciones la proporciona directamente la Orden, tras confirmación oficial. Ningún importe se publica en este sitio sin comprobación.",
     feeRegistrationLabel: 'Tasa de registro',
     feeMonthlyLabel: 'Contribución mínima mensual',
     formTitle: 'Solicitud de afiliación',
@@ -320,10 +325,6 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     howTitle: 'Cómo donar',
     howText: 'Contacta con la Orden para recibir las orientaciones y los datos necesarios para realizar tu donación de forma segura.',
     howCta: 'Quiero contribuir',
-    irpfTitle: 'Deducción en el IRPF',
-    irpfText:
-      'La información sobre la posibilidad de deducción en el Impuesto sobre la Renta debe observar exclusivamente las reglas y la información oficiales proporcionadas por la Orden.',
-    irpfCta: 'Entiende cómo funciona la deducción en el IRPF',
     legalNote: 'La Orden no presta asesoría tributaria. Consulta siempre las reglas oficiales y a un profesional habilitado.',
   },
 
@@ -334,11 +335,11 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     purposeTitle: 'Su propósito',
     purposeText: 'Reunir a la comunidad en torno a valores que siguen vigentes: ética, solidaridad, cultura y ciudadanía.',
     howTitle: 'Cómo funciona',
-    howText: 'Junto con socios locales, la Orden organiza una programación de actividades y encuentros abierta a la comunidad de la ciudad.',
+    howText: 'Cualquier edición solo se anuncia tras la confirmación oficial de la Orden, con ciudad, fecha y programación definidos.',
     whyTitle: 'Por qué existe',
     whyText: 'Porque una tradición solo permanece viva cuando se traduce en servicio concreto a la sociedad.',
     participateTitle: 'Cómo una ciudad puede participar',
-    participateText: 'Las ciudades interesadas pueden manifestar su interés mediante el formulario. Nuestro equipo orientará sobre requisitos, calendario y apoyo disponible.',
+    participateText: 'Las ciudades interesadas pueden manifestar interés mediante el formulario de contacto. Orientaciones, requisitos y calendario solo se informan tras confirmación oficial.',
     bringTitle: 'Lleva el Día de las Ciudades a tu ciudad',
     bringText: 'Completa el formulario contándonos sobre tu ciudad y tu interés. Nos pondremos en contacto.',
     cta: 'Quiero llevar el Día de las Ciudades a mi ciudad',
@@ -346,6 +347,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
 
   events: {
     upcomingTitle: 'Próximos eventos',
+    pastTitle: "Eventos anteriores",
     platformNote: 'La inscripción y la agenda completa se mantienen en nuestra plataforma externa de eventos.',
     ctaPlatform: 'Ver todos los eventos',
     emptyState: 'Ningún evento divulgado por el momento.',
@@ -376,7 +378,7 @@ export const es: DeepPartial<Widen<Dictionary>> = {
     cookiesTitle: 'Cookies',
     updatedLabel: 'Última actualización',
     placeholderNote:
-      'Este documento es un modelo inicial y debe ser revisado y completado por la Orden con el texto legal oficial.',
+      "Para solicitar la versión vigente de este documento, contáctenos en el correo institucional oicmctb@gmail.com. El texto jurídico oficial se publicará tras la validación de los responsables.",
   },
 
   notFound: {
