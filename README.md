@@ -60,7 +60,7 @@ npm run build        # gera o site estático em dist/
 npm run preview      # serve o build de produção localmente
 ```
 
-Requisitos: **Node.js 20+** e npm.
+Requisitos: **Node.js 26+** e npm.
 
 ---
 
@@ -318,7 +318,7 @@ git push  →  build (npm run build)  →  deploy de dist/
 
 | Plataforma           | Configuração                                                        |
 | -------------------- | ------------------------------------------------------------------- |
-| **Cloudflare Pages** | Build: `npm run build` · Output: `dist` · Node 20 · usa `public/_headers` |
+| **Cloudflare Pages** | Build: `npm run build` · Output: `dist` · Node 26 · usa `public/_headers` |
 | **Vercel**           | Detectado via `vercel.json` (framework Astro, output `dist`)          |
 | **Netlify**          | Detectado via `netlify.toml` (build `npm run build`, publish `dist`)  |
 | **Servidor estático**| Enviar o conteúdo de `dist/` (Nginx, S3+CloudFront, etc.)           |
@@ -328,7 +328,7 @@ Já incluímos a configuração pronta no repositório:
 - `netlify.toml` — build, publish e cabeçalhos de cache/segurança.
 - `vercel.json` — build, output e cabeçalhos.
 - `public/_headers` — cache/segurança para Cloudflare Pages e Netlify.
-- `.nvmrc` — fixa o Node 20.
+- `.nvmrc` — fixa o Node 26.
 
 Recomendações de infra:
 

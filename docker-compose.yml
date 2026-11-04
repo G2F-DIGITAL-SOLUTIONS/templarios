@@ -1,6 +1,6 @@
 services:
   app:
-    image: kooldev/node:22
+    image: kooldev/node:26
     # --ignore-lock: .astro/dev.json lives on the bind-mounted host dir and
     # outlives containers. A fresh container reuses low PIDs, so Astro mistakes
     # that stale lock for a live server and exits ("Another astro dev server
@@ -34,7 +34,7 @@ services:
       - kool_global
 
   prod:
-    image: kooldev/node:22
+    image: kooldev/node:26
     # Opt-in only: without a profile, `docker compose up` / `kool start`
     # starts every service, and app + prod publishing the same host port
     # makes one of them fail with "port is already allocated".
