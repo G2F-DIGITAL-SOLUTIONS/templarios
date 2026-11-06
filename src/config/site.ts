@@ -38,6 +38,19 @@ export const site = {
    * pre-filled mailto: — the site works with zero backend infrastructure.
    */
   formEndpoint: '',
+  /** Official Signvm Templariorvm Brasiliæ seal (main / institutional asset). */
+  logo: {
+    /** Primary brand mark used in the header. */
+    header: '/logos/selo-templarios-brasiliae-simples-fundo-escuro.svg',
+    /** Full seal for Open Graph / JSON-LD / large placements. */
+    full: '/logos/selo-templarios-brasiliae-lite.svg',
+    /** Dark strokes — use on light surfaces (parchment). */
+    light: '/logos/selo-templarios-brasiliae-simples-sem-fundo.svg',
+    /** Light strokes — use on dark surfaces (footer, engraved frames). */
+    dark: '/logos/selo-templarios-brasiliae-simples-fundo-escuro.svg',
+    /** Official raster logo (renamed from the provided seal photo). */
+    photo: '/logos/selo-templarios-brasiliae.jpg',
+  },
   /** Only official social profiles of the Order should be listed here. */
   social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
 } as const;

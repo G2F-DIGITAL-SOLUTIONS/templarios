@@ -1,54 +1,44 @@
 ---
+import { site } from '@/config/site';
+
 /**
- * Emblem — a generic site mark, not the official coat of arms.
+ * Emblem — official Signvm Templariorvm Brasiliæ seal.
  *
- * The Order's official heraldic art is a separate institutional asset and is
- * not recreated here. This simplified mark combines an arched gateway with a
- * Maltese cross, used only as a visual signpost for the website.
- *
- * Rendered as inline SVG so it is crisp at any size and needs no asset
- * request. Uses `currentColor` so it adapts to light/dark contexts.
+ * `full` renders the institutional seal introduced on main.
+ * `cross` keeps a lightweight Maltese cross for decorative accents only
+ * (section headings, cards) so the full seal is not repeated everywhere.
  */
 interface Props {
   class?: string;
   size?: number;
-  /** 'full' shows the arched gate; 'cross' shows only the cross. */
+  /** 'full' shows the official seal; 'cross' shows only the cross accent. */
   variant?: 'full' | 'cross';
+  /**
+   * Seal artwork for light or dark surfaces. Defaults to light (dark strokes).
+   * Use `dark` on dark surfaces; `header` for the site masthead mark.
+   */
+  tone?: 'light' | 'dark' | 'header';
   /** Optional accessible name. When omitted the mark is decorative. */
   title?: string;
 }
 
-const { class: className = '', size = 48, variant = 'full', title } = Astro.props;
+const { class: className = '', size = 48, variant = 'full', tone = 'light', title } = Astro.props;
+
+const sealSrc =
+  tone === 'header' ? site.logo.header : tone === 'dark' ? site.logo.dark : site.logo.light;
 ---
 
 {
   variant === 'full' ? (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={sealSrc}
       width={size}
       height={size}
-      viewBox="0 0 56 64"
-      class={className}
-      role={title ? 'img' : undefined}
-      aria-label={title}
+      alt={title ?? ''}
+      class={`block object-contain ${className}`.trim()}
+      decoding="async"
       aria-hidden={title ? undefined : 'true'}
-    >
-      {/* Arched gate */}
-      <path d="M8 60V32a20 20 0 0 1 40 0v28Z" fill="currentColor" opacity="0.12" />
-      <path
-        d="M8 60V32a20 20 0 0 1 40 0v28"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.4"
-      />
-      {/* Simplified Maltese cross */}
-      <g fill="currentColor" transform="translate(16 16) scale(0.75)">
-        <path d="M16 3 21 10 16 16 11 10Z" />
-        <path d="M29 16 22 11 16 16 22 21Z" />
-        <path d="M16 29 11 22 16 16 21 22Z" />
-        <path d="M3 16 10 21 16 16 10 11Z" />
-      </g>
-    </svg>
+    />
   ) : (
     <svg
       xmlns="http://www.w3.org/2000/svg"

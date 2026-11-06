@@ -73,7 +73,7 @@ const baseGraph = {
       name: dict.meta.siteName,
       alternateName: dict.meta.shortName,
       url: siteUrl.origin,
-      logo: new URL('/emblema.svg', siteUrl).href,
+      logo: new URL(site.logo.full, siteUrl).href,
       email: site.email,
     },
     {
