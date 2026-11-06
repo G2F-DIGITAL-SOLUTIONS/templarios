@@ -7,6 +7,13 @@ import redirects from './redirects.generated.mjs';
 // Change this to the final production domain before deploy.
 const SITE = 'https://templariosdobrasil.com';
 
+// Set by docker-compose so the dev server is reachable through the published port.
+const port = Number(process.env.PORT || 6000);
+const listenOnAllInterfaces = process.env.HOST === '0.0.0.0';
+const publishedPort = process.env.KOOL_APP_PORT
+  ? Number(process.env.KOOL_APP_PORT)
+  : undefined;
+
 export default defineConfig({
   site: SITE,
   output: 'static',
@@ -16,6 +23,16 @@ export default defineConfig({
   redirects,
   build: {
     inlineStylesheets: 'auto',
+  },
+  server: {
+    // Vite blocks unknown Host headers. A leading dot also allows subdomains.
+    allowedHosts: ['.templariosdobrasil.com'],
+    ...(listenOnAllInterfaces
+      ? {
+          host: true,
+          port,
+        }
+      : {}),
   },
   i18n: {
     defaultLocale: 'pt',
@@ -41,5 +58,12 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    ...(publishedPort && publishedPort !== port
+      ? {
+          server: {
+            ws: { clientPort: publishedPort },
+          },
+        }
+      : {}),
   },
 });

@@ -1,0 +1,17 @@
+scripts:
+  node: kool exec app node
+  npm: kool docker kooldev/node:26 npm
+  npx: kool docker kooldev/node:26 npx
+  astro: kool exec app npx astro
+
+  setup:
+    - kool run npm install
+    - kool start
+
+  reset:
+    - kool run npm install
+
+  # Same one-off container as `kool run npm` — works without `kool start`,
+  # as long as bind-mounted files aren't root-owned (see ASUSER in compose).
+  build: kool run npm run build
+  check: kool run npm run check

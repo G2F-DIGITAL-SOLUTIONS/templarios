@@ -5,9 +5,9 @@
  * All institutional data below was provided by the Order. Registration data
  * (CNPJ) is displayed with an explicit note that it does not replace an
  * official registry certificate. No address or telephone is published,
- * because none has been confirmed by the institution.
+ * because none has been confirmed by the institution. Unconfirmed fields
+ * stay out of this object (see AUDIT.md for pending confirmations).
  */
-
 export const site = {
   /** Full institutional name, used on first mention and in metadata. */
   name: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',

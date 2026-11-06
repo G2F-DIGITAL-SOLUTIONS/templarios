@@ -22,7 +22,7 @@ npm run preview      # serve dist/ localmente
 npm run verify       # check + check:i18n + build
 ```
 
-Requisitos: Node.js 20+.
+Requisitos: Node.js 26+.
 
 O `prebuild` executa `npm run redirects` automaticamente. Esse script gera:
 
