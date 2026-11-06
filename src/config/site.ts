@@ -1,32 +1,56 @@
 /**
- * Global site configuration — single source of truth for links and contacts.
- * Only confirmed information is published. Unconfirmed fields stay `null` /
- * empty and are hidden by the components that would render them (see
- * AUDIT.md for the pending confirmations).
+ * Global site configuration — single source of truth for links, contacts
+ * and social profiles. Components read from here.
+ *
+ * All institutional data below was provided by the Order. Registration data
+ * (CNPJ) is displayed with an explicit note that it does not replace an
+ * official registry certificate. No address or telephone is published,
+ * because none has been confirmed by the institution. Unconfirmed fields
+ * stay out of this object (see AUDIT.md for pending confirmations).
  */
 export const site = {
+  /** Full institutional name, used on first mention and in metadata. */
   name: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
+  /** Short institutional name used in headers/footers. */
   shortName: 'OICMCTB',
+  /** Legal name (razão social), as provided by the Order. */
   legalName: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
-  /** Institutional e-mail confirmed for publication. */
+  /** CNPJ as provided by the Order — pending external validation. */
+  cnpj: '42.071.770/0001-75',
+  /** Grand Master, as identified in the institutional material. */
+  grandMaster: 'Roberto Aguiar Guazzelli',
+  /** First Lady of the National Council of Templar Ladies, as identified. */
+  firstLady: 'Sueli Teodoro',
+  /** Cultural and literary arm associated with the Order. */
+  culturalArm: 'Academia Brasileira Templária de Letras (ABTL)',
+  /** Institutional e-mail provided by the Order. */
   email: 'oicmctb@gmail.com',
-  /** Not confirmed for publication — hidden until validated. */
-  phone: null as string | null,
-  phoneHref: null as string | null,
-  address: null as null | {
-    street: string; district: string; city: string; region: string; postalCode: string; country: string;
-  },
-  /** No confirmed external events platform — hidden until validated. */
-  eventsPlatformUrl: '',
-  /** No confirmed form backend; the form falls back to a pre-filled mailto:. */
-  formEndpoint: '',
-  /** No confirmed shop — hidden until validated. */
-  shopUrl: '',
+  /** Official social handle, as provided by the Order. */
+  socialHandle: '@oicmctb',
+  /** Official social platforms, as provided by the Order. */
+  socialPlatforms: ['Facebook', 'Instagram'],
+  /** Lema oficial da Ordem. */
+  motto: 'CREARE FUTURUM MUTATO MODO',
+  /** Portuguese translation of the motto. */
+  mottoTranslation: 'Para criar o futuro de um modo diferente.',
   /**
-   * Social profiles mentioned by representatives (@oicmctb on Facebook and
-   * Instagram) are NOT listed until the URLs are verified as official.
+   * Form submission endpoint. Left empty so ContactForm falls back to a
+   * pre-filled mailto: — the site works with zero backend infrastructure.
    */
+  formEndpoint: '',
+  /** Official Signvm Templariorvm Brasiliæ seal (main / institutional asset). */
+  logo: {
+    /** Primary brand mark used in the header. */
+    header: '/logos/selo-templarios-brasiliae-simples-fundo-escuro.svg',
+    /** Full seal for Open Graph / JSON-LD / large placements. */
+    full: '/logos/selo-templarios-brasiliae-lite.svg',
+    /** Dark strokes — use on light surfaces (parchment). */
+    light: '/logos/selo-templarios-brasiliae-simples-sem-fundo.svg',
+    /** Light strokes — use on dark surfaces (footer, engraved frames). */
+    dark: '/logos/selo-templarios-brasiliae-simples-fundo-escuro.svg',
+    /** Official raster logo (renamed from the provided seal photo). */
+    photo: '/logos/selo-templarios-brasiliae.jpg',
+  },
+  /** Only official social profiles of the Order should be listed here. */
   social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
 } as const;
-
-export const contactAddressLine: string | null = null;

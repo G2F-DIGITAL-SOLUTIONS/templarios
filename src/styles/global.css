@@ -31,7 +31,7 @@
   --color-parchment-dark: #ece4d5;
 
   /* Accents */
-  --color-gold-700: #8a6d3b;
+  --color-gold-700: #7d6133;
   --color-gold-600: #a3813f;
   --color-gold-500: #b8934e;
   --color-gold-400: #c9a862;
@@ -71,8 +71,17 @@
 @layer base {
   :root {
     color-scheme: light;
-    --header-height: 4.5rem;
+    --header-top-height: 4.5rem;
+    --header-nav-height: 2.75rem;
+    --header-height: var(--header-top-height);
     scrollbar-gutter: stable;
+  }
+
+  /* From lg the navigation gets its own row, so the sticky offset grows. */
+  @media (min-width: 64rem) {
+    :root {
+      --header-height: calc(var(--header-top-height) + var(--header-nav-height));
+    }
   }
 
   html {

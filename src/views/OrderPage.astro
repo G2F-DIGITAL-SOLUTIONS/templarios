@@ -1,0 +1,110 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import CTA from '@/components/ui/CTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { getDictionary } from '@/i18n/dictionaries';
+import { localizedPath, type Locale } from '@/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const order = dict.order;
+const page = dict.pages.order;
+const path = localizedPath(locale, 'order');
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey="order"
+  title={page.title}
+  description={page.lead}
+  path={path}
+>
+  <PageHero
+    locale={locale}
+    dict={dict}
+    kicker={page.kicker}
+    title={page.title}
+    lead={page.lead}
+    crumbs={[{ label: page.title }]}
+  />
+
+  <!-- On this page -->
+  <Section tone="parchment" size="tight">
+    <nav aria-label={dict.common.onThisPage}>
+      <p class="eyebrow">{dict.common.onThisPage}</p>
+      <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+        {
+          order.sections.map((section) => (
+            <li>
+              <a
+                href={`#${section.id}`}
+                class="text-sm font-medium text-wine-700 no-underline underline-offset-4 hover:underline"
+              >
+                {section.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </Section>
+
+  {
+    order.sections.map((section, index) => (
+      <Section id={section.id} tone={index % 2 === 1 ? 'sunken' : 'plain'}>
+        <div class="mx-auto max-w-3xl">
+          <SectionHeading title={section.title} as="h2" />
+          <div class="prose-templar mt-6">
+            {section.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </Section>
+    ))
+  }
+
+  <!-- Institutional information -->
+  <Section id="informacoes-institucionais" tone="parchment">
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading
+        kicker={dict.footer.institutionalTitle}
+        title={order.info.title}
+        lead={order.info.lead}
+      />
+      <dl class="mt-8 divide-y divide-stone-200 border-y border-stone-200">
+        {
+          order.info.items.map((item) => (
+            <div class="grid gap-1 py-4 sm:grid-cols-3 sm:gap-4">
+              <dt class="text-sm font-semibold text-ink-800">{item.label}</dt>
+              <dd class="text-sm text-ink-600 sm:col-span-2">{item.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="mt-5 text-xs text-stone-500">{order.info.note}</p>
+      <a href={localizedPath(locale, 'participate')} class="btn btn-outline mt-8">
+        {dict.nav.ctaSecondary}
+        <Icon name="arrow-right" size={17} />
+      </a>
+    </div>
+  </Section>
+
+  <CTA
+    locale={locale}
+    title={dict.society.cta.title}
+    lead={dict.society.cta.lead}
+    primaryLabel={dict.society.cta.primary}
+    primaryRouteKey="society"
+    secondaryLabel={dict.society.cta.secondary}
+    secondaryRouteKey="participate"
+    variant="quiet"
+  />
+</BaseLayout>

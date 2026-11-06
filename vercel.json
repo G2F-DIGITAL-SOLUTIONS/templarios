@@ -6,15 +6,731 @@
   "headers": [
     {
       "source": "/_astro/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/historia",
+      "destination": "/historia-e-brasao",
+      "permanent": true
+    },
+    {
+      "source": "/en/history",
+      "destination": "/en/history-and-coat-of-arms",
+      "permanent": true
+    },
+    {
+      "source": "/it/storia",
+      "destination": "/it/storia-e-stemma",
+      "permanent": true
+    },
+    {
+      "source": "/fr/histoire",
+      "destination": "/fr/histoire-et-blason",
+      "permanent": true
+    },
+    {
+      "source": "/es/historia",
+      "destination": "/es/historia-y-escudo",
+      "permanent": true
+    },
+    {
+      "source": "/propositos",
+      "destination": "/ordem#missao-visao-e-valores",
+      "permanent": true
+    },
+    {
+      "source": "/en/purposes",
+      "destination": "/en/order#missao-visao-e-valores",
+      "permanent": true
+    },
+    {
+      "source": "/it/propositi",
+      "destination": "/it/ordine#missao-visao-e-valores",
+      "permanent": true
+    },
+    {
+      "source": "/fr/propos",
+      "destination": "/fr/ordre#missao-visao-e-valores",
+      "permanent": true
+    },
+    {
+      "source": "/es/propositos",
+      "destination": "/es/orden#missao-visao-e-valores",
+      "permanent": true
+    },
+    {
+      "source": "/ensinamentos",
+      "destination": "/ordem#filosofia-e-mistica",
+      "permanent": true
+    },
+    {
+      "source": "/en/teachings",
+      "destination": "/en/order#filosofia-e-mistica",
+      "permanent": true
+    },
+    {
+      "source": "/it/insegnamenti",
+      "destination": "/it/ordine#filosofia-e-mistica",
+      "permanent": true
+    },
+    {
+      "source": "/fr/enseignements",
+      "destination": "/fr/ordre#filosofia-e-mistica",
+      "permanent": true
+    },
+    {
+      "source": "/es/ensenanzas",
+      "destination": "/es/orden#filosofia-e-mistica",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/meio-ambiente",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/environment",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/ambiente",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/environnement",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/medio-ambiente",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/esporte",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/sport",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/sport",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/sport",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/deporte",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/saude",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/health",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/salute",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/sante",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/salud",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/educacao",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/education",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/educazione",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/education",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/educacion",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/assistencia-social",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/social-assistance",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/assistenza-sociale",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/aide-sociale",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/asistencia-social",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/cultura-historia-pesquisa",
+      "destination": "/cultura-e-atuacao-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/culture-history-research",
+      "destination": "/en/culture-and-social-action#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/cultura-storia-ricerca",
+      "destination": "/it/cultura-e-azione-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/culture-histoire-recherche",
+      "destination": "/fr/culture-et-action-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/cultura-historia-investigacion",
+      "destination": "/es/cultura-y-accion-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/estudos-heraldicos",
+      "destination": "/historia-e-brasao",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/heraldic-studies",
+      "destination": "/en/history-and-coat-of-arms",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/studi-araldici",
+      "destination": "/it/storia-e-stemma",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/etudes-heraldiques",
+      "destination": "/fr/histoire-et-blason",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/estudios-heraldicos",
+      "destination": "/es/historia-y-escudo",
+      "permanent": true
+    },
+    {
+      "source": "/iniciativas/memoria-herois-civicos",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/initiatives/civic-heroes-memory",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/iniziative/memoria-eroi-civici",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/initiatives/memoire-heros-civiques",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/iniciativas/memoria-heroes-civicos",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/eventos",
+      "destination": "/participe#atividades",
+      "permanent": true
+    },
+    {
+      "source": "/en/events",
+      "destination": "/en/participate#atividades",
+      "permanent": true
+    },
+    {
+      "source": "/it/eventi",
+      "destination": "/it/partecipa#atividades",
+      "permanent": true
+    },
+    {
+      "source": "/fr/evenements",
+      "destination": "/fr/participer#atividades",
+      "permanent": true
+    },
+    {
+      "source": "/es/eventos",
+      "destination": "/es/participa#atividades",
+      "permanent": true
+    },
+    {
+      "source": "/conhecimento",
+      "destination": "/cultura-e-atuacao-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/en/knowledge",
+      "destination": "/en/culture-and-social-action#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/it/conoscenza",
+      "destination": "/it/cultura-e-azione-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/fr/connaissance",
+      "destination": "/fr/culture-et-action-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/es/conocimiento",
+      "destination": "/es/cultura-y-accion-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/palestras",
+      "destination": "/cultura-e-atuacao-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/en/lectures",
+      "destination": "/en/culture-and-social-action#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/it/conferenze",
+      "destination": "/it/cultura-e-azione-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/fr/conferences",
+      "destination": "/fr/culture-et-action-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/es/conferencias",
+      "destination": "/es/cultura-y-accion-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/estudos",
+      "destination": "/cultura-e-atuacao-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/en/studies",
+      "destination": "/en/culture-and-social-action#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/it/studi",
+      "destination": "/it/cultura-e-azione-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/fr/etudes",
+      "destination": "/fr/culture-et-action-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/es/estudios",
+      "destination": "/es/cultura-y-accion-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/artigos",
+      "destination": "/cultura-e-atuacao-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/en/articles",
+      "destination": "/en/culture-and-social-action#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/it/articoli",
+      "destination": "/it/cultura-e-azione-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/fr/articles",
+      "destination": "/fr/culture-et-action-sociale#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/es/articulos",
+      "destination": "/es/cultura-y-accion-social#cultura",
+      "permanent": true
+    },
+    {
+      "source": "/dia-das-cidades",
+      "destination": "/cultura-e-atuacao-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/en/day-of-cities",
+      "destination": "/en/culture-and-social-action#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/it/giorno-delle-citta",
+      "destination": "/it/cultura-e-azione-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/fr/jour-des-villes",
+      "destination": "/fr/culture-et-action-sociale#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/es/dia-de-las-ciudades",
+      "destination": "/es/cultura-y-accion-social#atuacao-social",
+      "permanent": true
+    },
+    {
+      "source": "/doacoes",
+      "destination": "/participe#contribuicoes",
+      "permanent": true
+    },
+    {
+      "source": "/en/donations",
+      "destination": "/en/participate#contribuicoes",
+      "permanent": true
+    },
+    {
+      "source": "/it/donazioni",
+      "destination": "/it/partecipa#contribuicoes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/dons",
+      "destination": "/fr/participer#contribuicoes",
+      "permanent": true
+    },
+    {
+      "source": "/es/donaciones",
+      "destination": "/es/participa#contribuicoes",
+      "permanent": true
+    },
+    {
+      "source": "/afiliacao",
+      "destination": "/participe#participar",
+      "permanent": true
+    },
+    {
+      "source": "/en/affiliation",
+      "destination": "/en/participate#participar",
+      "permanent": true
+    },
+    {
+      "source": "/it/affiliazione",
+      "destination": "/it/partecipa#participar",
+      "permanent": true
+    },
+    {
+      "source": "/fr/affiliation",
+      "destination": "/fr/participer#participar",
+      "permanent": true
+    },
+    {
+      "source": "/es/afiliacion",
+      "destination": "/es/participa#participar",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/participe#perguntas-frequentes",
+      "permanent": true
+    },
+    {
+      "source": "/en/faq",
+      "destination": "/en/participate#perguntas-frequentes",
+      "permanent": true
+    },
+    {
+      "source": "/it/faq",
+      "destination": "/it/partecipa#perguntas-frequentes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/faq",
+      "destination": "/fr/participer#perguntas-frequentes",
+      "permanent": true
+    },
+    {
+      "source": "/es/faq",
+      "destination": "/es/participa#perguntas-frequentes",
+      "permanent": true
+    },
+    {
+      "source": "/contato",
+      "destination": "/participe#contato",
+      "permanent": true
+    },
+    {
+      "source": "/en/contact",
+      "destination": "/en/participate#contato",
+      "permanent": true
+    },
+    {
+      "source": "/it/contatti",
+      "destination": "/it/partecipa#contato",
+      "permanent": true
+    },
+    {
+      "source": "/fr/contact",
+      "destination": "/fr/participer#contato",
+      "permanent": true
+    },
+    {
+      "source": "/es/contacto",
+      "destination": "/es/participa#contato",
+      "permanent": true
+    },
+    {
+      "source": "/brasao",
+      "destination": "/historia-e-brasao#brasao",
+      "permanent": true
+    },
+    {
+      "source": "/en/coat-of-arms",
+      "destination": "/en/history-and-coat-of-arms#brasao",
+      "permanent": true
+    },
+    {
+      "source": "/it/stemma",
+      "destination": "/it/storia-e-stemma#brasao",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blason",
+      "destination": "/fr/histoire-et-blason#brasao",
+      "permanent": true
+    },
+    {
+      "source": "/es/escudo",
+      "destination": "/es/historia-y-escudo#brasao",
+      "permanent": true
+    },
+    {
+      "source": "/abtl",
+      "destination": "/cultura-e-atuacao-social#abtl",
+      "permanent": true
+    },
+    {
+      "source": "/en/abtl",
+      "destination": "/en/culture-and-social-action#abtl",
+      "permanent": true
+    },
+    {
+      "source": "/it/abtl",
+      "destination": "/it/cultura-e-azione-sociale#abtl",
+      "permanent": true
+    },
+    {
+      "source": "/fr/abtl",
+      "destination": "/fr/culture-et-action-sociale#abtl",
+      "permanent": true
+    },
+    {
+      "source": "/es/abtl",
+      "destination": "/es/cultura-y-accion-social#abtl",
+      "permanent": true
+    },
+    {
+      "source": "/damas-templarias",
+      "destination": "/cultura-e-atuacao-social#damas",
+      "permanent": true
+    },
+    {
+      "source": "/en/templar-ladies",
+      "destination": "/en/culture-and-social-action#damas",
+      "permanent": true
+    },
+    {
+      "source": "/it/dame-templari",
+      "destination": "/it/cultura-e-azione-sociale#damas",
+      "permanent": true
+    },
+    {
+      "source": "/fr/dames-templieres",
+      "destination": "/fr/culture-et-action-sociale#damas",
+      "permanent": true
+    },
+    {
+      "source": "/es/damas-templarias",
+      "destination": "/es/cultura-y-accion-social#damas",
+      "permanent": true
+    },
+    {
+      "source": "/informacoes-institucionais",
+      "destination": "/ordem#informacoes-institucionais",
+      "permanent": true
+    },
+    {
+      "source": "/en/institutional-info",
+      "destination": "/en/order#informacoes-institucionais",
+      "permanent": true
+    },
+    {
+      "source": "/it/info-istituzionali",
+      "destination": "/it/ordine#informacoes-institucionais",
+      "permanent": true
+    },
+    {
+      "source": "/fr/infos-institutionnelles",
+      "destination": "/fr/ordre#informacoes-institucionais",
+      "permanent": true
+    },
+    {
+      "source": "/es/info-institucionales",
+      "destination": "/es/orden#informacoes-institucionais",
+      "permanent": true
+    },
+    {
+      "source": "/loja",
+      "destination": "/cultura-e-atuacao-social#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/en/shop",
+      "destination": "/en/culture-and-social-action#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/it/negozio",
+      "destination": "/it/cultura-e-azione-sociale#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/boutique",
+      "destination": "/fr/culture-et-action-sociale#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/es/tienda",
+      "destination": "/es/cultura-y-accion-social#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/tv",
+      "destination": "/cultura-e-atuacao-social#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/en/tv",
+      "destination": "/en/culture-and-social-action#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/it/tv",
+      "destination": "/it/cultura-e-azione-sociale#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/tv",
+      "destination": "/fr/culture-et-action-sociale#publicacoes",
+      "permanent": true
+    },
+    {
+      "source": "/es/tv",
+      "destination": "/es/cultura-y-accion-social#publicacoes",
+      "permanent": true
     }
   ]
 }

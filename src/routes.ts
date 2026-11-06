@@ -2,62 +2,37 @@ import type { RouteKey } from '@/i18n/routes';
 
 /**
  * Views available to the route renderer. Each key maps to a component in
- * `src/views`. Keeping the mapping in one place means adding a page is a
- * one-line change and there is a single source of truth for the URL space.
+ * `src/views`. The public architecture is intentionally compact: institutional
+ * content is consolidated into five main pages instead of one page per topic.
  */
 export type ViewName =
   | 'home'
-  | 'institution'
-  | 'initiatives'
-  | 'initiative'
-  | 'events'
-  | 'knowledge'
-  | 'donations'
-  | 'citiesDay'
-  | 'faq'
-  | 'contact'
-  | 'affiliation'
-  | 'legal';
+  | 'order'
+  | 'heritage'
+  | 'society'
+  | 'participate'
+  | 'legal'
+  | 'notFound';
 
 export interface RouteDefinition {
   routeKey: RouteKey;
   view: ViewName;
-  /** Extra, view-specific props resolved inside the dynamic page. */
+  /** Legal pages share one renderer. */
   meta?: {
-    institution?: 'about' | 'history' | 'purposes' | 'teachings';
-    initiativeId?: string;
-    knowledgeType?: 'lecture' | 'study' | 'article' | 'video';
+    legal?: 'privacy' | 'terms' | 'cookies';
   };
 }
 
-/**
- * Every content route the site exposes. The `notFound` route is handled by a
- * dedicated static 404 file instead (see `src/pages/404.astro`).
- */
 export const routeDefinitions: RouteDefinition[] = [
   { routeKey: 'home', view: 'home' },
-  { routeKey: 'order', view: 'institution', meta: { institution: 'about' } },
-  { routeKey: 'history', view: 'institution', meta: { institution: 'history' } },
-  { routeKey: 'purposes', view: 'institution', meta: { institution: 'purposes' } },
-  { routeKey: 'teachings', view: 'institution', meta: { institution: 'teachings' } },
-  { routeKey: 'initiatives', view: 'initiatives' },
-  { routeKey: 'initiativeEnvironment', view: 'initiative', meta: { initiativeId: 'environment' } },
-  { routeKey: 'initiativeSport', view: 'initiative', meta: { initiativeId: 'sport' } },
-  { routeKey: 'initiativeHealth', view: 'initiative', meta: { initiativeId: 'health' } },
-  { routeKey: 'initiativeEducation', view: 'initiative', meta: { initiativeId: 'education' } },
-  { routeKey: 'events', view: 'events' },
-  { routeKey: 'knowledge', view: 'knowledge' },
-  { routeKey: 'lectures', view: 'knowledge', meta: { knowledgeType: 'lecture' } },
-  { routeKey: 'studies', view: 'knowledge', meta: { knowledgeType: 'study' } },
-  { routeKey: 'articles', view: 'knowledge', meta: { knowledgeType: 'article' } },
-  { routeKey: 'citiesDay', view: 'citiesDay' },
-  { routeKey: 'donations', view: 'donations' },
-  { routeKey: 'affiliation', view: 'affiliation' },
-  { routeKey: 'faq', view: 'faq' },
-  { routeKey: 'contact', view: 'contact' },
-  { routeKey: 'privacy', view: 'legal' },
-  { routeKey: 'terms', view: 'legal' },
-  { routeKey: 'cookies', view: 'legal' },
+  { routeKey: 'order', view: 'order' },
+  { routeKey: 'heritage', view: 'heritage' },
+  { routeKey: 'society', view: 'society' },
+  { routeKey: 'participate', view: 'participate' },
+  { routeKey: 'privacy', view: 'legal', meta: { legal: 'privacy' } },
+  { routeKey: 'terms', view: 'legal', meta: { legal: 'terms' } },
+  { routeKey: 'cookies', view: 'legal', meta: { legal: 'cookies' } },
+  { routeKey: 'notFound', view: 'notFound' },
 ];
 
 const byKey = new Map(routeDefinitions.map((definition) => [definition.routeKey, definition]));

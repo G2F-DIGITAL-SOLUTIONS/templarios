@@ -10,52 +10,28 @@ export interface NavChild {
 export interface NavItem {
   labelKey: keyof Dictionary['nav'];
   routeKey: RouteKey;
-  children?: NavChild[];
 }
 
-/** Primary navigation — mirrors the proposed information architecture. */
-/** Consolidated IA (AUDIT.md §4): Início · A Ordem · História e Brasão · Cultura e Atuação Social · Participar e Contato. */
+/**
+ * Primary navigation — the five consolidated pages of the public architecture.
+ *
+ * Each page aggregates related content: "A Ordem" holds identity, history
+ * summary, mission, vision, values, philosophy and institutional data;
+ * "História e Brasão" holds the seal and heraldry; "Cultura e Atuação Social"
+ * holds ABTL, the Templar Ladies and the areas of action; "Participar e
+ * Contato" holds participation, donations, FAQ and the contact form.
+ */
 export const primaryNav: NavItem[] = [
-  {
-    labelKey: 'order',
-    routeKey: 'order',
-    children: [
-      { labelKey: 'about', routeKey: 'order' },
-      { labelKey: 'purposes', routeKey: 'purposes' },
-      { labelKey: 'teachings', routeKey: 'teachings' },
-    ],
-  },
-  { labelKey: 'history', routeKey: 'history' },
-  {
-    labelKey: 'initiatives',
-    routeKey: 'initiatives',
-    children: [
-      { labelKey: 'environment', routeKey: 'initiativeEnvironment' },
-      { labelKey: 'sport', routeKey: 'initiativeSport' },
-      { labelKey: 'health', routeKey: 'initiativeHealth' },
-      { labelKey: 'education', routeKey: 'initiativeEducation' },
-      { labelKey: 'lectures', routeKey: 'lectures' },
-      { labelKey: 'studies', routeKey: 'studies' },
-      { labelKey: 'articles', routeKey: 'articles' },
-    ],
-  },
-  {
-    labelKey: 'contact',
-    routeKey: 'contact',
-    children: [
-      { labelKey: 'affiliation', routeKey: 'affiliation' },
-      { labelKey: 'faq', routeKey: 'faq' },
-      { labelKey: 'donations', routeKey: 'donations' },
-      { labelKey: 'events', routeKey: 'events' },
-    ],
-  },
+  { labelKey: 'home', routeKey: 'home' },
+  { labelKey: 'order', routeKey: 'order' },
+  { labelKey: 'heritage', routeKey: 'heritage' },
+  { labelKey: 'society', routeKey: 'society' },
+  { labelKey: 'participate', routeKey: 'participate' },
 ];
 
-/** Secondary links (may live in the header utility area and the footer). */
+/** Secondary links shown in the mobile menu and used by the footer. */
 export const secondaryNav: NavItem[] = [
-  { labelKey: 'donations', routeKey: 'donations' },
-  { labelKey: 'faq', routeKey: 'faq' },
-  { labelKey: 'contact', routeKey: 'contact' },
+  { labelKey: 'participate', routeKey: 'participate' },
 ];
 
 /** Footer column structure. */
@@ -63,29 +39,10 @@ export const footerColumns: { titleKey: keyof Dictionary['footer']; items: NavCh
   {
     titleKey: 'institutionalTitle',
     items: [
-      { labelKey: 'about', routeKey: 'order' },
-      { labelKey: 'history', routeKey: 'history' },
-      { labelKey: 'purposes', routeKey: 'purposes' },
-      { labelKey: 'teachings', routeKey: 'teachings' },
-      { labelKey: 'affiliation', routeKey: 'affiliation' },
-    ],
-  },
-  {
-    titleKey: 'initiativesTitle',
-    items: [
-      { labelKey: 'environment', routeKey: 'initiativeEnvironment' },
-      { labelKey: 'sport', routeKey: 'initiativeSport' },
-      { labelKey: 'health', routeKey: 'initiativeHealth' },
-      { labelKey: 'education', routeKey: 'initiativeEducation' },
-    ],
-  },
-  {
-    titleKey: 'knowledgeTitle',
-    items: [
-      { labelKey: 'affiliation', routeKey: 'affiliation' },
-      { labelKey: 'faq', routeKey: 'faq' },
-      { labelKey: 'donations', routeKey: 'donations' },
-      { labelKey: 'contact', routeKey: 'contact' },
+      { labelKey: 'order', routeKey: 'order' },
+      { labelKey: 'heritage', routeKey: 'heritage' },
+      { labelKey: 'society', routeKey: 'society' },
+      { labelKey: 'participate', routeKey: 'participate' },
     ],
   },
 ];

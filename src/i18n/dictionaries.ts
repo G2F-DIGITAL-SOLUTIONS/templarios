@@ -22,47 +22,27 @@ export type DeepPartial<T> = {
 };
 
 /**
- * Merge a partial translation over the Portuguese source.
- *
- * Only plain objects are merged; arrays and primitives are taken wholesale
- * from the override when present. Undefined leaves fall back to pt, so a
- * partially-translated locale never renders an empty string.
+ * Every locale ships a complete dictionary. There is intentionally **no
+ * Portuguese fallback** for foreign locales: a missing key must fail the
+ * build (`npm run check:i18n`) instead of silently rendering Portuguese.
  */
-function deepMerge<T>(base: T, override: DeepPartial<T> | undefined): T {
-  if (override === undefined) return base;
-  if (Array.isArray(base) || typeof base !== 'object' || base === null) {
-    return (override as T) ?? base;
-  }
-  const result = { ...(base as Record<string, unknown>) };
-  for (const key of Object.keys(override as Record<string, unknown>)) {
-    const baseValue = (base as Record<string, unknown>)[key];
-    const overrideValue = (override as Record<string, unknown>)[key];
-    if (overrideValue === undefined) continue;
-    result[key] =
-      typeof baseValue === 'object' && baseValue !== null && !Array.isArray(baseValue)
-        ? deepMerge(baseValue, overrideValue as never)
-        : overrideValue;
-  }
-  return result as T;
-}
-
-const overrides: Record<Locale, DeepPartial<Dictionary>> = {
-  pt: {},
-  en,
-  it,
-  fr,
-  es,
+const dictionaries: Record<Locale, Dictionary> = {
+  pt,
+  en: en as unknown as Dictionary,
+  it: it as unknown as Dictionary,
+  fr: fr as unknown as Dictionary,
+  es: es as unknown as Dictionary,
 };
 
 const cache = new Map<Locale, Dictionary>();
 
-/** Get the fully-resolved dictionary for a locale (with pt fallback applied). */
+/** Get the fully-resolved dictionary for a locale. */
 export function getDictionary(locale: Locale): Dictionary {
   const cached = cache.get(locale);
   if (cached) return cached;
-  const merged = deepMerge(pt, overrides[locale]);
-  cache.set(locale, merged);
-  return merged;
+  const dictionary = dictionaries[locale] ?? dictionaries[defaultLocale];
+  cache.set(locale, dictionary);
+  return dictionary;
 }
 
 export { defaultLocale };
