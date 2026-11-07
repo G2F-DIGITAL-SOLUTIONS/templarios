@@ -98,21 +98,23 @@ const { closeLabel, prevLabel, nextLabel, counterLabel } = Astro.props;
 </dialog>
 
 <script>
-  const dialog = document.querySelector('[data-image-lightbox]');
-  if (dialog instanceof HTMLDialogElement) {
-    const imgEl = dialog.querySelector('[data-lightbox-image]');
-    const counterEl = dialog.querySelector('[data-lightbox-counter]');
-    const closeBtn = dialog.querySelector('[data-lightbox-close]');
-    const prevBtn = dialog.querySelector('[data-lightbox-prev]');
-    const nextBtn = dialog.querySelector('[data-lightbox-next]');
+  type LightboxItem = { src: string; alt: string };
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-image-lightbox]');
+  if (dialog) {
+    const imgEl = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]');
+    const counterEl = dialog.querySelector<HTMLElement>('[data-lightbox-counter]');
+    const closeBtn = dialog.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+    const prevBtn = dialog.querySelector<HTMLButtonElement>('[data-lightbox-prev]');
+    const nextBtn = dialog.querySelector<HTMLButtonElement>('[data-lightbox-next]');
     const counterTemplate = dialog.getAttribute('data-counter-label') || '{current} / {total}';
 
-    let items = [];
+    let items: LightboxItem[] = [];
     let index = 0;
 
     const update = () => {
       const item = items[index];
-      if (!item || !(imgEl instanceof HTMLImageElement)) return;
+      if (!item || !imgEl) return;
       imgEl.src = item.src;
       imgEl.alt = item.alt;
       if (counterEl) {
@@ -121,11 +123,11 @@ const { closeLabel, prevLabel, nextLabel, counterLabel } = Astro.props;
           .replace('{total}', String(items.length));
       }
       const multi = items.length > 1;
-      if (prevBtn instanceof HTMLButtonElement) prevBtn.hidden = !multi;
-      if (nextBtn instanceof HTMLButtonElement) nextBtn.hidden = !multi;
+      if (prevBtn) prevBtn.hidden = !multi;
+      if (nextBtn) nextBtn.hidden = !multi;
     };
 
-    const openGallery = (galleryItems, startIndex) => {
+    const openGallery = (galleryItems: LightboxItem[], startIndex: number) => {
       items = galleryItems;
       index = startIndex;
       update();
@@ -151,10 +153,10 @@ const { closeLabel, prevLabel, nextLabel, counterLabel } = Astro.props;
     };
 
     document.querySelectorAll('[data-lightbox-gallery]').forEach((gallery) => {
-      const triggers = gallery.querySelectorAll('[data-lightbox-trigger]');
+      const triggers = gallery.querySelectorAll<HTMLElement>('[data-lightbox-trigger]');
       triggers.forEach((trigger, triggerIndex) => {
         trigger.addEventListener('click', () => {
-          const galleryItems = Array.from(triggers).map((btn) => ({
+          const galleryItems: LightboxItem[] = Array.from(triggers).map((btn) => ({
             src: btn.getAttribute('data-src') || '',
             alt: btn.getAttribute('data-alt') || '',
           }));
