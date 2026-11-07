@@ -79,7 +79,7 @@ export const teachings: TeachingPost[] = [
     paragraphs: [
       'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (O.I.C.M.C.T.B.) esteve presente no 2º Autista’s Day, realizado em São Bernardo do Campo no domingo, 7 de abril de 2024, representada pelo Cavaleiro Eliaquim, também um dos organizadores do evento.',
       'Em razão da conscientização sobre o autismo e da inclusão, o encontro reuniu tendas de colaboradores, gincanas, brinquedos infláveis, palco com apresentações de dança e outras atividades.',
-      'O evento foi promovido pela Secretaria da Cidadania, sob a liderança da Dra. Luana Eloa — presidente do Teacolher Brasil e da comissão de Neurodiversidade da OAB — juntamente com o Cavaleiro Eliaquim. Contou ainda com a presença do deputado federal Alex Manente.',
+      'O evento foi promovido pela Secretaria da Cidadania, sob a liderança da Dra. Luana Eloa - presidente do Teacolher Brasil e da comissão de Neurodiversidade da OAB - juntamente com o Cavaleiro Eliaquim. Contou ainda com a presença do deputado federal Alex Manente.',
       'O slogan da campanha: “Por nós e para nós, ninguém solta a mão.” A Ordem parabeniza a todos por esse evento.',
       'G.M.T.B. +++ Dom Roberto Guazzelli.',
     ],
@@ -131,7 +131,7 @@ export const teachings: TeachingPost[] = [
     summary:
       'A OICMCTB e o Priorado 32, por meio do Prior de São Paulo Carlos Romagnoli, realizaram uma homenagem especial.',
     paragraphs: [
-      'Foi com grande honra que a O.I.C.M.C.T.B. — Ordem Internacional Civil Militar Cavaleiros Templários do Brasil —, juntamente com o Priorado 32, por meio do Prior de São Paulo Carlos Romagnoli e presidente do MMDC, realizou tão grande homenagem.',
+      'Foi com grande honra que a O.I.C.M.C.T.B. - Ordem Internacional Civil Militar Cavaleiros Templários do Brasil, juntamente com o Priorado 32, por meio do Prior de São Paulo Carlos Romagnoli e presidente do MMDC, realizou tão grande homenagem.',
       'G.M.T.B. +++ Dom Roberto Guazzelli.',
     ],
     images: imgs('homenagem-priorado-32-2024', 4),
@@ -167,9 +167,9 @@ export const teachings: TeachingPost[] = [
     paragraphs: [
       'A cruz templária é uma cruz vermelha utilizada pelos templários sobre as vestes brancas. Simboliza fé e proteção.',
       'Templários são os membros de uma ordem militar religiosa de cavalaria medieval. Eram monges que tinham feito votos de pobreza; o espaço que ocupavam em Jerusalém teria sido parte do Templo de Salomão. Por isso a ordem é conhecida como Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão, Ordem do Templo ou simplesmente Ordem dos Templários.',
-      'A Ordem foi criada para proteger os primeiros cristãos, no contexto das Cruzadas — expedições de caráter religioso formadas na Europa com o objetivo da conquista da Terra Santa.',
+      'A Ordem foi criada para proteger os primeiros cristãos, no contexto das Cruzadas - expedições de caráter religioso formadas na Europa com o objetivo da conquista da Terra Santa.',
       'Apesar do uso característico dessa cruz, o símbolo da Ordem dos Templários é tradicionalmente um cavalo com dois cavaleiros no dorso. Por vezes a cruz é chamada de cruz pátea: cruzes côncavas, com as pontas mais largas a partir do centro. Outras cruzes páteas conhecidas são a Cruz de Malta e a Cruz de Ferro.',
-      'A Ordem de Cristo foi criada em Portugal sob as bases da Ordem dos Templários; por isso a cruz templária costuma ser confundida com a Cruz de Portugal — símbolo nacional português que data de 1520 e ficou conhecido como a cruz dos descobrimentos, presente nas expedições marítimas portuguesas em honra à Ordem de Cristo.',
+      'A Ordem de Cristo foi criada em Portugal sob as bases da Ordem dos Templários; por isso a cruz templária costuma ser confundida com a Cruz de Portugal - símbolo nacional português que data de 1520 e ficou conhecido como a cruz dos descobrimentos, presente nas expedições marítimas portuguesas em honra à Ordem de Cristo.',
       'G.M.T.B. +++ Dom Roberto Guazzelli.',
     ],
     images: imgs('cruz-templaria-2024', 1),
@@ -183,7 +183,7 @@ export const teachings: TeachingPost[] = [
     paragraphs: [
       'Em 12 de dezembro de 2023, a Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (O.I.C.M.C.T.B.) participou de dois momentos especiais: uma homenagem ao Conselheiro de Honra, o eterno Grão-Mestre do GOSP, Venerável Kamel Aref, e a celebração de seu aniversário, em 13 de dezembro.',
       'Das mãos do Venerável GMAdj Renato Garcia, que presidiu a sessão, Kamel Aref recebeu a Comenda de Benfeitor da Ordem, em agradecimento pelo trabalho realizado em favor da humanidade. Os frateres se manifestaram nessa justa homenagem.',
-      'A Ordem Templária do Brasil, em comemoração à sessão solene e ao aniversário do conselheiro, entregou como presente o punhal templário — também como forma de gratidão pela orientação desde a fundação da Ordem, ao longo de cinco anos. O Grão-Mestre fez questão de entregar pessoalmente o presente.',
+      'A Ordem Templária do Brasil, em comemoração à sessão solene e ao aniversário do conselheiro, entregou como presente o punhal templário - também como forma de gratidão pela orientação desde a fundação da Ordem, ao longo de cinco anos. O Grão-Mestre fez questão de entregar pessoalmente o presente.',
       'G.M.T.B. +++ Roberto Guazzelli.',
     ],
     images: imgs('homenagem-kamel-aref-2023', 3),
@@ -209,10 +209,10 @@ export const teachings: TeachingPost[] = [
     summary:
       'Manifesto sobre valores, justiça, fé e responsabilidade social dos Templários do Brasil.',
     paragraphs: [
-      'Senhores nobres cavaleiros: o mundo está sedento de Templários. Vivemos a desordem pela confusão entre o certo e o errado — ambos sem consequências e sem responsabilidades, nocivos na mesma medida quando praticados sem a dose necessária.',
-      'Na ânsia de mostrar poder, de exigir ordens cumpridas, de impor vontade pessoal e egocêntrica, há quem prenda, viole, acuse, ultrapasse limites e até execute a pena de morte. Não é assim que funciona o ordenamento jurídico do mundo. Existem leis que medem intensidade, modo e tempo — o fiel da balança.',
+      'Senhores nobres cavaleiros: o mundo está sedento de Templários. Vivemos a desordem pela confusão entre o certo e o errado - ambos sem consequências e sem responsabilidades, nocivos na mesma medida quando praticados sem a dose necessária.',
+      'Na ânsia de mostrar poder, de exigir ordens cumpridas, de impor vontade pessoal e egocêntrica, há quem prenda, viole, acuse, ultrapasse limites e até execute a pena de morte. Não é assim que funciona o ordenamento jurídico do mundo. Existem leis que medem intensidade, modo e tempo - o fiel da balança.',
       'A sociedade conta, como sempre contou, com homens de bem em todos os setores, que agem para que a ordem se restabeleça. Homens que sacam do ilíaco suas “espadas” e dão a própria vida para que os ensinamentos de Nosso Senhor Jesus Cristo, o Deus feito Homem, nosso Salvador, continuem dando a paz de que nossas famílias precisam.',
-      'É, mais uma vez, chegada a hora de levantar esses homens. De erguer nossas espadas e lanças. Os Templários do Brasil. Os seguidores cristãos. Se levantem. O mundo, não só o Brasil, caminha cego na borda do abismo. O certo e o errado devem retornar aos seus trilhos. Vamos pegar o veneno da “cobra” e fazer o antídoto — com a dose certa, com a coragem e a sabedoria de todos nós que usamos a capa da Ordem.',
+      'É, mais uma vez, chegada a hora de levantar esses homens. De erguer nossas espadas e lanças. Os Templários do Brasil. Os seguidores cristãos. Se levantem. O mundo, não só o Brasil, caminha cego na borda do abismo. O certo e o errado devem retornar aos seus trilhos. Vamos pegar o veneno da “cobra” e fazer o antídoto - com a dose certa, com a coragem e a sabedoria de todos nós que usamos a capa da Ordem.',
       '“Toda a glória para Ele. Nada para nós.” + Irmão Templário. Ordem Internacional Civil Militar Cavaleiros Templários Brasil (O.I.C.M.C.T.B.). G.M.T.B. Roberto Guazzelli.',
     ],
     images: [],
@@ -222,14 +222,14 @@ export const teachings: TeachingPost[] = [
     date: '2023-11-15',
     title: 'Balduíno IV, o rei leproso de Jerusalém',
     summary:
-      'Pesquisa histórica sobre o reinado de Balduíno IV (1174–1185) e o confronto com Saladino.',
+      'Pesquisa histórica sobre o reinado de Balduíno IV (1174 - 1185) e o confronto com Saladino.',
     paragraphs: [
-      'Balduíno IV foi rei de Jerusalém de 1174 até 1185. Nascido em 1161 em Jerusalém, era filho do conde de Jaffa e Ascalon. Mais tarde, ele e sua irmã Sibila foram declarados filhos legítimos do rei Balduíno III — na verdade tio de ambos — para manter a ordem de sucessão.',
+      'Balduíno IV foi rei de Jerusalém de 1174 até 1185. Nascido em 1161 em Jerusalém, era filho do conde de Jaffa e Ascalon. Mais tarde, ele e sua irmã Sibila foram declarados filhos legítimos do rei Balduíno III - na verdade tio de ambos - para manter a ordem de sucessão.',
       'Aos nove anos, passou a ser educado pelo historiador Guilherme de Tiro, que descobriu que o jovem sofria de lepra. Mesmo com a consulta a médicos muçulmanos, nenhum tratamento foi suficiente.',
       'Amalrico I, então rei de Jerusalém, morreu em 1174, quando Balduíno tinha apenas 13 anos. Embora a maioridade fosse considerada aos 15, ele foi imediatamente coroado. Seu governo ficou sob a regência do senescal Miles de Plancy e, em seguida, de Raimundo III de Trípoli, parente mais próximo do falecido rei. Miles de Plancy foi acusado de abuso de poder e assassinado.',
       'Durante a regência de Raimundo, o grande desafio era o exército que Saladino organizava. Houve combates; Raimundo chegou a ser feito prisioneiro e liberado mediante resgate; depois estabeleceu-se uma trégua.',
       'Balduíno IV ganhou a alcunha de “rei leproso”. Sua doença determinou grande parte do reinado, sempre voltado à sucessão. Casou a irmã Sibila com Guy de Lusignan, união fundamental para conquistar ajuda militar. Não manteve a paz com Saladino e investiu em conflitos; mandou construir fortalezas com apoio dos Templários.',
-      'Em 1180, Balduíno IV e Saladino concordaram em nova trégua de dois anos. Súditos, porém, não respeitaram a paz e promoveram atentados. Balduíno associou o sobrinho Balduíno V ao trono e definiu a sucessão. Sucumbiu à lepra com apenas 24 anos, em 16 de março de 1185 — pouco antes do exército de Saladino massacrar as forças cristãs e tomar definitivamente Jerusalém.',
+      'Em 1180, Balduíno IV e Saladino concordaram em nova trégua de dois anos. Súditos, porém, não respeitaram a paz e promoveram atentados. Balduíno associou o sobrinho Balduíno V ao trono e definiu a sucessão. Sucumbiu à lepra com apenas 24 anos, em 16 de março de 1185 - pouco antes do exército de Saladino massacrar as forças cristãs e tomar definitivamente Jerusalém.',
       'Pesquisa feita por G.M.T.B. +++ Dom Roberto Guazzelli.',
     ],
     images: [],
@@ -241,10 +241,10 @@ export const teachings: TeachingPost[] = [
     summary:
       'Ação social com distribuição de brinquedos e atividades recreativas, organizada pelo Priorado local.',
     paragraphs: [
-      'Mesmo com chuva, a Ordem concluiu a última etapa em Suzano na comemoração do Dia das Crianças — com algodão-doce, cachorro-quente, refrigerante, pipoca, brinquedos e distribuição de presentes —, contando com a colaboração de voluntários.',
+      'Mesmo com chuva, a Ordem concluiu a última etapa em Suzano na comemoração do Dia das Crianças - com algodão-doce, cachorro-quente, refrigerante, pipoca, brinquedos e distribuição de presentes, contando com a colaboração de voluntários.',
       'A organização esteve a cargo do Prior Rogério Pádua e sua esposa Márcia Pádua; do Comendador Rubens Tavares e sua esposa, a secretária social Madalena Vasconcelos; do Cavaleiro Luiz Henrique Lanzas; do professor de judô Cláudio; e dos colaboradores Ademário e Fábio.',
       'Muito obrigado à cidade de Suzano e regiões pelo acolhimento. Em novembro, a Ordem anunciou o projeto “Templário Saúde” em Suzano, com data, horário e local a serem divulgados, contando com a colaboração dos cavaleiros.',
-      'Como sempre: “uma andorinha não faz verão” — e juntos somos bons. G.M.T.B. +++ Roberto Guazzelli.',
+      'Como sempre: “uma andorinha não faz verão” - e juntos somos bons. G.M.T.B. +++ Roberto Guazzelli.',
     ],
     images: imgs('dia-das-criancas-suzano-2023', 5),
   },
@@ -256,7 +256,7 @@ export const teachings: TeachingPost[] = [
       'Pesquisa histórica sobre o último grão-mestre templário, a perseguição de Filipe IV e o martírio de 1314.',
     paragraphs: [
       'Nascido em Molay, na França (então Condado da Borgonha), Jacques de Molay entrou na Ordem do Templo aos 21 anos. Em 1298, foi nomeado grão-mestre após a morte de Teobaldo Gaudini.',
-      'As Cruzadas não atingiam seus objetivos; os sarracenos capturavam cidades e portos. Os templários tentaram reorganizar-se em Chipre. Em 1305, o rei Filipe IV da França — o Belo — buscou controlar a Ordem e, sem conseguir fundi-la aos Hospitalários, armou um plano para destruí-la.',
+      'As Cruzadas não atingiam seus objetivos; os sarracenos capturavam cidades e portos. Os templários tentaram reorganizar-se em Chipre. Em 1305, o rei Filipe IV da França - o Belo - buscou controlar a Ordem e, sem conseguir fundi-la aos Hospitalários, armou um plano para destruí-la.',
       'Em 13 de outubro de 1307, Jacques e cavaleiros foram capturados. Durante sete anos sofreram torturas. Em 18 de março de 1314, desmentiu confissões forjadas e, junto com Godofredo de Charnay, foi condenado à fogueira na Île de la Cité.',
       'Jacques de Molay tornou-se símbolo de lealdade e companheirismo: preferiu morrer a entregar os companheiros ou faltar ao juramento.',
       'Pesquisa feita por G.M.T.B. Dom Roberto Guazzelli.',
@@ -270,9 +270,9 @@ export const teachings: TeachingPost[] = [
     summary:
       'Meditação bíblica sobre o povo de Israel, a promessa a Abraão e a salvação em Cristo.',
     paragraphs: [
-      'O povo de Israel é a nação santa — o povo escolhido por Deus. Deus não precisava escolher um povo, mas decidiu escolher Israel para mostrar o Seu amor e poder.',
-      'Deus prometeu a Abraão que o Seu povo seria numeroso e abençoado, e que por meio dele todos os povos do mundo seriam também abençoados — porque decidiu que o Seu Filho, Jesus Cristo, nasceria do povo de Israel.',
-      'No Novo Testamento, pelo ministério do apóstolo Paulo, vemos que Deus também ama e se revelou aos gentios. Todos os que creem em Jesus são salvos — e isso aconteceu através da nação santa, Israel.',
+      'O povo de Israel é a nação santa - o povo escolhido por Deus. Deus não precisava escolher um povo, mas decidiu escolher Israel para mostrar o Seu amor e poder.',
+      'Deus prometeu a Abraão que o Seu povo seria numeroso e abençoado, e que por meio dele todos os povos do mundo seriam também abençoados - porque decidiu que o Seu Filho, Jesus Cristo, nasceria do povo de Israel.',
+      'No Novo Testamento, pelo ministério do apóstolo Paulo, vemos que Deus também ama e se revelou aos gentios. Todos os que creem em Jesus são salvos - e isso aconteceu através da nação santa, Israel.',
       'Irmãos, o desejo do meu coração e a minha oração a Deus pelos israelitas é que eles sejam salvos. Assim está escrito; assim eu creio.',
       'Dom Roberto A. Guazzelli.',
     ],
@@ -287,7 +287,7 @@ export const teachings: TeachingPost[] = [
     paragraphs: [
       'Roberto Conde Caballero (Cavaleiro), de abençoada memória. “Abra meus olhos para que eu possa perceber as maravilhas (ocultas) dos seus ensinamentos.” (Salmo 119:18).',
       'A função de um Guardião do Conhecimento é transmitir às gerações futuras as sementes que tanto preservou, para germinar os frutos necessários à manutenção do grande trabalho. Em homenagem a Roberto Conde Caballero, de abençoada memória.',
-      'Alquimistas, cabalistas, herméticos e mágicos celebram o mérito de receber 50 anos de V∴L∴ — Verdadeira Luz. Nos quatro cantos do orbe, suas ações são lembradas e, para os iniciados, suas experiências são reveladas.',
+      'Alquimistas, cabalistas, herméticos e mágicos celebram o mérito de receber 50 anos de V∴L∴ - Verdadeira Luz. Nos quatro cantos do orbe, suas ações são lembradas e, para os iniciados, suas experiências são reveladas.',
       '“Não é seu trabalho terminar o trabalho. Mas se você começou, não está livre para abandoná-lo.” (Pirkei Avot).',
       'Pesquisado por G.M.T.B. +++ Roberto Guazzelli.',
     ],
@@ -334,7 +334,7 @@ export const teachings: TeachingPost[] = [
       'Reunião com o secretário de governo Alex para ações sociais e apresentação da revista dos Templários.',
     paragraphs: [
       'No dia 29 de agosto de 2023, a Ordem esteve em Suzano no gabinete do secretário de governo, senhor Alex, bem atendida por ele e por sua assessoria, para firmar uma parceria de ações sociais.',
-      'Na ocasião, também foi levada a primeira edição — de muitas — da revista dos Templários. Seja bem-vinda a cidade de Suzano e regiões.',
+      'Na ocasião, também foi levada a primeira edição - de muitas - da revista dos Templários. Seja bem-vinda a cidade de Suzano e regiões.',
       'G.M.T.B. Dom Roberto Guazzelli.',
     ],
     images: imgs('parceria-suzano-2023', 4),
@@ -357,7 +357,7 @@ export const teachings: TeachingPost[] = [
       'Cerimônia de consagração com 20 novos cavaleiros no fabuloso Museu do Obelisco MMDC 32.',
     paragraphs: [
       'No sábado, 19 de agosto de 2023, foi realizada mais uma cerimônia de consagração no Museu do Obelisco MMDC 32, com 20 novos cavaleiros.',
-      'A Ordem se alegra com a chegada deles e com a confiança depositada na instituição. Sejam bem-vindos — e vamos expandir mais.',
+      'A Ordem se alegra com a chegada deles e com a confiança depositada na instituição. Sejam bem-vindos - e vamos expandir mais.',
       'G.M.T.B. +++ Roberto Guazzelli.',
     ],
     images: imgs('consagracao-20-cavaleiros-2023', 10),

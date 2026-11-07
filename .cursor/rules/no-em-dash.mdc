@@ -1,0 +1,25 @@
+---
+description: Never use em dashes or double hyphens in copy; use a single hyphen only
+alwaysApply: true
+---
+
+# Traços em textos
+
+Em qualquer texto voltado ao usuário (dicionários i18n, páginas, publicações, alt, títulos, CTAs, FAQs, etc.):
+
+- **Não use** travessão (`—`), en dash (`–`) nem hífen duplo (`--`).
+- **Use apenas** hífen simples (`-`), com espaços quando fizer o papel de pausa: `texto - continuação`.
+- Evite o padrão de prosa de IA com pausas longas tipográficas.
+
+Exemplos:
+
+- Errado: `CREARE FUTURUM MUTATO MODO — Para criar o futuro`
+- Certo: `CREARE FUTURUM MUTATO MODO - Para criar o futuro`
+- Errado: `ações — entre elas o Dia dos Templários — e desenvolve`
+- Certo: `ações - entre elas o Dia dos Templários - e desenvolve`
+
+Exceções técnicas (não são copy):
+
+- Frontmatter Astro `---`
+- Comentários HTML `<!-- -->`
+- Operadores/sintaxe de código (`-->`, `--flag`, CSS `var(--token)`)

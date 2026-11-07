@@ -2,7 +2,7 @@ import type { Widen } from '../dictionaries';
 import type { Dictionary } from './pt';
 
 /**
- * Italian dictionary — complete, not a partial override.
+ * Italian dictionary - complete, not a partial override.
  * The official name and acronym are kept in Portuguese; only the descriptive
  * text is translated.
  */
@@ -91,7 +91,7 @@ export const it: Widen<Dictionary> = {
     hero: {
       kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
       title: 'Tradizione cavalleresca, cultura e servizio al bene comune.',
-      lead: 'CREARE FUTURUM MUTATO MODO — Creare il futuro in modo diverso.',
+      lead: 'CREARE FUTURUM MUTATO MODO - Creare il futuro in modo diverso.',
       intro:
         'L’Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) è un’organizzazione civile brasiliana senza scopo di lucro, di carattere fraterno, culturale, filosofico, civico e filantropico.',
       primaryCta: 'Scopri l’Ordine',
@@ -320,10 +320,10 @@ export const it: Widen<Dictionary> = {
         { label: 'Denominazione legale', value: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil' },
         { label: 'CNPJ', value: '42.071.770/0001-75' },
         { label: 'Gran Magistero', value: 'Roberto Aguiar Guazzelli' },
-        { label: 'Consiglio Nazionale delle Dame Templari', value: 'Sueli Teodoro — Prima Dama' },
+        { label: 'Consiglio Nazionale delle Dame Templari', value: 'Sueli Teodoro - Prima Dama' },
         { label: 'Braccio culturale e letterario', value: 'Academia Brasileira Templária de Letras (ABTL)' },
         { label: 'E-mail istituzionale', value: 'oicmctb@gmail.com' },
-        { label: 'Social', value: '@oicmctb — Facebook' },
+        { label: 'Social', value: '@oicmctb - Facebook' },
       ],
     },
   },
@@ -440,7 +440,7 @@ export const it: Widen<Dictionary> = {
     title: 'Cultura e Azione Sociale',
     lead: 'La dimensione culturale, letteraria e comunitaria dell’OICMCTB.',
     intro:
-      'L’Ordine intende la tradizione cavalleresca come impegno per la conoscenza, la cultura e il servizio al bene comune. Questa pagina riunisce il braccio culturale dell’istituzione, la partecipazione delle Dame Templari e i suoi ambiti di azione — compresi lavori nazionali e internazionali con bambini e anziani, nonché eventi negli stati e nei comuni del Brasile, come la Giornata dei Templari.',
+      'L’Ordine intende la tradizione cavalleresca come impegno per la conoscenza, la cultura e il servizio al bene comune. Questa pagina riunisce il braccio culturale dell’istituzione, la partecipazione delle Dame Templari e i suoi ambiti di azione - compresi lavori nazionali e internazionali con bambini e anziani, nonché eventi negli stati e nei comuni del Brasile, come la Giornata dei Templari.',
     abtl: {
       kicker: 'Braccio culturale e letterario',
       title: 'Academia Brasileira Templária de Letras (ABTL)',
@@ -544,7 +544,7 @@ export const it: Widen<Dictionary> = {
     title: 'Insegnamenti e registri',
     lead: 'Riflessioni, registri storici e resoconti delle azioni dell’Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     intro:
-      'Questa pagina riunisce le pubblicazioni istituzionali dell’OICMCTB — insegnamenti, contenuti storici e resoconti di eventi e azioni sociali. I testi sono stati revisionati per maggiore chiarezza, preservando i fatti e le informazioni originariamente divulgate dall’Ordine.',
+      'Questa pagina riunisce le pubblicazioni istituzionali dell’OICMCTB - insegnamenti, contenuti storici e resoconti di eventi e azioni sociali. I testi sono stati revisionati per maggiore chiarezza, preservando i fatti e le informazioni originariamente divulgate dall’Ordine.',
     languageNote:
       'Il contenuto delle pubblicazioni è presentato in portoghese, lingua originale delle comunicazioni ufficiali dell’Ordine.',
     externalLink: 'Apri riferimento esterno',
@@ -575,7 +575,7 @@ export const it: Widen<Dictionary> = {
       title: 'Incontri, cerimonie e solennità',
       paragraphs: [
         'Le cerimonie, le investiture, le elevazioni e le concessioni di titoli e onorificenze sono atti civili e cavallereschi dell’Ordine.',
-        'L’Ordine realizza e partecipa anche ad azioni ed eventi negli stati e nei comuni del Brasile — tra cui la Giornata dei Templari — e sviluppa lavori con bambini e anziani a livello nazionale e internazionale.',
+        'L’Ordine realizza e partecipa anche ad azioni ed eventi negli stati e nei comuni del Brasile - tra cui la Giornata dei Templari - e sviluppa lavori con bambini e anziani a livello nazionale e internazionale.',
         'Quando confermato dall’istituzione, questi incontri possono essere aperti a invitati, familiari e alla comunità.',
         'I titoli e le onorificenze concessi dall’OICMCTB non equivalgono a gradi militari ufficiali, titoli accademici, decorazioni governative o titoli pubblici.',
         'Eventi e attività confermati sono annunciati attraverso i canali ufficiali dell’Ordine e nella pagina Insegnamenti e registri.',
@@ -651,7 +651,7 @@ export const it: Widen<Dictionary> = {
     privacy: {
       title: 'Informativa sulla Privacy',
       paragraphs: [
-        'L’OICMCTB tratta i dati inviati volontariamente tramite il modulo di contatto — nome, e-mail, telefono, città, oggetto e messaggio — esclusivamente per rispondere alla richiesta e mantenere il relativo contatto amministrativo.',
+        'L’OICMCTB tratta i dati inviati volontariamente tramite il modulo di contatto - nome, e-mail, telefono, città, oggetto e messaggio - esclusivamente per rispondere alla richiesta e mantenere il relativo contatto amministrativo.',
         'I dati non sono venduti né condivisi con terzi per finalità commerciali. L’accesso è riservato alle persone responsabili della gestione delle richieste.',
         'L’interessato può richiedere informazioni, correzione o cancellazione dei propri dati scrivendo all’e-mail istituzionale oicmctb@gmail.com.',
         'Questo sito è statico e non mantiene un registro dei visitatori. I fornitori di hosting possono registrare dati tecnici di accesso secondo le proprie politiche.',

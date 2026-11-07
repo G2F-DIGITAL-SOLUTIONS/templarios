@@ -2,7 +2,7 @@ import type { Widen } from '../dictionaries';
 import type { Dictionary } from './pt';
 
 /**
- * French dictionary — complete, not a partial override.
+ * French dictionary - complete, not a partial override.
  * The official name and acronym are kept in Portuguese; only the descriptive
  * text is translated.
  */
@@ -92,7 +92,7 @@ export const fr: Widen<Dictionary> = {
     hero: {
       kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
       title: 'Tradition chevaleresque, culture et service du bien commun.',
-      lead: 'CREARE FUTURUM MUTATO MODO — Créer l’avenir d’une manière différente.',
+      lead: 'CREARE FUTURUM MUTATO MODO - Créer l’avenir d’une manière différente.',
       intro:
         "L'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) est une organisation civile brésilienne à but non lucratif, de caractère fraternel, culturel, philosophique, civique et philanthropique.",
       primaryCta: "Découvrir l'Ordre",
@@ -345,14 +345,14 @@ export const fr: Widen<Dictionary> = {
         { label: 'Grande Maîtrise', value: 'Roberto Aguiar Guazzelli' },
         {
           label: 'Conseil national des Dames templières',
-          value: 'Sueli Teodoro — Première dame',
+          value: 'Sueli Teodoro - Première dame',
         },
         {
           label: 'Bras culturel et littéraire',
           value: 'Académie brésilienne templière des lettres (ABTL)',
         },
         { label: 'Courriel institutionnel', value: 'oicmctb@gmail.com' },
-        { label: 'Réseaux sociaux', value: '@oicmctb — Facebook' },
+        { label: 'Réseaux sociaux', value: '@oicmctb - Facebook' },
       ],
     },
   },
@@ -470,7 +470,7 @@ export const fr: Widen<Dictionary> = {
     title: 'Culture et action sociale',
     lead: "La dimension culturelle, littéraire et communautaire de l'OICMCTB.",
     intro:
-      "L'Ordre conçoit la tradition chevaleresque comme un engagement en faveur du savoir, de la culture et du service du bien commun. Cette page réunit le bras culturel de l'institution, la participation des Dames templières et ses domaines d'action — y compris des travaux nationaux et internationaux auprès des enfants et des personnes âgées, ainsi que des événements dans les États et municipalités du Brésil, comme la Journée des Templiers.",
+      "L'Ordre conçoit la tradition chevaleresque comme un engagement en faveur du savoir, de la culture et du service du bien commun. Cette page réunit le bras culturel de l'institution, la participation des Dames templières et ses domaines d'action - y compris des travaux nationaux et internationaux auprès des enfants et des personnes âgées, ainsi que des événements dans les États et municipalités du Brésil, comme la Journée des Templiers.",
     abtl: {
       kicker: 'Bras culturel et littéraire',
       title: 'Académie brésilienne templière des lettres (ABTL)',
@@ -574,7 +574,7 @@ export const fr: Widen<Dictionary> = {
     title: 'Enseignements et registres',
     lead: 'Réflexions, registres historiques et récits d’actions de l’Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     intro:
-      'Cette page rassemble les publications institutionnelles de l’OICMCTB — enseignements, contenus historiques et récits d’événements et d’actions sociales. Les textes ont été revus pour plus de clarté, en préservant les faits et informations originellement partagés par l’Ordre.',
+      'Cette page rassemble les publications institutionnelles de l’OICMCTB - enseignements, contenus historiques et récits d’événements et d’actions sociales. Les textes ont été revus pour plus de clarté, en préservant les faits et informations originellement partagés par l’Ordre.',
     languageNote:
       'Le contenu des publications est présenté en portugais, langue originale des communications officielles de l’Ordre.',
     externalLink: 'Ouvrir la référence externe',
@@ -614,7 +614,7 @@ export const fr: Widen<Dictionary> = {
       title: 'Rencontres, cérémonies et solennités',
       paragraphs: [
         'Les cérémonies, investitures, élévations et concessions de titres et d’honneurs sont des actes civils et chevaleresques de l’Ordre.',
-        'L’Ordre réalise et participe également à des actions et événements dans les États et municipalités du Brésil — dont la Journée des Templiers — et développe des travaux auprès des enfants et des personnes âgées aux niveaux national et international.',
+        'L’Ordre réalise et participe également à des actions et événements dans les États et municipalités du Brésil - dont la Journée des Templiers - et développe des travaux auprès des enfants et des personnes âgées aux niveaux national et international.',
         'Lorsqu’ils sont confirmés par l’institution, ces rencontres peuvent être ouvertes aux invités, aux familles et à la communauté.',
         'Les titres et honneurs conférés par l’OICMCTB ne correspondent pas à des grades militaires officiels, diplômes académiques, décorations gouvernementales ou titres publics.',
         'Les événements et activités confirmés sont diffusés par les canaux officiels de l’Ordre et sur la page Enseignements et registres.',
@@ -692,7 +692,7 @@ export const fr: Widen<Dictionary> = {
     privacy: {
       title: 'Politique de confidentialité',
       paragraphs: [
-        "L'OICMCTB traite les données envoyées volontairement via le formulaire de contact — nom, courriel, téléphone, ville, objet et message — exclusivement pour répondre à la demande et maintenir la correspondance administrative correspondante.",
+        "L'OICMCTB traite les données envoyées volontairement via le formulaire de contact - nom, courriel, téléphone, ville, objet et message - exclusivement pour répondre à la demande et maintenir la correspondance administrative correspondante.",
         "Les données ne sont ni vendues ni partagées avec des tiers à des fins commerciales. L'accès est réservé aux personnes responsables du traitement des demandes.",
         "La personne concernée peut demander des informations, la correction ou la suppression de ses données par courriel institutionnel oicmctb@gmail.com.",
         "Ce site est statique et ne tient pas de registre des visiteurs. Les fournisseurs d'hébergement peuvent enregistrer des données techniques d'accès conformément à leurs propres politiques.",

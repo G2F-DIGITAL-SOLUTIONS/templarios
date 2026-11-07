@@ -57,7 +57,7 @@ const normalisePath = (value: string): string =>
 
 const canonical = new URL(normalisePath(path), siteUrl).href;
 const imageUrl = new URL(image, siteUrl).href;
-const fullTitle = title === dict.meta.siteName ? title : `${title} — ${dict.meta.siteName}`;
+const fullTitle = title === dict.meta.siteName ? title : `${title} - ${dict.meta.siteName}`;
 
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 

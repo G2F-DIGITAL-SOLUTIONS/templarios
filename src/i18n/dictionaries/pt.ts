@@ -1,5 +1,5 @@
 /**
- * Portuguese (pt-BR) dictionary — the source of truth.
+ * Portuguese (pt-BR) dictionary - the source of truth.
  *
  * `Dictionary` is derived from this object, so every other locale is
  * type-checked against these keys. Unlike the previous version, the other
@@ -91,7 +91,7 @@ export const pt = {
     hero: {
       kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
       title: 'Tradição cavalheiresca, cultura e serviço ao bem comum.',
-      lead: 'CREARE FUTURUM MUTATO MODO — Para criar o futuro de um modo diferente.',
+      lead: 'CREARE FUTURUM MUTATO MODO - Para criar o futuro de um modo diferente.',
       intro:
         'A Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) é uma organização civil brasileira sem fins lucrativos, de caráter fraterno, cultural, filosófico, cívico e filantrópico.',
       primaryCta: 'Conheça a Ordem',
@@ -320,10 +320,10 @@ export const pt = {
         { label: 'Razão social', value: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil' },
         { label: 'CNPJ', value: '42.071.770/0001-75' },
         { label: 'Grão-Mestrado', value: 'Roberto Aguiar Guazzelli' },
-        { label: 'Conselho Nacional das Damas Templárias', value: 'Sueli Teodoro — Primeira-Dama' },
+        { label: 'Conselho Nacional das Damas Templárias', value: 'Sueli Teodoro - Primeira-Dama' },
         { label: 'Braço cultural e literário', value: 'Academia Brasileira Templária de Letras (ABTL)' },
         { label: 'E-mail institucional', value: 'oicmctb@gmail.com' },
-        { label: 'Redes sociais', value: '@oicmctb — Facebook' },
+        { label: 'Redes sociais', value: '@oicmctb - Facebook' },
       ],
     },
   },
@@ -440,7 +440,7 @@ export const pt = {
     title: 'Cultura e Atuação Social',
     lead: 'A dimensão cultural, literária e comunitária da OICMCTB.',
     intro:
-      'A Ordem entende a tradição cavalheiresca como compromisso com o conhecimento, a cultura e o serviço ao bem comum. Esta página reúne o braço cultural da instituição, a participação das Damas Templárias e suas frentes de atuação — incluindo trabalhos nacionais e internacionais com crianças e com a terceira idade, bem como eventos em estados e municípios do Brasil, como o Dia dos Templários.',
+      'A Ordem entende a tradição cavalheiresca como compromisso com o conhecimento, a cultura e o serviço ao bem comum. Esta página reúne o braço cultural da instituição, a participação das Damas Templárias e suas frentes de atuação - incluindo trabalhos nacionais e internacionais com crianças e com a terceira idade, bem como eventos em estados e municípios do Brasil, como o Dia dos Templários.',
     abtl: {
       kicker: 'Braço cultural e literário',
       title: 'Academia Brasileira Templária de Letras (ABTL)',
@@ -544,7 +544,7 @@ export const pt = {
     title: 'Ensinamentos e Registros',
     lead: 'Reflexões, registros históricos e relatos de ações da Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     intro:
-      'Esta página reúne publicações institucionais da OICMCTB — ensinamentos, conteúdos históricos e relatos de eventos e ações sociais. Os textos foram revisados para maior clareza, preservando os fatos e as informações originalmente divulgadas pela Ordem.',
+      'Esta página reúne publicações institucionais da OICMCTB - ensinamentos, conteúdos históricos e relatos de eventos e ações sociais. Os textos foram revisados para maior clareza, preservando os fatos e as informações originalmente divulgadas pela Ordem.',
     languageNote:
       'O conteúdo das publicações é apresentado em português, idioma original das comunicações oficiais da Ordem.',
     externalLink: 'Abrir referência externa',
@@ -575,7 +575,7 @@ export const pt = {
       title: 'Encontros, cerimônias e solenidades',
       paragraphs: [
         'As cerimônias, investiduras, elevações e concessões de títulos e honrarias são atos civis e cavalheirescos da Ordem.',
-        'A Ordem também realiza e participa de ações e eventos em estados e municípios do Brasil — entre eles o Dia dos Templários — e desenvolve trabalhos com crianças e com a terceira idade no âmbito nacional e internacional.',
+        'A Ordem também realiza e participa de ações e eventos em estados e municípios do Brasil - entre eles o Dia dos Templários - e desenvolve trabalhos com crianças e com a terceira idade no âmbito nacional e internacional.',
         'Quando confirmado pela instituição, esses encontros podem ser abertos a convidados, familiares e à comunidade.',
         'Os títulos e honrarias concedidos pela OICMCTB não equivalem a cargos militares oficiais, diplomas acadêmicos, condecorações governamentais ou títulos públicos.',
         'Eventos e atividades confirmados são divulgados pelos canais oficiais da Ordem e na página Ensinamentos e Registros.',
@@ -651,7 +651,7 @@ export const pt = {
     privacy: {
       title: 'Política de Privacidade',
       paragraphs: [
-        'A OICMCTB trata os dados enviados voluntariamente por meio do formulário de contato — nome, e-mail, telefone, cidade, assunto e mensagem — exclusivamente para responder à solicitação e manter o contato administrativo correspondente.',
+        'A OICMCTB trata os dados enviados voluntariamente por meio do formulário de contato - nome, e-mail, telefone, cidade, assunto e mensagem - exclusivamente para responder à solicitação e manter o contato administrativo correspondente.',
         'Os dados não são vendidos nem compartilhados com terceiros para finalidades comerciais. O acesso é restrito às pessoas responsáveis pelo atendimento.',
         'O titular pode solicitar informações, correção ou exclusão dos seus dados pelo e-mail institucional oicmctb@gmail.com.',
         'Este site é estático e não mantém cadastro de visitantes. Provedores de hospedagem podem registrar dados técnicos de acesso conforme suas próprias políticas.',

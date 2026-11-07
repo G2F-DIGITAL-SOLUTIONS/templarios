@@ -2,7 +2,7 @@ import type { Widen } from '../dictionaries';
 import type { Dictionary } from './pt';
 
 /**
- * Spanish dictionary — complete, not a partial override.
+ * Spanish dictionary - complete, not a partial override.
  * The official name and acronym are kept in Portuguese; only the descriptive
  * text is translated.
  */
@@ -91,7 +91,7 @@ export const es: Widen<Dictionary> = {
     hero: {
       kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
       title: 'Tradición caballeresca, cultura y servicio al bien común.',
-      lead: 'CREARE FUTURUM MUTATO MODO — Para crear el futuro de un modo diferente.',
+      lead: 'CREARE FUTURUM MUTATO MODO - Para crear el futuro de un modo diferente.',
       intro:
         'La Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) es una organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico.',
       primaryCta: 'Conocer la Orden',
@@ -343,14 +343,14 @@ export const es: Widen<Dictionary> = {
         { label: 'Gran Maestrazgo', value: 'Roberto Aguiar Guazzelli' },
         {
           label: 'Consejo Nacional de las Damas Templarias',
-          value: 'Sueli Teodoro — Primera Dama',
+          value: 'Sueli Teodoro - Primera Dama',
         },
         {
           label: 'Brazo cultural y literario',
           value: 'Academia Brasileña Templaria de Letras (ABTL)',
         },
         { label: 'Correo institucional', value: 'oicmctb@gmail.com' },
-        { label: 'Redes sociales', value: '@oicmctb — Facebook' },
+        { label: 'Redes sociales', value: '@oicmctb - Facebook' },
       ],
     },
   },
@@ -468,7 +468,7 @@ export const es: Widen<Dictionary> = {
     title: 'Cultura y acción social',
     lead: 'La dimensión cultural, literaria y comunitaria de la OICMCTB.',
     intro:
-      'La Orden entiende la tradición caballeresca como compromiso con el conocimiento, la cultura y el servicio al bien común. Esta página reúne el brazo cultural de la institución, la participación de las Damas Templarias y sus frentes de actuación — incluidos trabajos nacionales e internacionales con niños y personas mayores, así como eventos en estados y municipios de Brasil, como el Día de los Templarios.',
+      'La Orden entiende la tradición caballeresca como compromiso con el conocimiento, la cultura y el servicio al bien común. Esta página reúne el brazo cultural de la institución, la participación de las Damas Templarias y sus frentes de actuación - incluidos trabajos nacionales e internacionales con niños y personas mayores, así como eventos en estados y municipios de Brasil, como el Día de los Templarios.',
     abtl: {
       kicker: 'Brazo cultural y literario',
       title: 'Academia Brasileña Templaria de Letras (ABTL)',
@@ -572,7 +572,7 @@ export const es: Widen<Dictionary> = {
     title: 'Enseñanzas y registros',
     lead: 'Reflexiones, registros históricos y relatos de las acciones de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     intro:
-      'Esta página reúne publicaciones institucionales de la OICMCTB — enseñanzas, contenidos históricos y relatos de eventos y acciones sociales. Los textos fueron revisados para mayor claridad, preservando los hechos y la información originalmente divulgada por la Orden.',
+      'Esta página reúne publicaciones institucionales de la OICMCTB - enseñanzas, contenidos históricos y relatos de eventos y acciones sociales. Los textos fueron revisados para mayor claridad, preservando los hechos y la información originalmente divulgada por la Orden.',
     languageNote:
       'El contenido de las publicaciones se presenta en portugués, idioma original de las comunicaciones oficiales de la Orden.',
     externalLink: 'Abrir referencia externa',
@@ -612,7 +612,7 @@ export const es: Widen<Dictionary> = {
       title: 'Encuentros, ceremonias y solemnidades',
       paragraphs: [
         'Las ceremonias, investiduras, elevaciones y concesiones de títulos y honores son actos civiles y caballerescos de la Orden.',
-        'La Orden también realiza y participa en acciones y eventos en estados y municipios de Brasil — entre ellos el Día de los Templarios — y desarrolla trabajos con niños y personas mayores en el ámbito nacional e internacional.',
+        'La Orden también realiza y participa en acciones y eventos en estados y municipios de Brasil - entre ellos el Día de los Templarios - y desarrolla trabajos con niños y personas mayores en el ámbito nacional e internacional.',
         'Cuando la institución lo confirme, esos encuentros pueden estar abiertos a invitados, familiares y a la comunidad.',
         'Los títulos y honores concedidos por la OICMCTB no equivalen a cargos militares oficiales, diplomas académicos, condecoraciones gubernamentales o títulos públicos.',
         'Los eventos y actividades confirmados se divulgan por los canales oficiales de la Orden y en la página Enseñanzas y registros.',
@@ -690,7 +690,7 @@ export const es: Widen<Dictionary> = {
     privacy: {
       title: 'Política de Privacidad',
       paragraphs: [
-        'La OICMCTB trata los datos enviados voluntariamente mediante el formulario de contacto —nombre, correo electrónico, teléfono, ciudad, asunto y mensaje— exclusivamente para responder a la solicitud y mantener el contacto administrativo correspondiente.',
+        'La OICMCTB trata los datos enviados voluntariamente mediante el formulario de contacto - nombre, correo electrónico, teléfono, ciudad, asunto y mensaje -  exclusivamente para responder a la solicitud y mantener el contacto administrativo correspondiente.',
         'Los datos no se venden ni se comparten con terceros con fines comerciales. El acceso está restringido a las personas responsables de la atención.',
         'El titular puede solicitar información, corrección o eliminación de sus datos por el correo institucional oicmctb@gmail.com.',
         'Este sitio es estático y no mantiene registro de visitantes. Los proveedores de alojamiento pueden registrar datos técnicos de acceso conforme a sus propias políticas.',

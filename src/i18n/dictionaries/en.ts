@@ -2,7 +2,7 @@ import type { Widen } from '../dictionaries';
 import type { Dictionary } from './pt';
 
 /**
- * English dictionary — complete, not a partial override.
+ * English dictionary - complete, not a partial override.
  * The official name and acronym are kept in Portuguese; only the descriptive
  * text is translated.
  */
@@ -91,7 +91,7 @@ export const en: Widen<Dictionary> = {
     hero: {
       kicker: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil',
       title: 'Chivalric tradition, culture and service to the common good.',
-      lead: 'CREARE FUTURUM MUTATO MODO — To create the future in a different way.',
+      lead: 'CREARE FUTURUM MUTATO MODO - To create the future in a different way.',
       intro:
         'The Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) is a Brazilian civil nonprofit organization of a fraternal, cultural, philosophical, civic and philanthropic nature.',
       primaryCta: 'Discover the Order',
@@ -320,10 +320,10 @@ export const en: Widen<Dictionary> = {
         { label: 'Legal name', value: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil' },
         { label: 'CNPJ', value: '42.071.770/0001-75' },
         { label: 'Grand Mastery', value: 'Roberto Aguiar Guazzelli' },
-        { label: 'National Council of Templar Ladies', value: 'Sueli Teodoro — First Lady' },
+        { label: 'National Council of Templar Ladies', value: 'Sueli Teodoro - First Lady' },
         { label: 'Cultural and literary arm', value: 'Brazilian Templar Academy of Letters (ABTL)' },
         { label: 'Institutional email', value: 'oicmctb@gmail.com' },
-        { label: 'Social media', value: '@oicmctb — Facebook' },
+        { label: 'Social media', value: '@oicmctb - Facebook' },
       ],
     },
   },
@@ -440,7 +440,7 @@ export const en: Widen<Dictionary> = {
     title: 'Culture and Social Action',
     lead: 'The cultural, literary and community dimension of OICMCTB.',
     intro:
-      'The Order understands the chivalric tradition as a commitment to knowledge, culture and service to the common good. This page brings together the cultural arm of the institution, the participation of the Templar Ladies and its areas of work — including national and international initiatives with children and the elderly, as well as events in Brazilian states and municipalities, such as Templar Day.',
+      'The Order understands the chivalric tradition as a commitment to knowledge, culture and service to the common good. This page brings together the cultural arm of the institution, the participation of the Templar Ladies and its areas of work - including national and international initiatives with children and the elderly, as well as events in Brazilian states and municipalities, such as Templar Day.',
     abtl: {
       kicker: 'Cultural and literary arm',
       title: 'Brazilian Templar Academy of Letters (ABTL)',
@@ -544,7 +544,7 @@ export const en: Widen<Dictionary> = {
     title: 'Teachings and Records',
     lead: 'Reflections, historical records and accounts of actions of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
     intro:
-      'This page gathers institutional publications of OICMCTB — teachings, historical content and reports of events and social actions. The texts were revised for clarity while preserving the facts and information originally shared by the Order.',
+      'This page gathers institutional publications of OICMCTB - teachings, historical content and reports of events and social actions. The texts were revised for clarity while preserving the facts and information originally shared by the Order.',
     languageNote:
       'Publication content is presented in Portuguese, the original language of the Order’s official communications.',
     externalLink: 'Open external reference',
@@ -575,7 +575,7 @@ export const en: Widen<Dictionary> = {
       title: 'Gatherings, ceremonies and solemnities',
       paragraphs: [
         'Ceremonies, investitures, elevations and grants of titles and honours are civil and chivalric acts of the Order.',
-        'The Order also holds and takes part in actions and events across Brazilian states and municipalities — including Templar Day — and develops work with children and the elderly nationally and internationally.',
+        'The Order also holds and takes part in actions and events across Brazilian states and municipalities - including Templar Day - and develops work with children and the elderly nationally and internationally.',
         'When confirmed by the institution, these gatherings may be open to guests, family members and the community.',
         'Titles and honours granted by OICMCTB are not equivalent to official military ranks, academic degrees, government decorations or public titles.',
         'Confirmed events and activities are announced through the official channels of the Order and on the Teachings and Records page.',
@@ -651,7 +651,7 @@ export const en: Widen<Dictionary> = {
     privacy: {
       title: 'Privacy Policy',
       paragraphs: [
-        'OICMCTB processes the data voluntarily submitted through the contact form — name, email, telephone, city, subject and message — exclusively to reply to the request and maintain the corresponding administrative contact.',
+        'OICMCTB processes the data voluntarily submitted through the contact form - name, email, telephone, city, subject and message - exclusively to reply to the request and maintain the corresponding administrative contact.',
         'The data is not sold or shared with third parties for commercial purposes. Access is restricted to the people responsible for handling enquiries.',
         'Data subjects may request information, correction or deletion of their data by writing to the institutional email oicmctb@gmail.com.',
         'This website is static and does not maintain a register of visitors. Hosting providers may record technical access data in accordance with their own policies.',
