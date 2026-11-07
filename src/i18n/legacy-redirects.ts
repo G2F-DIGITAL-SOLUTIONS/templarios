@@ -40,17 +40,6 @@ const legacyRoutes: LegacyRoute[] = [
   },
   {
     segments: {
-      pt: 'ensinamentos',
-      en: 'teachings',
-      it: 'insegnamenti',
-      fr: 'enseignements',
-      es: 'ensenanzas',
-    },
-    target: { pt: 'ordem', en: 'order', it: 'ordine', fr: 'ordre', es: 'orden' },
-    hash: 'filosofia-e-mistica',
-  },
-  {
-    segments: {
       pt: 'iniciativas',
       en: 'initiatives',
       it: 'iniziative',

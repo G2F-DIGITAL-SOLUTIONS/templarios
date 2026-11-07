@@ -92,18 +92,24 @@ const legalLinks = [
               {site.email}
             </a>
           </li>
-          <li class="flex gap-2.5">
-            <span class="mt-0.5 text-gold-600" aria-hidden="true">
-              <Icon name="globe" size={17} />
-            </span>
-            <span class="break-all">{site.socialHandle}</span>
-          </li>
-          <li class="flex gap-2.5">
-            <span class="mt-0.5 text-gold-600" aria-hidden="true">
-              <Icon name="globe" size={17} />
-            </span>
-            <span class="text-sm text-stone-400">{site.socialPlatforms.join(' · ')}</span>
-          </li>
+          {
+            site.social.map((profile) => (
+              <li class="flex gap-2.5">
+                <span class="mt-0.5 text-gold-600" aria-hidden="true">
+                  <Icon name={profile.icon} size={17} />
+                </span>
+                <a
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="break-all text-stone-200/90 no-underline transition-colors hover:text-gold-300"
+                >
+                  {profile.label}
+                  <span class="sr-only"> ({site.socialHandle})</span>
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 

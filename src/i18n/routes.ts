@@ -14,6 +14,7 @@ export const routeKeys = [
   'order',
   'heritage',
   'society',
+  'teachings',
   'participate',
   'privacy',
   'terms',
@@ -39,6 +40,13 @@ export const routeSegments: Record<RouteKey, Record<Locale, string>> = {
     it: 'cultura-e-azione-sociale',
     fr: 'culture-et-action-sociale',
     es: 'cultura-y-accion-social',
+  },
+  teachings: {
+    pt: 'ensinamentos',
+    en: 'teachings',
+    it: 'insegnamenti',
+    fr: 'enseignements',
+    es: 'ensenanzas',
   },
   participate: {
     pt: 'participe',

@@ -25,6 +25,7 @@ const areaIcons: IconName[] = [
   'trophy',
   'leaf',
   'book',
+  'globe',
   'scroll',
   'compass',
   'shield',
@@ -130,11 +131,21 @@ const areaIcons: IconName[] = [
 
   <!-- Publicações -->
   <Section id="publicacoes" tone="parchment">
-    <div class="mx-auto max-w-3xl">
-      <SectionHeading kicker={society.publications.kicker} title={society.publications.title} as="h2" />
-      <div class="prose-templar mt-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <SectionHeading
+        kicker={society.publications.kicker}
+        title={society.publications.title}
+        as="h2"
+        align="center"
+        class="mx-auto"
+      />
+      <div class="prose-templar mt-6 text-left">
         {society.publications.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
+      <a href={localizedPath(locale, 'teachings')} class="btn btn-gold mt-8">
+        {society.publications.cta}
+        <Icon name="arrow-right" size={17} />
+      </a>
     </div>
   </Section>
 

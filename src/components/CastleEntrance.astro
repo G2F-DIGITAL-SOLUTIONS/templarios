@@ -1,17 +1,17 @@
 ---
-import Emblem from '@/components/ui/Emblem.astro';
 import CastleArch from '@/components/ui/CastleArch.astro';
 import Icon from '@/components/ui/Icon.astro';
+import { site } from '@/config/site';
 import { localizedPath, type Locale } from '@/i18n';
 import type { Dictionary } from '@/i18n/dictionaries';
 
 /**
  * CastleEntrance — the homepage hero ("Entre no Castelo").
  *
- * Static composition: a dark, warm-lit backdrop, the semibold title, an
- * institutional line, two clear calls-to-action and a decorative retable
- * (arch + towers). No parallax, no WebGL, no autoplay — just layered CSS and
- * an inline SVG, so it stays extremely fast.
+ * Static composition: a dark, warm-lit backdrop, the coat of arms, the
+ * semibold title, an institutional line, two clear calls-to-action and a
+ * decorative retable (arch + towers). No parallax, no WebGL, no autoplay —
+ * just layered CSS, so it stays extremely fast.
  */
 interface Props {
   locale: Locale;
@@ -40,8 +40,16 @@ const hero = dict.home.hero;
 
   <div class="container-templar relative pt-16 pb-0 md:pt-24">
     <div class="mx-auto max-w-3xl text-center">
-      <p class="eyebrow justify-center !text-gold-400">
-        <Emblem size={20} variant="cross" class="text-gold-400" />
+      <img
+        src={site.logo.coatOfArms}
+        width={180}
+        height={210}
+        alt={`Brasão de armas da ${dict.meta.shortName}`}
+        class="mx-auto h-36 w-auto object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.45)] md:h-44"
+        decoding="async"
+      />
+
+      <p class="eyebrow mt-6 justify-center !text-gold-400">
         {hero.kicker}
       </p>
 

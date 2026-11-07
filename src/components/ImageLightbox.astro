@@ -1,0 +1,188 @@
+---
+/**
+ * ImageLightbox — shared dialog for expanding gallery images with
+ * previous/next navigation (keyboard and buttons).
+ *
+ * Pair with galleries marked `data-lightbox-gallery` and buttons
+ * `data-lightbox-trigger` carrying `data-src` / `data-alt`.
+ */
+interface Props {
+  closeLabel: string;
+  prevLabel: string;
+  nextLabel: string;
+  /** Template with `{current}` and `{total}` placeholders. */
+  counterLabel: string;
+}
+
+const { closeLabel, prevLabel, nextLabel, counterLabel } = Astro.props;
+---
+
+<dialog
+  data-image-lightbox
+  data-counter-label={counterLabel}
+  class="lightbox fixed inset-0 z-[100] m-0 h-full max-h-none w-full max-w-none border-0 bg-ink-950/92 p-0 text-parchment open:flex open:flex-col"
+  aria-modal="true"
+>
+  <div class="flex items-center justify-between gap-4 px-4 py-3 md:px-6">
+    <p data-lightbox-counter class="text-sm text-stone-300"></p>
+    <button
+      type="button"
+      data-lightbox-close
+      class="inline-flex size-10 items-center justify-center rounded-sm text-parchment transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+      aria-label={closeLabel}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="M18 6 6 18"></path>
+        <path d="M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="relative flex min-h-0 flex-1 items-center justify-center px-12 pb-8 md:px-20">
+    <button
+      type="button"
+      data-lightbox-prev
+      class="absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-sm bg-ink-900/70 text-parchment transition-colors hover:bg-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400 md:left-4"
+      aria-label={prevLabel}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
+    </button>
+
+    <img data-lightbox-image src="" alt="" class="max-h-[calc(100dvh-7rem)] max-w-full object-contain" />
+
+    <button
+      type="button"
+      data-lightbox-next
+      class="absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-sm bg-ink-900/70 text-parchment transition-colors hover:bg-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400 md:right-4"
+      aria-label={nextLabel}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M9 18l6-6-6-6"></path>
+      </svg>
+    </button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.querySelector('[data-image-lightbox]');
+  if (dialog instanceof HTMLDialogElement) {
+    const imgEl = dialog.querySelector('[data-lightbox-image]');
+    const counterEl = dialog.querySelector('[data-lightbox-counter]');
+    const closeBtn = dialog.querySelector('[data-lightbox-close]');
+    const prevBtn = dialog.querySelector('[data-lightbox-prev]');
+    const nextBtn = dialog.querySelector('[data-lightbox-next]');
+    const counterTemplate = dialog.getAttribute('data-counter-label') || '{current} / {total}';
+
+    let items = [];
+    let index = 0;
+
+    const update = () => {
+      const item = items[index];
+      if (!item || !(imgEl instanceof HTMLImageElement)) return;
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+      if (counterEl) {
+        counterEl.textContent = counterTemplate
+          .replace('{current}', String(index + 1))
+          .replace('{total}', String(items.length));
+      }
+      const multi = items.length > 1;
+      if (prevBtn instanceof HTMLButtonElement) prevBtn.hidden = !multi;
+      if (nextBtn instanceof HTMLButtonElement) nextBtn.hidden = !multi;
+    };
+
+    const openGallery = (galleryItems, startIndex) => {
+      items = galleryItems;
+      index = startIndex;
+      update();
+      dialog.showModal();
+      document.documentElement.style.overflow = 'hidden';
+    };
+
+    const closeGallery = () => {
+      dialog.close();
+      document.documentElement.style.overflow = '';
+    };
+
+    const showPrev = () => {
+      if (items.length < 2) return;
+      index = (index - 1 + items.length) % items.length;
+      update();
+    };
+
+    const showNext = () => {
+      if (items.length < 2) return;
+      index = (index + 1) % items.length;
+      update();
+    };
+
+    document.querySelectorAll('[data-lightbox-gallery]').forEach((gallery) => {
+      const triggers = gallery.querySelectorAll('[data-lightbox-trigger]');
+      triggers.forEach((trigger, triggerIndex) => {
+        trigger.addEventListener('click', () => {
+          const galleryItems = Array.from(triggers).map((btn) => ({
+            src: btn.getAttribute('data-src') || '',
+            alt: btn.getAttribute('data-alt') || '',
+          }));
+          openGallery(galleryItems, triggerIndex);
+        });
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeGallery);
+    prevBtn?.addEventListener('click', showPrev);
+    nextBtn?.addEventListener('click', showNext);
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) closeGallery();
+    });
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showPrev();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showNext();
+      }
+    });
+  }
+</script>

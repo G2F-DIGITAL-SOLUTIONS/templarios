@@ -28,7 +28,7 @@ export const site = {
   /** Official social handle, as provided by the Order. */
   socialHandle: '@oicmctb',
   /** Official social platforms, as provided by the Order. */
-  socialPlatforms: ['Facebook', 'Instagram'],
+  socialPlatforms: ['Facebook'],
   /** Lema oficial da Ordem. */
   motto: 'CREARE FUTURUM MUTATO MODO',
   /** Portuguese translation of the motto. */
@@ -50,7 +50,15 @@ export const site = {
     dark: '/logos/selo-templarios-brasiliae-simples-fundo-escuro.svg',
     /** Official raster logo (renamed from the provided seal photo). */
     photo: '/logos/selo-templarios-brasiliae.jpg',
+    /** Full coat of arms (brasão) for hero and heraldic placements. */
+    coatOfArms: '/logos/brasao-oicmctb.png',
   },
   /** Only official social profiles of the Order should be listed here. */
-  social: [] as { label: string; url: string; icon: 'facebook' | 'instagram' | 'youtube' | 'x' }[],
+  social: [
+    {
+      label: 'Facebook',
+      url: 'https://www.facebook.com/oicmctb',
+      icon: 'facebook' as const,
+    },
+  ],
 } as const;

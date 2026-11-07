@@ -10,6 +10,7 @@ export type ViewName =
   | 'order'
   | 'heritage'
   | 'society'
+  | 'teachings'
   | 'participate'
   | 'legal'
   | 'notFound';
@@ -28,6 +29,7 @@ export const routeDefinitions: RouteDefinition[] = [
   { routeKey: 'order', view: 'order' },
   { routeKey: 'heritage', view: 'heritage' },
   { routeKey: 'society', view: 'society' },
+  { routeKey: 'teachings', view: 'teachings' },
   { routeKey: 'participate', view: 'participate' },
   { routeKey: 'privacy', view: 'legal', meta: { legal: 'privacy' } },
   { routeKey: 'terms', view: 'legal', meta: { legal: 'terms' } },

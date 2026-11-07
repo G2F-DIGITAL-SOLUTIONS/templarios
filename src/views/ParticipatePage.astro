@@ -138,9 +138,20 @@ const path = localizedPath(locale, 'participate');
             <dt class="text-xs font-semibold tracking-[0.16em] text-stone-500 uppercase">
               {participate.contact.socialLabel}
             </dt>
-            <dd class="mt-1.5 flex items-center gap-2 text-base font-medium text-ink-800">
-              <Icon name="globe" size={18} class="text-gold-600" />
-              {participate.contact.socialHandle}
+            <dd class="mt-1.5 flex flex-col gap-2">
+              {
+                site.social.map((profile) => (
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-base font-medium text-wine-700 no-underline hover:underline"
+                  >
+                    <Icon name={profile.icon} size={18} class="text-gold-600" />
+                    {profile.label}
+                  </a>
+                ))
+              }
             </dd>
             <dd class="mt-1 text-xs text-stone-500">{participate.contact.platforms}</dd>
           </div>

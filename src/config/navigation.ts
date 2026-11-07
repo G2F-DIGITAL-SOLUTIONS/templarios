@@ -13,19 +13,21 @@ export interface NavItem {
 }
 
 /**
- * Primary navigation — the five consolidated pages of the public architecture.
+ * Primary navigation — the consolidated pages of the public architecture.
  *
  * Each page aggregates related content: "A Ordem" holds identity, history
  * summary, mission, vision, values, philosophy and institutional data;
  * "História e Brasão" holds the seal and heraldry; "Cultura e Atuação Social"
- * holds ABTL, the Templar Ladies and the areas of action; "Participar e
- * Contato" holds participation, donations, FAQ and the contact form.
+ * holds ABTL, the Templar Ladies and the areas of action; "Registro"
+ * holds teachings, publications and event records; "Participar e Contato"
+ * holds participation, donations, FAQ and the contact form.
  */
 export const primaryNav: NavItem[] = [
   { labelKey: 'home', routeKey: 'home' },
   { labelKey: 'order', routeKey: 'order' },
   { labelKey: 'heritage', routeKey: 'heritage' },
   { labelKey: 'society', routeKey: 'society' },
+  { labelKey: 'teachings', routeKey: 'teachings' },
   { labelKey: 'participate', routeKey: 'participate' },
 ];
 
@@ -42,6 +44,7 @@ export const footerColumns: { titleKey: keyof Dictionary['footer']; items: NavCh
       { labelKey: 'order', routeKey: 'order' },
       { labelKey: 'heritage', routeKey: 'heritage' },
       { labelKey: 'society', routeKey: 'society' },
+      { labelKey: 'teachings', routeKey: 'teachings' },
       { labelKey: 'participate', routeKey: 'participate' },
     ],
   },

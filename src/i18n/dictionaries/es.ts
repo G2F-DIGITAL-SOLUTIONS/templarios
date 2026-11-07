@@ -36,6 +36,7 @@ export const es: Widen<Dictionary> = {
     order: 'La Orden',
     heritage: 'Historia y escudo',
     society: 'Cultura y acción social',
+    teachings: 'Registro',
     participate: 'Participar y contacto',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
@@ -65,6 +66,11 @@ export const es: Widen<Dictionary> = {
     requiredField: 'campo obligatorio',
     formError: 'No fue posible enviar ahora. Inténtelo de nuevo o escriba a nuestro correo.',
     formOpening: 'Abriendo su programa de correo…',
+    expandImage: 'Ampliar imagen',
+    closeLightbox: 'Cerrar imagen',
+    prevImage: 'Imagen anterior',
+    nextImage: 'Imagen siguiente',
+    imageCounter: '{current} de {total}',
   },
 
   forms: {
@@ -110,7 +116,7 @@ export const es: Widen<Dictionary> = {
           'Fe en Dios, esperanza, caridad, justicia, prudencia, fortaleza y templanza.',
         today: 'Actuación',
         todayText:
-          'Cultura, investigación histórica, educación, salud, deporte, medio ambiente y asistencia social.',
+          'Cultura, turismo, educación, salud, deporte, medio ambiente, asistencia social y acciones con niños y personas mayores en Brasil y en el exterior.',
       },
       cta: 'Conocer la Orden',
       ctaSecondary: 'Nuestra historia y escudo',
@@ -148,7 +154,7 @@ export const es: Widen<Dictionary> = {
       kicker: 'Conozca la OICMCTB',
       title: 'Por dónde empezar',
       lead:
-        'Elija el tema que desea conocer. Toda la institución está organizada en cuatro páginas principales.',
+        'Elija el tema que desea conocer. Toda la institución está organizada en páginas principales.',
       items: {
         order: {
           label: 'La Orden',
@@ -165,6 +171,11 @@ export const es: Widen<Dictionary> = {
           text: 'ABTL, Damas Templarias y las frentes culturales, educativas y sociales de la Orden.',
           cta: 'Conocer la actuación',
         },
+        teachings: {
+          label: 'Registro',
+          text: 'Publicaciones, reflexiones históricas y registros de las acciones y eventos de la Orden.',
+          cta: 'Ver enseñanzas y registros',
+        },
         participate: {
           label: 'Participar y contacto',
           text: 'Cómo manifestar interés, hablar con la Orden y obtener orientación sobre contribuciones.',
@@ -176,7 +187,7 @@ export const es: Widen<Dictionary> = {
       kicker: 'Cultura y acción social',
       title: 'Una tradición que se traduce en servicio',
       lead:
-        'La OICMCTB reúne iniciativas culturales, educativas, filantrópicas y de preservación de la memoria histórica.',
+        'La OICMCTB reúne iniciativas culturales, educativas, filantrópicas y de preservación de la memoria histórica, con acciones nacionales e internacionales junto a niños y personas mayores.',
       items: [
         {
           title: 'Academia Brasileña Templaria de Letras (ABTL)',
@@ -188,11 +199,11 @@ export const es: Widen<Dictionary> = {
         },
         {
           title: 'Educación, salud y asistencia social',
-          text: 'Frentes de actuación orientadas al conocimiento, el bienestar y el amparo de quienes más lo necesitan.',
+          text: 'Frentes orientadas al conocimiento, el bienestar y el amparo de niños, familias y personas mayores.',
         },
         {
-          title: 'Medio ambiente y memoria cívica',
-          text: 'Protección de la Amazonía, concienciación ambiental y valoración de la memoria de héroes cívicos locales.',
+          title: 'Eventos y Día de los Templarios',
+          text: 'Celebraciones y acciones en estados y municipios de Brasil, incluido el Día de los Templarios.',
         },
       ],
       cta: 'Conocer la actuación social',
@@ -223,6 +234,11 @@ export const es: Widen<Dictionary> = {
       kicker: 'Cultura y acción social',
       title: 'Cultura y acción social',
       lead: 'La dimensión cultural, literaria y comunitaria de la OICMCTB.',
+    },
+    teachings: {
+      kicker: 'Conocimiento y memoria',
+      title: 'Enseñanzas y registros',
+      lead: 'Reflexiones, registros históricos y relatos de las acciones de la OICMCTB.',
     },
     participate: {
       kicker: 'Participe',
@@ -278,8 +294,8 @@ export const es: Widen<Dictionary> = {
         title: 'Misión, visión y valores',
         paragraphs: [
           'Misión: contribuir a crear el futuro de un modo diferente, promoviendo el desarrollo humano, la preservación de la historia de los caballeros templarios y el mantenimiento de la memoria de los héroes cívicos locales, mediante acciones comunitarias, proyectos educativos e iniciativas de reconocimiento del mérito, respetando el modo de vida, las tradiciones y las leyes locales.',
-          'Visión: ser reconocida internacionalmente como una orden templaria legítimamente brasileña, una organización civil sin fines de lucro que contribuye de forma efectiva a la mejora de la vida de sus asociados y de las comunidades en las que está inserta, con fe en Dios, respeto a las tradiciones locales y compromiso con la preservación de la memoria histórica de los templarios y de los héroes cívicos regionales.',
-          'La visión expresa un propósito institucional. Su formulación no constituye, por sí sola, una afirmación de reconocimiento internacional ya alcanzado.',
+          'Visión: ser reconocida y actuar como una orden templaria legítimamente brasileña, una organización civil sin fines de lucro que contribuye de forma efectiva a la mejora de la vida de sus asociados y de las comunidades en las que está inserta, con fe en Dios, respeto a las tradiciones locales y compromiso con la preservación de la memoria histórica de los templarios y de los héroes cívicos regionales.',
+          'La Orden informa que posee reconocimiento internacional e integra la representación brasileña en el ámbito de unos 150 países.',
           'Valores: fe en Dios, esperanza, caridad, justicia, prudencia, fortaleza y templanza.',
         ],
       },
@@ -334,7 +350,7 @@ export const es: Widen<Dictionary> = {
           value: 'Academia Brasileña Templaria de Letras (ABTL)',
         },
         { label: 'Correo institucional', value: 'oicmctb@gmail.com' },
-        { label: 'Redes sociales', value: '@oicmctb — Facebook e Instagram' },
+        { label: 'Redes sociales', value: '@oicmctb — Facebook' },
       ],
     },
   },
@@ -452,7 +468,7 @@ export const es: Widen<Dictionary> = {
     title: 'Cultura y acción social',
     lead: 'La dimensión cultural, literaria y comunitaria de la OICMCTB.',
     intro:
-      'La Orden entiende la tradición caballeresca como compromiso con el conocimiento, la cultura y el servicio al bien común. Esta página reúne el brazo cultural de la institución, la participación de las Damas Templarias y sus frentes de actuación.',
+      'La Orden entiende la tradición caballeresca como compromiso con el conocimiento, la cultura y el servicio al bien común. Esta página reúne el brazo cultural de la institución, la participación de las Damas Templarias y sus frentes de actuación — incluidos trabajos nacionales e internacionales con niños y personas mayores, así como eventos en estados y municipios de Brasil, como el Día de los Templarios.',
     abtl: {
       kicker: 'Brazo cultural y literario',
       title: 'Academia Brasileña Templaria de Letras (ABTL)',
@@ -488,11 +504,11 @@ export const es: Widen<Dictionary> = {
       kicker: 'Frentes de actuación',
       title: 'Áreas de actuación y objetivos institucionales',
       lead:
-        'Las áreas siguientes son frentes de trabajo y objetivos de la Orden, conforme al material institucional.',
+        'Las áreas siguientes son frentes de trabajo y objetivos de la Orden, conforme al material institucional. Incluyen acciones con niños y personas mayores, en Brasil y en el exterior, y celebraciones como el Día de los Templarios en estados y municipios.',
       items: [
         {
           title: 'Asistencia social',
-          text: 'Amparo a los necesitados e iniciativas de solidaridad y apoyo comunitario.',
+          text: 'Amparo a los necesitados e iniciativas de solidaridad y apoyo comunitario, con especial atención a niños y personas mayores.',
         },
         {
           title: 'Educación',
@@ -515,12 +531,16 @@ export const es: Widen<Dictionary> = {
           text: 'Valoración de la cultura, las tradiciones y la producción intelectual.',
         },
         {
+          title: 'Turismo',
+          text: 'Valoración del turismo cultural e histórico vinculado a la memoria templaria, las tradiciones locales y el encuentro entre comunidades.',
+        },
+        {
           title: 'Investigación histórica',
           text: 'Preservación de la memoria histórica y estímulo a la investigación, incluidos los estudios heráldicos.',
         },
         {
           title: 'Acciones comunitarias',
-          text: 'Iniciativas de acercamiento a las comunidades y de servicio al bien común.',
+          text: 'Iniciativas de acercamiento a las comunidades y de servicio al bien común en estados y municipios de Brasil.',
         },
         {
           title: 'Memoria de héroes cívicos',
@@ -534,9 +554,10 @@ export const es: Widen<Dictionary> = {
       kicker: 'Conocimiento',
       title: 'Publicaciones y estudios',
       paragraphs: [
-        'La Orden y la ABTL incentivan la investigación histórica, la producción intelectual y las publicaciones culturales. Cuando haya publicaciones disponibles y verificadas, se divulgarán en esta página.',
-        'No se presentan artículos, conferencias, premios o publicaciones ficticias para completar la sección.',
+        'La Orden y la ABTL incentivan la investigación histórica, la producción intelectual y las publicaciones culturales.',
+        'Los registros de acciones, reflexiones y enseñanzas de la Orden están reunidos en la página Enseñanzas y registros.',
       ],
+      cta: 'Ver enseñanzas y registros',
     },
     cta: {
       title: 'Conozca también la Orden',
@@ -544,6 +565,18 @@ export const es: Widen<Dictionary> = {
       primary: 'La Orden',
       secondary: 'Participar y contacto',
     },
+  },
+
+  teachings: {
+    kicker: 'Conocimiento y memoria',
+    title: 'Enseñanzas y registros',
+    lead: 'Reflexiones, registros históricos y relatos de las acciones de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
+    intro:
+      'Esta página reúne publicaciones institucionales de la OICMCTB — enseñanzas, contenidos históricos y relatos de eventos y acciones sociales. Los textos fueron revisados para mayor claridad, preservando los hechos y la información originalmente divulgada por la Orden.',
+    languageNote:
+      'El contenido de las publicaciones se presenta en portugués, idioma original de las comunicaciones oficiales de la Orden.',
+    externalLink: 'Abrir referencia externa',
+    empty: 'Ninguna publicación disponible por el momento.',
   },
 
   participate: {
@@ -579,9 +612,10 @@ export const es: Widen<Dictionary> = {
       title: 'Encuentros, ceremonias y solemnidades',
       paragraphs: [
         'Las ceremonias, investiduras, elevaciones y concesiones de títulos y honores son actos civiles y caballerescos de la Orden.',
+        'La Orden también realiza y participa en acciones y eventos en estados y municipios de Brasil — entre ellos el Día de los Templarios — y desarrolla trabajos con niños y personas mayores en el ámbito nacional e internacional.',
         'Cuando la institución lo confirme, esos encuentros pueden estar abiertos a invitados, familiares y a la comunidad.',
         'Los títulos y honores concedidos por la OICMCTB no equivalen a cargos militares oficiales, diplomas académicos, condecoraciones gubernamentales o títulos públicos.',
-        'No hay un calendario ficticio en esta página. Los eventos y actividades confirmados se divulgarán por los canales oficiales de la Orden.',
+        'Los eventos y actividades confirmados se divulgan por los canales oficiales de la Orden y en la página Enseñanzas y registros.',
       ],
     },
     donations: {
@@ -601,7 +635,7 @@ export const es: Widen<Dictionary> = {
       emailNote: 'Canal oficial informado por la Orden.',
       socialLabel: 'Redes sociales',
       socialHandle: '@oicmctb',
-      platforms: 'Facebook e Instagram',
+      platforms: 'Facebook',
       note:
         'La dirección y el teléfono no se divulgan en esta página por no haber sido confirmados por la institución.',
       formTitle: 'Envíe un mensaje',

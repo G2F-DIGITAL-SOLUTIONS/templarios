@@ -83,31 +83,6 @@
       "permanent": true
     },
     {
-      "source": "/ensinamentos",
-      "destination": "/ordem#filosofia-e-mistica",
-      "permanent": true
-    },
-    {
-      "source": "/en/teachings",
-      "destination": "/en/order#filosofia-e-mistica",
-      "permanent": true
-    },
-    {
-      "source": "/it/insegnamenti",
-      "destination": "/it/ordine#filosofia-e-mistica",
-      "permanent": true
-    },
-    {
-      "source": "/fr/enseignements",
-      "destination": "/fr/ordre#filosofia-e-mistica",
-      "permanent": true
-    },
-    {
-      "source": "/es/ensenanzas",
-      "destination": "/es/orden#filosofia-e-mistica",
-      "permanent": true
-    },
-    {
       "source": "/iniciativas",
       "destination": "/cultura-e-atuacao-social#atuacao-social",
       "permanent": true

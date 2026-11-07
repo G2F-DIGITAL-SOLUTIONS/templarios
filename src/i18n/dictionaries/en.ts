@@ -36,6 +36,7 @@ export const en: Widen<Dictionary> = {
     order: 'The Order',
     heritage: 'History and Coat of Arms',
     society: 'Culture and Social Action',
+    teachings: 'Record',
     participate: 'Participate and Contact',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
@@ -65,6 +66,11 @@ export const en: Widen<Dictionary> = {
     requiredField: 'required field',
     formError: 'We could not send your message now. Please try again or write to our email.',
     formOpening: 'Opening your email programme…',
+    expandImage: 'Enlarge image',
+    closeLightbox: 'Close image',
+    prevImage: 'Previous image',
+    nextImage: 'Next image',
+    imageCounter: '{current} of {total}',
   },
 
   forms: {
@@ -106,7 +112,8 @@ export const en: Widen<Dictionary> = {
         values: 'Values',
         valuesText: 'Faith in God, hope, charity, justice, prudence, fortitude and temperance.',
         today: 'Work',
-        todayText: 'Culture, historical research, education, health, sport, environment and social assistance.',
+        todayText:
+          'Culture, tourism, education, health, sport, environment, social assistance and actions with children and the elderly in Brazil and abroad.',
       },
       cta: 'Discover the Order',
       ctaSecondary: 'Our history and coat of arms',
@@ -133,7 +140,7 @@ export const en: Widen<Dictionary> = {
     doors: {
       kicker: 'Discover OICMCTB',
       title: 'Where to begin',
-      lead: 'Choose the subject you wish to explore. The whole institution is organised into four main pages.',
+      lead: 'Choose the subject you wish to explore. The whole institution is organised into main pages.',
       items: {
         order: {
           label: 'The Order',
@@ -150,6 +157,11 @@ export const en: Widen<Dictionary> = {
           text: 'ABTL, the Templar Ladies and the cultural, educational and social work of the Order.',
           cta: 'Discover our work',
         },
+        teachings: {
+          label: 'Record',
+          text: 'Publications, historical reflections and records of the Order’s actions and events.',
+          cta: 'See teachings and records',
+        },
         participate: {
           label: 'Participate and Contact',
           text: 'How to express interest, contact the Order and obtain guidance on contributions.',
@@ -161,7 +173,7 @@ export const en: Widen<Dictionary> = {
       kicker: 'Culture and Social Action',
       title: 'A tradition translated into service',
       lead:
-        'OICMCTB brings together cultural, educational, philanthropic and historical-memory initiatives.',
+        'OICMCTB brings together cultural, educational, philanthropic and historical-memory initiatives, with national and international actions alongside children and the elderly.',
       items: [
         {
           title: 'Brazilian Templar Academy of Letters (ABTL)',
@@ -173,11 +185,11 @@ export const en: Widen<Dictionary> = {
         },
         {
           title: 'Education, health and social assistance',
-          text: 'Areas of work dedicated to knowledge, wellbeing and support for those most in need.',
+          text: 'Areas of work dedicated to knowledge, wellbeing and support for children, families and the elderly.',
         },
         {
-          title: 'Environment and civic memory',
-          text: 'Protection of the Amazon, environmental awareness and appreciation of the memory of local civic heroes.',
+          title: 'Events and Templar Day',
+          text: 'Celebrations and actions across Brazilian states and municipalities, including Templar Day.',
         },
       ],
       cta: 'Discover our social work',
@@ -206,6 +218,11 @@ export const en: Widen<Dictionary> = {
       kicker: 'Culture and Social Action',
       title: 'Culture and Social Action',
       lead: 'The cultural, literary and community dimension of OICMCTB.',
+    },
+    teachings: {
+      kicker: 'Knowledge and memory',
+      title: 'Teachings and Records',
+      lead: 'Reflections, historical records and accounts of OICMCTB actions.',
     },
     participate: {
       kicker: 'Participate',
@@ -260,8 +277,8 @@ export const en: Widen<Dictionary> = {
         title: 'Mission, vision and values',
         paragraphs: [
           'Mission: to contribute to creating the future in a different way, promoting human development, the preservation of the history of the Knights Templar and the maintenance of the memory of local civic heroes, through community actions, educational projects and merit recognition initiatives, respecting the way of life, traditions and local laws.',
-          'Vision: to be recognised internationally as a legitimately Brazilian Templar order, a civil nonprofit organization that effectively contributes to improving the lives of its members and the communities in which it operates, with faith in God, respect for local traditions and commitment to preserving the historical memory of the Templars and regional civic heroes.',
-          'The vision expresses an institutional purpose. Its formulation does not, by itself, constitute a claim of international recognition already achieved.',
+          'Vision: to be recognised and to act as a legitimately Brazilian Templar order, a civil nonprofit organization that effectively contributes to improving the lives of its members and the communities in which it operates, with faith in God, respect for local traditions and commitment to preserving the historical memory of the Templars and regional civic heroes.',
+          'The Order states that it has international recognition and forms the Brazilian representation within a network of about 150 countries.',
           'Values: faith in God, hope, charity, justice, prudence, fortitude and temperance.',
         ],
       },
@@ -306,7 +323,7 @@ export const en: Widen<Dictionary> = {
         { label: 'National Council of Templar Ladies', value: 'Sueli Teodoro — First Lady' },
         { label: 'Cultural and literary arm', value: 'Brazilian Templar Academy of Letters (ABTL)' },
         { label: 'Institutional email', value: 'oicmctb@gmail.com' },
-        { label: 'Social media', value: '@oicmctb — Facebook and Instagram' },
+        { label: 'Social media', value: '@oicmctb — Facebook' },
       ],
     },
   },
@@ -423,7 +440,7 @@ export const en: Widen<Dictionary> = {
     title: 'Culture and Social Action',
     lead: 'The cultural, literary and community dimension of OICMCTB.',
     intro:
-      'The Order understands the chivalric tradition as a commitment to knowledge, culture and service to the common good. This page brings together the cultural arm of the institution, the participation of the Templar Ladies and its areas of work.',
+      'The Order understands the chivalric tradition as a commitment to knowledge, culture and service to the common good. This page brings together the cultural arm of the institution, the participation of the Templar Ladies and its areas of work — including national and international initiatives with children and the elderly, as well as events in Brazilian states and municipalities, such as Templar Day.',
     abtl: {
       kicker: 'Cultural and literary arm',
       title: 'Brazilian Templar Academy of Letters (ABTL)',
@@ -458,11 +475,12 @@ export const en: Widen<Dictionary> = {
     areas: {
       kicker: 'Areas of work',
       title: 'Areas of work and institutional objectives',
-      lead: 'The areas below are areas of work and objectives of the Order, according to the institutional material.',
+      lead:
+        'The areas below are areas of work and objectives of the Order, according to the institutional material. They include actions with children and the elderly, in Brazil and abroad, and celebrations such as Templar Day across states and municipalities.',
       items: [
         {
           title: 'Social assistance',
-          text: 'Support for those in need and initiatives of solidarity and community support.',
+          text: 'Support for those in need and initiatives of solidarity and community support, with special attention to children and the elderly.',
         },
         {
           title: 'Education',
@@ -485,12 +503,16 @@ export const en: Widen<Dictionary> = {
           text: 'Appreciation of culture, traditions and intellectual production.',
         },
         {
+          title: 'Tourism',
+          text: 'Appreciation of cultural and historical tourism linked to Templar memory, local traditions and encounters between communities.',
+        },
+        {
           title: 'Historical research',
           text: 'Preservation of historical memory and encouragement of research, including heraldic studies.',
         },
         {
           title: 'Community actions',
-          text: 'Initiatives bringing the Order closer to communities and serving the common good.',
+          text: 'Initiatives bringing the Order closer to communities and serving the common good across Brazilian states and municipalities.',
         },
         {
           title: 'Memory of civic heroes',
@@ -504,9 +526,10 @@ export const en: Widen<Dictionary> = {
       kicker: 'Knowledge',
       title: 'Publications and studies',
       paragraphs: [
-        'The Order and ABTL encourage historical research, intellectual production and cultural publications. When verified publications are available, they will be announced on this page.',
-        'No fictitious articles, lectures, awards or publications are presented to fill the section.',
+        'The Order and ABTL encourage historical research, intellectual production and cultural publications.',
+        'Records of actions, reflections and teachings of the Order are gathered on the Teachings and Records page.',
       ],
+      cta: 'See teachings and records',
     },
     cta: {
       title: 'Discover the Order as well',
@@ -514,6 +537,18 @@ export const en: Widen<Dictionary> = {
       primary: 'The Order',
       secondary: 'Participate and Contact',
     },
+  },
+
+  teachings: {
+    kicker: 'Knowledge and memory',
+    title: 'Teachings and Records',
+    lead: 'Reflections, historical records and accounts of actions of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
+    intro:
+      'This page gathers institutional publications of OICMCTB — teachings, historical content and reports of events and social actions. The texts were revised for clarity while preserving the facts and information originally shared by the Order.',
+    languageNote:
+      'Publication content is presented in Portuguese, the original language of the Order’s official communications.',
+    externalLink: 'Open external reference',
+    empty: 'No publications available at this time.',
   },
 
   participate: {
@@ -540,9 +575,10 @@ export const en: Widen<Dictionary> = {
       title: 'Gatherings, ceremonies and solemnities',
       paragraphs: [
         'Ceremonies, investitures, elevations and grants of titles and honours are civil and chivalric acts of the Order.',
+        'The Order also holds and takes part in actions and events across Brazilian states and municipalities — including Templar Day — and develops work with children and the elderly nationally and internationally.',
         'When confirmed by the institution, these gatherings may be open to guests, family members and the community.',
         'Titles and honours granted by OICMCTB are not equivalent to official military ranks, academic degrees, government decorations or public titles.',
-        'There is no fictitious calendar on this page. Confirmed events and activities will be announced through the official channels of the Order.',
+        'Confirmed events and activities are announced through the official channels of the Order and on the Teachings and Records page.',
       ],
     },
     donations: {
@@ -561,7 +597,7 @@ export const en: Widen<Dictionary> = {
       emailNote: 'Official channel provided by the Order.',
       socialLabel: 'Social media',
       socialHandle: '@oicmctb',
-      platforms: 'Facebook and Instagram',
+      platforms: 'Facebook',
       note:
         'Address and telephone are not published on this page because they have not been confirmed by the institution.',
       formTitle: 'Send a message',

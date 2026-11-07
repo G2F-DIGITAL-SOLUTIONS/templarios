@@ -4,6 +4,7 @@ import HomeView from '@/views/HomeView.astro';
 import OrderPage from '@/views/OrderPage.astro';
 import HeritagePage from '@/views/HeritagePage.astro';
 import SocietyPage from '@/views/SocietyPage.astro';
+import TeachingsPage from '@/views/TeachingsPage.astro';
 import ParticipatePage from '@/views/ParticipatePage.astro';
 import LegalPage from '@/views/LegalPage.astro';
 import NotFoundPage from '@/views/NotFoundPage.astro';
@@ -49,6 +50,8 @@ const legalPage = meta?.legal ? dict.pages[meta.legal] : undefined;
 {view === 'heritage' && <HeritagePage locale={locale} />}
 
 {view === 'society' && <SocietyPage locale={locale} />}
+
+{view === 'teachings' && <TeachingsPage locale={locale} />}
 
 {view === 'participate' && <ParticipatePage locale={locale} />}
 
