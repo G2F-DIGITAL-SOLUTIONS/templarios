@@ -103,9 +103,11 @@ const path = localizedPath(locale, 'participate');
       <div class="prose-templar mt-6">
         {participate.donations.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
-      <p class="mt-6 rounded-sm border-l-2 border-gold-500 bg-parchment-dark/40 px-4 py-3 text-sm text-ink-600">
-        {participate.donations.note}
-      </p>
+      {participate.donations.note ? (
+        <p class="mt-6 rounded-sm border-l-2 border-gold-500 bg-parchment-dark/40 px-4 py-3 text-sm text-ink-600">
+          {participate.donations.note}
+        </p>
+      ) : null}
     </div>
   </Section>
 
@@ -156,7 +158,9 @@ const path = localizedPath(locale, 'participate');
             <dd class="mt-1 text-xs text-stone-500">{participate.contact.platforms}</dd>
           </div>
         </dl>
-        <p class="mt-6 text-sm text-stone-500">{participate.contact.note}</p>
+        {participate.contact.note ? (
+          <p class="mt-6 text-sm text-stone-500">{participate.contact.note}</p>
+        ) : null}
       </div>
 
       <div class="lg:col-span-7">

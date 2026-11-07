@@ -89,7 +89,7 @@ const path = localizedPath(locale, 'order');
           ))
         }
       </dl>
-      <p class="mt-5 text-xs text-stone-500">{order.info.note}</p>
+      {order.info.note ? <p class="mt-5 text-xs text-stone-500">{order.info.note}</p> : null}
       <a href={localizedPath(locale, 'participate')} class="btn btn-outline mt-8">
         {dict.nav.ctaSecondary}
         <Icon name="arrow-right" size={17} />

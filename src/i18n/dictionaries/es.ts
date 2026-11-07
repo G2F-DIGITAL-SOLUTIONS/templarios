@@ -36,7 +36,7 @@ export const es: Widen<Dictionary> = {
     order: 'La Orden',
     heritage: 'Historia y escudo',
     society: 'Cultura y acción social',
-    teachings: 'Registro',
+    teachings: 'Registros',
     participate: 'Participar y contacto',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
@@ -58,7 +58,7 @@ export const es: Widen<Dictionary> = {
     cookies: 'Cookies',
     rights: 'Todos los derechos reservados.',
     motto: 'CREARE FUTURUM MUTATO MODO',
-    dataNote: 'Datos institucionales informados por la Orden.',
+    dataNote: 'Datos institucionales de la Orden.',
   },
 
   a11y: {
@@ -103,7 +103,7 @@ export const es: Widen<Dictionary> = {
       lead:
         'La OICMCTB une la valoración de las tradiciones caballerescas con el compromiso contemporáneo con el desarrollo humano, la memoria histórica, el conocimiento y el servicio a la sociedad.',
       body:
-        'Formalizada como persona jurídica en 2021, según la información institucional proporcionada, la Orden orienta sus actividades por principios como la fe, la esperanza, la caridad, la justicia, la prudencia, la fortaleza y la templanza. Su propuesta incluye el fortalecimiento de los vínculos fraternos, la investigación histórica, la valoración de la cultura, el reconocimiento del mérito cívico y el incentivo a iniciativas que contribuyan al bien común.',
+        'Formalizada como persona jurídica en 2021, la Orden orienta sus actividades por principios como la fe, la esperanza, la caridad, la justicia, la prudencia, la fortaleza y la templanza. Su propuesta incluye el fortalecimiento de los vínculos fraternos, la investigación histórica, la valoración de la cultura, el reconocimiento del mérito cívico y el incentivo a iniciativas que contribuyan al bien común.',
       highlights: {
         identity: 'Identidad',
         identityText:
@@ -172,7 +172,7 @@ export const es: Widen<Dictionary> = {
           cta: 'Conocer la actuación',
         },
         teachings: {
-          label: 'Registro',
+          label: 'Registros',
           text: 'Publicaciones, reflexiones históricas y registros de las acciones y eventos de la Orden.',
           cta: 'Ver enseñanzas y registros',
         },
@@ -274,7 +274,7 @@ export const es: Widen<Dictionary> = {
         paragraphs: [
           'La Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) es una organización civil brasileña sin fines de lucro, de carácter fraterno, cultural, filosófico, cívico y filantrópico.',
           'La institución busca unir la valoración de las tradiciones caballerescas con el compromiso contemporáneo con el desarrollo humano, la preservación de la memoria histórica, el conocimiento y el servicio a la sociedad.',
-          'Formalizada como persona jurídica en 2021, según la información institucional proporcionada, la Orden orienta sus actividades por principios como la fe, la esperanza, la caridad, la justicia, la prudencia, la fortaleza y la templanza.',
+          'Formalizada como persona jurídica en 2021, la Orden orienta sus actividades por principios como la fe, la esperanza, la caridad, la justicia, la prudencia, la fortaleza y la templanza.',
           'Su propuesta incluye el fortalecimiento de los vínculos fraternos, la investigación histórica, la valoración de la cultura, el reconocimiento del mérito cívico y el incentivo a iniciativas que contribuyan al bien común.',
         ],
       },
@@ -282,10 +282,9 @@ export const es: Widen<Dictionary> = {
         id: 'historia',
         title: 'Historia de la OICMCTB',
         paragraphs: [
-          'La idealización y el liderazgo de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil se atribuyen al Gran Maestro Roberto Aguiar Guazzelli, según el material institucional proporcionado.',
+          'La idealización y el liderazgo de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil son del Gran Maestro Roberto Aguiar Guazzelli.',
           'La Orden fue formalizada como persona jurídica en 2021. Ese hito está asociado a la inscripción «MMXXI» presente en el sello institucional.',
           'La construcción de la identidad institucional incluyó el desarrollo del sello y del escudo de armas, la valoración de los ideales caballerescos y la actuación cultural y literaria de la Academia Brasileña Templaria de Letras (ABTL).',
-          'La historia de la organización brasileña contemporánea es distinta de la historia medieval de los Caballeros Templarios. El uso de símbolos y la inspiración en una tradición no prueban, por sí solos, continuidad jurídica o institucional directa con la orden medieval.',
           'La historia de la identidad visual y la explicación de los elementos heráldicos se presentan en la página Historia y escudo.',
         ],
       },
@@ -295,7 +294,7 @@ export const es: Widen<Dictionary> = {
         paragraphs: [
           'Misión: contribuir a crear el futuro de un modo diferente, promoviendo el desarrollo humano, la preservación de la historia de los caballeros templarios y el mantenimiento de la memoria de los héroes cívicos locales, mediante acciones comunitarias, proyectos educativos e iniciativas de reconocimiento del mérito, respetando el modo de vida, las tradiciones y las leyes locales.',
           'Visión: ser reconocida y actuar como una orden templaria legítimamente brasileña, una organización civil sin fines de lucro que contribuye de forma efectiva a la mejora de la vida de sus asociados y de las comunidades en las que está inserta, con fe en Dios, respeto a las tradiciones locales y compromiso con la preservación de la memoria histórica de los templarios y de los héroes cívicos regionales.',
-          'La Orden informa que posee reconocimiento internacional e integra la representación brasileña en el ámbito de unos 150 países.',
+          'La Orden posee reconocimiento internacional e integra la representación brasileña en el ámbito de unos 150 países.',
           'Valores: fe en Dios, esperanza, caridad, justicia, prudencia, fortaleza y templanza.',
         ],
       },
@@ -332,8 +331,7 @@ export const es: Widen<Dictionary> = {
       title: 'Información institucional',
       lead:
         'Datos institucionales de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
-      note:
-        'Datos registrales informados por la Orden. No sustituyen un certificado ni una consulta a los registros oficiales.',
+      note: '',
       items: [
         {
           label: 'Razón social',
@@ -361,13 +359,12 @@ export const es: Widen<Dictionary> = {
     lead:
       'La trayectoria de la identidad institucional de la OICMCTB y el significado del sello y del escudo de armas.',
     intro:
-      'Esta página reúne la historia de la identidad institucional de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) y la explicación de los elementos del sello y del escudo de armas, con base en el material heráldico proporcionado por la institución.',
+      'Esta página reúne la historia de la identidad institucional de la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) y la explicación de los elementos del sello y del escudo de armas.',
     history: {
       title: 'La construcción de la identidad institucional',
       paragraphs: [
-        'La idealización y el liderazgo de la OICMCTB se atribuyen al Gran Maestro Roberto Aguiar Guazzelli. La Orden fue formalizada como persona jurídica en 2021, hito asociado a la inscripción «MMXXI» del sello.',
+        'La idealización y el liderazgo de la OICMCTB son del Gran Maestro Roberto Aguiar Guazzelli. La Orden fue formalizada como persona jurídica en 2021, hito asociado a la inscripción «MMXXI» del sello.',
         'El desarrollo del sello y del escudo de armas formó parte de la construcción de la identidad institucional, respetando la tradición heráldica y los valores caballerescos. La actuación cultural y literaria de la Academia Brasileña Templaria de Letras (ABTL) integra ese recorrido.',
-        'El origen histórico del modelo iconográfico de los dos caballeros es distinto de la creación del sello específico de la OICMCTB. La inspiración en una tradición no prueba continuidad jurídica o institucional con la orden medieval.',
       ],
     },
     seal: {
@@ -375,11 +372,10 @@ export const es: Widen<Dictionary> = {
       title: 'El sello institucional',
       paragraphs: [
         'El sello redondo presenta dos caballeros templarios compartiendo el mismo caballo, composición inspirada en la iconografía templaria histórica.',
-        'Según la interpretación institucional presentada por la OICMCTB, los caballeros se desplazan visualmente de derecha a izquierda, en sentido opuesto al de la representación tradicional referida en el documento.',
+        'En la interpretación institucional de la OICMCTB, los caballeros se desplazan visualmente de derecha a izquierda, en sentido opuesto al de la representación tradicional.',
         'Esa inversión simboliza, para la Orden:',
         'La inscripción que acompaña al sello es «SIGNUM TEMPLARIORUM BRASILIAE», traducida como «Signo de los Templarios Brasileños». Pequeñas cruces de Malta separan las palabras de la inscripción, conforme a la representación oficial.',
         'La inscripción «MMXXI» corresponde a 2021, año asociado a la formalización de la institución como persona jurídica.',
-        'Estos significados se presentan como interpretación de la propia OICMCTB, y no como hecho histórico universalmente establecido.',
       ],
       items: [
         'Una postura de contrapunto a la inversión de valores del mundo contemporáneo.',
@@ -395,7 +391,7 @@ export const es: Widen<Dictionary> = {
         'El escudo es clásico, ojival y lanceolado, con división simétrica en cuatro partes.',
         'Las dos bandas perpendiculares que se cruzan en el centro forman una cruz griega roja.',
         'Los campos del escudo utilizan verde, denominado Sinople en la descripción heráldica; amarillo, denominado Oro; rojo, denominado Gules; y plata en el contorno y en los elementos descritos.',
-        'Según la interpretación del documento, los colores verde y amarillo remiten a los colores nacionales brasileños, y la cruz roja evoca los ideales templarios, la justicia y la verdad.',
+        'Los colores verde y amarillo remiten a los colores nacionales brasileños, y la cruz roja evoca los ideales templarios, la justicia y la verdad.',
         'En el centro del escudo está el sello redondo con los dos caballeros.',
       ],
     },
@@ -411,7 +407,7 @@ export const es: Widen<Dictionary> = {
       title: 'Los lambrequines',
       paragraphs: [
         'Los lambrequines son los ornamentos laterales de la composición, descritos con elementos en azul, oro y plata.',
-        'El documento relaciona su composición con la tradición heráldica de la familia Guazzelli. Esa referencia familiar se presenta como información del material institucional, sin extrapolar a afirmaciones de linaje medieval.',
+        'La composición se relaciona con la tradición heráldica de la familia Guazzelli.',
       ],
     },
     crest: {
@@ -441,8 +437,7 @@ export const es: Widen<Dictionary> = {
       id: 'cores',
       title: 'Colores oficiales',
       paragraphs: [
-        'El documento presenta referencias cromáticas en RGB, CMYK y Pantone para algunos elementos. Hay detalles que deben verificarse entre las descripciones textuales y los códigos indicados.',
-        'El archivo vectorial oficial del escudo es la principal referencia para la representación visual. Los colores oficiales no deben alterarse con base únicamente en la interpretación de los números.',
+        'Las referencias cromáticas en RGB, CMYK y Pantone figuran a continuación. El archivo vectorial oficial del escudo es la principal referencia para la representación visual.',
       ],
       items: [
         'Plata: RGB 208, 211, 212; Pantone 427 C.',
@@ -473,9 +468,8 @@ export const es: Widen<Dictionary> = {
       kicker: 'Brazo cultural y literario',
       title: 'Academia Brasileña Templaria de Letras (ABTL)',
       paragraphs: [
-        'La Academia Brasileña Templaria de Letras (ABTL) es el brazo cultural y literario asociado a la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB), conforme a la descripción institucional proporcionada.',
+        'La Academia Brasileña Templaria de Letras (ABTL) es el brazo cultural y literario asociado a la Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB).',
         'Su actuación está orientada a la investigación histórica, la literatura y la producción intelectual, las publicaciones culturales, los estudios heráldicos, la preservación de las tradiciones y el incentivo a las artes, las ciencias y la producción de conocimiento.',
-        'Los estudios teológicos se consideran cuando son compatibles con la actuación efectiva de la Academia. La Orden no atribuye a la ABTL miembros, publicaciones, premios, proyectos o cargos no confirmados.',
       ],
       areasTitle: 'Frentes de actuación de la ABTL',
       areas: [
@@ -485,7 +479,6 @@ export const es: Widen<Dictionary> = {
         'Estudios heráldicos.',
         'Preservación de las tradiciones.',
         'Incentivo a las artes, las ciencias y la producción de conocimiento.',
-        'Estudios teológicos, cuando sean compatibles con la actuación efectiva.',
       ],
     },
     ladies: {
@@ -493,18 +486,15 @@ export const es: Widen<Dictionary> = {
       title: 'Damas Templarias',
       paragraphs: [
         'El Consejo Nacional de las Damas Templarias participa en la vida cultural, institucional y comunitaria de la Orden, contribuyendo a sus iniciativas y al fortalecimiento de los vínculos fraternos.',
-        'La participación de las mujeres se valora sin crear atribuciones, proyectos o responsabilidades no documentados.',
       ],
       firstLadyLabel: 'Primera Dama',
       firstLadyName: 'Sueli Teodoro',
-      firstLadyNote:
-        'Identificación conforme a la información institucional proporcionada. El título de Primera Dama no se convierte automáticamente en presidencia, dirección ejecutiva u otra función no confirmada.',
     },
     areas: {
       kicker: 'Frentes de actuación',
       title: 'Áreas de actuación y objetivos institucionales',
       lead:
-        'Las áreas siguientes son frentes de trabajo y objetivos de la Orden, conforme al material institucional. Incluyen acciones con niños y personas mayores, en Brasil y en el exterior, y celebraciones como el Día de los Templarios en estados y municipios.',
+        'Las áreas siguientes son frentes de trabajo y objetivos de la Orden. Incluyen acciones con niños y personas mayores, en Brasil y en el exterior, y celebraciones como el Día de los Templarios en estados y municipios.',
       items: [
         {
           title: 'Asistencia social',
@@ -547,8 +537,7 @@ export const es: Widen<Dictionary> = {
           text: 'Valoración de la memoria de héroes cívicos locales y regionales y reconocimiento del mérito cívico.',
         },
       ],
-      note:
-        'La presentación de estas áreas no implica afirmar que todas ya tengan proyectos en ejecución. Cuando haya proyectos documentados, se divulgarán con nombre, objetivo, público, lugar, período y resultados.',
+      note: '',
     },
     publications: {
       kicker: 'Conocimiento',
@@ -589,7 +578,7 @@ export const es: Widen<Dictionary> = {
       paragraphs: [
         'El primer paso es conocer la Orden, su historia, su misión y sus frentes de actuación.',
         'Quien desee conocer mejor la institución o manifestar interés en participar puede contactar mediante el formulario de esta página o por el correo institucional.',
-        'La Orden orientará sobre las etapas, los criterios y las condiciones vigentes. No se publican tasas, cuotas, beneficios ni reglas de ingreso sin validación institucional.',
+        'La Orden orienta sobre las etapas, los criterios y las condiciones vigentes para quien desee conocer o participar.',
       ],
       stepsTitle: 'Un camino sencillo',
       steps: [
@@ -613,31 +602,27 @@ export const es: Widen<Dictionary> = {
       paragraphs: [
         'Las ceremonias, investiduras, elevaciones y concesiones de títulos y honores son actos civiles y caballerescos de la Orden.',
         'La Orden también realiza y participa en acciones y eventos en estados y municipios de Brasil - entre ellos el Día de los Templarios - y desarrolla trabajos con niños y personas mayores en el ámbito nacional e internacional.',
-        'Cuando la institución lo confirme, esos encuentros pueden estar abiertos a invitados, familiares y a la comunidad.',
-        'Los títulos y honores concedidos por la OICMCTB no equivalen a cargos militares oficiales, diplomas académicos, condecoraciones gubernamentales o títulos públicos.',
-        'Los eventos y actividades confirmados se divulgan por los canales oficiales de la Orden y en la página Enseñanzas y registros.',
+        'Esos encuentros pueden estar abiertos a invitados, familiares y a la comunidad.',
+        'Los eventos y actividades se divulgan por los canales oficiales de la Orden y en la página Enseñanzas y registros.',
       ],
     },
     donations: {
       kicker: 'Contribuciones',
       title: 'Donaciones y contribuciones',
       paragraphs: [
-        'La OICMCTB no divulga en esta página datos bancarios, importes ni formas de pago. Tampoco se presentan beneficios fiscales, deducciones del impuesto sobre la renta o incentivos tributarios como garantizados.',
-        'Para recibir orientación sobre eventuales contribuciones, contacte con la Orden por sus canales oficiales.',
+        'Para orientación sobre contribuciones, contacte con la Orden por sus canales oficiales.',
       ],
-      note:
-        'La Orden no presta asesoría tributaria. La información fiscal debe confirmarse con la institución y con un profesional habilitado.',
+      note: '',
     },
     contact: {
       kicker: 'Contacto',
       title: 'Hable con la OICMCTB',
       emailLabel: 'Correo institucional',
-      emailNote: 'Canal oficial informado por la Orden.',
+      emailNote: 'Canal oficial de la Orden.',
       socialLabel: 'Redes sociales',
       socialHandle: '@oicmctb',
       platforms: 'Facebook',
-      note:
-        'La dirección y el teléfono no se divulgan en esta página por no haber sido confirmados por la institución.',
+      note: '',
       formTitle: 'Envíe un mensaje',
       formIntro:
         'Complete los campos siguientes. Su información se utilizará para responder a su contacto.',
@@ -645,7 +630,7 @@ export const es: Widen<Dictionary> = {
     faq: {
       kicker: 'Preguntas frecuentes',
       title: 'Preguntas frecuentes',
-      lead: 'Respuestas basadas en la información institucional oficial.',
+      lead: 'Respuestas institucionales oficiales.',
       items: [
         {
           q: '¿Qué es la OICMCTB?',
@@ -661,7 +646,7 @@ export const es: Widen<Dictionary> = {
         },
         {
           q: '¿Cuál es la relación con los Caballeros Templarios históricos?',
-          a: 'La OICMCTB preserva y valora la memoria y los ideales caballerescos asociados a la tradición templaria. La institución es una organización brasileña contemporánea y no afirma continuidad jurídica o institucional directa con la orden medieval.',
+          a: 'La OICMCTB preserva y valora la memoria y los ideales caballerescos asociados a la tradición templaria.',
         },
         {
           q: '¿Cuál es la relación con la masonería?',
@@ -677,7 +662,7 @@ export const es: Widen<Dictionary> = {
         },
         {
           q: '¿Cómo obtener información sobre participación y actividades?',
-          a: 'Contacte mediante el formulario de esta página o por el correo institucional. La Orden orientará sobre participación, actividades y eventuales contribuciones, sin publicar reglas o condiciones no confirmadas.',
+          a: 'Contacte mediante el formulario de esta página o por el correo institucional. La Orden orientará sobre participación, actividades y contribuciones.',
         },
       ],
     },

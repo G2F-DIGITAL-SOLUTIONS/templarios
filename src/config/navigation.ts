@@ -18,7 +18,7 @@ export interface NavItem {
  * Each page aggregates related content: "A Ordem" holds identity, history
  * summary, mission, vision, values, philosophy and institutional data;
  * "História e Brasão" holds the seal and heraldry; "Cultura e Atuação Social"
- * holds ABTL, the Templar Ladies and the areas of action; "Registro"
+ * holds ABTL, the Templar Ladies and the areas of action; "Registros"
  * holds teachings, publications and event records; "Participar e Contato"
  * holds participation, donations, FAQ and the contact form.
  */

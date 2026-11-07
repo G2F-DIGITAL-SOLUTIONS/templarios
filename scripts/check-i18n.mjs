@@ -77,11 +77,19 @@ for (const locale of Object.keys(dictionaries)) {
   });
 }
 
+/** Optional UI notes cleared intentionally (still present for typing and parity). */
+const ALLOW_EMPTY_STRING_PATHS = new Set([
+  'order.info.note',
+  'society.areas.note',
+  'participate.donations.note',
+  'participate.contact.note',
+]);
+
 /** Empty values. */
 for (const [locale, dict] of Object.entries(dictionaries)) {
   walk(dict, '', (value, path) => {
     if (!path) return;
-    if (typeof value === 'string' && value.trim() === '') {
+    if (typeof value === 'string' && value.trim() === '' && !ALLOW_EMPTY_STRING_PATHS.has(path)) {
       errors.push(`[${locale}] empty string: ${path}`);
     }
     if (Array.isArray(value) && value.length === 0) {

@@ -36,7 +36,7 @@ export const en: Widen<Dictionary> = {
     order: 'The Order',
     heritage: 'History and Coat of Arms',
     society: 'Culture and Social Action',
-    teachings: 'Record',
+    teachings: 'Records',
     participate: 'Participate and Contact',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
@@ -58,7 +58,7 @@ export const en: Widen<Dictionary> = {
     cookies: 'Cookies',
     rights: 'All rights reserved.',
     motto: 'CREARE FUTURUM MUTATO MODO',
-    dataNote: 'Institutional data provided by the Order.',
+    dataNote: 'Institutional data of the Order.',
   },
 
   a11y: {
@@ -103,7 +103,7 @@ export const en: Widen<Dictionary> = {
       lead:
         'OICMCTB combines the appreciation of chivalric traditions with a contemporary commitment to human development, historical memory, knowledge and service to society.',
       body:
-        'Formalised as a legal entity in 2021, according to the institutional information provided, the Order guides its activities by principles such as faith, hope, charity, justice, prudence, fortitude and temperance. Its purpose includes strengthening fraternal bonds, historical research, the appreciation of culture, the recognition of civic merit and the encouragement of initiatives that contribute to the common good.',
+        'Formalised as a legal entity in 2021, the Order guides its activities by principles such as faith, hope, charity, justice, prudence, fortitude and temperance. Its purpose includes strengthening fraternal bonds, historical research, the appreciation of culture, the recognition of civic merit and the encouragement of initiatives that contribute to the common good.',
       highlights: {
         identity: 'Identity',
         identityText: 'An independent Brazilian civil organization, with no institutional link to Freemasonry.',
@@ -158,7 +158,7 @@ export const en: Widen<Dictionary> = {
           cta: 'Discover our work',
         },
         teachings: {
-          label: 'Record',
+          label: 'Records',
           text: 'Publications, historical reflections and records of the Order’s actions and events.',
           cta: 'See teachings and records',
         },
@@ -257,7 +257,7 @@ export const en: Widen<Dictionary> = {
         paragraphs: [
           'The Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) is a Brazilian civil nonprofit organization of a fraternal, cultural, philosophical, civic and philanthropic nature.',
           'The institution seeks to unite the appreciation of chivalric traditions with a contemporary commitment to human development, the preservation of historical memory, knowledge and service to society.',
-          'Formalised as a legal entity in 2021, according to the institutional information provided, the Order guides its activities by principles such as faith, hope, charity, justice, prudence, fortitude and temperance.',
+          'Formalised as a legal entity in 2021, the Order guides its activities by principles such as faith, hope, charity, justice, prudence, fortitude and temperance.',
           'Its purpose includes strengthening fraternal bonds, historical research, the appreciation of culture, the recognition of civic merit and the encouragement of initiatives that contribute to the common good.',
         ],
       },
@@ -265,10 +265,9 @@ export const en: Widen<Dictionary> = {
         id: 'historia',
         title: 'History of OICMCTB',
         paragraphs: [
-          'The ideation and leadership of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil are attributed to Grand Master Roberto Aguiar Guazzelli, according to the institutional material provided.',
+          'The ideation and leadership of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil are those of Grand Master Roberto Aguiar Guazzelli.',
           'The Order was formalised as a legal entity in 2021. This milestone is associated with the inscription "MMXXI" on the institutional seal.',
           'The construction of the institutional identity included the development of the seal and coat of arms, the appreciation of chivalric ideals and the cultural and literary work of the Brazilian Templar Academy of Letters (ABTL).',
-          'The history of the contemporary Brazilian organization is distinct from the medieval history of the Knights Templar. The use of symbols and inspiration from a tradition does not, by itself, prove legal or institutional continuity with the medieval order.',
           'The history of the visual identity and the explanation of the heraldic elements are presented on the History and Coat of Arms page.',
         ],
       },
@@ -278,7 +277,7 @@ export const en: Widen<Dictionary> = {
         paragraphs: [
           'Mission: to contribute to creating the future in a different way, promoting human development, the preservation of the history of the Knights Templar and the maintenance of the memory of local civic heroes, through community actions, educational projects and merit recognition initiatives, respecting the way of life, traditions and local laws.',
           'Vision: to be recognised and to act as a legitimately Brazilian Templar order, a civil nonprofit organization that effectively contributes to improving the lives of its members and the communities in which it operates, with faith in God, respect for local traditions and commitment to preserving the historical memory of the Templars and regional civic heroes.',
-          'The Order states that it has international recognition and forms the Brazilian representation within a network of about 150 countries.',
+          'The Order has international recognition and forms the Brazilian representation within a network of about 150 countries.',
           'Values: faith in God, hope, charity, justice, prudence, fortitude and temperance.',
         ],
       },
@@ -314,8 +313,7 @@ export const en: Widen<Dictionary> = {
     info: {
       title: 'Institutional information',
       lead: 'Institutional data of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil.',
-      note:
-        'Registration data provided by the Order. It does not replace a certificate or consultation of official records.',
+      note: '',
       items: [
         { label: 'Legal name', value: 'Ordem Internacional Civil Militar Cavaleiros Templários do Brasil' },
         { label: 'CNPJ', value: '42.071.770/0001-75' },
@@ -333,13 +331,12 @@ export const en: Widen<Dictionary> = {
     title: 'History and Coat of Arms',
     lead: 'The journey of OICMCTB institutional identity and the meaning of the seal and coat of arms.',
     intro:
-      'This page brings together the history of the institutional identity of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) and the explanation of the elements of the seal and coat of arms, based on the heraldic material provided by the institution.',
+      'This page brings together the history of the institutional identity of the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) and the explanation of the elements of the seal and coat of arms.',
     history: {
       title: 'The construction of the institutional identity',
       paragraphs: [
-        'The ideation and leadership of OICMCTB are attributed to Grand Master Roberto Aguiar Guazzelli. The Order was formalised as a legal entity in 2021, a milestone associated with the inscription "MMXXI" on the seal.',
+        'The ideation and leadership of OICMCTB are those of Grand Master Roberto Aguiar Guazzelli. The Order was formalised as a legal entity in 2021, a milestone associated with the inscription "MMXXI" on the seal.',
         'The development of the seal and coat of arms was part of building the institutional identity, respecting heraldic tradition and chivalric values. The cultural and literary work of the Brazilian Templar Academy of Letters (ABTL) is part of this journey.',
-        'The historical origin of the iconographic model of the two knights is distinct from the creation of the specific OICMCTB seal. Inspiration from a tradition does not prove legal or institutional continuity with the medieval order.',
       ],
     },
     seal: {
@@ -347,11 +344,10 @@ export const en: Widen<Dictionary> = {
       title: 'The institutional seal',
       paragraphs: [
         'The round seal presents two Knights Templar sharing the same horse, a composition inspired by historical Templar iconography.',
-        'According to the institutional interpretation presented by OICMCTB, the knights move visually from right to left, in the opposite direction to the traditional representation referred to in the document.',
+        'In the institutional interpretation of OICMCTB, the knights move visually from right to left, in the opposite direction to the traditional representation.',
         'This inversion symbolises, for the Order:',
         'The inscription accompanying the seal is "SIGNUM TEMPLARIORUM BRASILIAE", translated as "Sign of the Brazilian Templars". Small Maltese crosses separate the words of the inscription, according to the official representation.',
         'The inscription "MMXXI" corresponds to 2021, the year associated with the institution\'s formalisation as a legal entity.',
-        'These meanings are presented as the interpretation of OICMCTB itself, not as a universally established historical fact.',
       ],
       items: [
         'A stance of counterpoint to the contemporary inversion of values.',
@@ -367,7 +363,7 @@ export const en: Widen<Dictionary> = {
         'The shield is classical, ogival and lanceolate, with a symmetrical division into four parts.',
         'The two perpendicular bands crossing at the centre form a red Greek cross.',
         'The fields of the shield use green, called Sinople in heraldic description; yellow, called Or; red, called Gules; and silver in the outline and in the described elements.',
-        'According to the interpretation of the document, the green and yellow colours refer to the Brazilian national colours, and the red cross evokes Templar ideals, justice and truth.',
+        'The green and yellow colours refer to the Brazilian national colours, and the red cross evokes Templar ideals, justice and truth.',
         'At the centre of the shield is the round seal with the two knights.',
       ],
     },
@@ -383,7 +379,7 @@ export const en: Widen<Dictionary> = {
       title: 'The mantling',
       paragraphs: [
         'The mantling consists of the lateral ornaments of the composition, described with elements in blue, gold and silver.',
-        'The document relates its composition to the heraldic tradition of the Guazzelli family. This family reference is presented as information from the institutional material, without extending to claims of medieval lineage.',
+        'The composition is related to the heraldic tradition of the Guazzelli family.',
       ],
     },
     crest: {
@@ -413,8 +409,7 @@ export const en: Widen<Dictionary> = {
       id: 'cores',
       title: 'Official colours',
       paragraphs: [
-        'The document provides colour references in RGB, CMYK and Pantone for some elements. Some details need to be checked between the textual descriptions and the codes provided.',
-        'The official vector file of the coat of arms is the main reference for visual representation. Official colours must not be changed based only on the interpretation of the numbers.',
+        'Colour references in RGB, CMYK and Pantone are listed below. The official vector file of the coat of arms is the main reference for visual representation.',
       ],
       items: [
         'Silver: RGB 208, 211, 212; Pantone 427 C.',
@@ -445,9 +440,8 @@ export const en: Widen<Dictionary> = {
       kicker: 'Cultural and literary arm',
       title: 'Brazilian Templar Academy of Letters (ABTL)',
       paragraphs: [
-        'The Academia Brasileira Templária de Letras (ABTL) is the cultural and literary arm associated with the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB), according to the institutional description provided.',
+        'The Academia Brasileira Templária de Letras (ABTL) is the cultural and literary arm associated with the Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB).',
         'Its work is dedicated to historical research, literature and intellectual production, cultural publications, heraldic studies, the preservation of traditions and the encouragement of the arts, sciences and the production of knowledge.',
-        'Theological studies are considered when compatible with the Academy\'s effective work. The Order does not attribute to ABTL members, publications, awards, projects or positions that have not been confirmed.',
       ],
       areasTitle: 'Areas of work of ABTL',
       areas: [
@@ -457,7 +451,6 @@ export const en: Widen<Dictionary> = {
         'Heraldic studies.',
         'Preservation of traditions.',
         'Encouragement of the arts, sciences and the production of knowledge.',
-        'Theological studies, when compatible with its effective work.',
       ],
     },
     ladies: {
@@ -465,18 +458,15 @@ export const en: Widen<Dictionary> = {
       title: 'Templar Ladies',
       paragraphs: [
         'The National Council of Templar Ladies participates in the cultural, institutional and community life of the Order, contributing to its initiatives and to strengthening fraternal bonds.',
-        'The participation of women is valued without creating duties, projects or responsibilities that have not been documented.',
       ],
       firstLadyLabel: 'First Lady',
       firstLadyName: 'Sueli Teodoro',
-      firstLadyNote:
-        'Identification according to the institutional information provided. The title of First Lady is not automatically converted into a presidency, executive direction or any other unconfirmed role.',
     },
     areas: {
       kicker: 'Areas of work',
       title: 'Areas of work and institutional objectives',
       lead:
-        'The areas below are areas of work and objectives of the Order, according to the institutional material. They include actions with children and the elderly, in Brazil and abroad, and celebrations such as Templar Day across states and municipalities.',
+        'The areas below are areas of work and objectives of the Order. They include actions with children and the elderly, in Brazil and abroad, and celebrations such as Templar Day across states and municipalities.',
       items: [
         {
           title: 'Social assistance',
@@ -519,8 +509,7 @@ export const en: Widen<Dictionary> = {
           text: 'Appreciation of the memory of local and regional civic heroes and recognition of civic merit.',
         },
       ],
-      note:
-        'Presenting these areas does not imply that all of them already have projects underway. When documented projects exist, they will be published with name, objective, audience, location, period and results.',
+      note: '',
     },
     publications: {
       kicker: 'Knowledge',
@@ -561,7 +550,7 @@ export const en: Widen<Dictionary> = {
       paragraphs: [
         'The first step is to learn about the Order, its history, its mission and its areas of work.',
         'Those who wish to learn more about the institution or express an interest in participating may contact us through the form on this page or by institutional email.',
-        'The Order will provide guidance on the applicable stages, criteria and conditions. Fees, dues, benefits or admission rules are not published without institutional validation.',
+        'The Order provides guidance on the stages, criteria and conditions in effect for those who wish to learn about or participate in the Order.',
       ],
       stepsTitle: 'A simple path',
       steps: [
@@ -576,37 +565,34 @@ export const en: Widen<Dictionary> = {
       paragraphs: [
         'Ceremonies, investitures, elevations and grants of titles and honours are civil and chivalric acts of the Order.',
         'The Order also holds and takes part in actions and events across Brazilian states and municipalities - including Templar Day - and develops work with children and the elderly nationally and internationally.',
-        'When confirmed by the institution, these gatherings may be open to guests, family members and the community.',
-        'Titles and honours granted by OICMCTB are not equivalent to official military ranks, academic degrees, government decorations or public titles.',
-        'Confirmed events and activities are announced through the official channels of the Order and on the Teachings and Records page.',
+        'These gatherings may be open to guests, family members and the community.',
+        'Events and activities are announced through the official channels of the Order and on the Teachings and Records page.',
       ],
     },
     donations: {
       kicker: 'Contributions',
       title: 'Donations and contributions',
       paragraphs: [
-        'OICMCTB does not publish bank details, amounts or payment methods on this page. Tax benefits, income tax deductions or tax incentives are not presented as guaranteed.',
-        'To receive guidance on possible contributions, please contact the Order through its official channels.',
+        'For guidance on contributions, please contact the Order through its official channels.',
       ],
-      note: 'The Order does not provide tax advice. Tax information must be confirmed with the institution and with a qualified professional.',
+      note: '',
     },
     contact: {
       kicker: 'Contact',
       title: 'Talk to OICMCTB',
       emailLabel: 'Institutional email',
-      emailNote: 'Official channel provided by the Order.',
+      emailNote: 'Official channel of the Order.',
       socialLabel: 'Social media',
       socialHandle: '@oicmctb',
       platforms: 'Facebook',
-      note:
-        'Address and telephone are not published on this page because they have not been confirmed by the institution.',
+      note: '',
       formTitle: 'Send a message',
       formIntro: 'Complete the fields below. Your information will be used to reply to your contact.',
     },
     faq: {
       kicker: 'Frequently asked questions',
       title: 'Frequently Asked Questions',
-      lead: 'Answers based on official institutional information.',
+      lead: 'Official institutional answers.',
       items: [
         {
           q: 'What is OICMCTB?',
@@ -622,7 +608,7 @@ export const en: Widen<Dictionary> = {
         },
         {
           q: 'What is its relationship with the historical Knights Templar?',
-          a: 'OICMCTB preserves and values the memory and chivalric ideals associated with the Templar tradition. The institution is a contemporary Brazilian organization and does not claim direct legal or institutional continuity with the medieval order.',
+          a: 'OICMCTB preserves and values the memory and chivalric ideals associated with the Templar tradition.',
         },
         {
           q: 'What is its relationship with Freemasonry?',
@@ -638,7 +624,7 @@ export const en: Widen<Dictionary> = {
         },
         {
           q: 'How can I obtain information about participation and activities?',
-          a: 'Contact us through the form on this page or by institutional email. The Order will provide guidance on participation, activities and possible contributions, without publishing unconfirmed rules or conditions.',
+          a: 'Contact us through the form on this page or by institutional email. The Order will provide guidance on participation, activities and contributions.',
         },
       ],
     },

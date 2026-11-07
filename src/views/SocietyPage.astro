@@ -97,7 +97,6 @@ const areaIcons: IconName[] = [
           <p class="mt-3 font-display text-xl font-semibold text-ink-900">
             {society.ladies.firstLadyName}
           </p>
-          <p class="mt-4 text-sm text-ink-600">{society.ladies.firstLadyNote}</p>
         </div>
       </div>
     </div>
@@ -126,7 +125,9 @@ const areaIcons: IconName[] = [
         ))
       }
     </ul>
-    <p class="mx-auto mt-8 max-w-3xl text-center text-xs text-stone-500">{society.areas.note}</p>
+    {society.areas.note ? (
+      <p class="mx-auto mt-8 max-w-3xl text-center text-xs text-stone-500">{society.areas.note}</p>
+    ) : null}
   </Section>
 
   <!-- Publicações -->
