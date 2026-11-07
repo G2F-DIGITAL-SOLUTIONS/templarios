@@ -11,20 +11,23 @@ import NotFoundPage from '@/views/NotFoundPage.astro';
 import { routeDefinitions, type RouteDefinition } from '@/routes';
 import { locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
-import { localizedPath } from '@/i18n/routes';
+import { pathsForRoute } from '@/i18n/routes';
 
 /**
  * Single dynamic route that statically generates every page for every locale.
  *
  * Static output, one file per (locale, route) pair — ideal for a CDN and for
  * Lighthouse. Pages stay thin because all rendering lives in `src/views`.
+ * Alias segments (e.g. /ensinamentos alongside /registros) reuse the same view.
  */
 export const getStaticPaths: GetStaticPaths = () => {
   return locales.flatMap((locale) =>
-    routeDefinitions.map((definition) => ({
-      params: { slug: localizedPath(locale, definition.routeKey).replace(/^\//, '') || undefined },
-      props: { locale, definition },
-    })),
+    routeDefinitions.flatMap((definition) =>
+      pathsForRoute(locale, definition.routeKey).map((path) => ({
+        params: { slug: path.replace(/^\//, '') || undefined },
+        props: { locale, definition },
+      })),
+    ),
   );
 };
 

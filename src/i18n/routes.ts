@@ -42,11 +42,11 @@ export const routeSegments: Record<RouteKey, Record<Locale, string>> = {
     es: 'cultura-y-accion-social',
   },
   teachings: {
-    pt: 'ensinamentos',
-    en: 'teachings',
-    it: 'insegnamenti',
-    fr: 'enseignements',
-    es: 'ensenanzas',
+    pt: 'registros',
+    en: 'records',
+    it: 'registri',
+    fr: 'registres',
+    es: 'registros',
   },
   participate: {
     pt: 'participe',
@@ -67,12 +67,42 @@ export const routeSegments: Record<RouteKey, Record<Locale, string>> = {
   notFound: { pt: '404', en: '404', it: '404', fr: '404', es: '404' },
 };
 
+/**
+ * Extra URL segments that serve the same page as the canonical segment.
+ * Nav, CTAs and canonical SEO keep using `routeSegments` / `localizedPath`.
+ */
+export const routeAliases: Partial<Record<RouteKey, Partial<Record<Locale, string[]>>>> = {
+  teachings: {
+    pt: ['ensinamentos'],
+    en: ['teachings'],
+    it: ['insegnamenti'],
+    fr: ['enseignements'],
+    es: ['ensenanzas'],
+  },
+};
+
 /** Build an absolute, locale-aware pathname (leading slash, no trailing slash except root). */
 export function localizedPath(locale: Locale, key: RouteKey): string {
   const segment = routeSegments[key][locale];
   const prefix = locale === defaultLocale ? '' : `/${locale}`;
   const path = `${prefix}/${segment}`.replace(/\/+$/, '');
   return path === '' ? '/' : path;
+}
+
+/** Locale-aware pathname for an alias segment of a route. */
+export function localizedAliasPath(locale: Locale, segment: string): string {
+  const prefix = locale === defaultLocale ? '' : `/${locale}`;
+  const path = `${prefix}/${segment}`.replace(/\/+$/, '');
+  return path === '' ? '/' : path;
+}
+
+/** Every pathname (canonical + aliases) that should render a given route. */
+export function pathsForRoute(locale: Locale, key: RouteKey): string[] {
+  const canonical = localizedPath(locale, key);
+  const aliases = (routeAliases[key]?.[locale] ?? []).map((segment) =>
+    localizedAliasPath(locale, segment),
+  );
+  return [canonical, ...aliases];
 }
 
 /** Every locale variant of a route — used for the language switcher and hreflang. */
@@ -95,11 +125,12 @@ export function matchRouteKey(pathname: string): RouteKey | undefined {
 
   for (const key of routeKeys) {
     for (const locale of Object.keys(routeSegments[key]) as Locale[]) {
-      const path = localizedPath(locale, key);
-      const matches = path === '/' ? clean === '/' : clean === path || clean.startsWith(`${path}/`);
-      if (matches && path.length > bestLength) {
-        best = key;
-        bestLength = path.length;
+      for (const path of pathsForRoute(locale, key)) {
+        const matches = path === '/' ? clean === '/' : clean === path || clean.startsWith(`${path}/`);
+        if (matches && path.length > bestLength) {
+          best = key;
+          bestLength = path.length;
+        }
       }
     }
   }
