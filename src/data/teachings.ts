@@ -46,20 +46,6 @@ export const teachings: TeachingPost[] = [
     ],
   },
   {
-    id: 'assembleia-transporte-alternativo-2024',
-    date: '2024-04-15',
-    title: 'Assembleia extraordinária do transporte alternativo',
-    summary:
-      'Mais de 100 associados reuniram-se na Associação Paulista de Imprensa, em iniciativa da OICMCTB e da ANTAB.',
-    paragraphs: [
-      'No domingo, 14 de abril de 2024, foi realizado um encontro histórico para o transporte alternativo: reuniram-se mais de 100 associados em assembleia extraordinária na Associação Paulista de Imprensa.',
-      'O evento foi organizado pela Ordem Internacional Civil Militar Cavaleiros Templários do Brasil (OICMCTB) e comandado pelo presidente da ANTAB, Tell dos Transportes.',
-      'A assembleia marcou um passo importante para o setor, com discussões sobre melhorias, regulamentações e avanços relevantes para a mobilidade urbana e para milhares de pessoas que utilizam o transporte alternativo no dia a dia.',
-      'G.M.T.B. +++ Dom Roberto Guazzelli.',
-    ],
-    images: imgs('assembleia-transporte-alternativo-2024', 3),
-  },
-  {
     id: 'convite-trabalho-frater-2024',
     date: '2024-04-10',
     title: 'Convite para prestigiar o trabalho de um frater',
